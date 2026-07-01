@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 3c936f0ec83ac3942a679c54fb21b4e0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6175447532512967947
+    second: Hit effect0002_0
+  - first:
+      213: 8127271951611589886
+    second: Hit effect0002_1
+  - first:
+      213: 797891186841939857
+    second: Hit effect0002_2
+  - first:
+      213: 2231512875031749937
+    second: Hit effect0002_3
+  - first:
+      213: 6851876280125489045
+    second: Hit effect0002_4
+  - first:
+      213: 6051994546157224117
+    second: Hit effect0002_5
+  - first:
+      213: 6329655995620448474
+    second: Hit effect0002_6
+  - first:
+      213: -325032605654927081
+    second: Hit effect0002_7
+  - first:
+      213: 3748009081099676472
+    second: Hit effect0002_8
+  - first:
+      213: -3271215157842560249
+    second: Hit effect0002_9
+  - first:
+      213: -8099646586743578815
+    second: Hit effect0002_10
+  - first:
+      213: 6009197641472597515
+    second: Hit effect0002_11
+  - first:
+      213: -4122047349072878670
+    second: Hit effect0002_12
+  - first:
+      213: -3147916256589567184
+    second: Hit effect0002_13
+  - first:
+      213: -8220273577888921888
+    second: Hit effect0002_14
+  - first:
+      213: -8701719919214910438
+    second: Hit effect0002_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hit effect0002_0
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 264
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f2808720376c4aa0800000000000000
+      internalID: -6175447532512967947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit effect0002_1
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 274
+        width: 19
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef4fdc4a7ced9c070800000000000000
+      internalID: 8127271951611589886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit effect0002_2
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 265
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19fe0299ecda21b00800000000000000
+      internalID: 797891186841939857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit effect0002_3
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 262
+        width: 11
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1356af3032de7fe10800000000000000
+      internalID: 2231512875031749937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit effect0002_4
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 271
+        width: 6
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59ffdc98c21c61f50800000000000000
+      internalID: 6851876280125489045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit effect0002_5
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 280
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b08d4299f00df350800000000000000
+      internalID: 6051994546157224117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit effect0002_6
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 251
+        width: 29
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad8d061979477d750800000000000000
+      internalID: 6329655995620448474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit effect0002_7
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 265
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 719b48731904d7bf0800000000000000
+      internalID: -325032605654927081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit effect0002_8
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 250
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83b62e5c66a930430800000000000000
+      internalID: 3748009081099676472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit effect0002_9
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 248
+        width: 40
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70bbbe4452f4a92d0800000000000000
+      internalID: -3271215157842560249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit effect0002_10
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 231
+        width: 36
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f91f6d756489f80800000000000000
+      internalID: -8099646586743578815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit effect0002_11
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 218
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0ed615ba65f46350800000000000000
+      internalID: 6009197641472597515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit effect0002_12
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 190
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b3ab2b86cb8bc6c0800000000000000
+      internalID: -4122047349072878670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit effect0002_13
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 208
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03b2d4fc7da5054d0800000000000000
+      internalID: -3147916256589567184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit effect0002_14
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 221
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e6c669dbb8bbed80800000000000000
+      internalID: -8220273577888921888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit effect0002_15
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 213
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a14214056d74d3780800000000000000
+      internalID: -8701719919214910438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Hit effect0002_0: -6175447532512967947
+      Hit effect0002_1: 8127271951611589886
+      Hit effect0002_10: -8099646586743578815
+      Hit effect0002_11: 6009197641472597515
+      Hit effect0002_12: -4122047349072878670
+      Hit effect0002_13: -3147916256589567184
+      Hit effect0002_14: -8220273577888921888
+      Hit effect0002_15: -8701719919214910438
+      Hit effect0002_2: 797891186841939857
+      Hit effect0002_3: 2231512875031749937
+      Hit effect0002_4: 6851876280125489045
+      Hit effect0002_5: 6051994546157224117
+      Hit effect0002_6: 6329655995620448474
+      Hit effect0002_7: -325032605654927081
+      Hit effect0002_8: 3748009081099676472
+      Hit effect0002_9: -3271215157842560249
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
