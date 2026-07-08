@@ -36,6 +36,9 @@ GameObject:
   - component: {fileID: 114679018816720190}
   - component: {fileID: -4342895061800036961}
   - component: {fileID: 1506911496304465599}
+  - component: {fileID: 2673102684246584702}
+  - component: {fileID: 7971541124681473021}
+  - component: {fileID: 1692757486288348094}
   m_Layer: 9
   m_Name: Maskbound_Player
   m_TagString: Player
@@ -1068,6 +1071,51 @@ MonoBehaviour:
   CooldownRemaining: 0
   CurrentEnergy: 100
   MaxEnergy: 100
+--- !u!114 &2673102684246584702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b654882f26ed9dc4986523dddf43d989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.SkillSlotManager
+  _slots:
+  - EquippedSkill: {fileID: 11400000, guid: e5e35e217c7a4f5bb1b4b8ece0d03edc, type: 2}
+  - EquippedSkill: {fileID: 11400000, guid: d9ce38619e294d96bfd66fcd24318492, type: 2}
+  - EquippedSkill: {fileID: 0}
+  _initialSlotCount: 3
+--- !u!114 &7971541124681473021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 386fe4c10cb24196a7481c94b6aa4ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Stats.CharacterStats
+  StatData: {fileID: 11400000, guid: 65be75bfb6db44fc80974280af40003b, type: 2}
+  _attackDamageBonus: 0
+--- !u!114 &1692757486288348094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4365f93cb434d53a9e7aeea620f88b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Soul.SoulWallet
+  CurrencyData: {fileID: 11400000, guid: 5a3299d7df0e4cefa37e9f83fb34b2da, type: 2}
+  InitializeFromDataIfEmpty: 1
 --- !u!1 &159142
 GameObject:
   m_ObjectHideFlags: 0
