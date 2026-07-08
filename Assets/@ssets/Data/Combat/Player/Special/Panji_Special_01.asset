@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 632e501e5b0a6e743863093c609cfd67, type: 3}
+  m_Name: Panji_Special_01
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Combat.MaskboundSpecialAttackData
+  DisplayName: Panji Spirit Burst
+  Cooldown: 5
+  EnergyCost: 30
+  RequiresEnergy: 0
+  StartupTime: 0.15
+  ActiveTime: 0.25
+  RecoveryTime: 0.35
+  HitboxOffset: {x: 1.1, y: 0}
+  HitboxSize: {x: 1.8, y: 1.2}
+  TargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  MinDamage: 25
+  MaxDamage: 25
+  KnockbackType: 1
+  KnockbackForce: {x: 18, y: 4}
+  InvincibilityDuration: 0.25
+  SpecialAttackTriggerParameter: SpecialAttack
+  IsSpecialAttackingParameter: IsSpecialAttacking
+  SpecialIndexParameter: SpecialIndex
+  SpecialIndex: 1

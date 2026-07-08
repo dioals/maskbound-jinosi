@@ -1,0 +1,227 @@
+using System.Collections;
+using MoreMountains.CorgiEngine;
+using MoreMountains.Tools;
+using UnityEngine;
+
+namespace MaskboundJinosi.Combat
+{
+	[AddComponentMenu("Maskbound/Character/Abilities/Special Attack")]
+	public class MaskboundSpecialAttackAbility : CharacterAbility
+	{
+		public enum SpecialInputSources
+		{
+			TimeControl,
+			SecondaryShoot
+		}
+
+		[Header("Special Attack")]
+		public MaskboundSpecialAttackData SpecialAttackData;
+		public MaskboundSpecialHitbox SpecialHitbox;
+		public SpecialInputSources InputSource = SpecialInputSources.TimeControl;
+
+		[Header("Runtime")]
+		[MMReadOnly] public bool IsSpecialAttacking;
+		[MMReadOnly] public float CooldownRemaining;
+		[MMReadOnly] public float CurrentEnergy = 100f;
+		public float MaxEnergy = 100f;
+
+		protected int _specialAttackTriggerParameter;
+		protected int _isSpecialAttackingParameter;
+		protected int _specialIndexParameter;
+		protected Coroutine _attackCoroutine;
+		protected float _lastUseTime = -999f;
+
+		public override string HelpBoxText()
+		{
+			return "Handles Maskbound special attacks from Corgi input. Use SpecialAttackData for timing, damage, cooldown, hitbox, and animation settings.";
+		}
+
+		protected override void Initialization()
+		{
+			base.Initialization();
+
+			CurrentEnergy = Mathf.Clamp(CurrentEnergy, 0f, MaxEnergy);
+
+			if (SpecialHitbox != null)
+			{
+				SpecialHitbox.Deactivate();
+			}
+		}
+
+		protected override void InitializeAnimatorParameters()
+		{
+			base.InitializeAnimatorParameters();
+
+			if (SpecialAttackData == null)
+			{
+				return;
+			}
+
+			RegisterAnimatorParameter(SpecialAttackData.SpecialAttackTriggerParameter, AnimatorControllerParameterType.Trigger, out _specialAttackTriggerParameter);
+			RegisterAnimatorParameter(SpecialAttackData.IsSpecialAttackingParameter, AnimatorControllerParameterType.Bool, out _isSpecialAttackingParameter);
+			RegisterAnimatorParameter(SpecialAttackData.SpecialIndexParameter, AnimatorControllerParameterType.Int, out _specialIndexParameter);
+		}
+
+		protected override void HandleInput()
+		{
+			base.HandleInput();
+
+			if (!AbilityAuthorized || _inputManager == null)
+			{
+				return;
+			}
+
+			if (SpecialInputDown())
+			{
+				TryStartSpecialAttack();
+			}
+		}
+
+		public override void ProcessAbility()
+		{
+			base.ProcessAbility();
+
+			if (SpecialAttackData == null)
+			{
+				CooldownRemaining = 0f;
+				return;
+			}
+
+			CooldownRemaining = Mathf.Max(0f, SpecialAttackData.Cooldown - (Time.time - _lastUseTime));
+		}
+
+		public override void UpdateAnimator()
+		{
+			base.UpdateAnimator();
+
+			if ((_animator == null) || (_character == null) || (SpecialAttackData == null))
+			{
+				return;
+			}
+
+			MMAnimatorExtensions.UpdateAnimatorBool(_animator, _isSpecialAttackingParameter, IsSpecialAttacking, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
+			MMAnimatorExtensions.UpdateAnimatorInteger(_animator, _specialIndexParameter, SpecialAttackData.SpecialIndex, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
+		}
+
+		public virtual bool TryStartSpecialAttack()
+		{
+			if (!CanStartSpecialAttack())
+			{
+				return false;
+			}
+
+			if (SpecialAttackData.RequiresEnergy)
+			{
+				CurrentEnergy -= SpecialAttackData.EnergyCost;
+			}
+
+			_lastUseTime = Time.time;
+			_attackCoroutine = StartCoroutine(SpecialAttackSequence());
+			return true;
+		}
+
+		public virtual bool CanStartSpecialAttack()
+		{
+			if ((SpecialAttackData == null) || IsSpecialAttacking)
+			{
+				return false;
+			}
+
+			if (_condition != null && _condition.CurrentState != CharacterStates.CharacterConditions.Normal)
+			{
+				return false;
+			}
+
+			if (Time.time < _lastUseTime + SpecialAttackData.Cooldown)
+			{
+				return false;
+			}
+
+			if (SpecialAttackData.RequiresEnergy && CurrentEnergy < SpecialAttackData.EnergyCost)
+			{
+				return false;
+			}
+
+			return true;
+		}
+
+		public virtual void RefillEnergy(float amount)
+		{
+			CurrentEnergy = Mathf.Clamp(CurrentEnergy + amount, 0f, MaxEnergy);
+		}
+
+		protected virtual IEnumerator SpecialAttackSequence()
+		{
+			IsSpecialAttacking = true;
+			PlayAbilityStartFeedbacks();
+			TriggerSpecialAnimator();
+
+			yield return new WaitForSeconds(Mathf.Max(0f, SpecialAttackData.StartupTime));
+
+			if (SpecialHitbox != null)
+			{
+				SpecialHitbox.Configure(SpecialAttackData, _character.gameObject, _character.IsFacingRight);
+				SpecialHitbox.Activate();
+			}
+
+			yield return new WaitForSeconds(Mathf.Max(0f, SpecialAttackData.ActiveTime));
+
+			if (SpecialHitbox != null)
+			{
+				SpecialHitbox.Deactivate();
+			}
+
+			yield return new WaitForSeconds(Mathf.Max(0f, SpecialAttackData.RecoveryTime));
+
+			StopSpecialAttack();
+		}
+
+		protected virtual void StopSpecialAttack()
+		{
+			if (SpecialHitbox != null)
+			{
+				SpecialHitbox.Deactivate();
+			}
+
+			IsSpecialAttacking = false;
+			StopStartFeedbacks();
+			PlayAbilityStopFeedbacks();
+			_attackCoroutine = null;
+		}
+
+		protected virtual void TriggerSpecialAnimator()
+		{
+			if ((_animator == null) || (_character == null) || (SpecialAttackData == null))
+			{
+				return;
+			}
+
+			MMAnimatorExtensions.UpdateAnimatorInteger(_animator, _specialIndexParameter, SpecialAttackData.SpecialIndex, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
+			MMAnimatorExtensions.UpdateAnimatorTrigger(_animator, _specialAttackTriggerParameter, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
+		}
+
+		protected virtual bool SpecialInputDown()
+		{
+			switch (InputSource)
+			{
+				case SpecialInputSources.SecondaryShoot:
+					return (_inputManager.SecondaryShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+					       || (_inputManager.SecondaryShootAxis == MMInput.ButtonStates.ButtonDown);
+				default:
+					return _inputManager.TimeControlButton.State.CurrentState == MMInput.ButtonStates.ButtonDown;
+			}
+		}
+
+		public override void ResetAbility()
+		{
+			base.ResetAbility();
+
+			if (_attackCoroutine != null)
+			{
+				StopCoroutine(_attackCoroutine);
+			}
+
+			StopSpecialAttack();
+		}
+	}
+}
