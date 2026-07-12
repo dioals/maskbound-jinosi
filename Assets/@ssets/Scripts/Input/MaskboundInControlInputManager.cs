@@ -144,7 +144,21 @@ namespace MaskboundJinosi.Input
 
             if (action.IsPressed)
             {
+                if (button.State.CurrentState == MMInput.ButtonStates.Off)
+                {
+                    button.TriggerButtonDown();
+                    LogButton(action.Name, "Down");
+                    return;
+                }
+
                 button.TriggerButtonPressed();
+                return;
+            }
+
+            if (button.State.CurrentState == MMInput.ButtonStates.ButtonPressed)
+            {
+                button.TriggerButtonUp();
+                LogButton(action.Name, "Up");
             }
         }
 

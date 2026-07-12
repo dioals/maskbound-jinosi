@@ -7467,7 +7467,7 @@ MonoBehaviour:
   DelayedButtonPresses: 0
   SmoothMovement: 1
   Threshold: {x: 0.1, y: 0.4}
-  logInputDebug: 0
+  logInputDebug: 1
 --- !u!114 &5028094075762398313
 MonoBehaviour:
   m_ObjectHideFlags: 0
