@@ -15,16 +15,11 @@ GameObject:
   - component: {fileID: 11494318}
   - component: {fileID: 11485350}
   - component: {fileID: 11455042}
-  - component: {fileID: 11449144}
   - component: {fileID: 11462046}
-  - component: {fileID: 11421110}
   - component: {fileID: 11431242}
   - component: {fileID: 11473620}
-  - component: {fileID: 11463706}
   - component: {fileID: 11453748}
-  - component: {fileID: 11431628}
   - component: {fileID: 11475426}
-  - component: {fileID: 11433500}
   - component: {fileID: 11444118}
   - component: {fileID: 11455680}
   - component: {fileID: 114000012565017190}
@@ -327,34 +322,6 @@ MonoBehaviour:
   TouchTheGroundFeedback: {fileID: 3350439616279390472}
   MinimumAirTimeBeforeFeedback: 0.2
   StopWalkingWhenCollidingWithAWall: 0
---- !u!114 &11449144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 119040}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8071d2257235e403da6c6a0a966d6683, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  CrawlAuthorized: 1
-  CrawlSpeed: 4
-  InputDriven: 1
-  ResizeColliderWhenCrouched: 1
-  CrouchedBoxColliderSize: {x: 0.35, y: 0.3}
-  CanCrouchWhileMoving: 0
-  CanMoveWhileCrouching: 1
-  InATunnel: 0
-  MoveCameraTarget: 1
-  CameraTargetOffset: {x: 0, y: -3, z: 0}
 --- !u!114 &11462046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,26 +362,6 @@ MonoBehaviour:
   SuccessiveDashResetMethod: 0
   SuccessiveDashResetDuration: 2
   InvincibleWhileDashing: 0
---- !u!114 &11421110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 119040}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98ba246fa819940cb8f8f89f002bb088, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  DanglingRaycastOrigin: {x: 0.7, y: 0.2, z: 0}
-  DanglingRaycastLength: 2
 --- !u!114 &11431242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,34 +421,6 @@ MonoBehaviour:
   ReadInput: 1
   AutoRun: 0
   AutoRunThreshold: 0.6
---- !u!114 &11463706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 119040}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d37391d2147a467db78bf732ae24daa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  MovingPlatformsJumpCollisionOffDuration: 0.05
-  ParticleEmitter: {fileID: 19839500}
-  JetpackForce: 2.5
-  JetpackUnlimited: 0
-  JetpackFuelDuration: 5
-  JetpackRefuelCooldown: 1
-  RefuelSpeed: 0.5
-  MinimumFuelRequirement: 0.2
-  JetpackRefueledSfx: {fileID: 0}
-  JetpackFuelDurationLeft: 0
 --- !u!114 &11453748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,26 +442,6 @@ MonoBehaviour:
   HorizontalInputThreshold: 0.5
   MoveCameraTarget: 1
   CameraTargetOffset: {x: 0, y: 6, z: 0}
---- !u!114 &11431628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 119040}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91c7e9428883e43cc8ce6e26ef802353, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  BufferDurationAfterGrip: 0.3
-  InputBasedGrip: 0
 --- !u!114 &11475426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,33 +465,6 @@ MonoBehaviour:
   WallClingingTolerance: 0.3
   ResetVerticalForceOnEntry: 1
   InputIndependent: 1
---- !u!114 &11433500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 119040}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeabffc5d6e694a8287c891288b0a4be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  WallJumpForce: {x: 15, y: 4}
-  ForceMode: 0
-  ForceFlipTowardsDirection: 1
-  ShouldReduceNumberOfJumpsLeft: 1
-  LimitNumberOfWalljumps: 0
-  MaximumNumberOfWalljumps: 3
-  NumberOfWalljumpsLeft: 0
-  AllowCoyoteTime: 0
-  CoyoteTimeDuration: 0.2
 --- !u!114 &11444118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -740,8 +612,8 @@ MonoBehaviour:
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
-  InitialHealth: 300
-  MaximumHealth: 300
+  InitialHealth: 80
+  MaximumHealth: 80
   Invulnerable: 0
   ImmuneToDamage: 0
   DamageFeedbacks: {fileID: 1159074697136316710}
@@ -6276,7 +6148,7 @@ MonoBehaviour:
   InScriptDrivenPause: 0
   FeedbacksList:
   - rid: 0
-  - rid: 1
+  - rid: 606514013425369178
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   RestoreInitialValuesOnDisable: 0
@@ -6410,13 +6282,13 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    - rid: 1
-      type: {class: MMF_ParticlesInstantiation, ns: MoreMountains.Feedbacks, asm: MoreMountains.Tools}
+    - rid: 606514013425369178
+      type: {class: MMF_InstantiateObject, ns: MoreMountains.Feedbacks, asm: MoreMountains.Tools}
       data:
         Active: 1
-        UniqueID: 2082614045
-        Label: Particles Instantiation
-        OriginalLabel: Particles Instantiation
+        UniqueID: 1039789536
+        Label: Instantiate Object
+        OriginalLabel: Instantiate Object
         ChannelMode: 0
         Channel: 0
         MMChannelDefinition: {fileID: 0}
@@ -6484,26 +6356,22 @@ MonoBehaviour:
           ButtonText: 
         Owner: {fileID: 1159074697136316710}
         DebugActive: 0
-        Mode: 1
+        GameObjectToInstantiate: {fileID: 8104515186401660106, guid: 4b72d3d871c6c6c46a965914f04ff0f3,
+          type: 3}
+        PositionMode: 0
+        AlsoApplyRotation: 0
+        AlsoApplyScale: 0
+        TargetTransform: {fileID: 0}
+        TargetPosition: {x: 0, y: 0, z: 0}
+        PositionOffset: {x: 0, y: 0, z: 0}
+        RandomizePosition: 0
+        RandomizedPositionMin: {x: 0, y: 0, z: 0}
+        RandomizedPositionMax: {x: 1, y: 1, z: 1}
+        ParentTransform: {fileID: 0}
+        CreateObjectPool: 0
         ObjectPoolSize: 5
         MutualizePools: 0
-        ParentTransform: {fileID: 0}
-        CachedRecycle: 0
-        ParticlesPrefab: {fileID: 19800000, guid: 65c210b4af5c9d544814a1bb717df020,
-          type: 3}
-        RandomParticlePrefabs: []
-        ForceSetActiveOnPlay: 0
-        StopOnReset: 0
-        DeclaredDuration: 0
-        PositionMode: 0
-        InstantiateParticlesPosition: {fileID: 0}
-        TargetWorldPosition: {x: 0, y: 0, z: 0}
-        Offset: {x: 0, y: 0, z: 0}
-        NestParticles: 0
-        ApplyRotation: 0
-        ApplyScale: 0
-        ForceSimulationSpeed: 0
-        ForcedSimulationSpeed: {x: 0.1, y: 1}
+        PoolParentTransform: {fileID: 0}
 --- !u!1 &1268775332594728068
 GameObject:
   m_ObjectHideFlags: 0

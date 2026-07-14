@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 5040397d6799d8a438be84b7c59a483b
+guid: 35b4d506072a928428ca8a5eb1937443
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2968253113320245591
-    second: HP Bar Frame_0
+      213: -7401956557883908674
+    second: Panji dash stop0003_0
+  - first:
+      213: 1705755916124584735
+    second: Panji dash stop0003_1
+  - first:
+      213: -506047143487412263
+    second: Panji dash stop0003_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HP Bar Frame_0
+      name: Panji dash stop0003_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 579
-        height: 188
+        x: 301
+        y: 103
+        width: 219
+        height: 170
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 75986e6ea7a513920800000000000000
-      internalID: 2968253113320245591
+      spriteID: ebdd4745ab7f64990800000000000000
+      internalID: -7401956557883908674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panji dash stop0003_1
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 106
+        width: 39
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b702ed7ff0ca710800000000000000
+      internalID: 1705755916124584735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panji dash stop0003_2
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 107
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d7e4dcddc82af8f0800000000000000
+      internalID: -506047143487412263
       vertices: []
       indices: 
       edges: []
@@ -125,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      HP Bar Frame_0: 2968253113320245591
+      Panji dash stop0003_0: -7401956557883908674
+      Panji dash stop0003_1: 1705755916124584735
+      Panji dash stop0003_2: -506047143487412263
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

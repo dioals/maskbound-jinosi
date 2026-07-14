@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5040397d6799d8a438be84b7c59a483b
+guid: 9185cfd643c730c4da89ac50cd9c1a05
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2968253113320245591
-    second: HP Bar Frame_0
+      213: 9006301237696401253
+    second: Panji dash Initial0001_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HP Bar Frame_0
+      name: Panji dash Initial0001_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 579
-        height: 188
+        x: 310
+        y: 104
+        width: 244
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 75986e6ea7a513920800000000000000
-      internalID: 2968253113320245591
+      spriteID: 56f0e0d124fccfc70800000000000000
+      internalID: 9006301237696401253
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      HP Bar Frame_0: 2968253113320245591
+      Panji dash Initial0001_0: 9006301237696401253
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

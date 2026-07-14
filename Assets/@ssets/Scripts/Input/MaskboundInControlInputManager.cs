@@ -315,7 +315,7 @@ namespace MaskboundJinosi.Input
                 actions.Roll.AddDefaultBinding(InputControlType.Action4);
 
                 actions.Attack.AddDefaultBinding(Key.E);
-                actions.Attack.AddDefaultBinding(Mouse.LeftButton);
+                // actions.Attack.AddDefaultBinding(Mouse.LeftButton);
                 actions.Attack.AddDefaultBinding(InputControlType.Action3);
                 actions.Attack.AddDefaultBinding(InputControlType.RightTrigger);
 
