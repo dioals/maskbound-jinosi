@@ -11,6 +11,8 @@ namespace MaskboundJinosi.Input
         [Header("InControl")]
         [SerializeField] private bool logInputDebug;
 
+        public MMInput.IMButton BlockButton { get; private set; }
+
         private MaskboundCorgiActions _actions;
         private bool _initialized;
 
@@ -118,6 +120,33 @@ namespace MaskboundJinosi.Input
             BindButton(_actions.Throw, ThrowButton);
             BindButton(_actions.Push, PushButton);
             BindButton(_actions.Grip, GripButton);
+            BindButton(_actions.Block, BlockButton);
+        }
+
+        protected override void InitializeButtons()
+        {
+            base.InitializeButtons();
+            ButtonList.Add(BlockButton = new MMInput.IMButton(
+                PlayerID,
+                "Block",
+                BlockButtonDown,
+                BlockButtonPressed,
+                BlockButtonUp));
+        }
+
+        public virtual void BlockButtonDown()
+        {
+            BlockButton.State.ChangeState(MMInput.ButtonStates.ButtonDown);
+        }
+
+        public virtual void BlockButtonPressed()
+        {
+            BlockButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed);
+        }
+
+        public virtual void BlockButtonUp()
+        {
+            BlockButton.State.ChangeState(MMInput.ButtonStates.ButtonUp);
         }
 
         protected override void SetShootAxis()
@@ -236,6 +265,7 @@ namespace MaskboundJinosi.Input
             public readonly PlayerAction Throw;
             public readonly PlayerAction Push;
             public readonly PlayerAction Grip;
+            public readonly PlayerAction Block;
 
             private MaskboundCorgiActions()
             {
@@ -271,6 +301,7 @@ namespace MaskboundJinosi.Input
                 Throw = CreatePlayerAction("Throw");
                 Push = CreatePlayerAction("Push");
                 Grip = CreatePlayerAction("Grip");
+                Block = CreatePlayerAction("Block");
             }
 
             public static MaskboundCorgiActions CreateWithDefaultBindings()
@@ -346,6 +377,7 @@ namespace MaskboundJinosi.Input
                 actions.Throw.AddDefaultBinding(Key.H);
                 actions.Push.AddDefaultBinding(Key.P);
                 actions.Grip.AddDefaultBinding(Key.G);
+                actions.Block.AddDefaultBinding(Key.B);
 
                 actions.ListenOptions.IncludeUnknownControllers = true;
                 actions.ListenOptions.IncludeMouseButtons = true;
