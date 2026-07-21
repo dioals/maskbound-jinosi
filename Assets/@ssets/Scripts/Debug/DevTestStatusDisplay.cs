@@ -49,10 +49,11 @@ namespace MaskboundJinosi.Debugging
 				: "N/A";
 			string invincible = Hub.PlayerHealth != null && Hub.PlayerHealth.Invulnerable ? "ON" : "OFF";
 			string slots = Hub.SkillSlots != null ? Hub.SkillSlots.SlotCount.ToString() : "N/A";
+			string timeScale = $"{Time.timeScale:0.##}x";
 
 			TargetText.text =
 				$"HP: {health}   Invincible: {invincible}\n" +
-				$"Soul: {SoulWallet.CurrentSoul}   Skill Slots: {slots}\n" +
+				$"Soul: {SoulWallet.CurrentSoul}   Skill Slots: {slots}   Time: {timeScale}\n" +
 				$"Last: {Hub.LastAction}";
 		}
 

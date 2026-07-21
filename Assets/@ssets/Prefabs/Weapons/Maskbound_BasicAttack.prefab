@@ -55,7 +55,7 @@ MonoBehaviour:
   InitializeOnStart: 0
   DelayBeforeUse: 0
   DelayBeforeUseReleaseInterruption: 1
-  TimeBetweenUses: 0
+  TimeBetweenUses: 0.35
   TimeBetweenUsesReleaseInterruption: 1
   CooldownDuration: 0
   UseBurstMode: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
   AreaOffset: {x: 1, y: 0}
-  AreaSize: {x: 1.8, y: 1.4}
+  AreaSize: {x: 1.2, y: 1}
   ExistingDamageArea: {fileID: 0}
   InitialDelay: 0
   ActiveDuration: 0.35
@@ -167,9 +167,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8449
   ApplyDamageOnTriggerEnter: 1
-  ApplyDamageOnTriggerStay: 1
+  ApplyDamageOnTriggerStay: 0
   MinDamageCaused: 10
-  MaxDamageCaused: 0
+  MaxDamageCaused: 10
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5

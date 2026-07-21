@@ -19,6 +19,12 @@ namespace MaskboundJinosi.Debugging
 		[Min(0)] public int SoulAmount = 10;
 		[Min(0)] public int SkillSlotIndex;
 
+		[Header("Time Scale")]
+		[Range(0.05f, 1f)] public float SlowMotionScale = 0.25f;
+		[Min(0.01f)] public float NormalTimeScale = 1f;
+		public bool AdjustFixedDeltaTime = true;
+		public bool ResetTimeScaleOnDestroy = true;
+
 		[Header("Placeholder Skills")]
 		public Skill PlaceholderPassiveSkill;
 		public Skill PlaceholderActiveSkill;
@@ -33,9 +39,14 @@ namespace MaskboundJinosi.Debugging
 		public Health PlayerHealth => Player != null ? Player.CharacterHealth : null;
 		public SkillSlotManager SkillSlots => Player != null ? Player.GetComponentInChildren<SkillSlotManager>(true) : null;
 		public string LastAction { get; protected set; } = "Ready";
+		public bool IsSlowMotionActive => Time.timeScale < NormalTimeScale;
+
+		protected float _defaultFixedDeltaTime;
 
 		protected virtual void Awake()
 		{
+			_defaultFixedDeltaTime = Time.fixedDeltaTime;
+
 			if (!IsDebugBuildAllowed())
 			{
 				gameObject.SetActive(false);
@@ -198,6 +209,38 @@ namespace MaskboundJinosi.Debugging
 			Report(removed ? $"Removed last skill slot | Total {manager.SlotCount}" : "No skill slot to remove", removed);
 		}
 
+		public virtual void ToggleSlowMotion()
+		{
+			if (IsSlowMotionActive)
+			{
+				DisableSlowMotion();
+				return;
+			}
+
+			EnableSlowMotion();
+		}
+
+		public virtual void EnableSlowMotion()
+		{
+			SetTimeScale(SlowMotionScale, $"Slow motion ON ({SlowMotionScale:0.##}x)");
+		}
+
+		public virtual void DisableSlowMotion()
+		{
+			SetTimeScale(NormalTimeScale, "Slow motion OFF");
+		}
+
+		public virtual void SetSlowMotionScale(float scale)
+		{
+			SlowMotionScale = Mathf.Clamp(scale, 0.05f, 1f);
+			SetTimeScale(SlowMotionScale, $"Slow motion scale set to {SlowMotionScale:0.##}x");
+		}
+
+		public virtual void SetTimeScale(float scale)
+		{
+			SetTimeScale(scale, $"Time scale set to {scale:0.##}x");
+		}
+
 		public virtual void RestartCurrentScene()
 		{
 			Report("Restarting current scene");
@@ -260,9 +303,33 @@ namespace MaskboundJinosi.Debugging
 			else UnityEngine.Debug.LogWarning($"[DevTestHub] {message}", this);
 		}
 
+		protected virtual void SetTimeScale(float scale, string message)
+		{
+			float clampedScale = Mathf.Max(0.01f, scale);
+			Time.timeScale = clampedScale;
+
+			if (AdjustFixedDeltaTime)
+			{
+				Time.fixedDeltaTime = _defaultFixedDeltaTime * clampedScale;
+			}
+
+			Report(message);
+		}
+
 		protected virtual bool IsDebugBuildAllowed()
 		{
 			return AllowInReleaseBuild || UnityEngine.Debug.isDebugBuild || Application.isEditor;
+		}
+
+		protected virtual void OnDestroy()
+		{
+			if (!ResetTimeScaleOnDestroy) return;
+
+			Time.timeScale = NormalTimeScale;
+			if (AdjustFixedDeltaTime)
+			{
+				Time.fixedDeltaTime = _defaultFixedDeltaTime;
+			}
 		}
 	}
 }
