@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: b494a6a9a920931459f42e8bdf4e05b7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5363171543407811522
+    second: Gempur Sukma Charging 0001_0
+  - first:
+      213: 3123450784708627208
+    second: Gempur Sukma Charging 0001_1
+  - first:
+      213: -4609135796049208340
+    second: Gempur Sukma Charging 0001_2
+  - first:
+      213: 5394474109000423977
+    second: Gempur Sukma Charging 0001_3
+  - first:
+      213: -6066259149676841051
+    second: Gempur Sukma Charging 0001_4
+  - first:
+      213: -4331817082061816066
+    second: Gempur Sukma Charging 0001_5
+  - first:
+      213: -3030948451415802345
+    second: Gempur Sukma Charging 0001_6
+  - first:
+      213: 9133619836054718135
+    second: Gempur Sukma Charging 0001_7
+  - first:
+      213: 3266730712546820144
+    second: Gempur Sukma Charging 0001_8
+  - first:
+      213: -1688811895903304604
+    second: Gempur Sukma Charging 0001_9
+  - first:
+      213: 2728859505837686324
+    second: Gempur Sukma Charging 0001_10
+  - first:
+      213: 2523291300300462851
+    second: Gempur Sukma Charging 0001_11
+  - first:
+      213: 6290179436492177416
+    second: Gempur Sukma Charging 0001_12
+  - first:
+      213: 698664382093236903
+    second: Gempur Sukma Charging 0001_13
+  - first:
+      213: 321574787109554259
+    second: Gempur Sukma Charging 0001_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Gempur Sukma Charging 0001_0
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 460
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e34a1b585ef2295b0800000000000000
+      internalID: -5363171543407811522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Charging 0001_1
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 468
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80b09ff90f9b85b20800000000000000
+      internalID: 3123450784708627208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Charging 0001_2
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 462
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceb13fae96f0900c0800000000000000
+      internalID: -4609135796049208340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Charging 0001_3
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 459
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a1309fe950dda40800000000000000
+      internalID: 5394474109000423977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Charging 0001_4
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 166
+        width: 183
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a77c0c917150dba0800000000000000
+      internalID: -6066259149676841051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Charging 0001_5
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 453
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efe7cb7905b42e3c0800000000000000
+      internalID: -4331817082061816066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Charging 0001_6
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 358
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71e37dc2178efe5d0800000000000000
+      internalID: -3030948451415802345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Charging 0001_7
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 351
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b6c08159d221ce70800000000000000
+      internalID: 9133619836054718135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Charging 0001_8
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 273
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03046327642c55d20800000000000000
+      internalID: 3266730712546820144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Charging 0001_9
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 258
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 464ca3447822098e0800000000000000
+      internalID: -1688811895903304604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Charging 0001_10
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 163
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43e376f234bded520800000000000000
+      internalID: 2728859505837686324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Charging 0001_11
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 156
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30b1e339118840320800000000000000
+      internalID: 2523291300300462851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Charging 0001_12
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 154
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8004595eed43b4750800000000000000
+      internalID: 6290179436492177416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Charging 0001_13
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 149
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aa92e7cd8722b900800000000000000
+      internalID: 698664382093236903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Charging 0001_14
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 156
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 358036aa096767400800000000000000
+      internalID: 321574787109554259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Gempur Sukma Charging 0001_0: -5363171543407811522
+      Gempur Sukma Charging 0001_1: 3123450784708627208
+      Gempur Sukma Charging 0001_10: 2728859505837686324
+      Gempur Sukma Charging 0001_11: 2523291300300462851
+      Gempur Sukma Charging 0001_12: 6290179436492177416
+      Gempur Sukma Charging 0001_13: 698664382093236903
+      Gempur Sukma Charging 0001_14: 321574787109554259
+      Gempur Sukma Charging 0001_2: -4609135796049208340
+      Gempur Sukma Charging 0001_3: 5394474109000423977
+      Gempur Sukma Charging 0001_4: -6066259149676841051
+      Gempur Sukma Charging 0001_5: -4331817082061816066
+      Gempur Sukma Charging 0001_6: -3030948451415802345
+      Gempur Sukma Charging 0001_7: 9133619836054718135
+      Gempur Sukma Charging 0001_8: 3266730712546820144
+      Gempur Sukma Charging 0001_9: -1688811895903304604
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

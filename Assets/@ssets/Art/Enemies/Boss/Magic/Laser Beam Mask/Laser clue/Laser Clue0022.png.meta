@@ -1,0 +1,1027 @@
+fileFormatVersion: 2
+guid: f397ab569e325b64189eee67edf96903
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6425101751852075308
+    second: Laser Clue0022_0
+  - first:
+      213: -7114864427517173462
+    second: Laser Clue0022_1
+  - first:
+      213: -2253694903763958104
+    second: Laser Clue0022_2
+  - first:
+      213: -3268808358692859695
+    second: Laser Clue0022_3
+  - first:
+      213: -5081130099896847635
+    second: Laser Clue0022_4
+  - first:
+      213: 8782740425621049827
+    second: Laser Clue0022_5
+  - first:
+      213: 5501464895490265099
+    second: Laser Clue0022_6
+  - first:
+      213: 2886316466206245738
+    second: Laser Clue0022_7
+  - first:
+      213: -3635338373720704404
+    second: Laser Clue0022_8
+  - first:
+      213: -9191549646789750904
+    second: Laser Clue0022_9
+  - first:
+      213: -3728388330220043833
+    second: Laser Clue0022_10
+  - first:
+      213: 5740077056817700159
+    second: Laser Clue0022_11
+  - first:
+      213: -2734547077771784585
+    second: Laser Clue0022_12
+  - first:
+      213: -3268760794787695278
+    second: Laser Clue0022_13
+  - first:
+      213: 5870986638343538740
+    second: Laser Clue0022_14
+  - first:
+      213: -6773122954925743232
+    second: Laser Clue0022_15
+  - first:
+      213: -63877836090537144
+    second: Laser Clue0022_16
+  - first:
+      213: 541657731805319234
+    second: Laser Clue0022_17
+  - first:
+      213: 509338160347285080
+    second: Laser Clue0022_18
+  - first:
+      213: 6007042407036554977
+    second: Laser Clue0022_19
+  - first:
+      213: -28672077030603407
+    second: Laser Clue0022_20
+  - first:
+      213: 2313931620278899331
+    second: Laser Clue0022_21
+  - first:
+      213: -5526796229313312981
+    second: Laser Clue0022_22
+  - first:
+      213: -5632711067836863921
+    second: Laser Clue0022_23
+  - first:
+      213: -2650656192893921069
+    second: Laser Clue0022_24
+  - first:
+      213: 6636424813038624051
+    second: Laser Clue0022_25
+  - first:
+      213: -3835685066981676803
+    second: Laser Clue0022_26
+  - first:
+      213: 3136936779420201934
+    second: Laser Clue0022_27
+  - first:
+      213: 8320239397412935586
+    second: Laser Clue0022_28
+  - first:
+      213: 3646817005013867106
+    second: Laser Clue0022_29
+  - first:
+      213: 2991594007395741273
+    second: Laser Clue0022_30
+  - first:
+      213: -1984160202108361983
+    second: Laser Clue0022_31
+  - first:
+      213: -2409568494800571805
+    second: Laser Clue0022_32
+  - first:
+      213: 4381301839564266588
+    second: Laser Clue0022_33
+  - first:
+      213: -6001617841136460784
+    second: Laser Clue0022_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Laser Clue0022_0
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 297
+        width: 41
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2902ec600c8a2950800000000000000
+      internalID: 6425101751852075308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_1
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 309
+        width: 42
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a21a6c4df7ce24d90800000000000000
+      internalID: -7114864427517173462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_2
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 305
+        width: 54
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a68a05fc6449b0e0800000000000000
+      internalID: -2253694903763958104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_3
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 297
+        width: 49
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d0d84ddd1cd2a2d0800000000000000
+      internalID: -3268808358692859695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_4
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 302
+        width: 54
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de27a1a58133c79b0800000000000000
+      internalID: -5081130099896847635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_5
+      rect:
+        serializedVersion: 2
+        x: 2355
+        y: 304
+        width: 33
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e11b9752ef82e970800000000000000
+      internalID: 8782740425621049827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_6
+      rect:
+        serializedVersion: 2
+        x: 2471
+        y: 259
+        width: 213
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b009af7ac21295c40800000000000000
+      internalID: 5501464895490265099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_7
+      rect:
+        serializedVersion: 2
+        x: 2634
+        y: 301
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a63859d98814e0820800000000000000
+      internalID: 2886316466206245738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_8
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 294
+        width: 41
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6af70c820fac8dc0800000000000000
+      internalID: -3635338373720704404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_9
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 289
+        width: 29
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88fcabf8b4e017080800000000000000
+      internalID: -9191549646789750904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_10
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 288
+        width: 43
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c1c588419a124cc0800000000000000
+      internalID: -3728388330220043833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_11
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 289
+        width: 42
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3d1df2cba9d8af40800000000000000
+      internalID: 5740077056817700159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_12
+      rect:
+        serializedVersion: 2
+        x: 1513
+        y: 284
+        width: 31
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77e84d7cbefec0ad0800000000000000
+      internalID: -2734547077771784585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 282
+        width: 232
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 255b4f2306703a2d0800000000000000
+      internalID: -3268760794787695278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_14
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 268
+        width: 42
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4380883ed3fe97150800000000000000
+      internalID: 5870986638343538740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_15
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 278
+        width: 35
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0836b9bde880102a0800000000000000
+      internalID: -6773122954925743232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_16
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 277
+        width: 187
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84b8dce427f0d1ff0800000000000000
+      internalID: -63877836090537144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_17
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 281
+        width: 130
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 240991656da548700800000000000000
+      internalID: 541657731805319234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_18
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 280
+        width: 390
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8560d06bb58811700800000000000000
+      internalID: 509338160347285080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_19
+      rect:
+        serializedVersion: 2
+        x: 1603
+        y: 273
+        width: 31
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ee0f161e3d4d5350800000000000000
+      internalID: 6007042407036554977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_20
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 282
+        width: 46
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1754e99d5e22a9ff0800000000000000
+      internalID: -28672077030603407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_21
+      rect:
+        serializedVersion: 2
+        x: 1830
+        y: 282
+        width: 514
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38294458c8cbc1020800000000000000
+      internalID: 2313931620278899331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_22
+      rect:
+        serializedVersion: 2
+        x: 2378
+        y: 282
+        width: 122
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b27cfc59c10ec43b0800000000000000
+      internalID: -5526796229313312981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_23
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 259
+        width: 49
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4a2c2f802794d1b0800000000000000
+      internalID: -5632711067836863921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_24
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 252
+        width: 52
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d85ed08c3af63bd0800000000000000
+      internalID: -2650656192893921069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_25
+      rect:
+        serializedVersion: 2
+        x: 1198
+        y: 263
+        width: 36
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33d51c7c431591c50800000000000000
+      internalID: 6636424813038624051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_26
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 270
+        width: 27
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df8694001c8e4cac0800000000000000
+      internalID: -3835685066981676803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_27
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 258
+        width: 39
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec3f2347163a88b20800000000000000
+      internalID: 3136936779420201934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_28
+      rect:
+        serializedVersion: 2
+        x: 1701
+        y: 268
+        width: 34
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a7120146ad677370800000000000000
+      internalID: 8320239397412935586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_29
+      rect:
+        serializedVersion: 2
+        x: 1981
+        y: 258
+        width: 38
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26a94b09eb81c9230800000000000000
+      internalID: 3646817005013867106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_30
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 264
+        width: 53
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95ea20b46e6448920800000000000000
+      internalID: 2991594007395741273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_31
+      rect:
+        serializedVersion: 2
+        x: 2189
+        y: 263
+        width: 42
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1032dd70fc8d674e0800000000000000
+      internalID: -1984160202108361983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_32
+      rect:
+        serializedVersion: 2
+        x: 2386
+        y: 267
+        width: 28
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 362707d683e7f8ed0800000000000000
+      internalID: -2409568494800571805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_33
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 250
+        width: 33
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c5ef85fc28dcc30800000000000000
+      internalID: 4381301839564266588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Clue0022_34
+      rect:
+        serializedVersion: 2
+        x: 2497
+        y: 253
+        width: 44
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01c1a651f58f5bca0800000000000000
+      internalID: -6001617841136460784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Laser Clue0022_0: 6425101751852075308
+      Laser Clue0022_1: -7114864427517173462
+      Laser Clue0022_10: -3728388330220043833
+      Laser Clue0022_11: 5740077056817700159
+      Laser Clue0022_12: -2734547077771784585
+      Laser Clue0022_13: -3268760794787695278
+      Laser Clue0022_14: 5870986638343538740
+      Laser Clue0022_15: -6773122954925743232
+      Laser Clue0022_16: -63877836090537144
+      Laser Clue0022_17: 541657731805319234
+      Laser Clue0022_18: 509338160347285080
+      Laser Clue0022_19: 6007042407036554977
+      Laser Clue0022_2: -2253694903763958104
+      Laser Clue0022_20: -28672077030603407
+      Laser Clue0022_21: 2313931620278899331
+      Laser Clue0022_22: -5526796229313312981
+      Laser Clue0022_23: -5632711067836863921
+      Laser Clue0022_24: -2650656192893921069
+      Laser Clue0022_25: 6636424813038624051
+      Laser Clue0022_26: -3835685066981676803
+      Laser Clue0022_27: 3136936779420201934
+      Laser Clue0022_28: 8320239397412935586
+      Laser Clue0022_29: 3646817005013867106
+      Laser Clue0022_3: -3268808358692859695
+      Laser Clue0022_30: 2991594007395741273
+      Laser Clue0022_31: -1984160202108361983
+      Laser Clue0022_32: -2409568494800571805
+      Laser Clue0022_33: 4381301839564266588
+      Laser Clue0022_34: -6001617841136460784
+      Laser Clue0022_4: -5081130099896847635
+      Laser Clue0022_5: 8782740425621049827
+      Laser Clue0022_6: 5501464895490265099
+      Laser Clue0022_7: 2886316466206245738
+      Laser Clue0022_8: -3635338373720704404
+      Laser Clue0022_9: -9191549646789750904
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 23074a352582370439b1aa73ddd3a60f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7884414939072312607
+    second: Ordinary Object Destroyed0005_0
+  - first:
+      213: 6291060175216735790
+    second: Ordinary Object Destroyed0005_1
+  - first:
+      213: -1324911465075995927
+    second: Ordinary Object Destroyed0005_2
+  - first:
+      213: -1998528425529628197
+    second: Ordinary Object Destroyed0005_3
+  - first:
+      213: -1594415827491539731
+    second: Ordinary Object Destroyed0005_4
+  - first:
+      213: -4498447277563529674
+    second: Ordinary Object Destroyed0005_5
+  - first:
+      213: -6270188017260309685
+    second: Ordinary Object Destroyed0005_6
+  - first:
+      213: 2666788189207646323
+    second: Ordinary Object Destroyed0005_7
+  - first:
+      213: 4248179527824689032
+    second: Ordinary Object Destroyed0005_8
+  - first:
+      213: 91805264779066062
+    second: Ordinary Object Destroyed0005_9
+  - first:
+      213: -1819002325653195160
+    second: Ordinary Object Destroyed0005_10
+  - first:
+      213: 8497199447923459065
+    second: Ordinary Object Destroyed0005_11
+  - first:
+      213: -624234234032919895
+    second: Ordinary Object Destroyed0005_12
+  - first:
+      213: -5090003131005275248
+    second: Ordinary Object Destroyed0005_13
+  - first:
+      213: 3809351208630826742
+    second: Ordinary Object Destroyed0005_14
+  - first:
+      213: 5983903770799512102
+    second: Ordinary Object Destroyed0005_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ordinary Object Destroyed0005_0
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 381
+        width: 49
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1530391d911b6d60800000000000000
+      internalID: 7884414939072312607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ordinary Object Destroyed0005_1
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 351
+        width: 55
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e26766cd5e55e4750800000000000000
+      internalID: 6291060175216735790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ordinary Object Destroyed0005_2
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 290
+        width: 38
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ea8d4dca08fc9de0800000000000000
+      internalID: -1324911465075995927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ordinary Object Destroyed0005_3
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 336
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd929c25cfcc344e0800000000000000
+      internalID: -1998528425529628197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ordinary Object Destroyed0005_4
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 218
+        width: 59
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de43b12a04f7fd9e0800000000000000
+      internalID: -1594415827491539731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ordinary Object Destroyed0005_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 229
+        width: 47
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 636b00ce80e4291c0800000000000000
+      internalID: -4498447277563529674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ordinary Object Destroyed0005_6
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 238
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b43d94c1831dbf8a0800000000000000
+      internalID: -6270188017260309685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ordinary Object Destroyed0005_7
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 242
+        width: 21
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 370dde49ab5520520800000000000000
+      internalID: 2666788189207646323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ordinary Object Destroyed0005_8
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 261
+        width: 37
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 887c312d5c094fa30800000000000000
+      internalID: 4248179527824689032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ordinary Object Destroyed0005_9
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 208
+        width: 50
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecabaa3e668264100800000000000000
+      internalID: 91805264779066062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ordinary Object Destroyed0005_10
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 146
+        width: 53
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 866f4d5b50b91c6e0800000000000000
+      internalID: -1819002325653195160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ordinary Object Destroyed0005_11
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 165
+        width: 65
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f38f17b0ed1ce570800000000000000
+      internalID: 8497199447923459065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ordinary Object Destroyed0005_12
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 187
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aa64df75464657f0800000000000000
+      internalID: -624234234032919895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ordinary Object Destroyed0005_13
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 146
+        width: 50
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 093fdcece1dac59b0800000000000000
+      internalID: -5090003131005275248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ordinary Object Destroyed0005_14
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 145
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f6352fcdb88dd430800000000000000
+      internalID: 3809351208630826742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ordinary Object Destroyed0005_15
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 141
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62a10a486c81b0350800000000000000
+      internalID: 5983903770799512102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ordinary Object Destroyed0005_0: 7884414939072312607
+      Ordinary Object Destroyed0005_1: 6291060175216735790
+      Ordinary Object Destroyed0005_10: -1819002325653195160
+      Ordinary Object Destroyed0005_11: 8497199447923459065
+      Ordinary Object Destroyed0005_12: -624234234032919895
+      Ordinary Object Destroyed0005_13: -5090003131005275248
+      Ordinary Object Destroyed0005_14: 3809351208630826742
+      Ordinary Object Destroyed0005_15: 5983903770799512102
+      Ordinary Object Destroyed0005_2: -1324911465075995927
+      Ordinary Object Destroyed0005_3: -1998528425529628197
+      Ordinary Object Destroyed0005_4: -1594415827491539731
+      Ordinary Object Destroyed0005_5: -4498447277563529674
+      Ordinary Object Destroyed0005_6: -6270188017260309685
+      Ordinary Object Destroyed0005_7: 2666788189207646323
+      Ordinary Object Destroyed0005_8: 4248179527824689032
+      Ordinary Object Destroyed0005_9: 91805264779066062
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

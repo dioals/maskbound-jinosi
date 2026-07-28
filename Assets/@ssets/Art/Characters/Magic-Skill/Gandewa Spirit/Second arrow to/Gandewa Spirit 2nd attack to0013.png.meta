@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: f7d90b0d05e384a4b8ce43c03aebf035
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3466788576299959667
+    second: Gandewa Spirit 2nd attack to0013_0
+  - first:
+      213: -944915571753174922
+    second: Gandewa Spirit 2nd attack to0013_1
+  - first:
+      213: -2305751173849635680
+    second: Gandewa Spirit 2nd attack to0013_2
+  - first:
+      213: 5933286017037261472
+    second: Gandewa Spirit 2nd attack to0013_3
+  - first:
+      213: -6239873129404318856
+    second: Gandewa Spirit 2nd attack to0013_4
+  - first:
+      213: 8834731802327334982
+    second: Gandewa Spirit 2nd attack to0013_5
+  - first:
+      213: -6386945561214738526
+    second: Gandewa Spirit 2nd attack to0013_6
+  - first:
+      213: -2891075988061341298
+    second: Gandewa Spirit 2nd attack to0013_7
+  - first:
+      213: -1680197213843008752
+    second: Gandewa Spirit 2nd attack to0013_8
+  - first:
+      213: -8120653775950720022
+    second: Gandewa Spirit 2nd attack to0013_9
+  - first:
+      213: -5308471082534730040
+    second: Gandewa Spirit 2nd attack to0013_10
+  - first:
+      213: 334741743016708522
+    second: Gandewa Spirit 2nd attack to0013_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Gandewa Spirit 2nd attack to0013_0
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 882
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 375cdb1a7d18c1030800000000000000
+      internalID: 3466788576299959667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gandewa Spirit 2nd attack to0013_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 45
+        width: 561
+        height: 764
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 678baea3b4cf2e2f0800000000000000
+      internalID: -944915571753174922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gandewa Spirit 2nd attack to0013_2
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 809
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a4a04616835000e0800000000000000
+      internalID: -2305751173849635680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gandewa Spirit 2nd attack to0013_3
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 789
+        width: 37
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aa5c445234475250800000000000000
+      internalID: 5933286017037261472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gandewa Spirit 2nd attack to0013_4
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 521
+        width: 148
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87bb956f2748769a0800000000000000
+      internalID: -6239873129404318856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gandewa Spirit 2nd attack to0013_5
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 574
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 640419b04c54b9a70800000000000000
+      internalID: 8834731802327334982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gandewa Spirit 2nd attack to0013_6
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 77
+        width: 209
+        height: 579
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2af99000ad20d57a0800000000000000
+      internalID: -6386945561214738526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gandewa Spirit 2nd attack to0013_7
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 555
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8931f8d4b5d0e7d0800000000000000
+      internalID: -2891075988061341298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gandewa Spirit 2nd attack to0013_8
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 236
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 013594c398dbea8e0800000000000000
+      internalID: -1680197213843008752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gandewa Spirit 2nd attack to0013_9
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 257
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae3d5847a64ad4f80800000000000000
+      internalID: -8120653775950720022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gandewa Spirit 2nd attack to0013_10
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 23
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c685190da58456b0800000000000000
+      internalID: -5308471082534730040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gandewa Spirit 2nd attack to0013_11
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 24
+        width: 57
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa9810c77dd35a400800000000000000
+      internalID: 334741743016708522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Gandewa Spirit 2nd attack to0013_0: 3466788576299959667
+      Gandewa Spirit 2nd attack to0013_1: -944915571753174922
+      Gandewa Spirit 2nd attack to0013_10: -5308471082534730040
+      Gandewa Spirit 2nd attack to0013_11: 334741743016708522
+      Gandewa Spirit 2nd attack to0013_2: -2305751173849635680
+      Gandewa Spirit 2nd attack to0013_3: 5933286017037261472
+      Gandewa Spirit 2nd attack to0013_4: -6239873129404318856
+      Gandewa Spirit 2nd attack to0013_5: 8834731802327334982
+      Gandewa Spirit 2nd attack to0013_6: -6386945561214738526
+      Gandewa Spirit 2nd attack to0013_7: -2891075988061341298
+      Gandewa Spirit 2nd attack to0013_8: -1680197213843008752
+      Gandewa Spirit 2nd attack to0013_9: -8120653775950720022
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

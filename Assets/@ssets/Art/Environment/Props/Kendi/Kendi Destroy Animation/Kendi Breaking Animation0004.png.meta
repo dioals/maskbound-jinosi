@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 9ac551145d076f941ba0ac0922d79283
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9161232158309288313
+    second: Kendi Breaking Animation0004_0
+  - first:
+      213: 1751906765236952156
+    second: Kendi Breaking Animation0004_1
+  - first:
+      213: 6011558289968133038
+    second: Kendi Breaking Animation0004_2
+  - first:
+      213: -4562676790352105760
+    second: Kendi Breaking Animation0004_3
+  - first:
+      213: -4394586486040430588
+    second: Kendi Breaking Animation0004_4
+  - first:
+      213: -3962337934587404596
+    second: Kendi Breaking Animation0004_5
+  - first:
+      213: -6062573625558857452
+    second: Kendi Breaking Animation0004_6
+  - first:
+      213: 3110926919323048001
+    second: Kendi Breaking Animation0004_7
+  - first:
+      213: -5193874989399770576
+    second: Kendi Breaking Animation0004_8
+  - first:
+      213: -6194253239227822999
+    second: Kendi Breaking Animation0004_9
+  - first:
+      213: -1099124323863466738
+    second: Kendi Breaking Animation0004_10
+  - first:
+      213: -1519749528022399109
+    second: Kendi Breaking Animation0004_11
+  - first:
+      213: 4087662302168934133
+    second: Kendi Breaking Animation0004_12
+  - first:
+      213: 5245811816288155226
+    second: Kendi Breaking Animation0004_13
+  - first:
+      213: 2889042311090578509
+    second: Kendi Breaking Animation0004_14
+  - first:
+      213: -8552248825536617751
+    second: Kendi Breaking Animation0004_15
+  - first:
+      213: -2704015262998160554
+    second: Kendi Breaking Animation0004_16
+  - first:
+      213: 1536897186960430923
+    second: Kendi Breaking Animation0004_17
+  - first:
+      213: 3444655862673228662
+    second: Kendi Breaking Animation0004_18
+  - first:
+      213: -2158413520210033406
+    second: Kendi Breaking Animation0004_19
+  - first:
+      213: -8450999503405546723
+    second: Kendi Breaking Animation0004_20
+  - first:
+      213: -8784641555270282056
+    second: Kendi Breaking Animation0004_21
+  - first:
+      213: 545174476778966762
+    second: Kendi Breaking Animation0004_22
+  - first:
+      213: 6280858988186294861
+    second: Kendi Breaking Animation0004_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_0
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 338
+        width: 61
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 786f61be3e3ccd080800000000000000
+      internalID: -9161232158309288313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_1
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 395
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c5d85cbe5005810800000000000000
+      internalID: 1751906765236952156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_2
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 247
+        width: 37
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea3fa140a685d6350800000000000000
+      internalID: 6011558289968133038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_3
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 286
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eea42e12ad1ea0c0800000000000000
+      internalID: -4562676790352105760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_4
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 279
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 408f3dcdfda4303c0800000000000000
+      internalID: -4394586486040430588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_5
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 286
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccedcd054a2f209c0800000000000000
+      internalID: -3962337934587404596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_6
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 274
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41989ef88696ddba0800000000000000
+      internalID: -6062573625558857452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_7
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 278
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 148537cfc8b3c2b20800000000000000
+      internalID: 3110926919323048001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_8
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 255
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03a7a092736abe7b0800000000000000
+      internalID: -5193874989399770576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_9
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 259
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96c430b5f77990aa0800000000000000
+      internalID: -6194253239227822999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_10
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 234
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0d602830402fb0f0800000000000000
+      internalID: -1099124323863466738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_11
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 234
+        width: 38
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7748a23bd3c8eae0800000000000000
+      internalID: -1519749528022399109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_12
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 268
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f6e88ad43b4ab830800000000000000
+      internalID: 4087662302168934133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_13
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 256
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a56f66cad0edcc840800000000000000
+      internalID: 5245811816288155226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_14
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 244
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d44a0a5dca0f71820800000000000000
+      internalID: 2889042311090578509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_15
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 242
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e26323410f405980800000000000000
+      internalID: -8552248825536617751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_16
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 248
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65b92cdd178697ad0800000000000000
+      internalID: -2704015262998160554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_17
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 238
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b47d21549d7245510800000000000000
+      internalID: 1536897186960430923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_18
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 235
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 673ca1ca140edcf20800000000000000
+      internalID: 3444655862673228662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_19
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 229
+        width: 40
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2050b71d656cb02e0800000000000000
+      internalID: -2158413520210033406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_20
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 254
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d13828a1ab408ba80800000000000000
+      internalID: -8450999503405546723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_21
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 229
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b4dafa6c0fa61680800000000000000
+      internalID: -8784641555270282056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_22
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 238
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aee05055c49d09700800000000000000
+      internalID: 545174476778966762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Breaking Animation0004_23
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 235
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4ad92be8f71a2750800000000000000
+      internalID: 6280858988186294861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Kendi Breaking Animation0004_0: -9161232158309288313
+      Kendi Breaking Animation0004_1: 1751906765236952156
+      Kendi Breaking Animation0004_10: -1099124323863466738
+      Kendi Breaking Animation0004_11: -1519749528022399109
+      Kendi Breaking Animation0004_12: 4087662302168934133
+      Kendi Breaking Animation0004_13: 5245811816288155226
+      Kendi Breaking Animation0004_14: 2889042311090578509
+      Kendi Breaking Animation0004_15: -8552248825536617751
+      Kendi Breaking Animation0004_16: -2704015262998160554
+      Kendi Breaking Animation0004_17: 1536897186960430923
+      Kendi Breaking Animation0004_18: 3444655862673228662
+      Kendi Breaking Animation0004_19: -2158413520210033406
+      Kendi Breaking Animation0004_2: 6011558289968133038
+      Kendi Breaking Animation0004_20: -8450999503405546723
+      Kendi Breaking Animation0004_21: -8784641555270282056
+      Kendi Breaking Animation0004_22: 545174476778966762
+      Kendi Breaking Animation0004_23: 6280858988186294861
+      Kendi Breaking Animation0004_3: -4562676790352105760
+      Kendi Breaking Animation0004_4: -4394586486040430588
+      Kendi Breaking Animation0004_5: -3962337934587404596
+      Kendi Breaking Animation0004_6: -6062573625558857452
+      Kendi Breaking Animation0004_7: 3110926919323048001
+      Kendi Breaking Animation0004_8: -5193874989399770576
+      Kendi Breaking Animation0004_9: -6194253239227822999
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

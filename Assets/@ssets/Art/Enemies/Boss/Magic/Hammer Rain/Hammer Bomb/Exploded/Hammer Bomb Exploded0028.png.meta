@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: d569258a96ef4f74ca3a7f159ed64562
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3993037789496328870
+    second: Hammer Bomb Exploded0028_0
+  - first:
+      213: -798150434945166479
+    second: Hammer Bomb Exploded0028_1
+  - first:
+      213: 5465400970433142673
+    second: Hammer Bomb Exploded0028_2
+  - first:
+      213: -5844482609359973671
+    second: Hammer Bomb Exploded0028_3
+  - first:
+      213: -2522207220476748752
+    second: Hammer Bomb Exploded0028_4
+  - first:
+      213: 3495767508515045145
+    second: Hammer Bomb Exploded0028_5
+  - first:
+      213: -3382594088165616116
+    second: Hammer Bomb Exploded0028_6
+  - first:
+      213: 7051949085888329933
+    second: Hammer Bomb Exploded0028_7
+  - first:
+      213: 8922342795423271098
+    second: Hammer Bomb Exploded0028_8
+  - first:
+      213: 4430490476110375586
+    second: Hammer Bomb Exploded0028_9
+  - first:
+      213: 5519025510287887676
+    second: Hammer Bomb Exploded0028_10
+  - first:
+      213: 2120144497534416544
+    second: Hammer Bomb Exploded0028_11
+  - first:
+      213: 4842061618554266607
+    second: Hammer Bomb Exploded0028_12
+  - first:
+      213: -4460670831908374018
+    second: Hammer Bomb Exploded0028_13
+  - first:
+      213: 4665927143248318553
+    second: Hammer Bomb Exploded0028_14
+  - first:
+      213: -762208226505875257
+    second: Hammer Bomb Exploded0028_15
+  - first:
+      213: -7945755565932241352
+    second: Hammer Bomb Exploded0028_16
+  - first:
+      213: -719163372624204099
+    second: Hammer Bomb Exploded0028_17
+  - first:
+      213: 8073312142376520471
+    second: Hammer Bomb Exploded0028_18
+  - first:
+      213: 195731865745726852
+    second: Hammer Bomb Exploded0028_19
+  - first:
+      213: -100906292763125683
+    second: Hammer Bomb Exploded0028_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_0
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 381
+        width: 49
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a2c3a9a6be1a6730800000000000000
+      internalID: 3993037789496328870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_1
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 351
+        width: 55
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17315cf78666ce4f0800000000000000
+      internalID: -798150434945166479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_2
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 290
+        width: 38
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19f1eb5c93109db40800000000000000
+      internalID: 5465400970433142673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_3
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 336
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d2962d380a34eea0800000000000000
+      internalID: -5844482609359973671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_4
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 218
+        width: 59
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03cde8d65e15ffcd0800000000000000
+      internalID: -2522207220476748752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 229
+        width: 66
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91f34621706738030800000000000000
+      internalID: 3495767508515045145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_6
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 201
+        width: 45
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c065d8b399c9e01d0800000000000000
+      internalID: -3382594088165616116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_7
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 242
+        width: 21
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc8b38ea45e8dd160800000000000000
+      internalID: 7051949085888329933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_8
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 261
+        width: 37
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab84875ff7782db70800000000000000
+      internalID: 8922342795423271098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_9
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 208
+        width: 50
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aa6f414d934c7d30800000000000000
+      internalID: 4430490476110375586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_10
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 146
+        width: 53
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3d4707e574879c40800000000000000
+      internalID: 5519025510287887676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_11
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 165
+        width: 66
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a6b90000344c6d10800000000000000
+      internalID: 2120144497534416544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_12
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 226
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe3ea724365723340800000000000000
+      internalID: 4842061618554266607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_13
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 187
+        width: 55
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef9b72413838812c0800000000000000
+      internalID: -4460670831908374018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_14
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 211
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9505b210404b0c040800000000000000
+      internalID: 4665927143248318553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_15
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 190
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c0ac3608a71c65f0800000000000000
+      internalID: -762208226505875257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_16
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 192
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83e968449610bb190800000000000000
+      internalID: -7945755565932241352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_17
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 164
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbe234f09b40506f0800000000000000
+      internalID: -719163372624204099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_18
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 146
+        width: 50
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71b43378e9a2a0070800000000000000
+      internalID: 8073312142376520471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_19
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 145
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48d9ff8481167b200800000000000000
+      internalID: 195731865745726852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer Bomb Exploded0028_20
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 141
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d489048e242899ef0800000000000000
+      internalID: -100906292763125683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Hammer Bomb Exploded0028_0: 3993037789496328870
+      Hammer Bomb Exploded0028_1: -798150434945166479
+      Hammer Bomb Exploded0028_10: 5519025510287887676
+      Hammer Bomb Exploded0028_11: 2120144497534416544
+      Hammer Bomb Exploded0028_12: 4842061618554266607
+      Hammer Bomb Exploded0028_13: -4460670831908374018
+      Hammer Bomb Exploded0028_14: 4665927143248318553
+      Hammer Bomb Exploded0028_15: -762208226505875257
+      Hammer Bomb Exploded0028_16: -7945755565932241352
+      Hammer Bomb Exploded0028_17: -719163372624204099
+      Hammer Bomb Exploded0028_18: 8073312142376520471
+      Hammer Bomb Exploded0028_19: 195731865745726852
+      Hammer Bomb Exploded0028_2: 5465400970433142673
+      Hammer Bomb Exploded0028_20: -100906292763125683
+      Hammer Bomb Exploded0028_3: -5844482609359973671
+      Hammer Bomb Exploded0028_4: -2522207220476748752
+      Hammer Bomb Exploded0028_5: 3495767508515045145
+      Hammer Bomb Exploded0028_6: -3382594088165616116
+      Hammer Bomb Exploded0028_7: 7051949085888329933
+      Hammer Bomb Exploded0028_8: 8922342795423271098
+      Hammer Bomb Exploded0028_9: 4430490476110375586
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

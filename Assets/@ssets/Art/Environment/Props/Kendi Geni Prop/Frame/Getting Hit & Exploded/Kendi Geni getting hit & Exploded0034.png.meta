@@ -1,0 +1,351 @@
+fileFormatVersion: 2
+guid: 6b48725c836376a46bbc3f9627fc0a4a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4385214747239420143
+    second: Kendi Geni getting hit & Exploded0034_0
+  - first:
+      213: -806644599953972492
+    second: Kendi Geni getting hit & Exploded0034_1
+  - first:
+      213: 4118371245419041075
+    second: Kendi Geni getting hit & Exploded0034_2
+  - first:
+      213: -174389844907257297
+    second: Kendi Geni getting hit & Exploded0034_3
+  - first:
+      213: 1900211802496929405
+    second: Kendi Geni getting hit & Exploded0034_4
+  - first:
+      213: -7590527917974333140
+    second: Kendi Geni getting hit & Exploded0034_5
+  - first:
+      213: -3908874634530571490
+    second: Kendi Geni getting hit & Exploded0034_6
+  - first:
+      213: -3747871814285817067
+    second: Kendi Geni getting hit & Exploded0034_7
+  - first:
+      213: 3289931951669074841
+    second: Kendi Geni getting hit & Exploded0034_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Kendi Geni getting hit & Exploded0034_0
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 711
+        width: 190
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe0920924996bdc30800000000000000
+      internalID: 4385214747239420143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Geni getting hit & Exploded0034_1
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 678
+        width: 49
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f2a1c792093ec4f0800000000000000
+      internalID: -806644599953972492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Geni getting hit & Exploded0034_2
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 433
+        width: 36
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3319260e3d4672930800000000000000
+      internalID: 4118371245419041075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Geni getting hit & Exploded0034_3
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 338
+        width: 140
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f221ed92c51749df0800000000000000
+      internalID: -174389844907257297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Geni getting hit & Exploded0034_4
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 417
+        width: 59
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7e85dd0198ee5a10800000000000000
+      internalID: 1900211802496929405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Geni getting hit & Exploded0034_5
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 260
+        width: 63
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c29547f231709a690800000000000000
+      internalID: -7590527917974333140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Geni getting hit & Exploded0034_6
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 275
+        width: 101
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1b3541ea33e0c9c0800000000000000
+      internalID: -3908874634530571490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Geni getting hit & Exploded0034_7
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 183
+        width: 58
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51b8bc52172ecfbc0800000000000000
+      internalID: -3747871814285817067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kendi Geni getting hit & Exploded0034_8
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 218
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99b5172edaf28ad20800000000000000
+      internalID: 3289931951669074841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Kendi Geni getting hit & Exploded0034_0: 4385214747239420143
+      Kendi Geni getting hit & Exploded0034_1: -806644599953972492
+      Kendi Geni getting hit & Exploded0034_2: 4118371245419041075
+      Kendi Geni getting hit & Exploded0034_3: -174389844907257297
+      Kendi Geni getting hit & Exploded0034_4: 1900211802496929405
+      Kendi Geni getting hit & Exploded0034_5: -7590527917974333140
+      Kendi Geni getting hit & Exploded0034_6: -3908874634530571490
+      Kendi Geni getting hit & Exploded0034_7: -3747871814285817067
+      Kendi Geni getting hit & Exploded0034_8: 3289931951669074841
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

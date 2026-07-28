@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: c4ab3bec5850fdb4d890698d7acc2576
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4390144100502213620
+    second: Gempur Sukma Forming0002_0
+  - first:
+      213: 7906282662691224330
+    second: Gempur Sukma Forming0002_1
+  - first:
+      213: 4776394113332427174
+    second: Gempur Sukma Forming0002_2
+  - first:
+      213: 8937693143433527544
+    second: Gempur Sukma Forming0002_3
+  - first:
+      213: -8930073490628680677
+    second: Gempur Sukma Forming0002_4
+  - first:
+      213: -6332169892835343172
+    second: Gempur Sukma Forming0002_5
+  - first:
+      213: 665759618977346317
+    second: Gempur Sukma Forming0002_6
+  - first:
+      213: -7821532052381344630
+    second: Gempur Sukma Forming0002_7
+  - first:
+      213: -5145067448255268120
+    second: Gempur Sukma Forming0002_8
+  - first:
+      213: -980411083161558063
+    second: Gempur Sukma Forming0002_9
+  - first:
+      213: 2717034191497931178
+    second: Gempur Sukma Forming0002_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Gempur Sukma Forming0002_0
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 486
+        width: 76
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ce9c853331313c0800000000000000
+      internalID: -4390144100502213620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Forming0002_1
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 509
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0b3a834132c8bd60800000000000000
+      internalID: 7906282662691224330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Forming0002_2
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 495
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a93270c329294240800000000000000
+      internalID: 4776394113332427174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Forming0002_3
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 336
+        width: 79
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f0cccd5f80190c70800000000000000
+      internalID: 8937693143433527544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Forming0002_4
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 380
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b14e1fc4971021480800000000000000
+      internalID: -8930073490628680677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Forming0002_5
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 134
+        width: 79
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb44020280d9f18a0800000000000000
+      internalID: -6332169892835343172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Forming0002_6
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 193
+        width: 20
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d03b1fa98d04d3900800000000000000
+      internalID: 665759618977346317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Forming0002_7
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 101
+        width: 45
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c5a72e906547390800000000000000
+      internalID: -7821532052381344630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Forming0002_8
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 161
+        width: 43
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eab1516a6c0998b0800000000000000
+      internalID: -5145067448255268120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Forming0002_9
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 114
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d3ac467051e462f0800000000000000
+      internalID: -980411083161558063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gempur Sukma Forming0002_10
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 97
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa923d2a338d4b520800000000000000
+      internalID: 2717034191497931178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Gempur Sukma Forming0002_0: -4390144100502213620
+      Gempur Sukma Forming0002_1: 7906282662691224330
+      Gempur Sukma Forming0002_10: 2717034191497931178
+      Gempur Sukma Forming0002_2: 4776394113332427174
+      Gempur Sukma Forming0002_3: 8937693143433527544
+      Gempur Sukma Forming0002_4: -8930073490628680677
+      Gempur Sukma Forming0002_5: -6332169892835343172
+      Gempur Sukma Forming0002_6: 665759618977346317
+      Gempur Sukma Forming0002_7: -7821532052381344630
+      Gempur Sukma Forming0002_8: -5145067448255268120
+      Gempur Sukma Forming0002_9: -980411083161558063
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

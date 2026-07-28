@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: e370cd09834d99c4dbb90d5d3549cc5d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7380992338082954345
+    second: Prabu Klana Attack 2 vfx0005_0
+  - first:
+      213: -1930387525191868878
+    second: Prabu Klana Attack 2 vfx0005_1
+  - first:
+      213: 3567237252428760450
+    second: Prabu Klana Attack 2 vfx0005_2
+  - first:
+      213: -5498682295792028995
+    second: Prabu Klana Attack 2 vfx0005_3
+  - first:
+      213: -4290102837634460698
+    second: Prabu Klana Attack 2 vfx0005_4
+  - first:
+      213: 4911238474393802828
+    second: Prabu Klana Attack 2 vfx0005_5
+  - first:
+      213: 6592397527372713736
+    second: Prabu Klana Attack 2 vfx0005_6
+  - first:
+      213: -696782734874483754
+    second: Prabu Klana Attack 2 vfx0005_7
+  - first:
+      213: 6057163847218474380
+    second: Prabu Klana Attack 2 vfx0005_8
+  - first:
+      213: 2275820761747172415
+    second: Prabu Klana Attack 2 vfx0005_9
+  - first:
+      213: 3474889588175786714
+    second: Prabu Klana Attack 2 vfx0005_10
+  - first:
+      213: 5567733566353366689
+    second: Prabu Klana Attack 2 vfx0005_11
+  - first:
+      213: -626473692942269370
+    second: Prabu Klana Attack 2 vfx0005_12
+  - first:
+      213: -6337963336621594585
+    second: Prabu Klana Attack 2 vfx0005_13
+  - first:
+      213: -5202146759112602671
+    second: Prabu Klana Attack 2 vfx0005_14
+  - first:
+      213: -6821133072994742011
+    second: Prabu Klana Attack 2 vfx0005_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Prabu Klana Attack 2 vfx0005_0
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 522
+        width: 173
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96c7051ec6d8e6660800000000000000
+      internalID: 7380992338082954345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Attack 2 vfx0005_1
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 630
+        width: 133
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23ed71206c2e535e0800000000000000
+      internalID: -1930387525191868878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Attack 2 vfx0005_2
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 588
+        width: 121
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2858e8c816f518130800000000000000
+      internalID: 3567237252428760450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Attack 2 vfx0005_3
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 588
+        width: 121
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db23692d591c0b3b0800000000000000
+      internalID: -5498682295792028995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Attack 2 vfx0005_4
+      rect:
+        serializedVersion: 2
+        x: 1576
+        y: 630
+        width: 133
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e317e8f23e7674c0800000000000000
+      internalID: -4290102837634460698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Attack 2 vfx0005_5
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 522
+        width: 173
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4859712f59382440800000000000000
+      internalID: 4911238474393802828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Attack 2 vfx0005_6
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 196
+        width: 118
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80fc6358f96ec7b50800000000000000
+      internalID: 6592397527372713736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Attack 2 vfx0005_7
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 135
+        width: 410
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d36e2a5bc78456f0800000000000000
+      internalID: -696782734874483754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Attack 2 vfx0005_8
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 135
+        width: 410
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8dabc34d6e5f0450800000000000000
+      internalID: 6057163847218474380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Attack 2 vfx0005_9
+      rect:
+        serializedVersion: 2
+        x: 1973
+        y: 196
+        width: 118
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3c266ccce6559f10800000000000000
+      internalID: 2275820761747172415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Attack 2 vfx0005_10
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 131
+        width: 56
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad2dbe07ba9493030800000000000000
+      internalID: 3474889588175786714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Attack 2 vfx0005_11
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 131
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aed282fd20944d40800000000000000
+      internalID: 5567733566353366689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Attack 2 vfx0005_12
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 132
+        width: 83
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6448c07de715e47f0800000000000000
+      internalID: -626473692942269370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Attack 2 vfx0005_13
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 131
+        width: 56
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7286831ece70b08a0800000000000000
+      internalID: -6337963336621594585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Attack 2 vfx0005_14
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 131
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dbc4a1b5134ec7b0800000000000000
+      internalID: -5202146759112602671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Attack 2 vfx0005_15
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 132
+        width: 82
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 501da7a2c977651a0800000000000000
+      internalID: -6821133072994742011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Prabu Klana Attack 2 vfx0005_0: 7380992338082954345
+      Prabu Klana Attack 2 vfx0005_1: -1930387525191868878
+      Prabu Klana Attack 2 vfx0005_10: 3474889588175786714
+      Prabu Klana Attack 2 vfx0005_11: 5567733566353366689
+      Prabu Klana Attack 2 vfx0005_12: -626473692942269370
+      Prabu Klana Attack 2 vfx0005_13: -6337963336621594585
+      Prabu Klana Attack 2 vfx0005_14: -5202146759112602671
+      Prabu Klana Attack 2 vfx0005_15: -6821133072994742011
+      Prabu Klana Attack 2 vfx0005_2: 3567237252428760450
+      Prabu Klana Attack 2 vfx0005_3: -5498682295792028995
+      Prabu Klana Attack 2 vfx0005_4: -4290102837634460698
+      Prabu Klana Attack 2 vfx0005_5: 4911238474393802828
+      Prabu Klana Attack 2 vfx0005_6: 6592397527372713736
+      Prabu Klana Attack 2 vfx0005_7: -696782734874483754
+      Prabu Klana Attack 2 vfx0005_8: 6057163847218474380
+      Prabu Klana Attack 2 vfx0005_9: 2275820761747172415
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

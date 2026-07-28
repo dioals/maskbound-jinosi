@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 15a1b147fa6a3e74da86efd82ec878f6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7201663798726562390
+    second: Prabu Klana Laser Beam Animation0010_0
+  - first:
+      213: -4006762372490085733
+    second: Prabu Klana Laser Beam Animation0010_1
+  - first:
+      213: 7545006517759499430
+    second: Prabu Klana Laser Beam Animation0010_2
+  - first:
+      213: 6206946513242528420
+    second: Prabu Klana Laser Beam Animation0010_3
+  - first:
+      213: -3954414881801236528
+    second: Prabu Klana Laser Beam Animation0010_4
+  - first:
+      213: -5582608611003723407
+    second: Prabu Klana Laser Beam Animation0010_5
+  - first:
+      213: 3191734186479819790
+    second: Prabu Klana Laser Beam Animation0010_6
+  - first:
+      213: -5262452118683988211
+    second: Prabu Klana Laser Beam Animation0010_7
+  - first:
+      213: 931100579447122584
+    second: Prabu Klana Laser Beam Animation0010_8
+  - first:
+      213: 994793907964946332
+    second: Prabu Klana Laser Beam Animation0010_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Prabu Klana Laser Beam Animation0010_0
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 473
+        width: 274
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aadec1d5eec8e0c90800000000000000
+      internalID: -7201663798726562390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Laser Beam Animation0010_1
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 343
+        width: 260
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9ab358d9de1568c0800000000000000
+      internalID: -4006762372490085733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Laser Beam Animation0010_2
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 602
+        width: 165
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6acdf07e37f35b860800000000000000
+      internalID: 7545006517759499430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Laser Beam Animation0010_3
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 409
+        width: 221
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa9badc7f0832650800000000000000
+      internalID: 6206946513242528420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Laser Beam Animation0010_4
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 409
+        width: 101
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0df08bbcd981f19c0800000000000000
+      internalID: -3954414881801236528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Laser Beam Animation0010_5
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 440
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1711615db079682b0800000000000000
+      internalID: -5582608611003723407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Laser Beam Animation0010_6
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 377
+        width: 72
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0c999205515b4c20800000000000000
+      internalID: 3191734186479819790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Laser Beam Animation0010_7
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 395
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0fc6520ea308f6b0800000000000000
+      internalID: -5262452118683988211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Laser Beam Animation0010_8
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 405
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89a2b183b0febec00800000000000000
+      internalID: 931100579447122584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prabu Klana Laser Beam Animation0010_9
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 366
+        width: 37
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9729f4e9c73ecd00800000000000000
+      internalID: 994793907964946332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Prabu Klana Laser Beam Animation0010_0: -7201663798726562390
+      Prabu Klana Laser Beam Animation0010_1: -4006762372490085733
+      Prabu Klana Laser Beam Animation0010_2: 7545006517759499430
+      Prabu Klana Laser Beam Animation0010_3: 6206946513242528420
+      Prabu Klana Laser Beam Animation0010_4: -3954414881801236528
+      Prabu Klana Laser Beam Animation0010_5: -5582608611003723407
+      Prabu Klana Laser Beam Animation0010_6: 3191734186479819790
+      Prabu Klana Laser Beam Animation0010_7: -5262452118683988211
+      Prabu Klana Laser Beam Animation0010_8: 931100579447122584
+      Prabu Klana Laser Beam Animation0010_9: 994793907964946332
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

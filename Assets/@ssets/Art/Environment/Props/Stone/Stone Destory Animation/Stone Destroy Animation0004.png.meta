@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: aa2256d15382e9646b69693c12f2853b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3362026534494724345
+    second: Stone Destroy Animation0004_0
+  - first:
+      213: 4309843752872172249
+    second: Stone Destroy Animation0004_1
+  - first:
+      213: 264661791177803883
+    second: Stone Destroy Animation0004_2
+  - first:
+      213: -4446101049012764392
+    second: Stone Destroy Animation0004_3
+  - first:
+      213: -3046786111171806004
+    second: Stone Destroy Animation0004_4
+  - first:
+      213: 9040028825608171053
+    second: Stone Destroy Animation0004_5
+  - first:
+      213: 5600853812951359325
+    second: Stone Destroy Animation0004_6
+  - first:
+      213: 2292571177033303943
+    second: Stone Destroy Animation0004_7
+  - first:
+      213: -1970702740605824619
+    second: Stone Destroy Animation0004_8
+  - first:
+      213: -1592982501011843813
+    second: Stone Destroy Animation0004_9
+  - first:
+      213: 2547935126932194196
+    second: Stone Destroy Animation0004_10
+  - first:
+      213: -675799703486616544
+    second: Stone Destroy Animation0004_11
+  - first:
+      213: -9149187757263127016
+    second: Stone Destroy Animation0004_12
+  - first:
+      213: -1072120929956142796
+    second: Stone Destroy Animation0004_13
+  - first:
+      213: -4203966044436462234
+    second: Stone Destroy Animation0004_14
+  - first:
+      213: -2269005509066618074
+    second: Stone Destroy Animation0004_15
+  - first:
+      213: 6290797389290046860
+    second: Stone Destroy Animation0004_16
+  - first:
+      213: -1645481537720811331
+    second: Stone Destroy Animation0004_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_0
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 318
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f0eef1025158ae20800000000000000
+      internalID: 3362026534494724345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_1
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 313
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dad1670f04afcb30800000000000000
+      internalID: 4309843752872172249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_2
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 332
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6885c03f744ca300800000000000000
+      internalID: 264661791177803883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_3
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 226
+        width: 178
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8114a1207a64c42c0800000000000000
+      internalID: -4446101049012764392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_4
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 302
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cccb209ac24a7b5d0800000000000000
+      internalID: -3046786111171806004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_5
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 306
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2eaaad1252a47d70800000000000000
+      internalID: 9040028825608171053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_6
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 309
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5f9bd74eda3abd40800000000000000
+      internalID: 5600853812951359325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_7
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 226
+        width: 153
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7878e55c659d0df10800000000000000
+      internalID: 2292571177033303943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_8
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 288
+        width: 15
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5911d447c48a6a4e0800000000000000
+      internalID: -1970702740605824619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_9
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 266
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1596c5fad694e9e0800000000000000
+      internalID: -1592982501011843813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_10
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 255
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49388879f751c5320800000000000000
+      internalID: 2547935126932194196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_11
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 226
+        width: 140
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02cad5e00c31f96f0800000000000000
+      internalID: -675799703486616544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_12
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 226
+        width: 58
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81e7af0953e870180800000000000000
+      internalID: -9149187757263127016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_13
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 227
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 431e3bdc1bf0f11f0800000000000000
+      internalID: -1072120929956142796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_14
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 233
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6658f89f72388a5c0800000000000000
+      internalID: -4203966044436462234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_15
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 226
+        width: 67
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62b0eaed28fd280e0800000000000000
+      internalID: -2269005509066618074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_16
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 226
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c85869e35e66d4750800000000000000
+      internalID: 6290797389290046860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone Destroy Animation0004_17
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 227
+        width: 71
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db000b372431a29e0800000000000000
+      internalID: -1645481537720811331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Stone Destroy Animation0004_0: 3362026534494724345
+      Stone Destroy Animation0004_1: 4309843752872172249
+      Stone Destroy Animation0004_10: 2547935126932194196
+      Stone Destroy Animation0004_11: -675799703486616544
+      Stone Destroy Animation0004_12: -9149187757263127016
+      Stone Destroy Animation0004_13: -1072120929956142796
+      Stone Destroy Animation0004_14: -4203966044436462234
+      Stone Destroy Animation0004_15: -2269005509066618074
+      Stone Destroy Animation0004_16: 6290797389290046860
+      Stone Destroy Animation0004_17: -1645481537720811331
+      Stone Destroy Animation0004_2: 264661791177803883
+      Stone Destroy Animation0004_3: -4446101049012764392
+      Stone Destroy Animation0004_4: -3046786111171806004
+      Stone Destroy Animation0004_5: 9040028825608171053
+      Stone Destroy Animation0004_6: 5600853812951359325
+      Stone Destroy Animation0004_7: 2292571177033303943
+      Stone Destroy Animation0004_8: -1970702740605824619
+      Stone Destroy Animation0004_9: -1592982501011843813
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
