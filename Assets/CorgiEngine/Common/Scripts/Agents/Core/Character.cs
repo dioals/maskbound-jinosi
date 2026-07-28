@@ -154,6 +154,10 @@ namespace MoreMountains.CorgiEngine
 		public HashSet<int> _animatorParameters { get; set; }
 		/// whether or not the character can flip this frame
 		public bool CanFlip { get; set; }
+		/// true while a block ability is active on this character (mirrored here so engine abilities can react without depending on project-specific block scripts)
+		public bool IsBlocking { get; set; }
+		/// true while a skill cast is in progress on this character (mirrored here so engine abilities can react without depending on project-specific skill scripts)
+		public bool IsCastingSkill { get; set; }
 
 		// animation parameters
 		protected const string _groundedAnimationParameterName = "Grounded";
