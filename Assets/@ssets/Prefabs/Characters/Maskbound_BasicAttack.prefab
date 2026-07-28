@@ -79,8 +79,8 @@ MonoBehaviour:
   ModifyMovementWhileAttacking: 0
   MovementMultiplier: 0
   AlwaysResetMultiplierToInitial: 1
-  PreventHorizontalGroundMovementWhileInUse: 0
-  PreventHorizontalAirMovementWhileInUse: 0
+  PreventHorizontalGroundMovementWhileInUse: 1
+  PreventHorizontalAirMovementWhileInUse: 1
   SetForceWhileInUse: 0
   ForceWhileInUse: {x: 0, y: 0}
   DisableGravityWhileInUse: 0
