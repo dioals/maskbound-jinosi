@@ -1,4 +1,5 @@
 using MaskboundJinosi.Input;
+using MaskboundJinosi.Skills;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
@@ -24,6 +25,7 @@ namespace MaskboundJinosi.Combat
         protected int _blockingAnimationParameter;
         protected float _previousAbilityMovementMultiplier = 1f;
         protected MaskboundInControlInputManager _maskboundInputManager;
+        protected CharacterSkillCaster _skillCaster;
 
         public override string HelpBoxText()
         {
@@ -35,10 +37,31 @@ namespace MaskboundJinosi.Combat
             base.Initialization();
             ResolveInputManager();
 
+            _skillCaster = _character?.GetComponentInChildren<CharacterSkillCaster>(true);
+
             if (BlockingResistance != null)
             {
                 BlockingResistance.gameObject.SetActive(false);
             }
+        }
+
+        protected virtual bool IsAttacking()
+        {
+            if (_handleWeaponList == null)
+            {
+                return false;
+            }
+
+            foreach (CharacterHandleWeapon handleWeapon in _handleWeaponList)
+            {
+                if ((handleWeapon.CurrentWeapon != null)
+                    && (handleWeapon.CurrentWeapon.WeaponState.CurrentState != Weapon.WeaponStates.WeaponIdle))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public override void SetInputManager(InputManager inputManager)
@@ -83,7 +106,9 @@ namespace MaskboundJinosi.Combat
 
             if (!AbilityAuthorized ||
                 (_condition.CurrentState != CharacterStates.CharacterConditions.Normal) ||
-                (GroundedOnly && !_controller.State.IsGrounded))
+                (GroundedOnly && !_controller.State.IsGrounded) ||
+                ((_skillCaster != null) && _skillCaster.IsCasting) ||
+                IsAttacking())
             {
                 BlockStop();
                 return;
@@ -103,12 +128,15 @@ namespace MaskboundJinosi.Combat
             }
 
             if ((_condition.CurrentState != CharacterStates.CharacterConditions.Normal) ||
-                (GroundedOnly && !_controller.State.IsGrounded))
+                (GroundedOnly && !_controller.State.IsGrounded) ||
+                ((_skillCaster != null) && _skillCaster.IsCasting) ||
+                IsAttacking())
             {
                 return;
             }
 
             IsBlocking = true;
+            _character.IsBlocking = true;
             BlockingResistance.gameObject.SetActive(true);
 
             if (PreventHorizontalMovement && (_characterHorizontalMovement != null))
@@ -129,6 +157,7 @@ namespace MaskboundJinosi.Combat
             }
 
             IsBlocking = false;
+            _character.IsBlocking = false;
 
             if (BlockingResistance != null)
             {
