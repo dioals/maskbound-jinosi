@@ -204,7 +204,29 @@ namespace MoreMountains.CorgiEngine
 			_characterLadder = _character?.FindAbility<CharacterLadder>();
 			ResetInitialNumberOfJumps();
 			CanJumpStop = true;
-		}	
+		}
+
+		/// <summary>
+		/// Returns true if any of the character's equipped weapons is currently mid-attack
+		/// </summary>
+		protected virtual bool IsAttacking()
+		{
+			if (_handleWeaponList == null)
+			{
+				return false;
+			}
+
+			foreach (CharacterHandleWeapon handleWeapon in _handleWeaponList)
+			{
+				if ((handleWeapon.CurrentWeapon != null)
+				    && (handleWeapon.CurrentWeapon.WeaponState.CurrentState != Weapon.WeaponStates.WeaponIdle))
+				{
+					return true;
+				}
+			}
+
+			return false;
+		}
         
 		/// <summary>
 		/// Stores the current NumberOfJumps
@@ -389,7 +411,10 @@ namespace MoreMountains.CorgiEngine
 			     || (_movement.CurrentState == CharacterStates.MovementStates.Dashing) // or if we're dashing
 			     || (_movement.CurrentState == CharacterStates.MovementStates.Pushing) // or if we're pushing                
 			     || ((_movement.CurrentState == CharacterStates.MovementStates.WallClinging) && (_characterWallJump != null)) // or if we're wallclinging and can walljump
-			     || (_controller.State.IsCollidingAbove && !onAOneWayPlatform)) // or if we're colliding with the ceiling
+			     || (_controller.State.IsCollidingAbove && !onAOneWayPlatform) // or if we're colliding with the ceiling
+			     || _character.IsBlocking // or if we're blocking
+			     || _character.IsCastingSkill // or if we're casting a skill
+			     || IsAttacking()) // or if we're mid-attack
 			{
 				return false;
 			}
