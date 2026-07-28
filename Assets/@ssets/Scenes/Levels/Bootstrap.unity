@@ -170,6 +170,7 @@ MonoBehaviour:
   destroyDuplicateBootstrap: 1
   loadFirstLevelOnStart: 1
   firstLevelName: Aras_Mamungkut_Forest
+  bootstrapSceneName: Bootstrap
   showSceneMenuOnStart: 1
   sceneMenuTitle: Select Scene
   sceneMenuOptions:
@@ -2141,7 +2142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.49905002, y: -0.5}
+  m_AnchoredPosition: {x: 0.49905014, y: -0.5}
   m_SizeDelta: {x: 0.3327, y: 0.4768}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &939723878
@@ -4941,6 +4942,7 @@ GameObject:
   - component: {fileID: 1652780181}
   - component: {fileID: 1652955605}
   - component: {fileID: 1669022805}
+  - component: {fileID: 1675088182}
   m_Layer: 5
   m_Name: PauseSplash
   m_TagString: Untagged
@@ -4948,6 +4950,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &1675088182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675088181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c097917f1b244749bb4ecb826fa3ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.UI.InControlMenuSelectionInput
+  PanelRoot: {fileID: 1675088181}
+  FirstSelected: {fileID: 114159703168286905}
+  SubmitButton: 19
+  CancelButton: 20
+  UseLeftStick: 1
+  UseDPad: 1
+  StickThreshold: 0.214
+  InitialRepeatDelay: 0.35
+  RepeatRate: 0.12
 --- !u!1 &1675094797
 GameObject:
   m_ObjectHideFlags: 0
@@ -5362,7 +5385,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 52.675, y: -50}
+  m_AnchoredPosition: {x: 52.675003, y: -50}
   m_SizeDelta: {x: 105.35, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2041224059
