@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using MaskboundJinosi.Combat;
 using MoreMountains.CorgiEngine;
 using UnityEngine;
 
@@ -20,8 +22,25 @@ namespace MaskboundJinosi.Skills
 		[Header("Runtime")]
 		public bool LogDebug;
 
+		/// true while a skill cast is in progress - blocks movement, jumping, blocking and attacking until it clears
+		public bool IsCasting
+		{
+			get { return _isCasting; }
+			protected set
+			{
+				_isCasting = value;
+				if (_character != null)
+				{
+					_character.IsCastingSkill = value;
+				}
+			}
+		}
+
+		protected bool _isCasting;
 		protected readonly Dictionary<ActiveSkillData, float> _lastCastTimes = new Dictionary<ActiveSkillData, float>();
 		protected Character _character;
+		protected CharacterBlock _characterBlock;
+		protected List<CharacterHandleWeapon> _handleWeaponList;
 		protected ActiveSkillData _currentSkill;
 		protected SkillContext _currentSkillContext;
 		protected bool _currentSkillFacingRight;
@@ -44,6 +63,34 @@ namespace MaskboundJinosi.Skills
 			{
 				SpawnOrigin = transform;
 			}
+
+			if (_character != null)
+			{
+				_characterBlock = _character.FindAbility<CharacterBlock>();
+				_handleWeaponList = _character.FindAbilities<CharacterHandleWeapon>();
+			}
+		}
+
+		/// <summary>
+		/// Returns true if any of the character's equipped weapons is currently mid-attack
+		/// </summary>
+		protected virtual bool IsAttacking()
+		{
+			if (_handleWeaponList == null)
+			{
+				return false;
+			}
+
+			foreach (CharacterHandleWeapon handleWeapon in _handleWeaponList)
+			{
+				if ((handleWeapon.CurrentWeapon != null)
+				    && (handleWeapon.CurrentWeapon.WeaponState.CurrentState != Weapon.WeaponStates.WeaponIdle))
+				{
+					return true;
+				}
+			}
+
+			return false;
 		}
 
 		public virtual bool ActivatePrimarySkill()
@@ -94,6 +141,21 @@ namespace MaskboundJinosi.Skills
 				return false;
 			}
 
+			if (IsCasting)
+			{
+				return false;
+			}
+
+			if ((_characterBlock != null) && _characterBlock.IsBlocking)
+			{
+				return false;
+			}
+
+			if (IsAttacking())
+			{
+				return false;
+			}
+
 			return GetCooldownRemaining(skill) <= 0f;
 		}
 
@@ -127,12 +189,28 @@ namespace MaskboundJinosi.Skills
 			_currentSkillFacingRight = facingRight;
 			SpawnSkillPrefab(skill, context, facingRight);
 
+			if (skill.Duration > 0f)
+			{
+				IsCasting = true;
+				StartCoroutine(CastLockCo(skill.Duration));
+			}
+
 			if (LogDebug)
 			{
 				Debug.Log($"Cast skill: {skill.DisplayName}", this);
 			}
 
 			return true;
+		}
+
+		/// <summary>
+		/// Holds IsCasting true for the skill's Duration, then releases the lock and stops the casting animation
+		/// </summary>
+		protected virtual IEnumerator CastLockCo(float duration)
+		{
+			yield return new WaitForSeconds(duration);
+			IsCasting = false;
+			StopCastingAnimation();
 		}
 
 		public virtual void SpawnCurrentSkill()
@@ -187,6 +265,8 @@ namespace MaskboundJinosi.Skills
 
 		public virtual void StopCastingAnimation()
 		{
+			IsCasting = false;
+
 			if (CharacterAnimator == null)
 			{
 				return;
