@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 namespace MaskboundJinosi.Gameplay.Scene
 {
     [AddComponentMenu("Maskbound/Scene/Bootstrap Scene Loader")]
+    [DefaultExecutionOrder(-10000)]
     public class BootstrapSceneLoader : MonoBehaviour
     {
         [Serializable]
@@ -63,6 +64,10 @@ namespace MaskboundJinosi.Gameplay.Scene
         {
             if (destroyDuplicateBootstrap && _instance != null && _instance != this)
             {
+                // Deactivate synchronously so sibling components (e.g. GUIManager) never run their own
+                // Awake on this doomed duplicate root - Destroy() alone is deferred to end of frame and
+                // would let them race in and steal static singleton references before cleanup happens.
+                gameObject.SetActive(false);
                 Destroy(gameObject);
                 return;
             }
