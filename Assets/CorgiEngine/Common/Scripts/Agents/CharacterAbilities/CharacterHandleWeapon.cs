@@ -106,7 +106,7 @@ namespace MoreMountains.CorgiEngine
 		protected Vector2 _invertedHorizontalAimMultiplier = new Vector2(-1f, 1f);
 
 		// Initialization
-		protected override void Initialization () 
+		protected override void Initialization ()
 		{
 			base.Initialization();
 			if (_characterHorizontalMovement != null)
@@ -223,7 +223,9 @@ namespace MoreMountains.CorgiEngine
 			if (!AbilityAuthorized
 			    || ((_condition.CurrentState != CharacterStates.CharacterConditions.Normal)
 			         && !shootFromLaddersAuthorized)
-			    || (CurrentWeapon == null))
+			    || (CurrentWeapon == null)
+			    || _character.IsBlocking
+			    || _character.IsCastingSkill)
 			{
 				return;
 			}
