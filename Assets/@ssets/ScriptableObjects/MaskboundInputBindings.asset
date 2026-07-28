@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1a378593446364e9c193a1dd08e780, type: 3}
+  m_Name: MaskboundInputBindings
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Input.MaskboundInputBindings
+  Horizontal:
+    Label: Horizontal
+    Negative:
+      Label: Move Left
+      KeyboardKeys: 2400000053000000
+      MouseButtons: 
+      ControllerButtons: 030000000d000000
+    Positive:
+      Label: Move Right
+      KeyboardKeys: 2700000054000000
+      MouseButtons: 
+      ControllerButtons: 040000000e000000
+  Vertical:
+    Label: Vertical
+    Negative:
+      Label: Move Down
+      KeyboardKeys: 3600000056000000
+      MouseButtons: 
+      ControllerButtons: 020000000c000000
+    Positive:
+      Label: Move Up
+      KeyboardKeys: 3a00000055000000
+      MouseButtons: 
+      ControllerButtons: 010000000b000000
+  AimHorizontal:
+    Label: Aim Horizontal
+    Negative:
+      Label: Aim Left
+      KeyboardKeys: 
+      MouseButtons: 
+      ControllerButtons: 08000000
+    Positive:
+      Label: Aim Right
+      KeyboardKeys: 
+      MouseButtons: 
+      ControllerButtons: 09000000
+  AimVertical:
+    Label: Aim Vertical
+    Negative:
+      Label: Aim Down
+      KeyboardKeys: 
+      MouseButtons: 
+      ControllerButtons: 07000000
+    Positive:
+      Label: Aim Up
+      KeyboardKeys: 
+      MouseButtons: 
+      ControllerButtons: 06000000
+  Jump:
+    Label: Jump
+    KeyboardKeys: 4c000000
+    MouseButtons: 
+    ControllerButtons: 13000000
+  Run:
+    Label: Run
+    KeyboardKeys: 05000000
+    MouseButtons: 
+    ControllerButtons: 11000000
+  Dash:
+    Label: Dash
+    KeyboardKeys: 08000000
+    MouseButtons: 
+    ControllerButtons: 14000000
+  Roll:
+    Label: Roll
+    KeyboardKeys: 06000000
+    MouseButtons: 
+    ControllerButtons: 16000000
+  Attack:
+    Label: Attack
+    KeyboardKeys: 28000000
+    MouseButtons: 
+    ControllerButtons: 1500000010000000
+  SpecialAttack:
+    Label: Special Attack
+    KeyboardKeys: 34000000
+    MouseButtons: 02000000
+    ControllerButtons: 160000000f000000
+  Interact:
+    Label: Interact
+    KeyboardKeys: 29000000
+    MouseButtons: 
+    ControllerButtons: 13000000
+  Reload:
+    Label: Reload
+    KeyboardKeys: 35000000
+    MouseButtons: 
+    ControllerButtons: 16000000
+  Pause:
+    Label: Pause
+    KeyboardKeys: 0d000000
+    MouseButtons: 
+    ControllerButtons: 65000000
+  SwitchWeapon:
+    Label: Switch Weapon
+    KeyboardKeys: 42000000
+    MouseButtons: 
+    ControllerButtons: 12000000
+  SwitchCharacter:
+    Label: Switch Character
+    KeyboardKeys: 26000000
+    MouseButtons: 
+    ControllerButtons: 
+  TimeControl:
+    Label: Time Control
+    KeyboardKeys: 37000000
+    MouseButtons: 
+    ControllerButtons: 
+  Swim:
+    Label: Swim
+    KeyboardKeys: 4c000000
+    MouseButtons: 
+    ControllerButtons: 
+  Glide:
+    Label: Glide
+    KeyboardKeys: 4c000000
+    MouseButtons: 
+    ControllerButtons: 
+  Jetpack:
+    Label: Jetpack
+    KeyboardKeys: 4c000000
+    MouseButtons: 
+    ControllerButtons: 
+  Fly:
+    Label: Fly
+    KeyboardKeys: 4c000000
+    MouseButtons: 
+    ControllerButtons: 
+  Grab:
+    Label: Grab
+    KeyboardKeys: 2a000000
+    MouseButtons: 
+    ControllerButtons: 
+  Throw:
+    Label: Throw
+    KeyboardKeys: 2b000000
+    MouseButtons: 
+    ControllerButtons: 
+  Push:
+    Label: Push
+    KeyboardKeys: 33000000
+    MouseButtons: 
+    ControllerButtons: 
+  Grip:
+    Label: Grip
+    KeyboardKeys: 2a000000
+    MouseButtons: 
+    ControllerButtons: 
+  Block:
+    Label: Block
+    KeyboardKeys: 25000000
+    MouseButtons: 
+    ControllerButtons: 

@@ -9,6 +9,7 @@ namespace MaskboundJinosi.Input
     public class MaskboundInControlInputManager : MoreMountains.CorgiEngine.InputManager
     {
         [Header("InControl")]
+        [SerializeField] private MaskboundInputBindings inputBindings;
         [SerializeField] private bool logInputDebug;
 
         public MMInput.IMButton BlockButton { get; private set; }
@@ -30,7 +31,7 @@ namespace MaskboundJinosi.Input
 
             if (_actions == null)
             {
-                _actions = MaskboundCorgiActions.CreateWithDefaultBindings();
+                _actions = MaskboundCorgiActions.CreateWithDefaultBindings(inputBindings);
             }
 
             _initialized = true;
@@ -304,80 +305,46 @@ namespace MaskboundJinosi.Input
                 Block = CreatePlayerAction("Block");
             }
 
-            public static MaskboundCorgiActions CreateWithDefaultBindings()
+            public static MaskboundCorgiActions CreateWithDefaultBindings(MaskboundInputBindings inputBindings)
             {
                 var actions = new MaskboundCorgiActions();
 
-                actions.MoveLeft.AddDefaultBinding(Key.A);
-                actions.MoveLeft.AddDefaultBinding(Key.LeftArrow);
-                actions.MoveLeft.AddDefaultBinding(InputControlType.LeftStickLeft);
-                actions.MoveLeft.AddDefaultBinding(InputControlType.DPadLeft);
+                if (inputBindings == null)
+                {
+                    inputBindings = ScriptableObject.CreateInstance<MaskboundInputBindings>();
+                }
 
-                actions.MoveRight.AddDefaultBinding(Key.D);
-                actions.MoveRight.AddDefaultBinding(Key.RightArrow);
-                actions.MoveRight.AddDefaultBinding(InputControlType.LeftStickRight);
-                actions.MoveRight.AddDefaultBinding(InputControlType.DPadRight);
+                inputBindings.Horizontal.Negative.ApplyTo(actions.MoveLeft);
+                inputBindings.Horizontal.Positive.ApplyTo(actions.MoveRight);
+                inputBindings.Vertical.Positive.ApplyTo(actions.MoveUp);
+                inputBindings.Vertical.Negative.ApplyTo(actions.MoveDown);
 
-                actions.MoveUp.AddDefaultBinding(Key.W);
-                actions.MoveUp.AddDefaultBinding(Key.UpArrow);
-                actions.MoveUp.AddDefaultBinding(InputControlType.LeftStickUp);
-                actions.MoveUp.AddDefaultBinding(InputControlType.DPadUp);
+                inputBindings.AimHorizontal.Negative.ApplyTo(actions.AimLeft);
+                inputBindings.AimHorizontal.Positive.ApplyTo(actions.AimRight);
+                inputBindings.AimVertical.Positive.ApplyTo(actions.AimUp);
+                inputBindings.AimVertical.Negative.ApplyTo(actions.AimDown);
 
-                actions.MoveDown.AddDefaultBinding(Key.S);
-                actions.MoveDown.AddDefaultBinding(Key.DownArrow);
-                actions.MoveDown.AddDefaultBinding(InputControlType.LeftStickDown);
-                actions.MoveDown.AddDefaultBinding(InputControlType.DPadDown);
-
-                actions.AimLeft.AddDefaultBinding(InputControlType.RightStickLeft);
-                actions.AimRight.AddDefaultBinding(InputControlType.RightStickRight);
-                actions.AimUp.AddDefaultBinding(InputControlType.RightStickUp);
-                actions.AimDown.AddDefaultBinding(InputControlType.RightStickDown);
-
-                actions.Jump.AddDefaultBinding(Key.Space);
-                actions.Jump.AddDefaultBinding(InputControlType.Action1);
-
-                actions.Run.AddDefaultBinding(Key.LeftShift);
-                actions.Run.AddDefaultBinding(InputControlType.LeftBumper);
-
-                actions.Dash.AddDefaultBinding(Key.LeftControl);
-                actions.Dash.AddDefaultBinding(InputControlType.Action2);
-
-                actions.Roll.AddDefaultBinding(Key.LeftAlt);
-                actions.Roll.AddDefaultBinding(InputControlType.Action4);
-
-                actions.Attack.AddDefaultBinding(Key.E);
-                // actions.Attack.AddDefaultBinding(Mouse.LeftButton);
-                actions.Attack.AddDefaultBinding(InputControlType.Action3);
-                actions.Attack.AddDefaultBinding(InputControlType.RightTrigger);
-
-                actions.SpecialAttack.AddDefaultBinding(Key.Q);
-                actions.SpecialAttack.AddDefaultBinding(Mouse.RightButton);
-                actions.SpecialAttack.AddDefaultBinding(InputControlType.Action4);
-                actions.SpecialAttack.AddDefaultBinding(InputControlType.LeftTrigger);
-
-                actions.Interact.AddDefaultBinding(Key.F);
-                actions.Interact.AddDefaultBinding(InputControlType.Action1);
-
-                actions.Reload.AddDefaultBinding(Key.R);
-                actions.Reload.AddDefaultBinding(InputControlType.Action4);
-
-                actions.Pause.AddDefaultBinding(Key.Escape);
-                actions.Pause.AddDefaultBinding(InputControlType.Start);
-
-                actions.SwitchWeapon.AddDefaultBinding(Key.Tab);
-                actions.SwitchWeapon.AddDefaultBinding(InputControlType.RightBumper);
-
-                actions.SwitchCharacter.AddDefaultBinding(Key.C);
-                actions.TimeControl.AddDefaultBinding(Key.T);
-                actions.Swim.AddDefaultBinding(Key.Space);
-                actions.Glide.AddDefaultBinding(Key.Space);
-                actions.Jetpack.AddDefaultBinding(Key.Space);
-                actions.Fly.AddDefaultBinding(Key.Space);
-                actions.Grab.AddDefaultBinding(Key.G);
-                actions.Throw.AddDefaultBinding(Key.H);
-                actions.Push.AddDefaultBinding(Key.P);
-                actions.Grip.AddDefaultBinding(Key.G);
-                actions.Block.AddDefaultBinding(Key.B);
+                inputBindings.Jump.ApplyTo(actions.Jump);
+                inputBindings.Run.ApplyTo(actions.Run);
+                inputBindings.Dash.ApplyTo(actions.Dash);
+                inputBindings.Roll.ApplyTo(actions.Roll);
+                inputBindings.Attack.ApplyTo(actions.Attack);
+                inputBindings.SpecialAttack.ApplyTo(actions.SpecialAttack);
+                inputBindings.Interact.ApplyTo(actions.Interact);
+                inputBindings.Reload.ApplyTo(actions.Reload);
+                inputBindings.Pause.ApplyTo(actions.Pause);
+                inputBindings.SwitchWeapon.ApplyTo(actions.SwitchWeapon);
+                inputBindings.SwitchCharacter.ApplyTo(actions.SwitchCharacter);
+                inputBindings.TimeControl.ApplyTo(actions.TimeControl);
+                inputBindings.Swim.ApplyTo(actions.Swim);
+                inputBindings.Glide.ApplyTo(actions.Glide);
+                inputBindings.Jetpack.ApplyTo(actions.Jetpack);
+                inputBindings.Fly.ApplyTo(actions.Fly);
+                inputBindings.Grab.ApplyTo(actions.Grab);
+                inputBindings.Throw.ApplyTo(actions.Throw);
+                inputBindings.Push.ApplyTo(actions.Push);
+                inputBindings.Grip.ApplyTo(actions.Grip);
+                inputBindings.Block.ApplyTo(actions.Block);
 
                 actions.ListenOptions.IncludeUnknownControllers = true;
                 actions.ListenOptions.IncludeMouseButtons = true;
