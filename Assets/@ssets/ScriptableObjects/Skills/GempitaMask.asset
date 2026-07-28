@@ -19,13 +19,17 @@ MonoBehaviour:
   SkillType: 1
   Damage: 50
   Duration: 5
-  Cooldown: 9
+  Cooldown: 2
   SkillIndex: 3
   CastTriggerParameter: SkillCast
   SkillIndexParameter: SkillIndex
   IsCastingParameter: IsCastingSkill
   SkillPrefab: {fileID: 778269070720293681, guid: 13b1ccaf95268b941b7ea0f8e0b22412,
     type: 3}
-  SpawnOffset: {x: 6, y: 1.2}
+  SpawnOffset: {x: 3, y: 1.2}
   ParentToOwner: 1
   MatchOwnerFacing: 1
+  ProjectilePrefab: {fileID: 0}
+  ProjectileSpawnOffset: {x: 1, y: 0}
+  ProjectileParentToOwner: 0
+  ProjectileMatchOwnerFacing: 1

@@ -373,7 +373,7 @@ MonoBehaviour:
     - rid: 0
       type: {class: MMF_Sound, ns: MoreMountains.Feedbacks, asm: MoreMountains.Tools}
       data:
-        Active: 1
+        Active: 0
         UniqueID: 239961131
         Label: Sound
         OriginalLabel: Sound
@@ -1080,7 +1080,7 @@ MonoBehaviour:
     - rid: 0
       type: {class: MMF_Sound, ns: MoreMountains.Feedbacks, asm: MoreMountains.Tools}
       data:
-        Active: 1
+        Active: 0
         UniqueID: -776557830
         Label: Sound
         OriginalLabel: Sound
@@ -1347,7 +1347,7 @@ MonoBehaviour:
     - rid: 0
       type: {class: MMF_Sound, ns: MoreMountains.Feedbacks, asm: MoreMountains.Tools}
       data:
-        Active: 1
+        Active: 0
         UniqueID: 1160286452
         Label: Sound
         OriginalLabel: Sound

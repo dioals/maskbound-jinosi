@@ -57,6 +57,7 @@ Transform:
   - {fileID: 34957779068220950}
   - {fileID: 258636244853065832}
   - {fileID: 910000100000002}
+  - {fileID: 6417396074573851750}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &6164218
@@ -376,7 +377,7 @@ MonoBehaviour:
   BlockingConditionStates: 
   BlockingWeaponStates: 
   NumberOfJumps: 2
-  JumpHeight: 3
+  JumpHeight: 5
   JumpRestrictions: 2
   ResetCameraOffsetOnJump: 0
   CanJumpDownOneWayPlatforms: 1
@@ -970,6 +971,7 @@ MonoBehaviour:
   SpawnOrigin: {fileID: 910000100000006}
   PrimarySkillSlotIndex: 0
   SecondarySkillSlotIndex: 1
+  SelectedSkillSlotIndex: 0
   LogDebug: 0
 --- !u!114 &910000100000004
 MonoBehaviour:
@@ -2926,6 +2928,63 @@ MonoBehaviour:
         ObjectPoolSize: 5
         MutualizePools: 0
         PoolParentTransform: {fileID: 0}
+--- !u!1 &7328230823760454613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6417396074573851750}
+  - component: {fileID: 5392590280993590727}
+  m_Layer: 9
+  m_Name: SkillInput
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6417396074573851750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7328230823760454613}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 425048}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5392590280993590727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7328230823760454613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e81e5776b000f4f9350bb96bbe22c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.CharacterSkillSelectionInput
+  SkillCaster: {fileID: 910000100000003}
+  EnableKeyboard: 1
+  PreviousSkillKey: 91
+  NextSkillKey: 93
+  ActivateSelectedSkillKey: 113
+  EnableController: 1
+  PreviousSkillButton: 17
+  NextSkillButton: 18
+  ActivateSelectedSkillButton: 15
+  WrapAround: 1
+  ActivateOnSelect: 0
+  selectedSlotIndex: 0
+  selectedSkillName: 
 --- !u!1 &7591286923208730013
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ namespace MaskboundJinosi.Skills
 		[Header("Input Slots")]
 		public int PrimarySkillSlotIndex;
 		public int SecondarySkillSlotIndex = 1;
+		public int SelectedSkillSlotIndex;
 
 		[Header("Runtime")]
 		public bool LogDebug;
@@ -53,6 +54,32 @@ namespace MaskboundJinosi.Skills
 		public virtual bool ActivateSecondarySkill()
 		{
 			return ActivateSkillSlot(SecondarySkillSlotIndex);
+		}
+
+		public virtual bool ActivateSelectedSkill()
+		{
+			return ActivateSkillSlot(SelectedSkillSlotIndex);
+		}
+
+		public virtual void SelectSkillSlot(int slotIndex)
+		{
+			if (SkillSlots == null || SkillSlots.SlotCount <= 0)
+			{
+				SelectedSkillSlotIndex = 0;
+				return;
+			}
+
+			SelectedSkillSlotIndex = Mathf.Clamp(slotIndex, 0, SkillSlots.SlotCount - 1);
+		}
+
+		public virtual void SelectNextSkillSlot()
+		{
+			SelectSkillSlot(SelectedSkillSlotIndex + 1);
+		}
+
+		public virtual void SelectPreviousSkillSlot()
+		{
+			SelectSkillSlot(SelectedSkillSlotIndex - 1);
 		}
 
 		public virtual bool ActivateSkillSlot(int slotIndex)
