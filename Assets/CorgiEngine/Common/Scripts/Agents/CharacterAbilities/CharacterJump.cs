@@ -227,7 +227,30 @@ namespace MoreMountains.CorgiEngine
 
 			return false;
 		}
-        
+
+		/// <summary>
+		/// Drops any in-progress basic attack combo back to its first hit
+		/// </summary>
+		protected virtual void ResetAttackCombo()
+		{
+			if (_handleWeaponList == null)
+			{
+				return;
+			}
+
+			foreach (CharacterHandleWeapon handleWeapon in _handleWeaponList)
+			{
+				if (handleWeapon.CurrentWeapon != null)
+				{
+					ComboWeapon comboWeapon = handleWeapon.CurrentWeapon.GetComponent<ComboWeapon>();
+					if (comboWeapon != null)
+					{
+						comboWeapon.DropCombo();
+					}
+				}
+			}
+		}
+
 		/// <summary>
 		/// Stores the current NumberOfJumps
 		/// </summary>
@@ -511,7 +534,9 @@ namespace MoreMountains.CorgiEngine
 			{
 				return;
 			}
-			
+
+			ResetAttackCombo();
+
 			// we reset our walking speed
 			if ((_movement.CurrentState == CharacterStates.MovementStates.Crawling)
 			    || (_movement.CurrentState == CharacterStates.MovementStates.Crouching)

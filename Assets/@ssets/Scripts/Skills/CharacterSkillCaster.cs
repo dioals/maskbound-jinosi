@@ -93,6 +93,29 @@ namespace MaskboundJinosi.Skills
 			return false;
 		}
 
+		/// <summary>
+		/// Drops any in-progress basic attack combo back to its first hit
+		/// </summary>
+		protected virtual void ResetAttackCombo()
+		{
+			if (_handleWeaponList == null)
+			{
+				return;
+			}
+
+			foreach (CharacterHandleWeapon handleWeapon in _handleWeaponList)
+			{
+				if (handleWeapon.CurrentWeapon != null)
+				{
+					ComboWeapon comboWeapon = handleWeapon.CurrentWeapon.GetComponent<ComboWeapon>();
+					if (comboWeapon != null)
+					{
+						comboWeapon.DropCombo();
+					}
+				}
+			}
+		}
+
 		public virtual bool ActivatePrimarySkill()
 		{
 			return ActivateSkillSlot(PrimarySkillSlotIndex);
@@ -180,6 +203,8 @@ namespace MaskboundJinosi.Skills
 			{
 				return false;
 			}
+
+			ResetAttackCombo();
 
 			bool facingRight = ResolveFacingRight();
 			_lastCastTimes[skill] = Time.time;

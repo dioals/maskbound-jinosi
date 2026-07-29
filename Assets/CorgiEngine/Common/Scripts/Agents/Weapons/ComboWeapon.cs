@@ -101,15 +101,30 @@ namespace MoreMountains.CorgiEngine
 					TimeSinceLastWeaponStopped += Time.deltaTime;
 					if (TimeSinceLastWeaponStopped > DropComboDelay)
 					{
-						_countdownActive = false;
-						Weapons[_currentWeaponIndex].enabled = false;
-						_currentWeaponIndex = 0;
-						OwnerCharacterHandleWeapon.CurrentWeapon = Weapons[_currentWeaponIndex];
-						OwnerCharacterHandleWeapon.ChangeWeapon(Weapons[_currentWeaponIndex], Weapons[_currentWeaponIndex].WeaponID, true);
-						Weapons[_currentWeaponIndex].enabled = true;
+						DropCombo();
 					}
 				}
 			}
+		}
+
+		/// <summary>
+		/// Immediately drops the combo back to the first weapon, regardless of the drop delay
+		/// </summary>
+		public virtual void DropCombo()
+		{
+			if ((Weapons.Length <= 1) || (_currentWeaponIndex == 0))
+			{
+				_countdownActive = false;
+				return;
+			}
+
+			_countdownActive = false;
+			CharacterHandleWeapon ownerHandleWeapon = OwnerCharacterHandleWeapon != null ? OwnerCharacterHandleWeapon : Weapons[_currentWeaponIndex].CharacterHandleWeapon;
+			Weapons[_currentWeaponIndex].enabled = false;
+			_currentWeaponIndex = 0;
+			ownerHandleWeapon.CurrentWeapon = Weapons[_currentWeaponIndex];
+			ownerHandleWeapon.ChangeWeapon(Weapons[_currentWeaponIndex], Weapons[_currentWeaponIndex].WeaponID, true);
+			Weapons[_currentWeaponIndex].enabled = true;
 		}
 
 		/// <summary>
