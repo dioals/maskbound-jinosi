@@ -31,6 +31,7 @@ GameObject:
   - component: {fileID: 4814719073469022075}
   - component: {fileID: 982193212850257250}
   - component: {fileID: 8687896121662674696}
+  - component: {fileID: 8248193746512337601}
   m_Layer: 9
   m_Name: Maskbound_Player
   m_TagString: Player
@@ -863,6 +864,24 @@ MonoBehaviour:
   minimumAirTime: 0.15
   minimumFallSpeed: 1
   triggerCooldown: 0.1
+--- !u!114 &8248193746512337601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0c5c14ff05465091f92ad839706e66, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Gameplay.LocomotionAnimationSpeedSync
+  targetAnimator: {fileID: 7798527774007179782}
+  horizontalMovement: {fileID: 11455042}
+  controller: {fileID: 11469900}
+  speedMultiplierParameterName: LocomotionSpeedMultiplier
+  minimumSpeedMultiplier: 0.3
+  maximumSpeedMultiplier: 3
 --- !u!114 &982193212850257250
 MonoBehaviour:
   m_ObjectHideFlags: 0
