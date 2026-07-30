@@ -56,7 +56,7 @@ MonoBehaviour:
   DelayBeforeUse: 0
   DelayBeforeUseReleaseInterruption: 1
   TimeBetweenUses: 0.45
-  TimeBetweenUsesReleaseInterruption: 0
+  TimeBetweenUsesReleaseInterruption: 1
   CooldownDuration: 0
   UseBurstMode: 0
   BurstLength: 3
@@ -191,7 +191,7 @@ MonoBehaviour:
   DelayBeforeUse: 0
   DelayBeforeUseReleaseInterruption: 1
   TimeBetweenUses: 0.55
-  TimeBetweenUsesReleaseInterruption: 0
+  TimeBetweenUsesReleaseInterruption: 1
   CooldownDuration: 0
   UseBurstMode: 0
   BurstLength: 3
@@ -326,7 +326,7 @@ MonoBehaviour:
   DelayBeforeUse: 0
   DelayBeforeUseReleaseInterruption: 1
   TimeBetweenUses: 0.7
-  TimeBetweenUsesReleaseInterruption: 0
+  TimeBetweenUsesReleaseInterruption: 1
   CooldownDuration: 0
   UseBurstMode: 0
   BurstLength: 3

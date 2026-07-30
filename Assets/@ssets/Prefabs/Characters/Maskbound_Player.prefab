@@ -498,8 +498,8 @@ MonoBehaviour:
   FaceWeaponDirection: 0
   InvertHorizontalAimWhenWallclinging: 0
   ForceAlwaysShoot: 0
-  BufferInput: 0
-  NewInputExtendsBuffer: 0
+  BufferInput: 1
+  NewInputExtendsBuffer: 1
   MaximumBufferDuration: 0.25
   CurrentWeapon: {fileID: 0}
 --- !u!114 &114000011047386926
