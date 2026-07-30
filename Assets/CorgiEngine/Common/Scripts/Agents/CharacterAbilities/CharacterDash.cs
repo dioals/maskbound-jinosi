@@ -106,6 +106,8 @@ namespace MoreMountains.CorgiEngine
 		// animation parameters
 		protected const string _dashingAnimationParameterName = "Dashing";
 		protected int _dashingAnimationParameter;
+		protected const string _dashStartAnimationParameterName = "DashStart";
+		protected int _dashStartAnimationParameter;
 
 		/// <summary>
 		/// Initializes our aim instance
@@ -270,6 +272,7 @@ namespace MoreMountains.CorgiEngine
 			
 			// we set its dashing state to true
 			_movement.ChangeState(CharacterStates.MovementStates.Dashing);
+			MMAnimatorExtensions.SetAnimatorTrigger(_animator, _dashStartAnimationParameter, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 
 			// we start our sounds
 			PlayAbilityStartFeedbacks();
@@ -494,6 +497,7 @@ namespace MoreMountains.CorgiEngine
 		protected override void InitializeAnimatorParameters()
 		{
 			RegisterAnimatorParameter(_dashingAnimationParameterName, AnimatorControllerParameterType.Bool, out _dashingAnimationParameter);
+			RegisterAnimatorParameter(_dashStartAnimationParameterName, AnimatorControllerParameterType.Trigger, out _dashStartAnimationParameter);
 		}
 
 		/// <summary>
