@@ -35,7 +35,9 @@ namespace MaskboundJinosi.Skills
 				}
 				if (_horizontalMovement != null)
 				{
-					_horizontalMovement.AbilityPermitted = !value;
+					// MovementForbidden (unlike AbilityPermitted) keeps running the movement update every frame
+					// and actively zeroes it out, instead of freezing whatever velocity was already in flight.
+					_horizontalMovement.MovementForbidden = value;
 				}
 			}
 		}
