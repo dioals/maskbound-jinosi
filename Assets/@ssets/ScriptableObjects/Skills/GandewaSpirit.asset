@@ -27,7 +27,7 @@ MonoBehaviour:
   SkillPrefab: {fileID: 778269070720293681, guid: f7de46cab6ab33845be3a818ca821e6a,
     type: 3}
   SpawnOffset: {x: 10, y: 3}
-  ParentToOwner: 1
+  ParentToOwner: 0
   MatchOwnerFacing: 1
   ProjectilePrefab: {fileID: 778269070720293681, guid: f1975ad3866595d40b27642df6b3b564,
     type: 3}
