@@ -8,6 +8,8 @@ namespace MaskboundJinosi.Skills
 		[Header("Cast")]
 		[Min(0f)] public float Damage;
 		[Min(0f)] public float Duration;
+		[Tooltip("Fallback: how long the player is locked out of jumping/attacking/blocking/re-casting if the cast animation never fires its StopCastingAnimation event. Should match the cast animation's length, not the summoned effect's Duration above.")]
+		[Min(0f)] public float CastLockFallbackDuration = 1f;
 		[Min(0f)] public float Cooldown = 1f;
 		public int SkillIndex;
 		public string CastTriggerParameter = "SkillCast";

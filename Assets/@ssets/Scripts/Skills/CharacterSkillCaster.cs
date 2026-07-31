@@ -214,10 +214,10 @@ namespace MaskboundJinosi.Skills
 			_currentSkillFacingRight = facingRight;
 			SpawnSkillPrefab(skill, context, facingRight);
 
-			if (skill.Duration > 0f)
+			if (skill.CastLockFallbackDuration > 0f)
 			{
 				IsCasting = true;
-				StartCoroutine(CastLockCo(skill.Duration));
+				StartCoroutine(CastLockCo(skill.CastLockFallbackDuration));
 			}
 
 			if (LogDebug)
@@ -229,7 +229,9 @@ namespace MaskboundJinosi.Skills
 		}
 
 		/// <summary>
-		/// Holds IsCasting true for the skill's Duration, then releases the lock and stops the casting animation
+		/// Fallback release: holds IsCasting true for at most CastLockFallbackDuration, then releases the lock and
+		/// stops the casting animation. Normally StopCastingAnimation is called earlier by an animation event as
+		/// soon as the cast animation itself finishes, independent of the summoned skill object's own lifetime.
 		/// </summary>
 		protected virtual IEnumerator CastLockCo(float duration)
 		{

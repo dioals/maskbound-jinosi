@@ -19,6 +19,7 @@ MonoBehaviour:
   SkillType: 1
   Damage: 50
   Duration: 5
+  CastLockFallbackDuration: 1.2
   Cooldown: 9
   SkillIndex: 4
   CastTriggerParameter: SkillCast
