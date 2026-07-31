@@ -33,6 +33,10 @@ namespace MaskboundJinosi.Skills
 				{
 					_character.IsCastingSkill = value;
 				}
+				if (_horizontalMovement != null)
+				{
+					_horizontalMovement.AbilityPermitted = !value;
+				}
 			}
 		}
 
@@ -41,6 +45,7 @@ namespace MaskboundJinosi.Skills
 		protected Character _character;
 		protected CharacterBlock _characterBlock;
 		protected List<CharacterHandleWeapon> _handleWeaponList;
+		protected CharacterHorizontalMovement _horizontalMovement;
 		protected ActiveSkillData _currentSkill;
 		protected SkillContext _currentSkillContext;
 		protected bool _currentSkillFacingRight;
@@ -68,6 +73,7 @@ namespace MaskboundJinosi.Skills
 			{
 				_characterBlock = _character.FindAbility<CharacterBlock>();
 				_handleWeaponList = _character.FindAbilities<CharacterHandleWeapon>();
+				_horizontalMovement = _character.FindAbility<CharacterHorizontalMovement>();
 			}
 		}
 
