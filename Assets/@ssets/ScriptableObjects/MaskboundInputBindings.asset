@@ -87,9 +87,9 @@ MonoBehaviour:
     ControllerButtons: 15000000
   SpecialAttack:
     Label: Special Attack
-    KeyboardKeys: 34000000
+    KeyboardKeys:
     MouseButtons: 02000000
-    ControllerButtons: 160000000f000000
+    ControllerButtons: 16000000
   Interact:
     Label: Interact
     KeyboardKeys: 29000000
