@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bb48ea7e7fc4c0fa43dce17235f4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStartFeedbacks: {fileID: 5203392991166988815}
   AbilityStopFeedbacks: {fileID: 0}
   AbilityPermitted: 1
   BlockingMovementStates: 
@@ -864,24 +864,6 @@ MonoBehaviour:
   minimumAirTime: 0.15
   minimumFallSpeed: 1
   triggerCooldown: 0.1
---- !u!114 &8248193746512337601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 119040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af0c5c14ff05465091f92ad839706e66, type: 3}
-  m_Name:
-  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Gameplay.LocomotionAnimationSpeedSync
-  targetAnimator: {fileID: 7798527774007179782}
-  horizontalMovement: {fileID: 11455042}
-  controller: {fileID: 11469900}
-  speedMultiplierParameterName: LocomotionSpeedMultiplier
-  minimumSpeedMultiplier: 0.3
-  maximumSpeedMultiplier: 3
 --- !u!114 &982193212850257250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -920,6 +902,24 @@ MonoBehaviour:
   IgnoreUnknownDamageTypes: 0
   DamageResistanceList:
   - {fileID: 2592257906837555446}
+--- !u!114 &8248193746512337601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0c5c14ff05465091f92ad839706e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Gameplay.LocomotionAnimationSpeedSync
+  targetAnimator: {fileID: 7798527774007179782}
+  horizontalMovement: {fileID: 11455042}
+  controller: {fileID: 11469900}
+  speedMultiplierParameterName: LocomotionSpeedMultiplier
+  minimumSpeedMultiplier: 0.3
+  maximumSpeedMultiplier: 3
 --- !u!1 &910000100000001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,7 +2317,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.72, y: 4.72}
+  m_Size: {x: 7.09, y: 4.72}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -2641,7 +2641,7 @@ MonoBehaviour:
           TimescaleMode: 0
           ExcludeFromHoldingPauses: 0
           ContributeToTotalDuration: 1
-          InitialDelay: 0
+          InitialDelay: 0.05
           CooldownDuration: 0
           InterruptsOnStop: 1
           NumberOfRepeats: 0
@@ -2704,14 +2704,14 @@ MonoBehaviour:
           type: 3}
         PositionMode: 1
         AlsoApplyRotation: 1
-        AlsoApplyScale: 1
-        TargetTransform: {fileID: 3581124441970434767}
+        AlsoApplyScale: 0
+        TargetTransform: {fileID: 4437640862564648259}
         TargetPosition: {x: 0, y: 0, z: 0}
-        PositionOffset: {x: 0.16, y: 0.59, z: 0}
+        PositionOffset: {x: 0, y: 0, z: 0}
         RandomizePosition: 0
         RandomizedPositionMin: {x: 0, y: 0, z: 0}
         RandomizedPositionMax: {x: 1, y: 1, z: 1}
-        ParentTransform: {fileID: 3581124441970434767}
+        ParentTransform: {fileID: 0}
         CreateObjectPool: 0
         ObjectPoolSize: 5
         MutualizePools: 0
