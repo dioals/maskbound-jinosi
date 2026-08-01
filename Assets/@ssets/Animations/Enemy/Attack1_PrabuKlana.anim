@@ -66,17 +66,29 @@ AnimationClip:
       value: {fileID: 21300000, guid: 10bfd455301332a43a15f49c39dd204e, type: 3}
     - time: 1.55
       value: {fileID: 21300000, guid: 95d08223e330a1948b3a497ac9341731, type: 3}
-    - time: 1.6166667
-      value: {fileID: 21300000, guid: a07854c61ddaf3248b3b9affd6e5f75e, type: 3}
-    - time: 1.7
-      value: {fileID: 21300000, guid: 9b79dea9bdb72874f99ef184cf7103c5, type: 3}
-    - time: 1.8
-      value: {fileID: 21300000, guid: 7fae50f20e3ae0e42b16217281d0942b, type: 3}
-    - time: 1.8666667
-      value: {fileID: 21300000, guid: 005b125a5db0d0544aa0a6308e335ac3, type: 3}
-    - time: 1.9333333
-      value: {fileID: 21300000, guid: 885963017d0d4c4499a526afb65e2f82, type: 3}
+    - time: 1.65
+      value: {fileID: 21300000, guid: 18530ad58e7843d479742d43da46c1d4, type: 3}
+    - time: 1.75
+      value: {fileID: 21300000, guid: 32127628df561fe4f846c279a8eaa78d, type: 3}
+    - time: 1.8166667
+      value: {fileID: 21300000, guid: 3ca9622c926d95941bdb3dadcc776f5e, type: 3}
+    - time: 1.8833333
+      value: {fileID: 21300000, guid: f31f2c617adbd444694e98e195ff3b69, type: 3}
+    - time: 1.95
+      value: {fileID: 21300000, guid: 10bfd455301332a43a15f49c39dd204e, type: 3}
     - time: 2
+      value: {fileID: 21300000, guid: 95d08223e330a1948b3a497ac9341731, type: 3}
+    - time: 2.0833333
+      value: {fileID: 21300000, guid: a07854c61ddaf3248b3b9affd6e5f75e, type: 3}
+    - time: 2.1666667
+      value: {fileID: 21300000, guid: 9b79dea9bdb72874f99ef184cf7103c5, type: 3}
+    - time: 2.2666667
+      value: {fileID: 21300000, guid: 7fae50f20e3ae0e42b16217281d0942b, type: 3}
+    - time: 2.3333333
+      value: {fileID: 21300000, guid: 005b125a5db0d0544aa0a6308e335ac3, type: 3}
+    - time: 2.4
+      value: {fileID: 21300000, guid: 885963017d0d4c4499a526afb65e2f82, type: 3}
+    - time: 2.4666667
       value: {fileID: 21300000, guid: 14518a890f58a914da08cf3c14f9fe59, type: 3}
     attribute: m_Sprite
     path: 
@@ -123,6 +135,12 @@ AnimationClip:
     - {fileID: 21300000, guid: f31f2c617adbd444694e98e195ff3b69, type: 3}
     - {fileID: 21300000, guid: 10bfd455301332a43a15f49c39dd204e, type: 3}
     - {fileID: 21300000, guid: 95d08223e330a1948b3a497ac9341731, type: 3}
+    - {fileID: 21300000, guid: 18530ad58e7843d479742d43da46c1d4, type: 3}
+    - {fileID: 21300000, guid: 32127628df561fe4f846c279a8eaa78d, type: 3}
+    - {fileID: 21300000, guid: 3ca9622c926d95941bdb3dadcc776f5e, type: 3}
+    - {fileID: 21300000, guid: f31f2c617adbd444694e98e195ff3b69, type: 3}
+    - {fileID: 21300000, guid: 10bfd455301332a43a15f49c39dd204e, type: 3}
+    - {fileID: 21300000, guid: 95d08223e330a1948b3a497ac9341731, type: 3}
     - {fileID: 21300000, guid: a07854c61ddaf3248b3b9affd6e5f75e, type: 3}
     - {fileID: 21300000, guid: 9b79dea9bdb72874f99ef184cf7103c5, type: 3}
     - {fileID: 21300000, guid: 7fae50f20e3ae0e42b16217281d0942b, type: 3}
@@ -134,12 +152,12 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 2.0166667
+    m_StopTime: 2.4833333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -153,4 +171,60 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 1.2
+    functionName: Lunge
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 45
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.2
+    functionName: OpenAttack1DamageWindow
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.4333333
+    functionName: Lunge
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 4.5
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.4333333
+    functionName: OpenAttack1DamageWindow
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.65
+    functionName: Lunge
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 4.5
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.65
+    functionName: OpenAttack1DamageWindow
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.8833333
+    functionName: Lunge
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 4.5
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.8833333
+    functionName: OpenAttack1DamageWindow
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

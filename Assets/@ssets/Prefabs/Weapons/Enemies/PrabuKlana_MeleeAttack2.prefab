@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000012403162920}
-  - component: {fileID: 114000011754806948}
   - component: {fileID: 114001947569942001}
   - component: {fileID: 114003894239853447}
   - component: {fileID: 114004766162015651}
+  - component: {fileID: 1507084911690109563}
   m_Layer: 0
   m_Name: PrabuKlana_MeleeAttack2
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1000012317101312}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -60.00407, y: -6.8565493, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38,7 +38,7 @@ Transform:
   - {fileID: 3251138307218210665}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114000011754806948
+--- !u!114 &114001947569942001
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,17 +47,64 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000012317101312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a557e2b93323f4831a62221b200348c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b2e67d670e94a5e9f0005b379b69d9f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Combat.MaskboundWeaponDirectInputDebug
+  EnabledForPrototype: 0
+  UseKeyboardE: 1
+  UseMouseLeftButton: 1
+  ForceDamageAreaCollider: 1
+  ForcedColliderDuration: 2
+  DebugLogs: 1
+--- !u!114 &114003894239853447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012317101312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7911076ec26f4f0bb4c93f98203b69b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Input.MaskboundInControlWeaponInput
+  EnabledForPrototype: 0
+  DebugLogs: 1
+  ForceDamageAreaCollider: 1
+  ForcedColliderDuration: 2
+--- !u!114 &114004766162015651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012317101312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed95e25721d84bf9bb20e097597de518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Combat.MaskboundMeleeWeaponStateDebug
+  debugLogs: 1
+--- !u!114 &1507084911690109563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012317101312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b16eacfee1a6a4aa752340f5b8db66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Combat.AnimationEventMeleeWeapon
   TriggerMode: 1
   Interruptable: 0
   InitializeOnStart: 0
   DelayBeforeUse: 0
   DelayBeforeUseReleaseInterruption: 1
-  TimeBetweenUses: 1.2
+  TimeBetweenUses: 4
   TimeBetweenUsesReleaseInterruption: 1
-  CooldownDuration: 0
+  CooldownDuration: 4
   UseBurstMode: 0
   BurstLength: 3
   BurstTimeBetweenShots: 0.1
@@ -84,7 +131,7 @@ MonoBehaviour:
   SetForceWhileInUse: 0
   ForceWhileInUse: {x: 0, y: 0}
   DisableGravityWhileInUse: 0
-  PreventFlipWhileInUse: 0
+  PreventFlipWhileInUse: 1
   Animators: []
   MirrorCharacterAnimatorParameters: 0
   EquippedAnimationParameter: 
@@ -158,8 +205,8 @@ MonoBehaviour:
     RecoilFeedback: {fileID: 0}
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
-  AreaOffset: {x: 0, y: 0.15}
-  AreaSize: {x: 15.86, y: 6.69}
+  AreaOffset: {x: 0, y: 0.7}
+  AreaSize: {x: 29, y: 8}
   ExistingDamageArea: {fileID: 0}
   InitialDelay: 0.25
   ActiveDuration: 0.35
@@ -171,55 +218,12 @@ MonoBehaviour:
   MinDamageCaused: 15
   MaxDamageCaused: 15
   Knockback: 1
-  KnockbackForce: {x: 12, y: 3}
+  KnockbackForce: {x: 30, y: 3}
   InvincibilityDuration: 0.5
---- !u!114 &114001947569942001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000012317101312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b2e67d670e94a5e9f0005b379b69d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Combat.MaskboundWeaponDirectInputDebug
-  EnabledForPrototype: 0
-  UseKeyboardE: 1
-  UseMouseLeftButton: 1
-  ForceDamageAreaCollider: 1
-  ForcedColliderDuration: 2
-  DebugLogs: 1
---- !u!114 &114003894239853447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000012317101312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7911076ec26f4f0bb4c93f98203b69b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Input.MaskboundInControlWeaponInput
-  EnabledForPrototype: 0
-  DebugLogs: 1
-  ForceDamageAreaCollider: 1
-  ForcedColliderDuration: 2
---- !u!114 &114004766162015651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000012317101312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed95e25721d84bf9bb20e097597de518, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Combat.MaskboundMeleeWeaponStateDebug
-  debugLogs: 1
+  useAnimationEventDamageWindow: 1
+  autoCloseAfterOpen: 1
+  damageWindowDuration: 0.2
+  logDamageWindow: 0
 --- !u!1 &1907648966830053811
 GameObject:
   m_ObjectHideFlags: 0
