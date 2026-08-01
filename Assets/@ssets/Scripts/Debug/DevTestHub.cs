@@ -1,6 +1,7 @@
 using System;
 using MaskboundJinosi.Skills;
 using MaskboundJinosi.Soul;
+using MaskboundJinosi.UI;
 using MoreMountains.CorgiEngine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,6 +13,7 @@ namespace MaskboundJinosi.Debugging
 	{
 		[Header("Target (optional)")]
 		[SerializeField] protected Character _player;
+		[SerializeField] protected BossHealthTarget _boss;
 
 		[Header("Test Values")]
 		[Min(0f)] public float DamageAmount = 10f;
@@ -37,6 +39,8 @@ namespace MaskboundJinosi.Debugging
 
 		public Character Player => ResolvePlayer();
 		public Health PlayerHealth => Player != null ? Player.CharacterHealth : null;
+		public BossHealthTarget Boss => ResolveBoss();
+		public Health BossHealth => Boss != null ? Boss.Health : null;
 		public SkillSlotManager SkillSlots => Player != null ? Player.GetComponentInChildren<SkillSlotManager>(true) : null;
 		public string LastAction { get; protected set; } = "Ready";
 		public bool IsSlowMotionActive => Time.timeScale < NormalTimeScale;
@@ -58,6 +62,13 @@ namespace MaskboundJinosi.Debugging
 			_player = null;
 			ResolvePlayer();
 			Report(_player != null ? $"Player found: {_player.name}" : "Player not found", _player != null);
+		}
+
+		public virtual void RefreshBossReference()
+		{
+			_boss = null;
+			ResolveBoss();
+			Report(_boss != null ? $"Boss found: {_boss.DisplayName}" : "Boss not found", _boss != null);
 		}
 
 		public virtual void DamagePlayer()
@@ -94,6 +105,42 @@ namespace MaskboundJinosi.Debugging
 
 			health.Kill();
 			Report("Player killed through Corgi Health");
+		}
+
+		public virtual void DamageBoss()
+		{
+			Health health = BossHealth;
+			if (!Require(health, "Boss Health")) return;
+
+			health.Damage(DamageAmount, gameObject, 0.1f, 0f, Vector3.zero);
+			Report($"Boss damage {DamageAmount:0.##} | HP {health.CurrentHealth:0.##}/{health.MaximumHealth:0.##}");
+		}
+
+		public virtual void HealBoss()
+		{
+			Health health = BossHealth;
+			if (!Require(health, "Boss Health")) return;
+
+			health.SetHealth(Mathf.Min(health.CurrentHealth + HealAmount, health.MaximumHealth), gameObject);
+			Report($"Boss heal {HealAmount:0.##} | HP {health.CurrentHealth:0.##}/{health.MaximumHealth:0.##}");
+		}
+
+		public virtual void HealBossToMaximum()
+		{
+			Health health = BossHealth;
+			if (!Require(health, "Boss Health")) return;
+
+			health.ResetHealthToMaxHealth();
+			Report($"Boss HP restored to {health.CurrentHealth:0.##}");
+		}
+
+		public virtual void KillBoss()
+		{
+			Health health = BossHealth;
+			if (!Require(health, "Boss Health")) return;
+
+			health.Kill();
+			Report("Boss killed through Corgi Health");
 		}
 
 		public virtual void RevivePlayerHere()
@@ -286,6 +333,32 @@ namespace MaskboundJinosi.Debugging
 			}
 
 			return _player;
+		}
+
+		protected virtual BossHealthTarget ResolveBoss()
+		{
+			if (_boss != null && _boss.Health != null) return _boss;
+
+			if (BossHealthTarget.Current != null && BossHealthTarget.Current.Health != null)
+			{
+				_boss = BossHealthTarget.Current;
+				return _boss;
+			}
+
+			BossHealthTarget[] bosses = FindObjectsByType<BossHealthTarget>(
+				FindObjectsInactive.Exclude,
+				FindObjectsSortMode.None);
+
+			foreach (BossHealthTarget boss in bosses)
+			{
+				if (boss != null && boss.Health != null)
+				{
+					_boss = boss;
+					break;
+				}
+			}
+
+			return _boss;
 		}
 
 		protected virtual bool Require(UnityEngine.Object reference, string label)
