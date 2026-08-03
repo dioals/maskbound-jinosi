@@ -182,8 +182,26 @@ namespace MaskboundJinosi.Debugging
 			Health health = PlayerHealth;
 			if (!Require(health, "Health")) return;
 
-			health.Invulnerable = !health.Invulnerable;
-			Report($"Invincibility: {(health.Invulnerable ? "ON" : "OFF")}");
+			SetInvincibility(!health.Invulnerable);
+		}
+
+		public virtual void EnableInvincibility()
+		{
+			SetInvincibility(true);
+		}
+
+		public virtual void DisableInvincibility()
+		{
+			SetInvincibility(false);
+		}
+
+		public virtual void SetInvincibility(bool enabled)
+		{
+			Health health = PlayerHealth;
+			if (!Require(health, "Health")) return;
+
+			health.Invulnerable = enabled;
+			Report($"Invincibility: {(enabled ? "ON" : "OFF")}");
 		}
 
 		public virtual void AddSoul()

@@ -2,6 +2,7 @@ using MoreMountains.Tools;
 using MoreMountains.CorgiEngine;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -47,6 +48,7 @@ namespace MaskboundJinosi.Gameplay.Scene
         [SerializeField] private bool useCorgiLoadingScreen = true;
         [SerializeField] private string loadingSceneName = "LoadingScreen";
         [SerializeField] private GameObject[] hideDuringLoading;
+        [SerializeField] private bool automaticallyHideHudDuringLoading = true;
 
         [Header("Camera Target")]
         [SerializeField] private bool rebindCameraTargetAfterLevelLoad = true;
@@ -59,6 +61,7 @@ namespace MaskboundJinosi.Gameplay.Scene
         private GUIStyle _titleStyle;
         private GUIStyle _buttonStyle;
         private GUIStyle _boxStyle;
+        private readonly List<GameObject> _automaticallyHiddenObjects = new List<GameObject>();
 
         private void Awake()
         {
@@ -333,6 +336,23 @@ namespace MaskboundJinosi.Gameplay.Scene
 
         private void SetLoadingHiddenObjectsActive(bool active)
         {
+            if (active)
+            {
+                RestoreAutomaticallyHiddenObjects();
+                SetConfiguredLoadingObjectsActive(true);
+                return;
+            }
+
+            SetConfiguredLoadingObjectsActive(false);
+
+            if (automaticallyHideHudDuringLoading)
+            {
+                HideHudAutomatically();
+            }
+        }
+
+        private void SetConfiguredLoadingObjectsActive(bool active)
+        {
             if (hideDuringLoading == null)
             {
                 return;
@@ -345,6 +365,41 @@ namespace MaskboundJinosi.Gameplay.Scene
                     target.SetActive(active);
                 }
             }
+        }
+
+        private void HideHudAutomatically()
+        {
+            _automaticallyHiddenObjects.Clear();
+
+            GameObject hud = null;
+            if (GUIManager.HasInstance)
+            {
+                hud = GUIManager.Instance.HUD;
+            }
+
+            if (hud == null)
+            {
+                hud = FindNamedObject("HUD");
+            }
+
+            if (hud != null && hud.activeSelf)
+            {
+                _automaticallyHiddenObjects.Add(hud);
+                hud.SetActive(false);
+            }
+        }
+
+        private void RestoreAutomaticallyHiddenObjects()
+        {
+            foreach (GameObject target in _automaticallyHiddenObjects)
+            {
+                if (target != null)
+                {
+                    target.SetActive(true);
+                }
+            }
+
+            _automaticallyHiddenObjects.Clear();
         }
 
         private IEnumerator RebindCameraTargetWhenPlayerIsReady()

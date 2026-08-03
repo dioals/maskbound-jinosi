@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using InControl;
+using MoreMountains.CorgiEngine;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -16,17 +17,20 @@ namespace MaskboundJinosi.UI
 		[Header("Controller")]
 		public InputControlType SubmitButton = InputControlType.Action1;
 		public InputControlType CancelButton = InputControlType.Action2;
+		public bool UnpauseGameOnSubmit;
 		public bool UseLeftStick = true;
 		public bool UseDPad = true;
 		[Range(0.1f, 1f)] public float StickThreshold = 0.5f;
 
 		[Header("Repeat")]
+		public bool RequireNeutralBeforeNextMove = true;
 		public float InitialRepeatDelay = 0.35f;
 		public float RepeatRate = 0.12f;
 
 		private readonly List<Selectable> _selectables = new List<Selectable>();
 		private float _nextMoveTime;
 		private int _lastMoveDirection;
+		private bool _waitingForNeutral;
 
 		protected virtual void Reset()
 		{
@@ -44,6 +48,11 @@ namespace MaskboundJinosi.UI
 			if (!IsPanelActive())
 			{
 				return;
+			}
+
+			if (EventSystem.current != null)
+			{
+				EventSystem.current.sendNavigationEvents = false;
 			}
 
 			EnsureValidSelection();
@@ -91,6 +100,12 @@ namespace MaskboundJinosi.UI
 			{
 				_lastMoveDirection = 0;
 				_nextMoveTime = 0f;
+				_waitingForNeutral = false;
+				return;
+			}
+
+			if (RequireNeutralBeforeNextMove && _waitingForNeutral)
+			{
 				return;
 			}
 
@@ -101,6 +116,7 @@ namespace MaskboundJinosi.UI
 
 			MoveSelection(direction);
 			_lastMoveDirection = direction;
+			_waitingForNeutral = true;
 			_nextMoveTime = Time.unscaledTime + (_nextMoveTime <= 0f ? InitialRepeatDelay : RepeatRate);
 		}
 
@@ -125,7 +141,7 @@ namespace MaskboundJinosi.UI
 
 		private void HandleSubmit()
 		{
-			InputDevice device = InputManager.ActiveDevice;
+			InputDevice device = InControl.InputManager.ActiveDevice;
 			if (device == null || !device.GetControl(SubmitButton).WasPressed || EventSystem.current == null)
 			{
 				return;
@@ -134,13 +150,18 @@ namespace MaskboundJinosi.UI
 			GameObject selected = EventSystem.current.currentSelectedGameObject;
 			if (selected != null)
 			{
+				if (UnpauseGameOnSubmit)
+				{
+					CorgiEngineEvent.Trigger(CorgiEngineEventTypes.UnPause);
+				}
+
 				ExecuteEvents.Execute(selected, new BaseEventData(EventSystem.current), ExecuteEvents.submitHandler);
 			}
 		}
 
 		private void HandleCancel()
 		{
-			InputDevice device = InputManager.ActiveDevice;
+			InputDevice device = InControl.InputManager.ActiveDevice;
 			if (device == null || !device.GetControl(CancelButton).WasPressed || EventSystem.current == null)
 			{
 				return;
@@ -155,7 +176,7 @@ namespace MaskboundJinosi.UI
 
 		private int GetMoveDirection()
 		{
-			InputDevice device = InputManager.ActiveDevice;
+			InputDevice device = InControl.InputManager.ActiveDevice;
 			if (device == null)
 			{
 				return 0;
