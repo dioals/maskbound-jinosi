@@ -18,12 +18,12 @@ MonoBehaviour:
   RequiresEnergy: 0
   StartupTime: 0.15
   ActiveTime: 0.25
-  RecoveryTime: 0.35
-  HitboxOffset: {x: 1.1, y: 0}
-  HitboxSize: {x: 1.8, y: 1.2}
+  RecoveryTime: 0.62
+  HitboxOffset: {x: 3.5, y: 0}
+  HitboxSize: {x: 5.5, y: 2}
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   MinDamage: 25
   MaxDamage: 25
   KnockbackType: 1

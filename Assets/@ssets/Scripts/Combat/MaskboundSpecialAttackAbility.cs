@@ -18,6 +18,7 @@ namespace MaskboundJinosi.Combat
 		public MaskboundSpecialAttackData SpecialAttackData;
 		public MaskboundSpecialHitbox SpecialHitbox;
 		public SpecialInputSources InputSource = SpecialInputSources.TimeControl;
+		public bool PreventHorizontalMovement = true;
 
 		[Header("Runtime")]
 		[MMReadOnly] public bool IsSpecialAttacking;
@@ -30,6 +31,8 @@ namespace MaskboundJinosi.Combat
 		protected int _specialIndexParameter;
 		protected Coroutine _attackCoroutine;
 		protected float _lastUseTime = -999f;
+		protected CharacterHorizontalMovement _horizontalMovement;
+		protected bool _movementWasForbidden;
 
 		public override string HelpBoxText()
 		{
@@ -41,6 +44,7 @@ namespace MaskboundJinosi.Combat
 			base.Initialization();
 
 			CurrentEnergy = Mathf.Clamp(CurrentEnergy, 0f, MaxEnergy);
+			_horizontalMovement = _character?.FindAbility<CharacterHorizontalMovement>();
 
 			if (SpecialHitbox != null)
 			{
@@ -153,6 +157,7 @@ namespace MaskboundJinosi.Combat
 		protected virtual IEnumerator SpecialAttackSequence()
 		{
 			IsSpecialAttacking = true;
+			LockHorizontalMovement();
 			PlayAbilityStartFeedbacks();
 			TriggerSpecialAnimator();
 
@@ -184,9 +189,33 @@ namespace MaskboundJinosi.Combat
 			}
 
 			IsSpecialAttacking = false;
+			UnlockHorizontalMovement();
 			StopStartFeedbacks();
 			PlayAbilityStopFeedbacks();
 			_attackCoroutine = null;
+		}
+
+		protected virtual void LockHorizontalMovement()
+		{
+			if (!PreventHorizontalMovement || _horizontalMovement == null)
+			{
+				return;
+			}
+
+			_movementWasForbidden = _horizontalMovement.MovementForbidden;
+			_horizontalMovement.SetHorizontalMove(0f);
+			_horizontalMovement.MovementForbidden = true;
+			_controller?.SetHorizontalForce(0f);
+		}
+
+		protected virtual void UnlockHorizontalMovement()
+		{
+			if (!PreventHorizontalMovement || _horizontalMovement == null)
+			{
+				return;
+			}
+
+			_horizontalMovement.MovementForbidden = _movementWasForbidden;
 		}
 
 		protected virtual void TriggerSpecialAnimator()
@@ -222,6 +251,30 @@ namespace MaskboundJinosi.Combat
 			}
 
 			StopSpecialAttack();
+		}
+
+		protected virtual void OnDrawGizmosSelected()
+		{
+			if (SpecialAttackData == null || SpecialHitbox == null)
+			{
+				return;
+			}
+
+			bool facingRight = !Application.isPlaying || _character == null || _character.IsFacingRight;
+			Vector2 offset = SpecialAttackData.HitboxOffset;
+			offset.x = Mathf.Abs(offset.x) * (facingRight ? 1f : -1f);
+
+			Matrix4x4 previousMatrix = Gizmos.matrix;
+			Color previousColor = Gizmos.color;
+			Gizmos.matrix = SpecialHitbox.transform.localToWorldMatrix;
+
+			Gizmos.color = new Color(1f, 0.15f, 0.1f, 0.18f);
+			Gizmos.DrawCube(offset, SpecialAttackData.HitboxSize);
+			Gizmos.color = new Color(1f, 0.25f, 0.1f, 1f);
+			Gizmos.DrawWireCube(offset, SpecialAttackData.HitboxSize);
+
+			Gizmos.matrix = previousMatrix;
+			Gizmos.color = previousColor;
 		}
 	}
 }
