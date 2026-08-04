@@ -12,19 +12,28 @@ namespace MaskboundJinosi.Skills.Effects
 		public bool UseSkillDataProjectile = true;
 		public bool ParentProjectileToOwner;
 		public bool MatchOwnerFacing = true;
+		[Tooltip("Mencegah Animation Event yang terpanggil berulang membuat lebih dari satu projectile.")]
+		public bool SpawnOnlyOnce = true;
 		public bool LogDebug;
 
 		protected SkillRuntimeContext _context;
 		protected bool _hasContext;
+		protected bool _hasSpawned;
 
 		public virtual void Initialize(SkillRuntimeContext context)
 		{
 			_context = context;
 			_hasContext = true;
+			_hasSpawned = false;
 		}
 
 		public virtual void SpawnProjectile()
 		{
+			if (SpawnOnlyOnce && _hasSpawned)
+			{
+				return;
+			}
+
 			GameObject prefab = ResolveProjectilePrefab();
 			if (prefab == null)
 			{
@@ -46,6 +55,7 @@ namespace MaskboundJinosi.Skills.Effects
 			Transform origin = SpawnOrigin != null ? SpawnOrigin : transform;
 			Transform parent = ParentProjectileToOwner ? origin : null;
 			GameObject instance = Instantiate(prefab, origin.position + (Vector3)offset, Quaternion.identity, parent);
+			_hasSpawned = true;
 
 			if (MatchOwnerFacing && !facingRight)
 			{

@@ -1,3 +1,4 @@
+using System.Collections;
 using MaskboundJinosi.Input;
 using MaskboundJinosi.Skills;
 using MoreMountains.CorgiEngine;
@@ -19,6 +20,9 @@ namespace MaskboundJinosi.Combat
         [Tooltip("Stops horizontal movement while the character is blocking.")]
         public bool PreventHorizontalMovement = true;
 
+		[Tooltip("Fallback delay before movement returns after block is released. Match this to the release animation length, or use the animation event method.")]
+		[Min(0f)] public float MovementReleaseDelay = 0.27f;
+
         public bool IsBlocking { get; protected set; }
 
         protected const string BlockingAnimationParameterName = "Blocking";
@@ -26,6 +30,8 @@ namespace MaskboundJinosi.Combat
         protected float _previousAbilityMovementMultiplier = 1f;
         protected MaskboundInControlInputManager _maskboundInputManager;
         protected CharacterSkillCaster _skillCaster;
+		protected Coroutine _movementReleaseCoroutine;
+		protected bool _movementLockedByBlock;
 
         public override string HelpBoxText()
         {
@@ -118,6 +124,7 @@ namespace MaskboundJinosi.Combat
             {
                 _controller.SetHorizontalForce(0f);
             }
+
         }
 
         public virtual void BlockStart()
@@ -141,7 +148,18 @@ namespace MaskboundJinosi.Combat
 
             if (PreventHorizontalMovement && (_characterHorizontalMovement != null))
             {
-                _previousAbilityMovementMultiplier = _characterHorizontalMovement.AbilityMovementSpeedMultiplier;
+				if (_movementReleaseCoroutine != null)
+				{
+					StopCoroutine(_movementReleaseCoroutine);
+					_movementReleaseCoroutine = null;
+				}
+
+				if (!_movementLockedByBlock)
+				{
+					_previousAbilityMovementMultiplier = _characterHorizontalMovement.AbilityMovementSpeedMultiplier;
+					_movementLockedByBlock = true;
+				}
+
                 _characterHorizontalMovement.AbilityMovementSpeedMultiplier = 0f;
                 _controller.SetHorizontalForce(0f);
             }
@@ -166,12 +184,49 @@ namespace MaskboundJinosi.Combat
 
             if (PreventHorizontalMovement && (_characterHorizontalMovement != null))
             {
-                _characterHorizontalMovement.AbilityMovementSpeedMultiplier = _previousAbilityMovementMultiplier;
+				if (MovementReleaseDelay > 0f)
+				{
+					_movementReleaseCoroutine = StartCoroutine(ReleaseMovementAfterDelay());
+				}
+				else
+				{
+					ReleaseBlockMovement();
+				}
             }
 
             StopStartFeedbacks();
             PlayAbilityStopFeedbacks();
         }
+
+		protected virtual IEnumerator ReleaseMovementAfterDelay()
+		{
+			yield return new WaitForSeconds(MovementReleaseDelay);
+			_movementReleaseCoroutine = null;
+			ReleaseBlockMovement();
+		}
+
+		/// <summary>Animation Event target for the final frame of ReleaseBlockPose.</summary>
+		public virtual void ReleaseBlockMovement()
+		{
+			if (_movementReleaseCoroutine != null)
+			{
+				StopCoroutine(_movementReleaseCoroutine);
+				_movementReleaseCoroutine = null;
+			}
+
+			if (_movementLockedByBlock && _characterHorizontalMovement != null)
+			{
+				_characterHorizontalMovement.AbilityMovementSpeedMultiplier = _previousAbilityMovementMultiplier;
+			}
+
+			_movementLockedByBlock = false;
+		}
+
+		protected virtual void StopBlockImmediately()
+		{
+			BlockStop();
+			ReleaseBlockMovement();
+		}
 
         protected override void InitializeAnimatorParameters()
         {
@@ -194,18 +249,18 @@ namespace MaskboundJinosi.Combat
         public override void ResetAbility()
         {
             base.ResetAbility();
-            BlockStop();
+			StopBlockImmediately();
         }
 
         protected override void OnDeath()
         {
-            BlockStop();
+			StopBlockImmediately();
             base.OnDeath();
         }
 
         protected override void OnDisable()
         {
-            BlockStop();
+			StopBlockImmediately();
             base.OnDisable();
         }
     }

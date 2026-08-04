@@ -220,7 +220,14 @@ namespace MaskboundJinosi.Skills
 			_currentSkill = skill;
 			_currentSkillContext = context;
 			_currentSkillFacingRight = facingRight;
-			SpawnSkillPrefab(skill, context, facingRight);
+			if (skill.SkillPrefabSpawnDelay > 0f)
+			{
+				StartCoroutine(SpawnSkillPrefabAfterDelayCo(skill, context, facingRight));
+			}
+			else
+			{
+				SpawnSkillPrefab(skill, context, facingRight);
+			}
 
 			if (skill.CastLockFallbackDuration > 0f)
 			{
@@ -234,6 +241,12 @@ namespace MaskboundJinosi.Skills
 			}
 
 			return true;
+		}
+
+		protected virtual IEnumerator SpawnSkillPrefabAfterDelayCo(ActiveSkillData skill, SkillContext context, bool facingRight)
+		{
+			yield return new WaitForSeconds(skill.SkillPrefabSpawnDelay);
+			SpawnSkillPrefab(skill, context, facingRight);
 		}
 
 		/// <summary>

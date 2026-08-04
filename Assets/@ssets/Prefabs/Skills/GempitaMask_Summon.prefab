@@ -80,10 +80,11 @@ MonoBehaviour:
   SpawnPrefab: {fileID: 778269070720293681, guid: cf642b06cc952484fbf09ff859d33a14,
     type: 3}
   SpawnOrigin: {fileID: 0}
-  SpawnCount: 7
-  DelayBetweenSpawns: 0.2
-  StartOffset: {x: 1, y: 0}
-  StepOffset: {x: 2, y: 0}
+  SpawnCount: 5
+  InitialSpawnDelay: 0
+  DelayBetweenSpawns: 0.07
+  StartOffset: {x: 3, y: 1.9}
+  StepOffset: {x: 3, y: 0}
   MatchOwnerFacing: 1
   ParentSpawnedObjectsToOrigin: 0
   StartOnInitialize: 1

@@ -16,9 +16,9 @@ MonoBehaviour:
   Cooldown: 5
   EnergyCost: 30
   RequiresEnergy: 0
-  StartupTime: 0.15
-  ActiveTime: 0.25
-  RecoveryTime: 0.62
+  StartupTime: 0.45
+  ActiveTime: 0.15
+  RecoveryTime: 0.42
   HitboxOffset: {x: 3.5, y: 0}
   HitboxSize: {x: 5.5, y: 2}
   TargetLayerMask:

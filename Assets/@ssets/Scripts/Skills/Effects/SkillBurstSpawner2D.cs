@@ -11,6 +11,8 @@ namespace MaskboundJinosi.Skills.Effects
 		public GameObject SpawnPrefab;
 		public Transform SpawnOrigin;
 		[Min(1)] public int SpawnCount = 5;
+		[Tooltip("Delay sebelum spawn pertama dimulai. Gunakan ini untuk menyamakan ledakan dengan timing animasi pemanggil skill.")]
+		[Min(0f)] public float InitialSpawnDelay;
 		[Min(0f)] public float DelayBetweenSpawns = 0.2f;
 		public Vector2 StartOffset = new Vector2(1f, 0f);
 		public Vector2 StepOffset = new Vector2(1f, 0f);
@@ -60,6 +62,11 @@ namespace MaskboundJinosi.Skills.Effects
 				}
 
 				yield break;
+			}
+
+			if (InitialSpawnDelay > 0f)
+			{
+				yield return new WaitForSeconds(InitialSpawnDelay);
 			}
 
 			for (int i = 0; i < SpawnCount; i++)

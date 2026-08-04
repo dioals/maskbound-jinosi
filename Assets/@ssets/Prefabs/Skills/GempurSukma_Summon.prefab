@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 8684103218280274220}
   - component: {fileID: 1887454893336389020}
   - component: {fileID: 4379428026794219672}
+  - component: {fileID: 6348129074512389001}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -92,8 +93,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.6999999, y: 1.6999999, z: 1.6999999}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7645678421886490170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -142,16 +143,16 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -1628607475
-  m_SortingLayer: 2
+  m_SortingLayerID: 940224915
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 991095e4be9496d4084a0e9611bf7c5d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3f321937b24941c4aad9db4225904691, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.91, y: 5.91}
+  m_Size: {x: 17.72, y: 5.91}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -178,3 +179,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6348129074512389001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8770661134070267509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac412493ac5d1f340bf4b18bf0197b30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.Effects.SkillProjectileSpawner
+  ProjectilePrefab: {fileID: 778269070720293681, guid: c1e51d4f8f2b4c3488a601238daba101,
+    type: 3}
+  SpawnOrigin: {fileID: 0}
+  SpawnOffset: {x: 1, y: 0}
+  UseSkillDataProjectile: 1
+  ParentProjectileToOwner: 0
+  MatchOwnerFacing: 1
+  SpawnOnlyOnce: 1
+  LogDebug: 0

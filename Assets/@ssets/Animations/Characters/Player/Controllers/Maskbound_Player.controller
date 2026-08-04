@@ -2648,7 +2648,7 @@ AnimatorStateMachine:
     m_Position: {x: 130, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -155387692047016382}
-    m_Position: {x: 410, y: 300, z: 0}
+    m_Position: {x: 400, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3608160685890649695}
     m_Position: {x: 400, y: 180, z: 0}
@@ -2941,7 +2941,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TakeBlockPose
+  m_Name: GempurSukma
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -2955,7 +2955,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 273f183e88f520147ad79ee8aa109db5, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8891976d5d70bcd439ef3caf5c554d50, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

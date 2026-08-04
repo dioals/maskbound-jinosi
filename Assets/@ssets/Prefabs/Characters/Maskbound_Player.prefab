@@ -31,6 +31,10 @@ GameObject:
   - component: {fileID: 982193212850257250}
   - component: {fileID: 8687896121662674696}
   - component: {fileID: 8248193746512337601}
+  - component: {fileID: 7319465284102756301}
+  - component: {fileID: 6246770626308875162}
+  - component: {fileID: -8011868815701257972}
+  - component: {fileID: 2948024076433436526}
   m_Layer: 9
   m_Name: Maskbound_Player
   m_TagString: Player
@@ -690,6 +694,7 @@ MonoBehaviour:
   BlockingResistance: {fileID: 2592257906837555446}
   GroundedOnly: 1
   PreventHorizontalMovement: 1
+  MovementReleaseDelay: 0.3
 --- !u!114 &8687896121662674696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,6 +730,67 @@ MonoBehaviour:
   speedMultiplierParameterName: LocomotionSpeedMultiplier
   minimumSpeedMultiplier: 0.3
   maximumSpeedMultiplier: 3
+--- !u!114 &7319465284102756301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e0a65161e24f649e98b8508d19c0e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Combat.SingleAirAttackLimiter
+  LimitAirAttacks: 1
+  MaximumAirAttacks: 2
+--- !u!114 &6246770626308875162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14b285538811a40489a3b436766925c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Gameplay.PlayerDeathKnockback
+  horizontalForce: 12
+  verticalForce: 12
+  horizontalForceDuration: 0.5
+--- !u!114 &-8011868815701257972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74bd04ba64637104ea60a157ec619bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Combat.FaceDamageDirectionOnHit
+  health: {fileID: 114000011356687900}
+  character: {fileID: 11485350}
+  faceTowardsDamageSource: 1
+  holdFacingDuration: 0.05
+--- !u!114 &2948024076433436526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c95cc4c34c8a124dae0318430eb1996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Gameplay.CharacterFacingVisualOffset
+  character: {fileID: 11485350}
+  visualTarget: {fileID: 2320345801386116752}
+  rightFacingOffset: {x: 0, y: 0, z: 0}
+  leftFacingOffset: {x: 0.75, y: 0, z: 0}
 --- !u!1 &910000100000001
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,7 +842,6 @@ MonoBehaviour:
   - EquippedSkill: {fileID: 11400000, guid: 77f16bc18170e9c488d86e3d4354fcc5, type: 2}
   - EquippedSkill: {fileID: 11400000, guid: 2bbfff7c4fad5bc44b664db148f84590, type: 2}
   - EquippedSkill: {fileID: 11400000, guid: f2046b58fc47340419f6e258b4bfaccd, type: 2}
-  - EquippedSkill: {fileID: 11400000, guid: 1c7a771bbfb75f94c9937de60856859b, type: 2}
   _initialSlotCount: 1
 --- !u!114 &910000100000003
 MonoBehaviour:
@@ -1891,7 +1956,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.09, y: 4.72}
+  m_Size: {x: 5.91, y: 5.91}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0

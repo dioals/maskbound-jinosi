@@ -20,13 +20,14 @@ MonoBehaviour:
   Damage: 50
   Duration: 5
   CastLockFallbackDuration: 3
-  Cooldown: 2
+  Cooldown: 1
   SkillIndex: 3
   CastTriggerParameter: SkillCast
   SkillIndexParameter: SkillIndex
   IsCastingParameter: IsCastingSkill
   SkillPrefab: {fileID: 778269070720293681, guid: 13b1ccaf95268b941b7ea0f8e0b22412,
     type: 3}
+  SkillPrefabSpawnDelay: 0.5
   SpawnOffset: {x: 3, y: 1.2}
   ParentToOwner: 1
   MatchOwnerFacing: 1

@@ -92,8 +92,8 @@ Transform:
   m_GameObject: {fileID: 8770661134070267509}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.98, z: 0}
+  m_LocalScale: {x: 1.7630947, y: 1.7630947, z: 1.7630947}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7645678421886490170}
@@ -198,4 +198,5 @@ MonoBehaviour:
   UseSkillDataProjectile: 1
   ParentProjectileToOwner: 0
   MatchOwnerFacing: 1
+  SpawnOnlyOnce: 0
   LogDebug: 0

@@ -17,17 +17,22 @@ MonoBehaviour:
   Description: Active Skill menghasilkan bomb mask secara beruntun
   Icon: {fileID: 0}
   SkillType: 1
-  Damage: 50
+  Damage: 100
   Duration: 5
   CastLockFallbackDuration: 0.5
-  Cooldown: 4
+  Cooldown: 15
   SkillIndex: 2
   CastTriggerParameter: SkillCast
   SkillIndexParameter: SkillIndex
   IsCastingParameter: IsCastingSkill
   SkillPrefab: {fileID: 778269070720293681, guid: 8bc53edbe1b607b4e80d1a10b1ea4e2d,
     type: 3}
-  SpawnOffset: {x: 6, y: 1.2}
-  SpawnOnAnimationEvent: 1
+  SkillPrefabSpawnDelay: 0
+  SpawnOffset: {x: 9, y: 0.2}
   ParentToOwner: 0
   MatchOwnerFacing: 1
+  ProjectilePrefab: {fileID: 778269070720293681, guid: c1e51d4f8f2b4c3488a601238daba101,
+    type: 3}
+  ProjectileSpawnOffset: {x: 0, y: 0}
+  ProjectileParentToOwner: 0
+  ProjectileMatchOwnerFacing: 1

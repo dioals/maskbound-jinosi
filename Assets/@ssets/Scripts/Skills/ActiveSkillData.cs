@@ -18,6 +18,8 @@ namespace MaskboundJinosi.Skills
 
 		[Header("Spawn")]
 		public GameObject SkillPrefab;
+		[Tooltip("Delay setelah animasi cast dimulai sebelum SkillPrefab dibuat. Atur per skill agar efek muncul tepat pada frame animasi yang diinginkan.")]
+		[Min(0f)] public float SkillPrefabSpawnDelay;
 		public Vector2 SpawnOffset = new Vector2(1f, 0f);
 		public bool ParentToOwner;
 		public bool MatchOwnerFacing = true;
