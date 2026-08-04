@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 2327228472936335062}
   - component: {fileID: 5859102408681469668}
   - component: {fileID: 2995035584039756921}
+  - component: {fileID: 57371823367200294}
   m_Layer: 13
   m_Name: AIDecision
   m_TagString: Untagged
@@ -367,8 +368,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: MoreMountains.CorgiEngine::MoreMountains.CorgiEngine.AIDecisionHealth
   Label: Health < 71%
+  ValueMode: 1
   TrueIfHealthIs: 1
   HealthValue: 71
+  HealthPercentage: 71
   OnlyOnce: 0
 --- !u!114 &5859102408681469668
 MonoBehaviour:
@@ -402,6 +405,24 @@ MonoBehaviour:
   Label: After Rain Hammer
   AfterTimeMin: 8
   AfterTimeMax: 8
+--- !u!114 &57371823367200294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598868147655907467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80e986d14b3dfc428c2cde1ed3f41b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MoreMountains.CorgiEngine::MoreMountains.CorgiEngine.AIDecisionHealth
+  Label: Die
+  ValueMode: 0
+  TrueIfHealthIs: 2
+  HealthValue: 0
+  HealthPercentage: 50
+  OnlyOnce: 0
 --- !u!1 &2926269828800973588
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3524662888615722976}
   - component: {fileID: 694955567305975876}
+  - component: {fileID: 910000000000000201}
   m_Layer: 0
   m_Name: SkillPointGroup
   m_TagString: Untagged
@@ -459,6 +481,19 @@ MonoBehaviour:
   - {fileID: 7813442648799132210}
   - {fileID: 2292945620476484604}
   autoCollectChildren: 1
+--- !u!114 &910000000000000201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2926269828800973588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40bfc644ad184f3391943382bb2378c5, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.AI.BossSkillPointGroupFacingMirror
+  defaultFacingLeft: 1
 --- !u!1 &3160373013191631676
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,6 +547,7 @@ GameObject:
   - component: {fileID: 3395390673641171047}
   - component: {fileID: 8043974374708528736}
   - component: {fileID: 6240564032085676939}
+  - component: {fileID: 4680164696205663604}
   m_Layer: 13
   m_Name: PrabuKlana
   m_TagString: Untagged
@@ -774,8 +810,8 @@ MonoBehaviour:
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
-  InitialHealth: 100
-  MaximumHealth: 100
+  InitialHealth: 1000
+  MaximumHealth: 1000
   Invulnerable: 0
   ImmuneToDamage: 0
   DamageFeedbacks: {fileID: 4304032282592703142}
@@ -1103,6 +1139,9 @@ MonoBehaviour:
       - Decision: {fileID: 1804280047633173650}
         TrueState: Attack2
         FalseState: 
+      - Decision: {fileID: 57371823367200294}
+        TrueState: Die
+        FalseState: 
   - StateName: CheckDistance
     Actions:
       array: []
@@ -1116,6 +1155,9 @@ MonoBehaviour:
         FalseState: 
       - Decision: {fileID: 1405247718316443772}
         TrueState: Chase
+        FalseState: 
+      - Decision: {fileID: 57371823367200294}
+        TrueState: Die
         FalseState: 
   - StateName: Rest
     Actions:
@@ -1174,6 +1216,9 @@ MonoBehaviour:
       - Decision: {fileID: 5859102408681469668}
         TrueState: RainHammerAttack
         FalseState: 
+      - Decision: {fileID: 57371823367200294}
+        TrueState: Die
+        FalseState: 
   - StateName: AfterRainHammerAttack
     Actions:
       array: []
@@ -1182,6 +1227,11 @@ MonoBehaviour:
       - Decision: {fileID: 1804280047633173650}
         TrueState: Attack2
         FalseState: PrepareRainHammerAttack
+  - StateName: Die
+    Actions:
+      array: []
+    Transitions:
+      array: []
   TimeInThisState: 0
   Target: {fileID: 0}
   _lastKnownTargetPosition: {x: 0, y: 0, z: 0}
@@ -1276,6 +1326,22 @@ MonoBehaviour:
   health: {fileID: 4682139684029810595}
   unregisterOnDeath: 1
   logRegistration: 0
+--- !u!114 &4680164696205663604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3254722359449906798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7727ae05344edb84fa5b36a4b933ee94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.AI.BossDeathBrainState
+  health: {fileID: 4682139684029810595}
+  brain: {fileID: 6377390025179805658}
+  deathStateName: Die
+  logTransition: 0
 --- !u!1 &3371805620551668301
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,3 +2175,5 @@ MonoBehaviour:
   pointIndex: 0
   stopDistance: 0.2
   faceMoveDirection: 1
+  facePlayerWhenReached: 1
+  playerTarget: {fileID: 0}

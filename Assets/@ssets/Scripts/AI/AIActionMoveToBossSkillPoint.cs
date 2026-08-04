@@ -12,6 +12,9 @@ namespace MaskboundJinosi.AI
         [SerializeField] private int pointIndex;
         [SerializeField, Min(0.01f)] private float stopDistance = 0.2f;
         [SerializeField] private bool faceMoveDirection = true;
+        [SerializeField] private bool facePlayerWhenReached = true;
+        [Tooltip("Optional. Jika kosong, player utama akan diambil dari LevelManager.")]
+        [SerializeField] private Transform playerTarget;
 
         private Character _character;
         private CharacterHorizontalMovement _horizontalMovement;
@@ -101,6 +104,10 @@ namespace MaskboundJinosi.AI
             if (Mathf.Abs(deltaX) <= stopDistance)
             {
                 _horizontalMovement.SetHorizontalMove(0f);
+                if (facePlayerWhenReached)
+                {
+                    FacePlayer();
+                }
                 return;
             }
 
@@ -120,6 +127,48 @@ namespace MaskboundJinosi.AI
             return BossSkillSpawnPointGroup.TryGet(groupId, out BossSkillSpawnPointGroup group)
                 ? group.GetPoint(pointIndex)
                 : null;
+        }
+
+        private void FacePlayer()
+        {
+            if (_character == null)
+            {
+                return;
+            }
+
+            Transform target = ResolvePlayerTarget();
+            if (target == null)
+            {
+                return;
+            }
+
+            float deltaX = target.position.x - transform.position.x;
+            if (Mathf.Abs(deltaX) <= Mathf.Epsilon)
+            {
+                return;
+            }
+
+            _character.Face(deltaX > 0f
+                ? Character.FacingDirections.Right
+                : Character.FacingDirections.Left);
+        }
+
+        private Transform ResolvePlayerTarget()
+        {
+            if (playerTarget != null)
+            {
+                return playerTarget;
+            }
+
+            if (!LevelManager.HasInstance ||
+                LevelManager.Instance.Players == null ||
+                LevelManager.Instance.Players.Count == 0 ||
+                LevelManager.Instance.Players[0] == null)
+            {
+                return null;
+            }
+
+            return LevelManager.Instance.Players[0].transform;
         }
 
         private bool IsDead()
