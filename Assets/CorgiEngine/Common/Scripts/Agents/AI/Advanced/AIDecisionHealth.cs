@@ -14,12 +14,20 @@ namespace MoreMountains.CorgiEngine
 	{
 		/// the different comparison modes
 		public enum ComparisonModes { StrictlyLowerThan, LowerThan, Equals, GreatherThan, StrictlyGreaterThan }
+		/// whether the threshold is expressed as raw health or as a percentage of maximum health
+		public enum HealthValueModes { Absolute, Percentage }
+
+		[Tooltip("Choose whether to compare against a raw health value or a percentage of MaximumHealth.")]
+		public HealthValueModes ValueMode = HealthValueModes.Absolute;
 		/// the comparison mode with which we'll evaluate the HealthValue
 		[Tooltip("the comparison mode with which we'll evaluate the HealthValue")]
 		public ComparisonModes TrueIfHealthIs;
 		/// the Health value to compare to
 		[Tooltip("the Health value to compare to")]
 		public int HealthValue;
+		/// the percentage of MaximumHealth to compare to
+		[Tooltip("Percentage of MaximumHealth to compare to when Value Mode is Percentage.")]
+		[Range(0f, 100f)] public float HealthPercentage = 50f;
 		/// whether we want this comparison to be done only once or not
 		[Tooltip("whether we want this comparison to be done only once or not")]
 		public bool OnlyOnce = true;
@@ -68,29 +76,33 @@ namespace MoreMountains.CorgiEngine
 				return false;
 			}
             
+			float comparisonValue = ValueMode == HealthValueModes.Percentage
+				? _health.MaximumHealth * (HealthPercentage / 100f)
+				: HealthValue;
+
 			if (TrueIfHealthIs == ComparisonModes.StrictlyLowerThan)
 			{
-				returnValue = (_health.CurrentHealth < HealthValue);
+				returnValue = (_health.CurrentHealth < comparisonValue);
 			}
 
 			if (TrueIfHealthIs == ComparisonModes.LowerThan)
 			{
-				returnValue = (_health.CurrentHealth <= HealthValue);
+				returnValue = (_health.CurrentHealth <= comparisonValue);
 			}
 
 			if (TrueIfHealthIs == ComparisonModes.Equals)
 			{
-				returnValue = (_health.CurrentHealth == HealthValue);
+				returnValue = Mathf.Approximately(_health.CurrentHealth, comparisonValue);
 			}
 
 			if (TrueIfHealthIs == ComparisonModes.GreatherThan)
 			{
-				returnValue = (_health.CurrentHealth >= HealthValue);
+				returnValue = (_health.CurrentHealth >= comparisonValue);
 			}
 
 			if (TrueIfHealthIs == ComparisonModes.StrictlyGreaterThan)
 			{
-				returnValue = (_health.CurrentHealth > HealthValue);
+				returnValue = (_health.CurrentHealth > comparisonValue);
 			}
 
 			if (returnValue)
