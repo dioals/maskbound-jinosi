@@ -1,4 +1,5 @@
 using InControl;
+using MaskboundJinosi.Combat;
 using MoreMountains.CorgiEngine;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ namespace MaskboundJinosi.Input
 		protected MaskboundWeaponActions _actions;
 		protected float _forcedColliderUntil;
 		protected Collider2D _damageAreaCollider;
+		protected SingleAirAttackLimiter _airAttackLimiter;
 
 		protected virtual void Awake()
 		{
@@ -35,7 +37,9 @@ namespace MaskboundJinosi.Input
 				return;
 			}
 
-			if (_actions.Attack.WasPressed)
+			ResolveAirAttackLimiter();
+
+			if (_actions.Attack.WasPressed && CanStartAttack())
 			{
 				if (DebugLogs)
 				{
@@ -66,6 +70,31 @@ namespace MaskboundJinosi.Input
 				{
 					Debug.Log($"InControl forced DamageArea collider OFF: {_damageAreaCollider.name}", _damageAreaCollider);
 				}
+			}
+		}
+
+		protected virtual bool CanStartAttack()
+		{
+			return _airAttackLimiter == null || _airAttackLimiter.TryConsumeAirAttack();
+		}
+
+		protected virtual void ResolveAirAttackLimiter()
+		{
+			if (_airAttackLimiter != null)
+			{
+				return;
+			}
+
+			Character character = GetComponentInParent<Character>();
+			if (character == null || character.CharacterType != Character.CharacterTypes.Player)
+			{
+				return;
+			}
+
+			_airAttackLimiter = character.GetComponent<SingleAirAttackLimiter>();
+			if (_airAttackLimiter == null)
+			{
+				_airAttackLimiter = character.gameObject.AddComponent<SingleAirAttackLimiter>();
 			}
 		}
 

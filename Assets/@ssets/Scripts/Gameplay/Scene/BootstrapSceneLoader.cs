@@ -55,6 +55,9 @@ namespace MaskboundJinosi.Gameplay.Scene
         [SerializeField] private int cameraRebindRetries = 20;
         [SerializeField] private float cameraRebindRetryDelay = 0.1f;
 
+        [Header("Demo Challenge")]
+        [SerializeField] private DemoBossChallengeTimer demoBossChallengeTimer;
+
         public string FirstLevelName => firstLevelName;
 
         private bool _sceneMenuVisible;
@@ -76,6 +79,11 @@ namespace MaskboundJinosi.Gameplay.Scene
             }
 
             _instance = this;
+
+            if (demoBossChallengeTimer == null)
+            {
+                demoBossChallengeTimer = GetComponentInParent<DemoBossChallengeTimer>();
+            }
 
             if (keepRootAlive)
             {
@@ -254,6 +262,11 @@ namespace MaskboundJinosi.Gameplay.Scene
         {
             if (scene.name == bootstrapSceneName)
             {
+                if (demoBossChallengeTimer != null)
+                {
+                    demoBossChallengeTimer.ResetTimer();
+                }
+
                 if (showSceneMenuOnStart)
                 {
                     ShowSceneMenu();
@@ -264,13 +277,17 @@ namespace MaskboundJinosi.Gameplay.Scene
 
             RebindPersistentGUI();
 
-            if (!rebindCameraTargetAfterLevelLoad || scene.name == loadingSceneName)
+            if (scene.name == loadingSceneName)
             {
                 return;
             }
 
             SetLoadingHiddenObjectsActive(true);
-            StartCoroutine(RebindCameraTargetWhenPlayerIsReady());
+            StartCoroutine(StartDemoChallengeWhenPlayerIsReady());
+            if (rebindCameraTargetAfterLevelLoad)
+            {
+                StartCoroutine(RebindCameraTargetWhenPlayerIsReady());
+            }
         }
 
         private void RebindPersistentGUI()
@@ -413,6 +430,35 @@ namespace MaskboundJinosi.Gameplay.Scene
                     MMCameraEvent.Trigger(MMCameraEventTypes.SetTargetCharacter, player);
                     MMCameraEvent.Trigger(MMCameraEventTypes.StartFollowing);
                     DirectlyBindCorgiCameras(player);
+                    yield break;
+                }
+
+                if (cameraRebindRetryDelay > 0f)
+                {
+                    yield return new WaitForSeconds(cameraRebindRetryDelay);
+                }
+            }
+        }
+
+        private IEnumerator StartDemoChallengeWhenPlayerIsReady()
+        {
+            if (demoBossChallengeTimer == null)
+            {
+                yield break;
+            }
+
+            if (demoBossChallengeTimer.IsRunning || demoBossChallengeTimer.BossDefeated)
+            {
+                yield break;
+            }
+
+            for (int i = 0; i < cameraRebindRetries; i++)
+            {
+                yield return null;
+
+                if (TryGetMainPlayer(out _))
+                {
+                    demoBossChallengeTimer.StartTimer();
                     yield break;
                 }
 

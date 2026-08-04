@@ -102,7 +102,7 @@ namespace MaskboundJinosi.Debugging.Editor
 			CreateAction(player, "KillPlayer", "Kill Player", hub.KillPlayer);
 			CreateAction(player, "RevivePlayer", "Revive Here", hub.RevivePlayerHere);
 			CreateAction(player, "RespawnCheckpoint", "Respawn Checkpoint", hub.RespawnAtCheckpoint);
-			CreateToggle(player, "Invincibility", "Invincibility", hub.EnableInvincibility, hub.DisableInvincibility);
+			CreateToggle(player, "GodMode", "God Mode", hub.EnableGodMode, hub.DisableGodMode);
 			CreateBackButton(player, controller);
 
 			CreateAction(boss, "RefreshBoss", "Refresh Boss Reference", hub.RefreshBossReference);

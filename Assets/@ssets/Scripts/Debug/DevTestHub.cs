@@ -44,8 +44,11 @@ namespace MaskboundJinosi.Debugging
 		public SkillSlotManager SkillSlots => Player != null ? Player.GetComponentInChildren<SkillSlotManager>(true) : null;
 		public string LastAction { get; protected set; } = "Ready";
 		public bool IsSlowMotionActive => Time.timeScale < NormalTimeScale;
+		public bool GodModeEnabled { get; protected set; }
 
 		protected float _defaultFixedDeltaTime;
+		protected Health _godModeHealth;
+		protected float _godModeLockedHealth;
 
 		protected virtual void Awake()
 		{
@@ -185,6 +188,14 @@ namespace MaskboundJinosi.Debugging
 			SetInvincibility(!health.Invulnerable);
 		}
 
+		protected virtual void Update()
+		{
+			if (GodModeEnabled)
+			{
+				ApplyGodModeToCurrentPlayer();
+			}
+		}
+
 		public virtual void EnableInvincibility()
 		{
 			SetInvincibility(true);
@@ -202,6 +213,73 @@ namespace MaskboundJinosi.Debugging
 
 			health.Invulnerable = enabled;
 			Report($"Invincibility: {(enabled ? "ON" : "OFF")}");
+		}
+
+		public virtual void ToggleGodMode()
+		{
+			if (GodModeEnabled) DisableGodMode();
+			else EnableGodMode();
+		}
+
+		public virtual void EnableGodMode()
+		{
+			GodModeEnabled = true;
+			ApplyGodModeToCurrentPlayer();
+			Report(_godModeHealth != null ? "God Mode: ON" : "God Mode: ON (waiting for player)");
+		}
+
+		public virtual void DisableGodMode()
+		{
+			GodModeEnabled = false;
+			RestoreGodModeHealth();
+			Report("God Mode: OFF");
+		}
+
+		protected virtual void ApplyGodModeToCurrentPlayer()
+		{
+			Health health = PlayerHealth;
+			if (health == null)
+			{
+				return;
+			}
+
+			if (_godModeHealth != health)
+			{
+				RestoreGodModeHealth();
+				_godModeHealth = health;
+				_godModeLockedHealth = health.CurrentHealth;
+				health.OnHit += RestoreGodModeHealthAfterHit;
+			}
+
+			// Healing remains valid while God Mode is active, damage does not.
+			if (health.CurrentHealth > _godModeLockedHealth)
+			{
+				_godModeLockedHealth = health.CurrentHealth;
+			}
+			else if (health.CurrentHealth < _godModeLockedHealth)
+			{
+				health.SetHealth(_godModeLockedHealth, gameObject);
+			}
+		}
+
+		protected virtual void RestoreGodModeHealthAfterHit()
+		{
+			if (!GodModeEnabled || _godModeHealth == null)
+			{
+				return;
+			}
+
+			_godModeHealth.SetHealth(_godModeLockedHealth, gameObject);
+		}
+
+		protected virtual void RestoreGodModeHealth()
+		{
+			if (_godModeHealth != null)
+			{
+				_godModeHealth.OnHit -= RestoreGodModeHealthAfterHit;
+			}
+
+			_godModeHealth = null;
 		}
 
 		public virtual void AddSoul()
@@ -414,6 +492,9 @@ namespace MaskboundJinosi.Debugging
 
 		protected virtual void OnDestroy()
 		{
+			GodModeEnabled = false;
+			RestoreGodModeHealth();
+
 			if (!ResetTimeScaleOnDestroy) return;
 
 			Time.timeScale = NormalTimeScale;
