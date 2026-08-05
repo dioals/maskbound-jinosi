@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using MaskboundJinosi.Combat;
+using MaskboundJinosi.Skills.Passives;
 using MoreMountains.CorgiEngine;
 using UnityEngine;
 
@@ -53,6 +54,7 @@ namespace MaskboundJinosi.Skills
 		protected CharacterBlock _characterBlock;
 		protected List<CharacterHandleWeapon> _handleWeaponList;
 		protected CharacterHorizontalMovement _horizontalMovement;
+		protected PlayerPassiveSkillController _passiveSkillController;
 		protected ActiveSkillData _currentSkill;
 		protected SkillContext _currentSkillContext;
 		protected bool _currentSkillFacingRight;
@@ -60,6 +62,11 @@ namespace MaskboundJinosi.Skills
 		protected virtual void Awake()
 		{
 			_character = GetComponentInParent<Character>();
+			_passiveSkillController = GetComponentInParent<PlayerPassiveSkillController>();
+			if (_passiveSkillController == null && _character != null)
+			{
+				_passiveSkillController = _character.GetComponentInChildren<PlayerPassiveSkillController>(true);
+			}
 
 			if (SkillSlots == null)
 			{
@@ -217,7 +224,10 @@ namespace MaskboundJinosi.Skills
 				return 0f;
 			}
 
-			return Mathf.Max(0f, skill.Cooldown - (Time.time - lastCastTime));
+			float cooldown = _passiveSkillController != null
+				? _passiveSkillController.ModifySkillCooldown(skill.Cooldown)
+				: skill.Cooldown;
+			return Mathf.Max(0f, cooldown - (Time.time - lastCastTime));
 		}
 
 		public virtual bool Cast(ActiveSkillData skill, SkillContext context)

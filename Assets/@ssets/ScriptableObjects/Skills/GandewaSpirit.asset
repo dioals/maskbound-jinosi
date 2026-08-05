@@ -15,7 +15,7 @@ MonoBehaviour:
   SkillId: gandewa_spirit
   DisplayName: Gandewa Spirit
   Description: Summon Archer spirit selama beberapa detik
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 62b4f00d941c7ae4fa2194d8be207aff, type: 3}
   SkillType: 1
   Damage: 60
   Duration: 5

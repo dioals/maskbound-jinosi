@@ -30,7 +30,7 @@ namespace MaskboundJinosi.UI
         [SerializeField] private Color readyColor = Color.white;
         [SerializeField] private Color cooldownColor = new Color(0.45f, 0.45f, 0.45f, 1f);
 
-        private ActiveSkillData _displayedSkill;
+        private Skill _displayedSkill;
 
         private void Awake()
         {
@@ -70,10 +70,10 @@ namespace MaskboundJinosi.UI
 
         private void RefreshIcon()
         {
-            ActiveSkillData skill = null;
+            Skill skill = null;
             if (skillCaster != null && skillCaster.SkillSlots != null)
             {
-                skill = skillCaster.SkillSlots.GetSkill(slotIndex) as ActiveSkillData;
+                skill = skillCaster.SkillSlots.GetSkill(slotIndex);
             }
 
             if (_displayedSkill == skill)
@@ -107,13 +107,14 @@ namespace MaskboundJinosi.UI
             float remaining = 0f;
             float duration = 0f;
 
-            if (skillCaster != null && _displayedSkill != null)
+            ActiveSkillData activeSkill = _displayedSkill as ActiveSkillData;
+            if (skillCaster != null && activeSkill != null)
             {
-                float skillRemaining = skillCaster.GetCooldownRemaining(_displayedSkill);
+                float skillRemaining = skillCaster.GetCooldownRemaining(activeSkill);
                 float globalRemaining = skillCaster.GetGlobalCooldownRemaining();
                 remaining = Mathf.Max(skillRemaining, globalRemaining);
                 duration = skillRemaining >= globalRemaining
-                    ? _displayedSkill.Cooldown
+                    ? activeSkill.Cooldown
                     : skillCaster.GlobalCooldown;
             }
 

@@ -464,6 +464,23 @@ namespace MoreMountains.CorgiEngine
 				return;
 			}
 
+			if (instigator != null)
+			{
+				IOutgoingDamageModifier outgoingDamageModifier =
+					instigator.GetComponentInParent<IOutgoingDamageModifier>();
+				if (outgoingDamageModifier == null)
+				{
+					Character instigatorCharacter = instigator.GetComponentInParent<Character>();
+					outgoingDamageModifier = instigatorCharacter != null
+						? instigatorCharacter.GetComponentInChildren<IOutgoingDamageModifier>(true)
+						: null;
+				}
+				if (outgoingDamageModifier != null)
+				{
+					damage = outgoingDamageModifier.ModifyOutgoingDamage(this, damage);
+				}
+			}
+
 			damage = ComputeDamageOutput(damage, typedDamages, true);
 			
 			// we process any condition state change

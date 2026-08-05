@@ -1,4 +1,5 @@
 using MoreMountains.CorgiEngine;
+using MaskboundJinosi.Skills.Passives;
 using UnityEngine;
 
 namespace MaskboundJinosi.Skills
@@ -22,7 +23,11 @@ namespace MaskboundJinosi.Skills
 			Health = context.Health;
 			SlotIndex = context.SlotIndex;
 			FacingRight = facingRight;
-			Damage = skill != null ? skill.Damage : 0f;
+			float baseDamage = skill != null ? skill.Damage : 0f;
+			PlayerPassiveSkillController passiveController = Owner != null
+				? Owner.GetComponentInParent<PlayerPassiveSkillController>()
+				: null;
+			Damage = passiveController != null ? passiveController.ModifySkillDamage(baseDamage) : baseDamage;
 			Duration = skill != null ? skill.Duration : 0f;
 		}
 	}

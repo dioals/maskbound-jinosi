@@ -313,7 +313,7 @@ MonoBehaviour:
     m_Bits: 256
   impactTrigger: Impact
   freezeOnImpact: 1
-  disableColliderOnImpact: 1
+  disableColliderOnImpact: 0
   enableDamageOnImpact: 1
   damageActiveDuration: 0.6
   destroyAfterImpact: 1
