@@ -19,6 +19,10 @@ namespace MaskboundJinosi.Skills
 		public int SecondarySkillSlotIndex = 1;
 		public int SelectedSkillSlotIndex;
 
+		[Header("Cooldown")]
+		[Tooltip("Cooldown singkat yang mengunci semua active skill setelah satu skill digunakan.")]
+		[Min(0f)] public float GlobalCooldown = 0.4f;
+
 		[Header("Runtime")]
 		public bool LogDebug;
 
@@ -44,6 +48,7 @@ namespace MaskboundJinosi.Skills
 
 		protected bool _isCasting;
 		protected readonly Dictionary<ActiveSkillData, float> _lastCastTimes = new Dictionary<ActiveSkillData, float>();
+		protected float _lastGlobalCastTime = float.NegativeInfinity;
 		protected Character _character;
 		protected CharacterBlock _characterBlock;
 		protected List<CharacterHandleWeapon> _handleWeaponList;
@@ -187,7 +192,17 @@ namespace MaskboundJinosi.Skills
 				return false;
 			}
 
-			return GetCooldownRemaining(skill) <= 0f;
+			return GetCooldownRemaining(skill) <= 0f && GetGlobalCooldownRemaining() <= 0f;
+		}
+
+		public virtual float GetGlobalCooldownRemaining()
+		{
+			return Mathf.Max(0f, GlobalCooldown - (Time.time - _lastGlobalCastTime));
+		}
+
+		public virtual float GetEffectiveCooldownRemaining(ActiveSkillData skill)
+		{
+			return Mathf.Max(GetCooldownRemaining(skill), GetGlobalCooldownRemaining());
 		}
 
 		public virtual float GetCooldownRemaining(ActiveSkillData skill)
@@ -216,6 +231,7 @@ namespace MaskboundJinosi.Skills
 
 			bool facingRight = ResolveFacingRight();
 			_lastCastTimes[skill] = Time.time;
+			_lastGlobalCastTime = Time.time;
 			UpdateAnimator(skill);
 			_currentSkill = skill;
 			_currentSkillContext = context;

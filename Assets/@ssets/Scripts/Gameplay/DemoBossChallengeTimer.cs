@@ -26,8 +26,8 @@ namespace MaskboundJinosi.Gameplay
 
         [Header("UI (Optional)")]
         [SerializeField] private TMP_Text timerText;
-        [Tooltip("Tampilkan sisa waktu menuju batas reward. Jika mati, tampilkan waktu yang sudah berlalu.")]
-        [SerializeField] private bool displayCountdown = true;
+        [Tooltip("Jika aktif, tampilkan sisa waktu reward. Biarkan nonaktif untuk stopwatch waktu penaklukan boss.")]
+        [SerializeField] private bool displayCountdown;
         [SerializeField] private string timerFormat = "{0:00}:{1:00}";
 
         [Header("Events")]

@@ -861,6 +861,7 @@ MonoBehaviour:
   PrimarySkillSlotIndex: 0
   SecondarySkillSlotIndex: 1
   SelectedSkillSlotIndex: 0
+  GlobalCooldown: 0.4
   LogDebug: 0
 --- !u!114 &910000100000004
 MonoBehaviour:

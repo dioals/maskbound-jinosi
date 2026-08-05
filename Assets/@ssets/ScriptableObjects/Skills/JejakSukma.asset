@@ -15,7 +15,7 @@ MonoBehaviour:
   SkillId: gempita_mask
   DisplayName: Gempita Mask
   Description: Active Skill menghasilkan bomb mask secara beruntun
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 0733c6772a2207541b400faf37216bea, type: 3}
   SkillType: 1
   Damage: 50
   Duration: 5
@@ -27,6 +27,7 @@ MonoBehaviour:
   IsCastingParameter: IsCastingSkill
   SkillPrefab: {fileID: 778269070720293681, guid: 2664e2f536a6d434a82bb320f04b2c1b,
     type: 3}
+  SkillPrefabSpawnDelay: 0
   SpawnOffset: {x: 0, y: 0}
   ParentToOwner: 1
   MatchOwnerFacing: 1
