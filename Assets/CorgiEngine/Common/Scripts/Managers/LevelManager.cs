@@ -644,6 +644,10 @@ namespace MoreMountains.CorgiEngine
 							StartCoroutine(LoadGameOverSceneCo());
 							return;
 						}
+
+						// Game over may be handled by an overlay listener instead of a dedicated scene.
+						// Don't fall through to SoloModeRestart once all lives are gone.
+						return;
 					}
 				}
 
