@@ -1196,7 +1196,7 @@ MonoBehaviour:
     - rid: 606514039506600012
       type: {class: MMF_AnimatorPlayState, ns: MoreMountains.Feedbacks, asm: MoreMountains.Tools}
       data:
-        Active: 1
+        Active: 0
         UniqueID: -360527675
         Label: Animator Play State
         OriginalLabel: Animator Play State

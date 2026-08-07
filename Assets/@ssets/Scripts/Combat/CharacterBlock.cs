@@ -26,7 +26,9 @@ namespace MaskboundJinosi.Combat
         public bool IsBlocking { get; protected set; }
 
         protected const string BlockingAnimationParameterName = "Blocking";
+        protected const string BlockStartAnimationParameterName = "BlockStart";
         protected int _blockingAnimationParameter;
+        protected int _blockStartAnimationParameter;
         protected float _previousAbilityMovementMultiplier = 1f;
         protected MaskboundInControlInputManager _maskboundInputManager;
         protected CharacterSkillCaster _skillCaster;
@@ -111,8 +113,7 @@ namespace MaskboundJinosi.Combat
             }
 
             if (!AbilityAuthorized ||
-                (_condition.CurrentState != CharacterStates.CharacterConditions.Normal) ||
-                (GroundedOnly && !_controller.State.IsGrounded) ||
+                ShouldInterruptActiveBlock() ||
                 ((_skillCaster != null) && _skillCaster.IsCasting) ||
                 IsAttacking())
             {
@@ -125,6 +126,20 @@ namespace MaskboundJinosi.Combat
                 _controller.SetHorizontalForce(0f);
             }
 
+        }
+
+        /// <summary>
+        /// Damage and knockback may temporarily put the character in ControlledMovement
+        /// or lift it off the ground. Those states must not release a held block.
+        /// GroundedOnly is intentionally checked by BlockStart only.
+        /// </summary>
+        protected virtual bool ShouldInterruptActiveBlock()
+        {
+            CharacterStates.CharacterConditions condition = _condition.CurrentState;
+            return condition == CharacterStates.CharacterConditions.Dead ||
+                   condition == CharacterStates.CharacterConditions.Stunned ||
+                   condition == CharacterStates.CharacterConditions.Frozen ||
+                   condition == CharacterStates.CharacterConditions.Paused;
         }
 
         public virtual void BlockStart()
@@ -145,6 +160,11 @@ namespace MaskboundJinosi.Combat
             IsBlocking = true;
             _character.IsBlocking = true;
             BlockingResistance.gameObject.SetActive(true);
+            MMAnimatorExtensions.UpdateAnimatorTrigger(
+                _animator,
+                _blockStartAnimationParameter,
+                _character._animatorParameters,
+                _character.PerformAnimatorSanityChecks);
 
             if (PreventHorizontalMovement && (_characterHorizontalMovement != null))
             {
@@ -234,6 +254,10 @@ namespace MaskboundJinosi.Combat
                 BlockingAnimationParameterName,
                 AnimatorControllerParameterType.Bool,
                 out _blockingAnimationParameter);
+            RegisterAnimatorParameter(
+                BlockStartAnimationParameterName,
+                AnimatorControllerParameterType.Trigger,
+                out _blockStartAnimationParameter);
         }
 
         public override void UpdateAnimator()
