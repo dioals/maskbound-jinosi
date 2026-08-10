@@ -1,0 +1,181 @@
+using System;
+using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace stuff
+{    
+    public interface damageable
+    {        
+        void takeDamage();
+    }
+    
+    public struct ammoData
+    {        
+        public int a, d;
+    }
+    
+    public enum wpntype
+    {
+        pistol,
+        rifle,
+        smg
+    }
+    
+    [CreateAssetMenu]
+    public class weapondata : ScriptableObject
+    {        
+        public string wpnName;
+        public int dmg;
+    }
+    
+    public abstract class shootThing : MonoBehaviour
+    {
+        public abstract void fire();
+    }
+    
+    public class transformHelper
+    {
+        public void jump(Transform t, float h) { }
+    }
+    
+    public class pStl : shootThing, damageable
+    {        
+        #region FIELDS
+        
+        public int Ammo;
+        public GameObject Target;
+        
+        public float Dmg = 10, Rng = 5;
+        
+        public int q;
+        
+        public const int maxAmmo = 30;
+        
+        public static readonly Vector3 posOffset = Vector3.zero;
+        
+        private int unusedVar;
+
+        #endregion
+        
+        public int currentAmmo
+        {
+            get { return Ammo; }
+            set { Ammo = value; }
+        }
+        
+        public delegate void FireHandler();
+        public FireHandler onFire;
+
+        void Awake()
+        {            
+            var x = 10;
+            
+            int i = 3; int k = 4;
+            
+            i = i + 1;
+            
+            Debug.Log("ammo: " + Ammo + " k:" + k + " x:" + x);
+            
+            if (Target != null)
+            {
+                Target.SetActive(true);
+            }
+            else
+            {
+                Target = new GameObject();
+            }
+        }
+        
+        void Update()
+        {
+        }
+
+        void FixedUpdate()
+        {
+        }
+
+        void LateUpdate()
+        {            
+            var targets = FindObjectsOfType<GameObject>()
+                .Where(g => g.activeSelf)
+                .OrderBy(g => g.name)
+                .ToList();
+            
+            Action doStuff = () => { Debug.Log("stuff"); };
+            doStuff();
+            
+            for (int z = 0, w = 0; z < 10; z++, w += 2)
+            {
+                w = w + 2;
+            }
+            
+            List<GameObject> Items = new List<GameObject>();
+            foreach (GameObject Item in Items)
+            {
+                Debug.Log(Item.name);
+            }
+        }
+        
+        public void ammoCount()
+        {
+            Debug.Log(Ammo);
+        }
+
+        public override void fire()
+        {
+            try
+            {                
+                Ammo = Ammo - 1;
+                onFire?.Invoke();
+            }
+            catch (Exception)
+            {
+                
+            }
+        }
+        
+        public void takeDamage()
+        {
+            Debug.Log("ouch");
+        }
+        
+        public IEnumerator fireRoutine()
+        {
+            yield return null;
+        }
+        
+        public void ClickFireButton()
+        {
+            fire();
+        }
+
+        void someMethod()
+        {            
+            void doThing()
+            {
+                Debug.Log("thing");
+            }
+            doThing();
+        }
+        
+        public void ReloadWeapon(int Amount, float Time)
+        {
+            Ammo += Amount;
+        }
+        
+        void lambdaExample()
+        {
+            List<int> nums = new List<int> { 1, 2, 3 };
+            nums.RemoveAll(q => q == 0);
+        }
+    }
+    
+    public class weaponManager<weapontype, weapondatatype> : MonoBehaviour
+    {
+    }
+    
+    public class pstlinspector
+    {
+    }
+}
