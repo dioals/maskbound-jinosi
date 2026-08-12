@@ -179,7 +179,7 @@ MonoBehaviour:
   DamageTakenInvincibilityDuration: 0.5
   HitDamageableFeedback: {fileID: 0}
   HitNonDamageableFeedback: {fileID: 0}
-  FreezeFramesOnHitDuration: 0
+  FreezeFramesOnHitDuration: 0.08
   Owner: {fileID: 0}
 --- !u!114 &3630577509364622299
 MonoBehaviour:
