@@ -1,4 +1,5 @@
 using System.Collections;
+using MaskboundJinosi.Skills;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace MaskboundJinosi.Combat
 		public MaskboundSpecialHitbox SpecialHitbox;
 		public SpecialInputSources InputSource = SpecialInputSources.TimeControl;
 		public bool PreventHorizontalMovement = true;
+		public SkillCooldownFeedback CooldownFeedback;
 
 		[Header("Runtime")]
 		[MMReadOnly] public bool IsSpecialAttacking;
@@ -45,6 +47,11 @@ namespace MaskboundJinosi.Combat
 
 			CurrentEnergy = Mathf.Clamp(CurrentEnergy, 0f, MaxEnergy);
 			_horizontalMovement = _character?.FindAbility<CharacterHorizontalMovement>();
+
+			if (CooldownFeedback == null && _character != null)
+			{
+				CooldownFeedback = _character.GetComponentInChildren<SkillCooldownFeedback>(true);
+			}
 
 			if (SpecialHitbox != null)
 			{
@@ -111,6 +118,11 @@ namespace MaskboundJinosi.Combat
 		{
 			if (!CanStartSpecialAttack())
 			{
+				if ((SpecialAttackData != null) && !IsSpecialAttacking && (CooldownRemaining > 0f))
+				{
+					CooldownFeedback?.Show();
+				}
+
 				return false;
 			}
 
@@ -119,7 +131,6 @@ namespace MaskboundJinosi.Combat
 				CurrentEnergy -= SpecialAttackData.EnergyCost;
 			}
 
-			_lastUseTime = Time.time;
 			_attackCoroutine = StartCoroutine(SpecialAttackSequence());
 			return true;
 		}
@@ -193,6 +204,7 @@ namespace MaskboundJinosi.Combat
 			StopStartFeedbacks();
 			PlayAbilityStopFeedbacks();
 			_attackCoroutine = null;
+			_lastUseTime = Time.time;
 		}
 
 		protected virtual void LockHorizontalMovement()

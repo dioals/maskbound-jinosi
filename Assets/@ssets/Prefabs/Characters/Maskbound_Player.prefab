@@ -624,6 +624,7 @@ MonoBehaviour:
   SpecialHitbox: {fileID: 3810531314743122295}
   InputSource: 1
   PreventHorizontalMovement: 1
+  CooldownFeedback: {fileID: 910000100000009}
   IsSpecialAttacking: 0
   CooldownRemaining: 0
   CurrentEnergy: 100
@@ -804,6 +805,7 @@ GameObject:
   - component: {fileID: 910000100000003}
   - component: {fileID: 910000100000004}
   - component: {fileID: 910000100000008}
+  - component: {fileID: 910000100000009}
   m_Layer: 9
   m_Name: SkillSystem
   m_TagString: Untagged
@@ -859,6 +861,7 @@ MonoBehaviour:
   SkillSlots: {fileID: 2673102684246584702}
   CharacterAnimator: {fileID: 7798527774007179782}
   SpawnOrigin: {fileID: 910000100000006}
+  CooldownFeedback: {fileID: 910000100000009}
   PrimarySkillSlotIndex: 0
   SecondarySkillSlotIndex: 1
   SelectedSkillSlotIndex: 0
@@ -891,8 +894,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e3b00a7dcab4f2b86c4dfdd0143bc3a, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.Passives.PlayerPassiveSkillController
+--- !u!114 &910000100000009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910000100000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9abe8e9da1374d88ab849770012bcda0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.SkillCooldownFeedback
+  TextPrefab: {fileID: 11400002, guid: 676e5eb6bca2403aaaced445958a8425, type: 3}
+  SpawnOrigin: {fileID: 0}
+  SpawnOffset: {x: 0, y: 2.3}
 --- !u!1 &910000100000005
 GameObject:
   m_ObjectHideFlags: 0
