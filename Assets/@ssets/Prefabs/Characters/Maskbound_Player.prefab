@@ -387,9 +387,9 @@ MonoBehaviour:
   CanJumpDownOneWayPlatforms: 1
   FixedAerialJumpCount: 0
   JumpIsProportionalToThePressTime: 1
-  JumpMinimumAirTime: 0.2
+  JumpMinimumAirTime: 0.05
   JumpReleaseForceFactor: 2
-  CoyoteTime: 0
+  CoyoteTime: 0.08
   InputBufferDuration: 0.2
   OneWayPlatformsJumpCollisionOffDuration: 0.2
   MovingOneWayPlatformsJumpCollisionOffDuration: 0.2
