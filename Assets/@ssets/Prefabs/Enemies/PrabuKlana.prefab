@@ -674,6 +674,8 @@ GameObject:
   - component: {fileID: 8043974374708528736}
   - component: {fileID: 6240564032085676939}
   - component: {fileID: 4680164696205663604}
+  - component: {fileID: 910000000000000601}
+  - component: {fileID: 910000000000000602}
   m_Layer: 13
   m_Name: PrabuKlana
   m_TagString: Untagged
@@ -1469,6 +1471,40 @@ MonoBehaviour:
   brain: {fileID: 6377390025179805658}
   deathStateName: Die
   logTransition: 0
+--- !u!114 &910000000000000601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3254722359449906798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1f59c53ee2b943be20c8f49d4f6e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MoreMountains.CorgiEngine::MoreMountains.CorgiEngine.CharacterStun
+  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStopFeedbacks: {fileID: 0}
+  AbilityPermitted: 1
+  BlockingMovementStates: 
+  BlockingConditionStates: 
+  BlockingWeaponStates: 
+  StunButton: 0
+  ExitStunButton: 0
+--- !u!114 &910000000000000602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3254722359449906798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9304b29e5484c8dafe6bf104ca52271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.AI.BossStunReceiver
+  characterStun: {fileID: 910000000000000601}
+  brain: {fileID: 6377390025179805658}
 --- !u!1 &3371805620551668301
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,6 +2120,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.AI.AnimationEventBossSkillPointSpawner
   groupId: prabu_klana_skill
   prefab: {fileID: 4797858593716115447, guid: c32fef68366ebc34389a0234d3bfb7e5, type: 3}
+  specialPrefab: {fileID: 4797858593716115447, guid: 59a22e9be4101f84fb684dadb13a0d4f,
+    type: 3}
+  specialPointIndices: 01000000
+  minimumAttackBeforeSpecial: 2
+  maximumAttackBeforeSpecial: 3
   spawnMode: 0
   pointIndex: 0
   matchPointRotation: 1

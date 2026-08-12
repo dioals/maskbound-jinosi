@@ -14,9 +14,21 @@ namespace MaskboundJinosi.AI
 
         [SerializeField] private string groupId = "prabu_klana_skill";
         [SerializeField] private GameObject prefab;
+        [Header("Weakness Variant")]
+        [SerializeField] private GameObject specialPrefab;
+        [Tooltip("Index spawn point yang berubah menjadi Hammer Bomb saat gilirannya tiba.")]
+        [SerializeField] private int[] specialPointIndices = { 1 };
+        [Tooltip("Bomb paling cepat muncul pada serangan Hammer Rain ke berapa.")]
+        [SerializeField, Min(1)] private int minimumAttackBeforeSpecial = 2;
+        [Tooltip("Bomb paling lambat muncul pada serangan Hammer Rain ke berapa.")]
+        [SerializeField, Min(1)] private int maximumAttackBeforeSpecial = 3;
         [SerializeField] private SpawnMode spawnMode = SpawnMode.AllPoints;
         [SerializeField] private int pointIndex;
         [SerializeField] private bool matchPointRotation = true;
+
+        private int _attackCount;
+        private int _specialAttackNumber;
+        private bool _spawnSpecialThisSequence;
 
         public void SpawnConfigured()
         {
@@ -50,18 +62,64 @@ namespace MaskboundJinosi.AI
                 return;
             }
 
-            SpawnAt(group.GetPoint(index));
+            if (index == 0 || _specialAttackNumber <= 0)
+            {
+                PrepareSpecialSequence();
+            }
+
+            GameObject selectedPrefab = _spawnSpecialThisSequence && IsSpecialPoint(index)
+                ? specialPrefab
+                : prefab;
+            SpawnAt(group.GetPoint(index), selectedPrefab);
+        }
+
+        private void PrepareSpecialSequence()
+        {
+            if (_specialAttackNumber <= 0)
+            {
+                ChooseNextSpecialAttack();
+            }
+
+            _attackCount++;
+            _spawnSpecialThisSequence = specialPrefab != null && _attackCount >= _specialAttackNumber;
+            if (_spawnSpecialThisSequence)
+            {
+                _attackCount = 0;
+                ChooseNextSpecialAttack();
+            }
+        }
+
+        private void ChooseNextSpecialAttack()
+        {
+            int min = Mathf.Max(1, minimumAttackBeforeSpecial);
+            int max = Mathf.Max(min, maximumAttackBeforeSpecial);
+            _specialAttackNumber = Random.Range(min, max + 1);
+        }
+
+        private bool IsSpecialPoint(int index)
+        {
+            if (specialPointIndices == null) { return false; }
+            for (int i = 0; i < specialPointIndices.Length; i++)
+            {
+                if (specialPointIndices[i] == index) { return true; }
+            }
+            return false;
         }
 
         private void SpawnAt(Transform point)
         {
-            if (point == null)
+            SpawnAt(point, prefab);
+        }
+
+        private void SpawnAt(Transform point, GameObject selectedPrefab)
+        {
+            if (point == null || selectedPrefab == null)
             {
                 return;
             }
 
             Quaternion rotation = matchPointRotation ? point.rotation : Quaternion.identity;
-            Instantiate(prefab, point.position, rotation);
+            Instantiate(selectedPrefab, point.position, rotation);
         }
     }
 }
