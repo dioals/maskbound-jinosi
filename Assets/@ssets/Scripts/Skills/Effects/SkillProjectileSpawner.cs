@@ -17,6 +17,8 @@ namespace MaskboundJinosi.Skills.Effects
 		public bool PrefabFacesRight = true;
 		[Tooltip("Mencegah Animation Event yang terpanggil berulang membuat lebih dari satu projectile.")]
 		public bool SpawnOnlyOnce = true;
+		[Tooltip("ID yang dipakai Animation Event. Kosong berarti event SpawnProjectile lama tetap diterima.")]
+		public string SpawnId;
 		public bool LogDebug;
 
 		protected SkillRuntimeContext _context;
@@ -38,6 +40,22 @@ namespace MaskboundJinosi.Skills.Effects
 
 		public virtual void SpawnProjectile()
 		{
+			SpawnProjectileInternal(string.Empty);
+		}
+
+		// Gunakan Animation Event dengan parameter string, misalnya: SpawnProjectileWithId("LaserBeam").
+		public virtual void SpawnProjectileWithId(string requestedSpawnId)
+		{
+			SpawnProjectileInternal(requestedSpawnId);
+		}
+
+		protected virtual void SpawnProjectileInternal(string requestedSpawnId)
+		{
+			if (!string.IsNullOrEmpty(SpawnId) && !string.Equals(SpawnId, requestedSpawnId, System.StringComparison.Ordinal))
+			{
+				return;
+			}
+
 			if (SpawnOnlyOnce && _hasSpawned)
 			{
 				return;
