@@ -47,9 +47,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000012317101312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a557e2b93323f4831a62221b200348c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Script: {fileID: 11500000, guid: 5c098bad5aee439783d79aae9ceea079, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
   TriggerMode: 0
   Interruptable: 0
   InitializeOnStart: 0
@@ -173,6 +173,7 @@ MonoBehaviour:
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
+  hitstopDuration: 0.05
 --- !u!114 &114001947569942001
 MonoBehaviour:
   m_ObjectHideFlags: 0

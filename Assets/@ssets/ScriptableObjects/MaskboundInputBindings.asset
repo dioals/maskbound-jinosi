@@ -93,8 +93,8 @@ MonoBehaviour:
   Interact:
     Label: Interact
     KeyboardKeys: 29000000
-    MouseButtons: 
-    ControllerButtons: 13000000
+    MouseButtons:
+    ControllerButtons: 0b000000
   Reload:
     Label: Reload
     KeyboardKeys: 35000000

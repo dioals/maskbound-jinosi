@@ -14,6 +14,7 @@ namespace MaskboundJinosi.Skills
 		public SkillSlotManager SkillSlots;
 		public Animator CharacterAnimator;
 		public Transform SpawnOrigin;
+		public SkillCooldownFeedback CooldownFeedback;
 
 		[Header("Input Slots")]
 		public int PrimarySkillSlotIndex;
@@ -81,6 +82,11 @@ namespace MaskboundJinosi.Skills
 			if (SpawnOrigin == null)
 			{
 				SpawnOrigin = transform;
+			}
+
+			if (CooldownFeedback == null)
+			{
+				CooldownFeedback = GetComponentInChildren<SkillCooldownFeedback>(true);
 			}
 
 			if (_character != null)
@@ -174,7 +180,31 @@ namespace MaskboundJinosi.Skills
 
 		public virtual bool ActivateSkillSlot(int slotIndex)
 		{
-			return SkillSlots != null && SkillSlots.ActivateSkillInSlot(slotIndex);
+			if (SkillSlots == null)
+			{
+				return false;
+			}
+
+			bool activated = SkillSlots.ActivateSkillInSlot(slotIndex);
+			if (!activated)
+			{
+				ShowCooldownFeedbackIfOnCooldown(SkillSlots.GetSkill(slotIndex) as ActiveSkillData);
+			}
+
+			return activated;
+		}
+
+		protected virtual void ShowCooldownFeedbackIfOnCooldown(ActiveSkillData skill)
+		{
+			if (skill == null || CooldownFeedback == null)
+			{
+				return;
+			}
+
+			if (GetEffectiveCooldownRemaining(skill) > 0f)
+			{
+				CooldownFeedback.Show();
+			}
 		}
 
 		public virtual bool CanCast(ActiveSkillData skill)

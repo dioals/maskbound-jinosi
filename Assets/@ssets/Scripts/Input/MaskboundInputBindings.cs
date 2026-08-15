@@ -114,7 +114,7 @@ namespace MaskboundJinosi.Input
         public ButtonBinding Roll = new ButtonBinding { Label = "Roll", KeyboardKeys = new[] { Key.LeftAlt }, ControllerButtons = new[] { InputControlType.Action4 } };
         public ButtonBinding Attack = new ButtonBinding { Label = "Attack", KeyboardKeys = new[] { Key.E }, ControllerButtons = new[] { InputControlType.Action3, InputControlType.RightTrigger } };
         public ButtonBinding SpecialAttack = new ButtonBinding { Label = "Special Attack", MouseButtons = new[] { Mouse.RightButton }, ControllerButtons = new[] { InputControlType.Action4 } };
-        public ButtonBinding Interact = new ButtonBinding { Label = "Interact", KeyboardKeys = new[] { Key.F }, ControllerButtons = new[] { InputControlType.Action1 } };
+        public ButtonBinding Interact = new ButtonBinding { Label = "Interact", KeyboardKeys = new[] { Key.F }, ControllerButtons = new[] { InputControlType.DPadUp } };
         public ButtonBinding Reload = new ButtonBinding { Label = "Reload", KeyboardKeys = new[] { Key.R }, ControllerButtons = new[] { InputControlType.Action4 } };
         public ButtonBinding Pause = new ButtonBinding { Label = "Pause", KeyboardKeys = new[] { Key.Escape }, ControllerButtons = new[] { InputControlType.Start, InputControlType.Menu, InputControlType.Command } };
         public ButtonBinding SwitchWeapon = new ButtonBinding { Label = "Switch Weapon", KeyboardKeys = new[] { Key.Tab }, ControllerButtons = new[] { InputControlType.RightBumper } };

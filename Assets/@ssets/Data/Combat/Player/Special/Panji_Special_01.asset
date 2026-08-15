@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Panji_Special_01
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Combat.MaskboundSpecialAttackData
   DisplayName: Panji Spirit Burst
-  Cooldown: 5
+  Cooldown: 0
   EnergyCost: 30
   RequiresEnergy: 0
   StartupTime: 0.45

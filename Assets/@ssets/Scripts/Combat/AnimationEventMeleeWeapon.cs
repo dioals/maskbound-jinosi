@@ -13,7 +13,17 @@ namespace MaskboundJinosi.Combat
         [SerializeField, Min(0.01f)] private float damageWindowDuration = 0.2f;
         [SerializeField] private bool logDamageWindow;
 
+        [Header("Hitstop")]
+        [Tooltip("How long (in real seconds) to freeze the game when this attack lands a hit. 0 disables hitstop for this attack.")]
+        [SerializeField, Min(0f)] private float hitstopDuration = 0.06f;
+
         private Coroutine _autoCloseCoroutine;
+
+        public override void WeaponHitDamageable()
+        {
+            base.WeaponHitDamageable();
+            HitstopTrigger.Trigger(hitstopDuration);
+        }
 
         public bool DamageWindowOpen =>
             _damageAreaCollider != null && _damageAreaCollider.enabled;
