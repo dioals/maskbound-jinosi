@@ -108,7 +108,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.2780654, y: 2.108731}
+  m_Size: {x: 0.6, y: 2.108731}
   m_EdgeRadius: 0
 --- !u!50 &5049808
 Rigidbody2D:
@@ -894,7 +894,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e3b00a7dcab4f2b86c4dfdd0143bc3a, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.Passives.PlayerPassiveSkillController
 --- !u!114 &910000100000009
 MonoBehaviour:
@@ -906,7 +906,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9abe8e9da1374d88ab849770012bcda0, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.SkillCooldownFeedback
   TextPrefab: {fileID: 11400002, guid: 676e5eb6bca2403aaaced445958a8425, type: 3}
   SpawnOrigin: {fileID: 0}
@@ -2817,8 +2817,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58788854fc0b0f45a35f66a32a8132e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Gameplay.LandingMovementLock
-  horizontalMovement: {fileID: 11455042}
-  autoUnlockDelay: 0.35
 --- !u!1 &6888385314004376200
 GameObject:
   m_ObjectHideFlags: 0
