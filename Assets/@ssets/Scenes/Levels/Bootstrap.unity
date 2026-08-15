@@ -2070,6 +2070,7 @@ GameObject:
   - component: {fileID: 910000000000000101}
   - component: {fileID: 910000000000000105}
   - component: {fileID: 910000000000000106}
+  - component: {fileID: 910000000000000107}
   m_Layer: 0
   m_Name: BootstrapRoot
   m_TagString: Untagged
@@ -14715,6 +14716,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398737029}
   m_CullTransparentMesh: 1
+--- !u!1001 &1409269215
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 119040, guid: 67eea5027ac23404ab90943a917c7c11, type: 3}
+      propertyPath: m_Name
+      value: Maskbound_Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 119040, guid: 67eea5027ac23404ab90943a917c7c11, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425048, guid: 67eea5027ac23404ab90943a917c7c11, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -37.2911
+      objectReference: {fileID: 0}
+    - target: {fileID: 425048, guid: 67eea5027ac23404ab90943a917c7c11, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.50219
+      objectReference: {fileID: 0}
+    - target: {fileID: 425048, guid: 67eea5027ac23404ab90943a917c7c11, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425048, guid: 67eea5027ac23404ab90943a917c7c11, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 425048, guid: 67eea5027ac23404ab90943a917c7c11, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425048, guid: 67eea5027ac23404ab90943a917c7c11, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425048, guid: 67eea5027ac23404ab90943a917c7c11, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425048, guid: 67eea5027ac23404ab90943a917c7c11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425048, guid: 67eea5027ac23404ab90943a917c7c11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425048, guid: 67eea5027ac23404ab90943a917c7c11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 67eea5027ac23404ab90943a917c7c11, type: 3}
 --- !u!1 &1442085767
 GameObject:
   m_ObjectHideFlags: 0
@@ -24673,6 +24735,21 @@ MonoBehaviour:
   resetChallengeTimer: 1
   gameFlowManager: {fileID: 215762478}
   challengeTimer: {fileID: 910000000000000101}
+--- !u!114 &910000000000000107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215762475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2d9a4e1b3f4c6a8d0e2f5b7c9a1d3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Combat.DamageNumberManager
+  TextPrefab: {fileID: 11400002, guid: b1e4a7c2f9d84e6ab3c5d7e9f1a2b4c6, type: 3}
+  SpawnOffset: {x: 0, y: 1}
+  IgnorePlayerDamage: 1
 --- !u!224 &1384056667549512708
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25143,3 +25220,4 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 215762476}
+  - {fileID: 1409269215}
