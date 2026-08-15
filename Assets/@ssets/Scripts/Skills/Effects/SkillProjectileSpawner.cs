@@ -1,4 +1,5 @@
 using MaskboundJinosi.Skills;
+using MoreMountains.CorgiEngine;
 using UnityEngine;
 
 namespace MaskboundJinosi.Skills.Effects
@@ -12,13 +13,23 @@ namespace MaskboundJinosi.Skills.Effects
 		public bool UseSkillDataProjectile = true;
 		public bool ParentProjectileToOwner;
 		public bool MatchOwnerFacing = true;
+		[Tooltip("Aktifkan jika visual/collider prefab mengarah ke kanan pada scale X positif. Matikan jika prefab default mengarah ke kiri.")]
+		public bool PrefabFacesRight = true;
 		[Tooltip("Mencegah Animation Event yang terpanggil berulang membuat lebih dari satu projectile.")]
 		public bool SpawnOnlyOnce = true;
+		[Tooltip("ID yang dipakai Animation Event. Kosong berarti event SpawnProjectile lama tetap diterima.")]
+		public string SpawnId;
 		public bool LogDebug;
 
 		protected SkillRuntimeContext _context;
 		protected bool _hasContext;
 		protected bool _hasSpawned;
+		protected Character _ownerCharacter;
+
+		protected virtual void Awake()
+		{
+			_ownerCharacter = GetComponentInParent<Character>();
+		}
 
 		public virtual void Initialize(SkillRuntimeContext context)
 		{
@@ -29,6 +40,22 @@ namespace MaskboundJinosi.Skills.Effects
 
 		public virtual void SpawnProjectile()
 		{
+			SpawnProjectileInternal(string.Empty);
+		}
+
+		// Gunakan Animation Event dengan parameter string, misalnya: SpawnProjectileWithId("LaserBeam").
+		public virtual void SpawnProjectileWithId(string requestedSpawnId)
+		{
+			SpawnProjectileInternal(requestedSpawnId);
+		}
+
+		protected virtual void SpawnProjectileInternal(string requestedSpawnId)
+		{
+			if (!string.IsNullOrEmpty(SpawnId) && !string.Equals(SpawnId, requestedSpawnId, System.StringComparison.Ordinal))
+			{
+				return;
+			}
+
 			if (SpawnOnlyOnce && _hasSpawned)
 			{
 				return;
@@ -45,7 +72,7 @@ namespace MaskboundJinosi.Skills.Effects
 				return;
 			}
 
-			bool facingRight = !_hasContext || _context.FacingRight;
+			bool facingRight = ResolveFacingRight();
 			Vector2 offset = SpawnOffset;
 			if (MatchOwnerFacing)
 			{
@@ -57,10 +84,10 @@ namespace MaskboundJinosi.Skills.Effects
 			GameObject instance = Instantiate(prefab, origin.position + (Vector3)offset, Quaternion.identity, parent);
 			_hasSpawned = true;
 
-			if (MatchOwnerFacing && !facingRight)
+			if (MatchOwnerFacing && facingRight != PrefabFacesRight)
 			{
 				Vector3 scale = instance.transform.localScale;
-				scale.x = -Mathf.Abs(scale.x);
+				scale.x *= -1f;
 				instance.transform.localScale = scale;
 			}
 
@@ -72,6 +99,21 @@ namespace MaskboundJinosi.Skills.Effects
 					receivers[i].Initialize(_context);
 				}
 			}
+		}
+
+		protected virtual bool ResolveFacingRight()
+		{
+			if (_hasContext)
+			{
+				return _context.FacingRight;
+			}
+
+			if (_ownerCharacter == null)
+			{
+				_ownerCharacter = GetComponentInParent<Character>();
+			}
+
+			return _ownerCharacter == null || _ownerCharacter.IsFacingRight;
 		}
 
 		protected virtual GameObject ResolveProjectilePrefab()
