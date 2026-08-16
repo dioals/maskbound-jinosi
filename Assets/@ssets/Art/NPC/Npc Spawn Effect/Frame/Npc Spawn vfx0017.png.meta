@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: d72fa9a1addf21c498161fd7d2b584e0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1367478062179894010
+    second: Npc Spawn vfx0017_0
+  - first:
+      213: -2487423359498267199
+    second: Npc Spawn vfx0017_1
+  - first:
+      213: 6095810646272956894
+    second: Npc Spawn vfx0017_2
+  - first:
+      213: -8540357058753027018
+    second: Npc Spawn vfx0017_3
+  - first:
+      213: 6118244371570006182
+    second: Npc Spawn vfx0017_4
+  - first:
+      213: -1833559289500054383
+    second: Npc Spawn vfx0017_5
+  - first:
+      213: -4363701502660576125
+    second: Npc Spawn vfx0017_6
+  - first:
+      213: 1983764580410220410
+    second: Npc Spawn vfx0017_7
+  - first:
+      213: -2557574562167282046
+    second: Npc Spawn vfx0017_8
+  - first:
+      213: 8504404018193763453
+    second: Npc Spawn vfx0017_9
+  - first:
+      213: 1171830994535854112
+    second: Npc Spawn vfx0017_10
+  - first:
+      213: 6535985630162101249
+    second: Npc Spawn vfx0017_11
+  - first:
+      213: -1990292870903065707
+    second: Npc Spawn vfx0017_12
+  - first:
+      213: 6711311742537604115
+    second: Npc Spawn vfx0017_13
+  - first:
+      213: 5644367833569411833
+    second: Npc Spawn vfx0017_14
+  - first:
+      213: 5599922122020164646
+    second: Npc Spawn vfx0017_15
+  - first:
+      213: -7576245608741983038
+    second: Npc Spawn vfx0017_16
+  - first:
+      213: -7852524292653198873
+    second: Npc Spawn vfx0017_17
+  - first:
+      213: 4442744643551182159
+    second: Npc Spawn vfx0017_18
+  - first:
+      213: 4667488447751755813
+    second: Npc Spawn vfx0017_19
+  - first:
+      213: 233308615962142819
+    second: Npc Spawn vfx0017_20
+  - first:
+      213: -6115629229557065304
+    second: Npc Spawn vfx0017_21
+  - first:
+      213: -4793194220224682467
+    second: Npc Spawn vfx0017_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_0
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 575
+        width: 96
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60db0a992fdb50de0800000000000000
+      internalID: -1367478062179894010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_1
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 476
+        width: 63
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c5d81b22a5ea7dd0800000000000000
+      internalID: -2487423359498267199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_2
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 475
+        width: 33
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed9d42d5c7ba89450800000000000000
+      internalID: 6095810646272956894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_3
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 515
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 634a60af08e8a7980800000000000000
+      internalID: -8540357058753027018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_4
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 455
+        width: 120
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a8967017de58e450800000000000000
+      internalID: 6118244371570006182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_5
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 515
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19c4bb27a83ed86e0800000000000000
+      internalID: -1833559289500054383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_6
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 475
+        width: 33
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38cf31c6a940173c0800000000000000
+      internalID: -4363701502660576125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_7
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 476
+        width: 64
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7f5a5d106fb78b10800000000000000
+      internalID: 1983764580410220410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_8
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 302
+        width: 79
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 286a17f7c7ba18cd0800000000000000
+      internalID: -2557574562167282046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_9
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 389
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7c08d27566b50670800000000000000
+      internalID: 8504404018193763453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_10
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 294
+        width: 90
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0203a16b41e234010800000000000000
+      internalID: 1171830994535854112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_11
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 389
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 104aede2d4c74ba50800000000000000
+      internalID: 6535985630162101249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_12
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 302
+        width: 79
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59394decd2f0164e0800000000000000
+      internalID: -1990292870903065707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_13
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 322
+        width: 49
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c9cd6c87e532d50800000000000000
+      internalID: 6711311742537604115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_14
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 322
+        width: 49
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f2cb85b3a2d45e40800000000000000
+      internalID: 5644367833569411833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_15
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 126
+        width: 103
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6241dd4108be6bd40800000000000000
+      internalID: 5599922122020164646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_16
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 130
+        width: 142
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cc22df62c4cbd690800000000000000
+      internalID: -7576245608741983038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_17
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 128
+        width: 94
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e1d742a2ca360390800000000000000
+      internalID: -7852524292653198873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_18
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 128
+        width: 94
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4d33a2f6bcc7ad30800000000000000
+      internalID: 4442744643551182159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_19
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 130
+        width: 142
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5289b79830046c040800000000000000
+      internalID: 4667488447751755813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_20
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 126
+        width: 103
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 368267933f0ec3300800000000000000
+      internalID: 233308615962142819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_21
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 102
+        width: 55
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a951422e9be02ba0800000000000000
+      internalID: -6115629229557065304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc Spawn vfx0017_22
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 102
+        width: 55
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d166d0c80472b7db0800000000000000
+      internalID: -4793194220224682467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Npc Spawn vfx0017_0: -1367478062179894010
+      Npc Spawn vfx0017_1: -2487423359498267199
+      Npc Spawn vfx0017_10: 1171830994535854112
+      Npc Spawn vfx0017_11: 6535985630162101249
+      Npc Spawn vfx0017_12: -1990292870903065707
+      Npc Spawn vfx0017_13: 6711311742537604115
+      Npc Spawn vfx0017_14: 5644367833569411833
+      Npc Spawn vfx0017_15: 5599922122020164646
+      Npc Spawn vfx0017_16: -7576245608741983038
+      Npc Spawn vfx0017_17: -7852524292653198873
+      Npc Spawn vfx0017_18: 4442744643551182159
+      Npc Spawn vfx0017_19: 4667488447751755813
+      Npc Spawn vfx0017_2: 6095810646272956894
+      Npc Spawn vfx0017_20: 233308615962142819
+      Npc Spawn vfx0017_21: -6115629229557065304
+      Npc Spawn vfx0017_22: -4793194220224682467
+      Npc Spawn vfx0017_3: -8540357058753027018
+      Npc Spawn vfx0017_4: 6118244371570006182
+      Npc Spawn vfx0017_5: -1833559289500054383
+      Npc Spawn vfx0017_6: -4363701502660576125
+      Npc Spawn vfx0017_7: 1983764580410220410
+      Npc Spawn vfx0017_8: -2557574562167282046
+      Npc Spawn vfx0017_9: 8504404018193763453
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

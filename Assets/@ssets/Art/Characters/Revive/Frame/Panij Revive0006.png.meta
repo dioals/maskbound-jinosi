@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 57fa93fde3fd63a4c8163f667483c88f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1765212422829421628
+    second: Panij Revive0006_0
+  - first:
+      213: -3945499038968323471
+    second: Panij Revive0006_1
+  - first:
+      213: 20029931124675300
+    second: Panij Revive0006_2
+  - first:
+      213: 2295899165154664036
+    second: Panij Revive0006_3
+  - first:
+      213: -4692466234250741600
+    second: Panij Revive0006_4
+  - first:
+      213: -4317023302519307824
+    second: Panij Revive0006_5
+  - first:
+      213: 5839508040963990877
+    second: Panij Revive0006_6
+  - first:
+      213: 6199919819270464004
+    second: Panij Revive0006_7
+  - first:
+      213: -4553834398394284612
+    second: Panij Revive0006_8
+  - first:
+      213: -7322293422185342956
+    second: Panij Revive0006_9
+  - first:
+      213: -123265363518794686
+    second: Panij Revive0006_10
+  - first:
+      213: -6360256188840889467
+    second: Panij Revive0006_11
+  - first:
+      213: -150326712476711262
+    second: Panij Revive0006_12
+  - first:
+      213: 9188947370990197892
+    second: Panij Revive0006_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Panij Revive0006_0
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 445
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c34bad7985b4f7810800000000000000
+      internalID: 1765212422829421628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panij Revive0006_1
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 452
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 172e5a83785ce39c0800000000000000
+      internalID: -3945499038968323471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panij Revive0006_2
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 446
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e2df81cd19274000800000000000000
+      internalID: 20029931124675300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panij Revive0006_3
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 283
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46ed823602cacdf10800000000000000
+      internalID: 2295899165154664036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panij Revive0006_4
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 191
+        width: 205
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a838fa52d201eeb0800000000000000
+      internalID: -4692466234250741600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panij Revive0006_5
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 296
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d1c04ecd2ad614c0800000000000000
+      internalID: -4317023302519307824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panij Revive0006_6
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 280
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5522bccf991a0150800000000000000
+      internalID: 5839508040963990877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panij Revive0006_7
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 285
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 402258f1a3a8a0650800000000000000
+      internalID: 6199919819270464004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panij Revive0006_8
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 177
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb501cdedb78dc0c0800000000000000
+      internalID: -4553834398394284612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panij Revive0006_9
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 190
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 418967d7decf16a90800000000000000
+      internalID: -7322293422185342956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panij Revive0006_10
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 171
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2445a521ec21a4ef0800000000000000
+      internalID: -123265363518794686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panij Revive0006_11
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 169
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 583b8afb1b4dbb7a0800000000000000
+      internalID: -6360256188840889467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panij Revive0006_12
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 181
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a6c296c6aee9edf0800000000000000
+      internalID: -150326712476711262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panij Revive0006_13
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 173
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48c51a3e2f2b58f70800000000000000
+      internalID: 9188947370990197892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Panij Revive0006_0: 1765212422829421628
+      Panij Revive0006_1: -3945499038968323471
+      Panij Revive0006_10: -123265363518794686
+      Panij Revive0006_11: -6360256188840889467
+      Panij Revive0006_12: -150326712476711262
+      Panij Revive0006_13: 9188947370990197892
+      Panij Revive0006_2: 20029931124675300
+      Panij Revive0006_3: 2295899165154664036
+      Panij Revive0006_4: -4692466234250741600
+      Panij Revive0006_5: -4317023302519307824
+      Panij Revive0006_6: 5839508040963990877
+      Panij Revive0006_7: 6199919819270464004
+      Panij Revive0006_8: -4553834398394284612
+      Panij Revive0006_9: -7322293422185342956
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
