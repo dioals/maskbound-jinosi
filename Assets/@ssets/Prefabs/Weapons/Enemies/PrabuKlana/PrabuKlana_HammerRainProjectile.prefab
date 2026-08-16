@@ -401,7 +401,7 @@ MonoBehaviour:
   DamageTakenInvincibilityDuration: 0.5
   HitDamageableFeedback: {fileID: 0}
   HitNonDamageableFeedback: {fileID: 0}
-  FreezeFramesOnHitDuration: 0.1
+  FreezeFramesOnHitDuration: 0
   Owner: {fileID: 0}
 --- !u!114 &5760072930531224164
 MonoBehaviour:
@@ -417,6 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.Effects.TimedSkillObject
   LifetimeOverride: 5
   DestroyOnEnd: 1
+  StartAutomatically: 1
 --- !u!114 &8439853728212290603
 MonoBehaviour:
   m_ObjectHideFlags: 0
