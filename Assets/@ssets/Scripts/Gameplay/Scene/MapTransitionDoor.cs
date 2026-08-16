@@ -23,6 +23,8 @@ namespace MaskboundJinosi.Gameplay.Scene
         [SerializeField] private string loadingSceneName = "LoadingScreen";
 
         [Header("Interaction Prompt")]
+        [Tooltip("Optional prefab shown above the door. Its text auto-adapts to the bound Interact key (e.g. InteractionPrompt.prefab). Falls back to the built-in promptText when empty.")]
+        [SerializeField] private GameObject interactionPromptPrefab;
         [SerializeField] private string promptText = "INTERACT";
         [SerializeField] private Vector3 promptOffset = new Vector3(0f, 1.25f, 0f);
         [SerializeField, Min(0.1f)] private float promptScale = 0.015f;
@@ -164,6 +166,14 @@ namespace MaskboundJinosi.Gameplay.Scene
         {
             if (_runtimePrompt != null)
             {
+                return;
+            }
+
+            if (interactionPromptPrefab != null)
+            {
+                _runtimePrompt = Instantiate(interactionPromptPrefab, transform, false);
+                _runtimePrompt.transform.localPosition = promptOffset;
+                _runtimePrompt.transform.localScale = Vector3.one * promptScale;
                 return;
             }
 
