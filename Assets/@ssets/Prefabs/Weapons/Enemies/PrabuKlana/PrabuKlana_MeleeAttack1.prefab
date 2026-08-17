@@ -174,7 +174,7 @@ MonoBehaviour:
   autoCloseAfterOpen: 1
   damageWindowDuration: 0.05
   logDamageWindow: 0
-  hitstopDuration: 0.06
+  hitstopDuration: 0.25
 --- !u!1 &1907648966830053811
 GameObject:
   m_ObjectHideFlags: 0
