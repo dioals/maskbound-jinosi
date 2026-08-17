@@ -1,4 +1,5 @@
 using System;
+using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using TMPro;
 using UnityEngine;
@@ -56,7 +57,28 @@ namespace MaskboundJinosi.Gameplay.Scene
 
 		public virtual void StartNewGame()
 		{
+			ClearSaveData();
 			LoadGameplayScene(FirstGameplayScene);
+		}
+
+		/// <summary>
+		/// Wipes old PlayerPrefs save data so a New Game starts completely fresh:
+		/// the last gameplay scene (Continue), dialog "seen once" flags and Fungus'
+		/// save history. Add any new save key written by the game here.
+		/// </summary>
+		public virtual void ClearSaveData()
+		{
+			PlayerPrefs.DeleteKey(LastSceneKey);
+
+			// Dialog flags written by NPCDialogTrigger ("only plays once per save").
+			PlayerPrefs.DeleteKey("Maskbound.IntroDialogShown");
+
+			// Fungus save history (SaveManager).
+			PlayerPrefs.DeleteKey(Fungus.FungusConstants.DefaultSaveDataKey);
+
+			PlayerPrefs.Save();
+			RefreshUI();
+			Report("Save data cleared");
 		}
 
 		public virtual void ContinueGame()

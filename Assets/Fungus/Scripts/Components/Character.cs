@@ -32,6 +32,9 @@ namespace Fungus
         [Tooltip("Sets the active Say dialog with a reference to a Say Dialog object in the scene. This Say Dialog will be used whenever the character speaks.")]
         [SerializeField] protected SayDialog setSayDialog;
 
+        [Tooltip("Dialog box background sprite to use when this character speaks. Leave empty to keep the Say Dialog's default panel.")]
+        [SerializeField] protected Sprite dialogPanel;
+
         [FormerlySerializedAs("notes")]
         [TextArea(5,10)]
         [SerializeField] protected string description;
@@ -82,6 +85,11 @@ namespace Fungus
         /// Color to display the character name in Say Dialog.
         /// </summary>
         public virtual Color NameColor { get { return nameColor; } set { nameColor = value; } }
+
+        /// <summary>
+        /// Dialog box background sprite used when this character speaks.
+        /// </summary>
+        public virtual Sprite DialogPanel { get { return dialogPanel; } set { dialogPanel = value; } }
 
         /// <summary>
         /// Sound effect to play when this character is speaking.

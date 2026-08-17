@@ -923,6 +923,8 @@ MonoBehaviour:
   transitionDelay: 0
   useBootstrapLoadingScreen: 1
   loadingSceneName: LoadingScreen
+  interactionPromptPrefab: {fileID: 1000001, guid: bb33cc44dd55ee66ff77001122334456,
+    type: 3}
   promptText: INTERACT
   promptOffset: {x: 0, y: 1.25, z: 0}
   promptScale: 0.015

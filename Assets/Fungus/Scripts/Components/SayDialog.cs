@@ -42,6 +42,21 @@ namespace Fungus
             }
         }
 
+        [Tooltip("The character subtitle text UI object (e.g. title/description under the name)")]
+        [SerializeField] protected Text subtitleText;
+        protected TextAdapter subtitleTextAdapter = new TextAdapter();
+        public virtual string SubtitleText
+        {
+            get
+            {
+                return subtitleTextAdapter.Text;
+            }
+            set
+            {
+                subtitleTextAdapter.Text = value;
+            }
+        }
+
         [Tooltip("The story text UI object")]
         [SerializeField] protected Text storyText;
         [Tooltip("TextAdapter will search for appropriate output on this GameObject if storyText is null")]
@@ -69,6 +84,10 @@ namespace Fungus
         [Tooltip("The character UI object")]
         [SerializeField] protected Image characterImage;
         public virtual Image CharacterImage { get { return characterImage; } }
+
+        [Tooltip("The dialog box background image. Can be swapped per character via Character.DialogPanel.")]
+        [SerializeField] protected Image panelImage;
+        protected Sprite defaultPanelSprite;
     
         [Tooltip("Adjust width of story text when Character Image is displayed (to avoid overlapping)")]
         [SerializeField] protected bool fitTextWithImage = true;
@@ -105,7 +124,12 @@ namespace Fungus
 			}
 
             nameTextAdapter.InitFromGameObject(nameText != null ? nameText.gameObject : nameTextGO);
+            subtitleTextAdapter.InitFromGameObject(subtitleText != null ? subtitleText.gameObject : null);
             storyTextAdapter.InitFromGameObject(storyText != null ? storyText.gameObject : storyTextGO);
+            if (panelImage != null)
+            {
+                defaultPanelSprite = panelImage.sprite;
+            }
         }
 
 		protected virtual void OnDestroy()
@@ -339,6 +363,11 @@ namespace Fungus
                 {
                     NameText = "";
                 }
+                if (subtitleText != null)
+                {
+                    SubtitleText = "";
+                }
+                SetPanelImage(null);
                 speakingCharacter = null;
             }
             else
@@ -381,6 +410,13 @@ namespace Fungus
                 }
                     
                 SetCharacterName(characterName, character.NameColor);
+
+                if (subtitleText != null)
+                {
+                    SubtitleText = character.GetDescription();
+                }
+
+                SetPanelImage(character.DialogPanel);
             }
         }
 
@@ -437,6 +473,19 @@ namespace Fungus
                         startStoryTextWidth - characterImage.rectTransform.rect.width);
                 }
             }
+        }
+
+        /// <summary>
+        /// Sets the dialog box background sprite. Pass null to restore the default panel sprite.
+        /// </summary>
+        public virtual void SetPanelImage(Sprite sprite)
+        {
+            if (panelImage == null)
+            {
+                return;
+            }
+
+            panelImage.sprite = sprite != null ? sprite : defaultPanelSprite;
         }
 
         /// <summary>
