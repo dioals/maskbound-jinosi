@@ -52,6 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.Effects.TimedSkillObject
   LifetimeOverride: 5
   DestroyOnEnd: 1
+  StartAutomatically: 1
 --- !u!50 &4274871509402215907
 Rigidbody2D:
   serializedVersion: 5
@@ -91,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75f06b096b3abe40a5a561404949c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.Effects.SkillProjectile2D
-  Speed: 100
+  Speed: 50
   Direction: {x: 1, y: 0}
   UseFacingDirection: 1
   RotateToDirection: 0
@@ -248,7 +249,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 940224915
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 10963dbb329ea064b852ce58adadfbc2, type: 3}

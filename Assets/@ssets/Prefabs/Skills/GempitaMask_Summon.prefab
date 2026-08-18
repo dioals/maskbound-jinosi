@@ -65,6 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.Effects.TimedSkillObject
   LifetimeOverride: 10
   DestroyOnEnd: 1
+  StartAutomatically: 1
 --- !u!114 &8943189749437280953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +83,7 @@ MonoBehaviour:
   SpawnOrigin: {fileID: 0}
   SpawnCount: 5
   InitialSpawnDelay: 0
-  DelayBetweenSpawns: 0.07
+  DelayBetweenSpawns: 0.1
   StartOffset: {x: 3, y: 1.9}
   StepOffset: {x: 3, y: 0}
   MatchOwnerFacing: 1
