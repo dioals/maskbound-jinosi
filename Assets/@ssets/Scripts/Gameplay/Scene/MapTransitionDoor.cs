@@ -53,6 +53,10 @@ namespace MaskboundJinosi.Gameplay.Scene
             // Polling the character's linked InputManager below also makes the door work
             // on player prefabs that don't yet contain CharacterButtonActivation.
             RequiresButtonActivationAbility = false;
+            // The door drives its own input and prompt, so it must not mutate the player's
+            // CharacterButtonActivation state. Doing so sets InButtonActivatedZone, which
+            // makes CharacterJump block jumping anywhere near the door.
+            ShouldUpdateState = false;
             base.Initialization();
             CreateRuntimePrompt();
             SetRuntimePromptVisible(false);
@@ -87,6 +91,9 @@ namespace MaskboundJinosi.Gameplay.Scene
             if (exitingCharacter != null && exitingCharacter == _nearbyCharacter)
             {
                 _nearbyCharacter = null;
+                // The base class only hides its own Corgi ButtonPrompt, which this
+                // door never creates, so we hide our runtime prompt ourselves.
+                HidePrompt();
             }
         }
 

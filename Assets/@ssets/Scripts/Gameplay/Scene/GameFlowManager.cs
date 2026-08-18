@@ -1,4 +1,5 @@
 using System;
+using MaskboundJinosi.Breakables;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using TMPro;
@@ -62,19 +63,39 @@ namespace MaskboundJinosi.Gameplay.Scene
 		}
 
 		/// <summary>
+		/// All "seen once per save" dialog / tutorial flags written by NPCDialogTrigger
+		/// (its saveFlagKey field). Keep in sync with the keys used in the scenes.
+		/// </summary>
+		private static readonly string[] DialogFlagKeys =
+		{
+			"Maskbound.IntroDialogShown",
+			"Maskbound.FirstTutorialShown",
+			"Maskbound.SecondTutorialShown",
+			"Maskbound.ThirdTutorialShown",
+			"Maskbound.FourthTutorialShown"
+		};
+
+		/// <summary>
 		/// Wipes old PlayerPrefs save data so a New Game starts completely fresh:
-		/// the last gameplay scene (Continue), dialog "seen once" flags and Fungus'
-		/// save history. Add any new save key written by the game here.
+		/// the last gameplay scene (Continue), dialog "seen once" flags, Fungus'
+		/// save history and broken breakables. Add any new save key written by the
+		/// game here.
 		/// </summary>
 		public virtual void ClearSaveData()
 		{
 			PlayerPrefs.DeleteKey(LastSceneKey);
 
-			// Dialog flags written by NPCDialogTrigger ("only plays once per save").
-			PlayerPrefs.DeleteKey("Maskbound.IntroDialogShown");
+			// Dialog / tutorial flags written by NPCDialogTrigger ("only plays once per save").
+			foreach (string key in DialogFlagKeys)
+			{
+				PlayerPrefs.DeleteKey(key);
+			}
 
 			// Fungus save history (SaveManager).
 			PlayerPrefs.DeleteKey(Fungus.FungusConstants.DefaultSaveDataKey);
+
+			// Breakable world objects (stones, ...) that stay broken once destroyed.
+			PlayerPrefs.DeleteKey(BreakableObject.BrokenBreakablesKey);
 
 			PlayerPrefs.Save();
 			RefreshUI();

@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 7086922310602720191}
   - component: {fileID: 228264155704927574}
   - component: {fileID: 7473884094713773903}
+  - component: {fileID: 8472916340127453123}
   m_Layer: 13
-  m_Name: Kendi
+  m_Name: Stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +85,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 033c7eb733209514db5c92be709d3ca5, type: 3}
+  m_Sprite: {fileID: -1336518189695726446, guid: 8711fdb1f15ed8849bf248fc243b0e34,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,7 +134,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.87, y: 1.65}
+    oldSize: {x: 1.75, y: 2.12}
     newSize: {x: 9.45, y: 7.09}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -176,16 +178,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 2300851502006097800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f230cfc6a7fa47b996473d4d6ec46b0b, type: 3}
+  m_Script: {fileID: 11500000, guid: fc7dcb48908d45cc872506605d6e63e8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Breakables.BreakableSoulObject
-  BreakEffectPrefab: {fileID: 1855479440272291597, guid: 6796f3b85c9c21e4188e30a3c69f936f,
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Breakables.BreakableStoneObject
+  BreakEffectPrefab: {fileID: 1855479440272291597, guid: c892b0f3da9209140a7b116adf1086c5,
     type: 3}
   DisableOnBreak: 0
-  DestroyOnBreak: 1
+  DestroyOnBreak: 0
   DestroyDelay: 0
   SaveId: 
-  SoulPickupPrefab: {fileID: 1000010000000001, guid: 11508e98eab64faca52bd4e52d645e1d,
-    type: 3}
-  SoulPickupCount: 1
-  PickupSpawnOffset: {x: 0, y: 0.65}
+  Animator: {fileID: 8472916340127453123}
+  DestroyParameter: Destroy
+  DisableAfterDestroyAnimation: 0
+--- !u!95 &8472916340127453123
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2300851502006097800}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7b77e35c3c0b751499c1985806a15bb1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

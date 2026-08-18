@@ -1545,7 +1545,7 @@ MonoBehaviour:
   ButtonActivatedRequirement: 2
   RequiresPlayerType: 1
   RequiresButtonActivationAbility: 1
-  PreventJumpsWhileInThisZone: 1
+  PreventJumpsWhileInThisZone: 0
   Activable: 1
   AutoActivation: 0
   AutoActivationAndButtonInteraction: 0
