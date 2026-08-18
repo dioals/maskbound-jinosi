@@ -1584,7 +1584,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1795597123
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 014e70f594fdba74da6ca448abe744dc, type: 3}
@@ -1737,7 +1737,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 940224915
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
@@ -1765,6 +1765,8 @@ GameObject:
   - component: {fileID: 6349487045337106103}
   - component: {fileID: 2515904835878298133}
   - component: {fileID: 4178095589347770048}
+  - component: {fileID: 5860434654804421423}
+  - component: {fileID: 6661993517632565726}
   m_Layer: 13
   m_Name: Model
   m_TagString: Untagged
@@ -1950,6 +1952,49 @@ MonoBehaviour:
   SpawnOnlyOnce: 0
   SpawnId: LaserBeam
   LogDebug: 0
+--- !u!114 &5860434654804421423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5868921619347304010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac412493ac5d1f340bf4b18bf0197b30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.Effects.SkillProjectileSpawner
+  ProjectilePrefab: {fileID: 4797858593716115447, guid: da7da5a4980ed1f429050a93252824c0,
+    type: 3}
+  SpawnOrigin: {fileID: 3027916323863682979}
+  SpawnOffset: {x: 0, y: 0}
+  UseSkillDataProjectile: 1
+  ParentProjectileToOwner: 0
+  MatchOwnerFacing: 1
+  PrefabFacesRight: 0
+  SpawnOnlyOnce: 0
+  SpawnId: MaskRage
+  LogDebug: 0
+--- !u!114 &6661993517632565726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5868921619347304010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8c2a4d9d4f749bca4bf10df07dbd3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.AI.AnimationEventTeleportBehindPlayer
+  bossCharacter: {fileID: 7532373360727809212}
+  targetPlayer: {fileID: 0}
+  behindDistance: 2
+  verticalOffset: 0
+  facePlayerAfterTeleport: 1
+  useCorgiSafePosition: 1
+  stopVelocity: 1
+  logMissingTarget: 0
 --- !u!1 &7152788489035207303
 GameObject:
   m_ObjectHideFlags: 0
@@ -2028,7 +2073,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 940224915
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
