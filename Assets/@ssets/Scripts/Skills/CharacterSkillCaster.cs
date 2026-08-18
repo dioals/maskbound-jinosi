@@ -15,6 +15,7 @@ namespace MaskboundJinosi.Skills
 		public Animator CharacterAnimator;
 		public Transform SpawnOrigin;
 		public SkillCooldownFeedback CooldownFeedback;
+		public SkillSelectionIconFeedback SelectionFeedback;
 
 		[Header("Input Slots")]
 		public int PrimarySkillSlotIndex;
@@ -87,6 +88,11 @@ namespace MaskboundJinosi.Skills
 			if (CooldownFeedback == null)
 			{
 				CooldownFeedback = GetComponentInChildren<SkillCooldownFeedback>(true);
+			}
+
+			if (SelectionFeedback == null)
+			{
+				SelectionFeedback = GetComponentInChildren<SkillSelectionIconFeedback>(true);
 			}
 
 			if (_character != null)
@@ -165,7 +171,33 @@ namespace MaskboundJinosi.Skills
 				return;
 			}
 
-			SelectedSkillSlotIndex = Mathf.Clamp(slotIndex, 0, SkillSlots.SlotCount - 1);
+			int newIndex = Mathf.Clamp(slotIndex, 0, SkillSlots.SlotCount - 1);
+			if (newIndex == SelectedSkillSlotIndex)
+			{
+				return;
+			}
+
+			SelectedSkillSlotIndex = newIndex;
+			ShowSelectionIconFeedback();
+		}
+
+		/// <summary>
+		/// Shows a floating popup with the newly selected skill's icon above the player.
+		/// </summary>
+		protected virtual void ShowSelectionIconFeedback()
+		{
+			if (SelectionFeedback == null || SkillSlots == null)
+			{
+				return;
+			}
+
+			Skill skill = SkillSlots.GetSkill(SelectedSkillSlotIndex);
+			if (skill == null || skill.Icon == null)
+			{
+				return;
+			}
+
+			SelectionFeedback.Show(skill.Icon);
 		}
 
 		public virtual void SelectNextSkillSlot()
