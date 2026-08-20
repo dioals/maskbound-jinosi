@@ -77,11 +77,13 @@ namespace MaskboundJinosi.Gameplay.Dialogue
         private Flowchart _flowchartInstance;
         private CinemachineCamera _cinematicCamera;
         private Character _player;
-        private CharacterHorizontalMovement _movementAbility;
+        private CharacterAbility[] _playerAbilities;
+        private bool[] _playerAbilitiesEnabledState;
         private bool _sequenceStarted;
         private bool _sequenceFinished;
         private bool _dialogExecuting;
         private bool _hudHidden;
+        private float _targetCameraX;
 
         protected virtual void Start()
         {
@@ -216,9 +218,8 @@ namespace MaskboundJinosi.Gameplay.Dialogue
 
             Debug.Log("[NPCDialogTrigger] Player entered trigger at " + transform.position + ", starting sequence.", this);
 
-            FreezePlayer();
+            DisableMovementAbility();
             HideHud();
-            SpawnNpc();
             ResolveFlowchart();
             CreateCinematicCamera();
 
@@ -234,18 +235,68 @@ namespace MaskboundJinosi.Gameplay.Dialogue
 
         protected virtual IEnumerator SequenceRoutine()
         {
-            // 1. Camera settles on the scene while the player stands idle.
-            yield return new WaitForSeconds(cameraDelay);
+            // 0. Wait for the player to land on the ground if they are airborne
+            //    (e.g. they entered the trigger while jumping or falling).
+            yield return new WaitUntil(() => _player == null || !_player.Airborne);
 
-            // 2. NPC appears (animator trigger, or fade-in fallback).
+            // Force idle now that the player has landed.
+            ForcePlayerIdle();
+
+            // 1. Camera pans horizontally to the spawn point while the player stands idle.
+            if (useCinematicCamera && _cinematicCamera != null)
+            {
+                yield return StartCoroutine(PanCameraToTarget());
+            }
+            else
+            {
+                yield return new WaitForSeconds(cameraDelay);
+            }
+
+            // 2. Spawn NPC after the camera has finished focusing.
+            SpawnNpc();
+            if (_cinematicCamera != null && _npcInstance != null)
+            {
+                _cinematicCamera.LookAt = _npcInstance.transform;
+            }
+
+            // 3. NPC appears (animator trigger, or fade-in fallback).
             yield return StartCoroutine(ShowNpc());
 
-            // 3. Short beat, then the dialog starts.
+            // 4. Short beat, then the dialog starts.
             yield return new WaitForSeconds(dialogDelay);
 
             Debug.Log("[NPCDialogTrigger] Executing block '" + blockName + "' on flowchart '" + _flowchartInstance.name + "'.", this);
             _dialogExecuting = true;
             _flowchartInstance.ExecuteBlock(blockName);
+        }
+
+        /// <summary>
+        /// Smoothly pans the cinematic camera horizontally from its current X to the
+        /// target X (spawn point + offset), keeping Y and Z constant.
+        /// </summary>
+        protected virtual IEnumerator PanCameraToTarget()
+        {
+            if (_cinematicCamera == null)
+            {
+                yield break;
+            }
+
+            float startX = _cinematicCamera.transform.position.x;
+            float y = _cinematicCamera.transform.position.y;
+            float z = _cinematicCamera.transform.position.z;
+            float elapsed = 0f;
+
+            while (elapsed < cameraDelay)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(elapsed / Mathf.Max(0.01f, cameraDelay)));
+                float x = Mathf.Lerp(startX, _targetCameraX, t);
+                _cinematicCamera.transform.position = new Vector3(x, y, z);
+                yield return null;
+            }
+
+            // Ensure final position is exact.
+            _cinematicCamera.transform.position = new Vector3(_targetCameraX, y, z);
         }
 
         /// <summary>
@@ -319,7 +370,7 @@ namespace MaskboundJinosi.Gameplay.Dialogue
 
         protected virtual void CreateCinematicCamera()
         {
-            if (!useCinematicCamera || _npcInstance == null)
+            if (!useCinematicCamera)
             {
                 return;
             }
@@ -332,16 +383,21 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             // Keep the same depth as the gameplay camera (usually far behind the world,
             // e.g. z = -15) or the view ends up inside the geometry and shows a white screen.
             float cameraZ = Camera.main != null ? Camera.main.transform.position.z : -15f;
-            _cinematicCamera.transform.position = new Vector3(
-                _npcInstance.transform.position.x + cameraOffset.x,
-                _npcInstance.transform.position.y + cameraOffset.y,
-                cameraZ);
 
-            _cinematicCamera.LookAt = _npcInstance.transform;
+            // Start at the gameplay camera's current position so CinemachineBrain
+            // blends smoothly from the gameplay camera to this one.
+            float startX = Camera.main != null ? Camera.main.transform.position.x : 0f;
+            float cameraY = Camera.main != null ? Camera.main.transform.position.y : 0f;
+            _cinematicCamera.transform.position = new Vector3(startX, cameraY, cameraZ);
+
+            // Calculate the target X (spawn point + offset) for the horizontal pan.
+            Vector3 spawnPos = npcSpawnPoint != null ? npcSpawnPoint.position : transform.position;
+            _targetCameraX = spawnPos.x + cameraOffset.x;
+
             _cinematicCamera.Lens.ModeOverride = LensSettings.OverrideModes.Orthographic;
             _cinematicCamera.Lens.OrthographicSize = cameraOrthographicSize;
 
-            Debug.Log("[NPCDialogTrigger] Cinematic camera created at " + _cinematicCamera.transform.position + ".", this);
+            Debug.Log("[NPCDialogTrigger] Cinematic camera created at " + _cinematicCamera.transform.position + ", target X: " + _targetCameraX + ".", this);
         }
 
         protected virtual void DestroyCinematicCamera()
@@ -360,43 +416,59 @@ namespace MaskboundJinosi.Gameplay.Dialogue
                 return;
             }
 
-            _player.Freeze();
-
-            // Freeze() only changes the ConditionState - MovementState stays "Walking",
-            // and CharacterHorizontalMovement keeps writing "Walking"/"Speed" to the
-            // animator every Update (before the Animator evaluates), which is why the
-            // walk clip keeps playing. Disabling the ability stops those writes so the
-            // forced idle parameters below actually stick.
+            // Disable input abilities so no new movement commands are accepted,
+            // but keep gravity active so the player finishes their current action
+            // (e.g. falling to the ground) before the dialog sequence starts.
             DisableMovementAbility();
-            ForcePlayerIdle();
         }
 
         /// <summary>
-        /// Disables the player's horizontal movement ability so it stops driving the
-        /// animator's Walking/Speed parameters while the dialog plays.
+        /// Disables ALL player abilities (movement, jump, attack, skill, etc.) so no
+        /// input is processed during the dialog. Also stops horizontal velocity.
+        /// The enabled state of each ability is saved so it can be restored exactly.
         /// </summary>
         protected virtual void DisableMovementAbility()
         {
-            if (_movementAbility == null)
+            if (_player == null)
             {
-                _movementAbility = _player != null ? _player.GetComponent<CharacterHorizontalMovement>() : null;
+                return;
             }
 
-            if (_movementAbility != null)
+            _playerAbilities = _player.GetComponents<CharacterAbility>();
+            _playerAbilitiesEnabledState = new bool[_playerAbilities.Length];
+
+            for (int i = 0; i < _playerAbilities.Length; i++)
             {
-                _movementAbility.enabled = false;
+                _playerAbilitiesEnabledState[i] = _playerAbilities[i].enabled;
+                _playerAbilities[i].enabled = false;
+            }
+
+            // Stop horizontal velocity so the player doesn't slide when the
+            // dialog trigger fires (e.g. entering while jumping forward).
+            CorgiController controller = _player.GetComponent<CorgiController>();
+            if (controller != null)
+            {
+                controller.SetHorizontalForce(0f);
             }
         }
 
         /// <summary>
-        /// Re-enables the player's horizontal movement ability after the dialog ends.
+        /// Re-enables all player abilities that were active before the dialog started.
         /// </summary>
         protected virtual void RestoreMovementAbility()
         {
-            if (_movementAbility != null)
+            if (_playerAbilities == null || _playerAbilitiesEnabledState == null)
             {
-                _movementAbility.enabled = true;
+                return;
             }
+
+            for (int i = 0; i < _playerAbilities.Length; i++)
+            {
+                _playerAbilities[i].enabled = _playerAbilitiesEnabledState[i];
+            }
+
+            _playerAbilities = null;
+            _playerAbilitiesEnabledState = null;
         }
 
         /// <summary>
@@ -439,7 +511,6 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             }
 
             RestoreMovementAbility();
-            _player.UnFreeze();
         }
 
         /// <summary>
