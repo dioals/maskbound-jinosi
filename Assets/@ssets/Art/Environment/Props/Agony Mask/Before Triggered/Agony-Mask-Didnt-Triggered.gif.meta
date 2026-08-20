@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 35bbd39164a424945a28e022f4517906
+guid: 9989f9ac9743c0542ac796e06676bf25
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2791786903342828207
-    second: Brahmana Caksena_0
+      213: 3319224647538781008
+    second: Agony-Mask-Didnt-Triggered_0
+  - first:
+      213: -7694159582629680297
+    second: Agony-Mask-Didnt-Triggered_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,11 +49,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.4, y: 0.5}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -100,23 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Brahmana Caksena_0
+      name: Agony-Mask-Didnt-Triggered_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 497
-        height: 1490
+        x: 234
+        y: 181
+        width: 124
+        height: 162
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: faa4656a56b6eb620800000000000000
-      internalID: 2791786903342828207
+      spriteID: 05b254e1b31401e20800000000000000
+      internalID: 3319224647538781008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agony-Mask-Didnt-Triggered_1
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 121
+        width: 120
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75ba03000aad83590800000000000000
+      internalID: -7694159582629680297
       vertices: []
       indices: 
       edges: []
@@ -125,8 +150,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Brahmana Caksena_0: 2791786903342828207
+      Agony-Mask-Didnt-Triggered_0: 3319224647538781008
+      Agony-Mask-Didnt-Triggered_1: -7694159582629680297
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 35bbd39164a424945a28e022f4517906
+guid: d94747c1f14c6ff47a7f2b0bb9b49dbd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2791786903342828207
-    second: Brahmana Caksena_0
+      213: 2063427739912305165
+    second: Spiritual Gate Open_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,8 +49,8 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.4, y: 0.5}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Brahmana Caksena_0
+      name: Spiritual Gate Open_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 497
-        height: 1490
+        width: 478
+        height: 370
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: faa4656a56b6eb620800000000000000
-      internalID: 2791786903342828207
+      spriteID: d0af821d894c2ac10800000000000000
+      internalID: 2063427739912305165
       vertices: []
       indices: 
       edges: []
@@ -126,7 +126,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Brahmana Caksena_0: 2791786903342828207
+      Spiritual Gate Open_0: 2063427739912305165
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

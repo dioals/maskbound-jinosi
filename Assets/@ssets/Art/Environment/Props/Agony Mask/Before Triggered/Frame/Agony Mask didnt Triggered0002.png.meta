@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 35bbd39164a424945a28e022f4517906
+guid: 7d3955deb98030a43b4dde7cb4abbe5e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2791786903342828207
-    second: Brahmana Caksena_0
+      213: 6841981949721818409
+    second: Agony Mask didnt Triggered0002_0
+  - first:
+      213: -7743240091258769781
+    second: Agony Mask didnt Triggered0002_1
+  - first:
+      213: -7326225960749818176
+    second: Agony Mask didnt Triggered0002_2
+  - first:
+      213: -192494098448352852
+    second: Agony Mask didnt Triggered0002_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,11 +55,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.4, y: 0.5}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -100,23 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Brahmana Caksena_0
+      name: Agony Mask didnt Triggered0002_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 497
-        height: 1490
+        x: 234
+        y: 188
+        width: 124
+        height: 163
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: faa4656a56b6eb620800000000000000
-      internalID: 2791786903342828207
+      spriteID: 925bdc8355a93fe50800000000000000
+      internalID: 6841981949721818409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agony Mask didnt Triggered0002_1
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 123
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e25f5992c7a8490800000000000000
+      internalID: -7743240091258769781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agony Mask didnt Triggered0002_2
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 121
+        width: 96
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ce13410e44045a90800000000000000
+      internalID: -7326225960749818176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agony Mask didnt Triggered0002_3
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 123
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca970a823af145df0800000000000000
+      internalID: -192494098448352852
       vertices: []
       indices: 
       edges: []
@@ -125,8 +200,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Brahmana Caksena_0: 2791786903342828207
+      Agony Mask didnt Triggered0002_0: 6841981949721818409
+      Agony Mask didnt Triggered0002_1: -7743240091258769781
+      Agony Mask didnt Triggered0002_2: -7326225960749818176
+      Agony Mask didnt Triggered0002_3: -192494098448352852
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

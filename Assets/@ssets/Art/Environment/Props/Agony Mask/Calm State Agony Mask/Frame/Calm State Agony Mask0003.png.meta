@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: d05b3ac2483fd1b4895d756493219f02
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2293792271414365385
+    second: Calm State Agony Mask0003_0
+  - first:
+      213: 1328564201949198929
+    second: Calm State Agony Mask0003_1
+  - first:
+      213: -6161099871942786263
+    second: Calm State Agony Mask0003_2
+  - first:
+      213: 4353990296608954915
+    second: Calm State Agony Mask0003_3
+  - first:
+      213: 1758778898644982440
+    second: Calm State Agony Mask0003_4
+  - first:
+      213: 183884824366967337
+    second: Calm State Agony Mask0003_5
+  - first:
+      213: 7360876081943940602
+    second: Calm State Agony Mask0003_6
+  - first:
+      213: -3379406719189784124
+    second: Calm State Agony Mask0003_7
+  - first:
+      213: -1184726216472962825
+    second: Calm State Agony Mask0003_8
+  - first:
+      213: 1739967705702409192
+    second: Calm State Agony Mask0003_9
+  - first:
+      213: 4582388614582642579
+    second: Calm State Agony Mask0003_10
+  - first:
+      213: 6394733697166062104
+    second: Calm State Agony Mask0003_11
+  - first:
+      213: -1006875848361730627
+    second: Calm State Agony Mask0003_12
+  - first:
+      213: 7059540947449101525
+    second: Calm State Agony Mask0003_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Calm State Agony Mask0003_0
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 130
+        width: 137
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7337fc90510da20e0800000000000000
+      internalID: -2293792271414365385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calm State Agony Mask0003_1
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 345
+        width: 37
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15a7b764a12007210800000000000000
+      internalID: 1328564201949198929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calm State Agony Mask0003_2
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 304
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92345233f406f7aa0800000000000000
+      internalID: -6161099871942786263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calm State Agony Mask0003_3
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 304
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32adfd83b1b7c6c30800000000000000
+      internalID: 4353990296608954915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calm State Agony Mask0003_4
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 257
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aadf240710786810800000000000000
+      internalID: 1758778898644982440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calm State Agony Mask0003_5
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 243
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a6af3064a4d8200800000000000000
+      internalID: 183884824366967337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calm State Agony Mask0003_6
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 243
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afd00f30cc5172660800000000000000
+      internalID: 7360876081943940602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calm State Agony Mask0003_7
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 272
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c9ef176e7fe911d0800000000000000
+      internalID: -3379406719189784124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calm State Agony Mask0003_8
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 206
+        width: 54
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f8590778c10f8fe0800000000000000
+      internalID: -1184726216472962825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calm State Agony Mask0003_9
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 206
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e32b0bd86b952810800000000000000
+      internalID: 1739967705702409192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calm State Agony Mask0003_10
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 180
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3972efa9a2ae79f30800000000000000
+      internalID: 4582388614582642579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calm State Agony Mask0003_11
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 180
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 812bdc4ba68aeb850800000000000000
+      internalID: 6394733697166062104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calm State Agony Mask0003_12
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 129
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbd9a7520cbd602f0800000000000000
+      internalID: -1006875848361730627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calm State Agony Mask0003_13
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 129
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dc3702b61788f160800000000000000
+      internalID: 7059540947449101525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Calm State Agony Mask0003_0: -2293792271414365385
+      Calm State Agony Mask0003_1: 1328564201949198929
+      Calm State Agony Mask0003_10: 4582388614582642579
+      Calm State Agony Mask0003_11: 6394733697166062104
+      Calm State Agony Mask0003_12: -1006875848361730627
+      Calm State Agony Mask0003_13: 7059540947449101525
+      Calm State Agony Mask0003_2: -6161099871942786263
+      Calm State Agony Mask0003_3: 4353990296608954915
+      Calm State Agony Mask0003_4: 1758778898644982440
+      Calm State Agony Mask0003_5: 183884824366967337
+      Calm State Agony Mask0003_6: 7360876081943940602
+      Calm State Agony Mask0003_7: -3379406719189784124
+      Calm State Agony Mask0003_8: -1184726216472962825
+      Calm State Agony Mask0003_9: 1739967705702409192
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
