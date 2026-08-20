@@ -361,7 +361,7 @@ MonoBehaviour:
   SuccessiveDashesLeft: 1
   SuccessiveDashResetMethod: 0
   SuccessiveDashResetDuration: 2
-  InvincibleWhileDashing: 0
+  InvincibleWhileDashing: 1
 --- !u!114 &11431242
 MonoBehaviour:
   m_ObjectHideFlags: 0
