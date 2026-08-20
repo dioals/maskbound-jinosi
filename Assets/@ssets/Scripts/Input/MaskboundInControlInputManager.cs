@@ -13,6 +13,7 @@ namespace MaskboundJinosi.Input
         [SerializeField] private bool logInputDebug;
 
         public MMInput.IMButton BlockButton { get; private set; }
+        public MMInput.IMButton MeditateButton { get; private set; }
 
         private MaskboundCorgiActions _actions;
         private bool _initialized;
@@ -122,6 +123,7 @@ namespace MaskboundJinosi.Input
             BindButton(_actions.Push, PushButton);
             BindButton(_actions.Grip, GripButton);
             BindButton(_actions.Block, BlockButton);
+            BindButton(_actions.Meditate, MeditateButton);
         }
 
         protected override void InitializeButtons()
@@ -133,6 +135,12 @@ namespace MaskboundJinosi.Input
                 BlockButtonDown,
                 BlockButtonPressed,
                 BlockButtonUp));
+            ButtonList.Add(MeditateButton = new MMInput.IMButton(
+                PlayerID,
+                "Meditate",
+                MeditateButtonDown,
+                MeditateButtonPressed,
+                MeditateButtonUp));
         }
 
         public virtual void BlockButtonDown()
@@ -148,6 +156,21 @@ namespace MaskboundJinosi.Input
         public virtual void BlockButtonUp()
         {
             BlockButton.State.ChangeState(MMInput.ButtonStates.ButtonUp);
+        }
+
+        public virtual void MeditateButtonDown()
+        {
+            MeditateButton.State.ChangeState(MMInput.ButtonStates.ButtonDown);
+        }
+
+        public virtual void MeditateButtonPressed()
+        {
+            MeditateButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed);
+        }
+
+        public virtual void MeditateButtonUp()
+        {
+            MeditateButton.State.ChangeState(MMInput.ButtonStates.ButtonUp);
         }
 
         protected override void SetShootAxis()
@@ -267,6 +290,7 @@ namespace MaskboundJinosi.Input
             public readonly PlayerAction Push;
             public readonly PlayerAction Grip;
             public readonly PlayerAction Block;
+            public readonly PlayerAction Meditate;
 
             private MaskboundCorgiActions()
             {
@@ -303,6 +327,7 @@ namespace MaskboundJinosi.Input
                 Push = CreatePlayerAction("Push");
                 Grip = CreatePlayerAction("Grip");
                 Block = CreatePlayerAction("Block");
+                Meditate = CreatePlayerAction("Meditate");
             }
 
             public static MaskboundCorgiActions CreateWithDefaultBindings(MaskboundInputBindings inputBindings)
@@ -345,6 +370,7 @@ namespace MaskboundJinosi.Input
                 inputBindings.Push.ApplyTo(actions.Push);
                 inputBindings.Grip.ApplyTo(actions.Grip);
                 inputBindings.Block.ApplyTo(actions.Block);
+                inputBindings.Meditate.ApplyTo(actions.Meditate);
 
                 actions.ListenOptions.IncludeUnknownControllers = true;
                 actions.ListenOptions.IncludeMouseButtons = true;

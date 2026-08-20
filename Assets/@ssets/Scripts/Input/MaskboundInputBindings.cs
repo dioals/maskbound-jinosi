@@ -129,5 +129,6 @@ namespace MaskboundJinosi.Input
         public ButtonBinding Push = new ButtonBinding { Label = "Push", KeyboardKeys = new[] { Key.P } };
         public ButtonBinding Grip = new ButtonBinding { Label = "Grip", KeyboardKeys = new[] { Key.G } };
         public ButtonBinding Block = new ButtonBinding { Label = "Block", KeyboardKeys = new[] { Key.B } };
+        public ButtonBinding Meditate = new ButtonBinding { Label = "Meditate", KeyboardKeys = new[] { Key.M } };
     }
 }
