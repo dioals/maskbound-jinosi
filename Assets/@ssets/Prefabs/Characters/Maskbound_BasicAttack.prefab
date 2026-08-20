@@ -172,7 +172,7 @@ MonoBehaviour:
   MaxDamageCaused: 10
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
-  InvincibilityDuration: 0.5
+  InvincibilityDuration: 0
   hitstopDuration: 0.2
 --- !u!114 &114001947569942001
 MonoBehaviour:
