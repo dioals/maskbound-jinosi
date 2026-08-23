@@ -35,6 +35,9 @@ namespace Fungus
         [Tooltip("Dialog box background sprite to use when this character speaks. Leave empty to keep the Say Dialog's default panel.")]
         [SerializeField] protected Sprite dialogPanel;
 
+        [Tooltip("Which side of the Say Dialog this character's dialogue box appears on.")]
+        [SerializeField] protected DialogSide dialogSide = DialogSide.Left;
+
         [FormerlySerializedAs("notes")]
         [TextArea(5,10)]
         [SerializeField] protected string description;
@@ -106,6 +109,11 @@ namespace Fungus
         /// Direction that portrait sprites face.
         /// </summary>
         public virtual FacingDirection PortraitsFace { get { return portraitsFace; } }
+
+        /// <summary>
+        /// Which side of the Say Dialog this character's dialogue box appears on.
+        /// </summary>
+        public virtual DialogSide DialogSide { get { return dialogSide; } }
 
         /// <summary>
         /// Current display state of this character's portrait.

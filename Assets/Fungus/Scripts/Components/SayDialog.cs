@@ -88,6 +88,10 @@ namespace Fungus
         [Tooltip("The dialog box background image. Can be swapped per character via Character.DialogPanel.")]
         [SerializeField] protected Image panelImage;
         protected Sprite defaultPanelSprite;
+
+        [Tooltip("Dialog box background image used when the speaking character is on the right side. Must be a horizontally flipped version of the default panel.")]
+        [SerializeField] protected Image panelImageRight;
+        protected Sprite defaultPanelSpriteRight;
     
         [Tooltip("Adjust width of story text when Character Image is displayed (to avoid overlapping)")]
         [SerializeField] protected bool fitTextWithImage = true;
@@ -116,6 +120,23 @@ namespace Fungus
 		// Cache active Say Dialogs to avoid expensive scene search
 		protected static List<SayDialog> activeSayDialogs = new List<SayDialog>();
 
+		// Cached authored layout of UI elements, used to mirror them to the right side
+		protected Dictionary<RectTransform, RectLayoutCache> mirroredLayoutCache = new Dictionary<RectTransform, RectLayoutCache>();
+
+		protected struct RectLayoutCache
+		{
+			public Vector2 anchorMin;
+			public Vector2 anchorMax;
+			public Vector2 anchoredPosition;
+
+			public RectLayoutCache(Vector2 anchorMin, Vector2 anchorMax, Vector2 anchoredPosition)
+			{
+				this.anchorMin = anchorMin;
+				this.anchorMax = anchorMax;
+				this.anchoredPosition = anchoredPosition;
+			}
+		}
+
 		protected virtual void Awake()
 		{
 			if (!activeSayDialogs.Contains(this))
@@ -129,6 +150,10 @@ namespace Fungus
             if (panelImage != null)
             {
                 defaultPanelSprite = panelImage.sprite;
+            }
+            if (panelImageRight != null)
+            {
+                defaultPanelSpriteRight = panelImageRight.sprite;
             }
         }
 
@@ -416,6 +441,7 @@ namespace Fungus
                     SubtitleText = character.GetDescription();
                 }
 
+                SetDialogSide(character.DialogSide);
                 SetPanelImage(character.DialogPanel);
             }
         }
@@ -476,6 +502,90 @@ namespace Fungus
         }
 
         /// <summary>
+        /// Sets which dialog box background and text layout side to display.
+        /// </summary>
+        public virtual void SetDialogSide(DialogSide side)
+        {
+            if (panelImage == null && panelImageRight == null)
+            {
+                return;
+            }
+
+            bool isRight = (side == DialogSide.Right);
+
+            // Toggle the correct dialog box background
+            if (panelImage != null)
+            {
+                panelImage.gameObject.SetActive(!isRight);
+            }
+            if (panelImageRight != null)
+            {
+                panelImageRight.gameObject.SetActive(isRight);
+            }
+
+            // Mirror the text layout so it stays inside the active dialog box.
+            // Layout is authored for the left side; mirroring around the panel
+            // center flips it to the right side.
+            MirrorTextLayout(isRight);
+
+            // Flip the character image horizontally so it faces the dialog box.
+            if (characterImage != null)
+            {
+                Vector3 scale = characterImage.rectTransform.localScale;
+                scale.x = Mathf.Abs(scale.x) * (isRight ? -1f : 1f);
+                characterImage.rectTransform.localScale = scale;
+            }
+        }
+
+        /// <summary>
+        /// Mirrors the anchored positions of name, subtitle, story text and continue button
+        /// so the layout looks correct on both sides of the dialog box.
+        /// </summary>
+        protected virtual void MirrorTextLayout(bool isRight)
+        {
+            MirrorHorizontal(characterImage != null ? characterImage.rectTransform : null, isRight);
+            MirrorHorizontal(nameText != null ? nameText.rectTransform : null, isRight);
+            MirrorHorizontal(subtitleText != null ? subtitleText.rectTransform : null, isRight);
+            MirrorHorizontal(storyText != null ? storyText.rectTransform : null, isRight);
+            MirrorHorizontal(continueButton != null ? continueButton.GetComponent<RectTransform>() : null, isRight);
+        }
+
+        /// <summary>
+        /// Mirrors a RectTransform horizontally around the center of its parent.
+        /// The original (left side) layout is cached on first use so repeated calls
+        /// do not accumulate the mirror transformation.
+        /// </summary>
+        protected virtual void MirrorHorizontal(RectTransform rectTransform, bool isRight)
+        {
+            if (rectTransform == null)
+            {
+                return;
+            }
+
+            // Cache the authored layout on first use.
+            if (!mirroredLayoutCache.ContainsKey(rectTransform))
+            {
+                mirroredLayoutCache[rectTransform] = new RectLayoutCache(
+                    rectTransform.anchorMin, rectTransform.anchorMax, rectTransform.anchoredPosition);
+            }
+
+            var cached = mirroredLayoutCache[rectTransform];
+
+            if (isRight)
+            {
+                rectTransform.anchorMin = new Vector2(1f - cached.anchorMax.x, cached.anchorMin.y);
+                rectTransform.anchorMax = new Vector2(1f - cached.anchorMin.x, cached.anchorMax.y);
+                rectTransform.anchoredPosition = new Vector2(-cached.anchoredPosition.x, cached.anchoredPosition.y);
+            }
+            else
+            {
+                rectTransform.anchorMin = cached.anchorMin;
+                rectTransform.anchorMax = cached.anchorMax;
+                rectTransform.anchoredPosition = cached.anchoredPosition;
+            }
+        }
+
+        /// <summary>
         /// Sets the dialog box background sprite. Pass null to restore the default panel sprite.
         /// </summary>
         public virtual void SetPanelImage(Sprite sprite)
@@ -486,6 +596,11 @@ namespace Fungus
             }
 
             panelImage.sprite = sprite != null ? sprite : defaultPanelSprite;
+
+            if (panelImageRight != null)
+            {
+                panelImageRight.sprite = sprite != null ? sprite : defaultPanelSpriteRight;
+            }
         }
 
         /// <summary>

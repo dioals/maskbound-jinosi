@@ -64,19 +64,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 24.959099, y: 43.15714}
+  scrollPos: {x: 37.824013, y: 134.00002}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.8200002
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -343
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 1880275935377284151}
+  selectedCommands:
+  - {fileID: 7498133898449043057}
   variables: []
   description: 
   stepPause: 0
@@ -139,7 +141,7 @@ MonoBehaviour:
   storyText: Panji, putraku... akhirnya engkau tiba di Daha Kingdom.
   description: 
   character: {fileID: 11420000}
-  portrait: {fileID: 21300000, guid: 35bbd39164a424945a28e022f4517906, type: 3}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -149,6 +151,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
 --- !u!114 &11400003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +180,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+  dialogSideOverride: 0
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +199,7 @@ MonoBehaviour:
     sekadar pusaka...
   description: 
   character: {fileID: 11420000}
-  portrait: {fileID: 21300000, guid: 35bbd39164a424945a28e022f4517906, type: 3}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -205,6 +209,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
 --- !u!114 &11400005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,7 +228,7 @@ MonoBehaviour:
     ini akan runtuh.
   description: 
   character: {fileID: 11420000}
-  portrait: {fileID: 21300000, guid: 35bbd39164a424945a28e022f4517906, type: 3}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -233,6 +238,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +266,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
 --- !u!114 &11400007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,7 +285,7 @@ MonoBehaviour:
     kuasa topeng itu.
   description: 
   character: {fileID: 11420000}
-  portrait: {fileID: 21300000, guid: 35bbd39164a424945a28e022f4517906, type: 3}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -288,6 +295,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,7 +314,7 @@ MonoBehaviour:
     ke tempatnya.
   description: 
   character: {fileID: 11420000}
-  portrait: {fileID: 21300000, guid: 35bbd39164a424945a28e022f4517906, type: 3}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -316,6 +324,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
 --- !u!114 &11400009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +342,7 @@ MonoBehaviour:
   storyText: Semoga leluhur menjaga langkahmu, Panji.
   description: 
   character: {fileID: 11420000}
-  portrait: {fileID: 21300000, guid: 35bbd39164a424945a28e022f4517906, type: 3}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -343,6 +352,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
 --- !u!114 &1880275935377284151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +397,7 @@ MonoBehaviour:
   storyText: Tutorial Pertama
   description: 
   character: {fileID: 11420000}
-  portrait: {fileID: 21300000, guid: 35bbd39164a424945a28e022f4517906, type: 3}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -397,6 +407,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+  dialogSideOverride: 0
 --- !u!114 &4316287744425596664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,6 +462,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+  dialogSideOverride: 0
 --- !u!114 &7869965819448228307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,6 +517,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+  dialogSideOverride: 0
 --- !u!114 &1596623036447780184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,6 +572,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+  dialogSideOverride: 0
 --- !u!1 &110000
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,6 +625,7 @@ MonoBehaviour:
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   dialogPanel: {fileID: 21300000, guid: 694613b570a735f4794ff09fa880ac95, type: 3}
+  dialogSide: 0
   description: Pangeran Kerajaan Jenggala
   effectAudioSource: {fileID: 0}
   voiceAudioSource: {fileID: 0}
@@ -662,10 +677,11 @@ MonoBehaviour:
   nameColor: {r: 1, g: 0.84, b: 0.35, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 21300000, guid: 35bbd39164a424945a28e022f4517906, type: 3}
+  - {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   dialogPanel: {fileID: 21300000, guid: d37b36c46613a2c4daaf39c2e85563c4, type: 3}
+  dialogSide: 1
   description: Pendeta Kerajaan Daha
   effectAudioSource: {fileID: 0}
   voiceAudioSource: {fileID: 0}

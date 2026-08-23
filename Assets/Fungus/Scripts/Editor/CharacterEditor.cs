@@ -17,6 +17,7 @@ namespace Fungus.EditorUtils
         protected SerializedProperty descriptionProp;
         protected SerializedProperty setSayDialogProp;
         protected SerializedProperty dialogPanelProp;
+        protected SerializedProperty dialogSideProp;
         protected SerializedProperty effectAudioSourceProp;
         protected SerializedProperty voiceAudioSourceProp;
 
@@ -30,6 +31,7 @@ namespace Fungus.EditorUtils
             descriptionProp = serializedObject.FindProperty ("description");
             setSayDialogProp = serializedObject.FindProperty("setSayDialog");
             dialogPanelProp = serializedObject.FindProperty("dialogPanel");
+            dialogSideProp = serializedObject.FindProperty("dialogSide");
             effectAudioSourceProp = serializedObject.FindProperty("effectAudioSource");
             voiceAudioSourceProp = serializedObject.FindProperty("voiceAudioSource");
         }
@@ -48,6 +50,7 @@ namespace Fungus.EditorUtils
             EditorGUILayout.PropertyField(voiceAudioSourceProp);
             EditorGUILayout.PropertyField(setSayDialogProp);
             EditorGUILayout.PropertyField(dialogPanelProp, new GUIContent("Dialog Panel", "Dialog box background sprite to use when this character speaks. Leave empty to keep the Say Dialog's default panel."));
+            EditorGUILayout.PropertyField(dialogSideProp, new GUIContent("Dialog Side", "Which side of the Say Dialog this character's dialogue box appears on."));
             EditorGUILayout.PropertyField(descriptionProp, new GUIContent("Description", "Notes about this story character (personality, attibutes, etc.)"));
 
             if (t.Portraits != null &&

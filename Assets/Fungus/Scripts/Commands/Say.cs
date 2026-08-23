@@ -56,6 +56,9 @@ namespace Fungus
         [Tooltip("Sets the active Say dialog with a reference to a Say Dialog object in the scene. All story text will now display using this Say Dialog.")]
         [SerializeField] protected SayDialog setSayDialog;
 
+        [Tooltip("Overrides which side of the Say Dialog the dialogue box appears on. Uses the character's Dialog Side if set to None.")]
+        [SerializeField] protected DialogSideOverride dialogSideOverride = DialogSideOverride.None;
+
         protected int executionCount;
 
         #region Public members
@@ -108,6 +111,10 @@ namespace Fungus
             sayDialog.SetActive(true);
 
             sayDialog.SetCharacter(character);
+            if (dialogSideOverride != DialogSideOverride.None)
+            {
+                sayDialog.SetDialogSide(dialogSideOverride == DialogSideOverride.Right ? DialogSide.Right : DialogSide.Left);
+            }
             sayDialog.SetCharacterImage(portrait);
 
             string displayText = storyText;

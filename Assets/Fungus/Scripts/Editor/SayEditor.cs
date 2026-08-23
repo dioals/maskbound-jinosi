@@ -82,6 +82,7 @@ namespace Fungus.EditorUtils
         protected SerializedProperty stopVoiceoverProp;
         protected SerializedProperty setSayDialogProp;
         protected SerializedProperty waitForVOProp;
+        protected SerializedProperty dialogSideOverrideProp;
 
         public override void OnEnable()
         {
@@ -100,6 +101,7 @@ namespace Fungus.EditorUtils
             stopVoiceoverProp = serializedObject.FindProperty("stopVoiceover");
             setSayDialogProp = serializedObject.FindProperty("setSayDialog");
             waitForVOProp = serializedObject.FindProperty("waitForVO");
+            dialogSideOverrideProp = serializedObject.FindProperty("dialogSideOverride");
 
             if (blackTex == null)
             {
@@ -199,6 +201,7 @@ namespace Fungus.EditorUtils
             EditorGUILayout.PropertyField(stopVoiceoverProp);
             EditorGUILayout.PropertyField(setSayDialogProp);
             EditorGUILayout.PropertyField(waitForVOProp);
+            EditorGUILayout.PropertyField(dialogSideOverrideProp);
             
             if (showPortraits && t.Portrait != null)
             {
