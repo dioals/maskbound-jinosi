@@ -30,6 +30,9 @@ namespace MaskboundJinosi.Skills
 		public bool ProjectileParentToOwner;
 		public bool ProjectileMatchOwnerFacing = true;
 
+		[Header("Shop")]
+		[Min(0)] public int SoulPrice;
+
 		public override bool CanActivate(SkillContext context)
 		{
 			if (!base.CanActivate(context))
