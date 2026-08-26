@@ -1,4 +1,5 @@
 using MaskboundJinosi.Skills;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 namespace MaskboundJinosi.Skills.Effects
@@ -12,13 +13,74 @@ namespace MaskboundJinosi.Skills.Effects
 		public bool UseFacingDirection = true;
 		public bool RotateToDirection;
 
+		[Header("Spawn Feedback")]
+		[Tooltip("Audio yang diputar begitu projectile dibuat (dipendek untuk 'spawn feedback').")]
+		public AudioClip SpawnSound;
+		[Tooltip("AudioSource untuk memutar SpawnSound. Kosong = otomatis dibuat saat runtime.")]
+		public AudioSource SfxSource;
+		[Tooltip("Putar feedback (sound + MMFeedbacks) begitu projectile dibuat.")]
+		public bool PlayFeedbackOnSpawn = true;
+
 		protected Rigidbody2D _rigidbody2D;
+		protected bool _feedbackPlayed;
 
 		protected virtual void Awake()
 		{
 			_rigidbody2D = GetComponent<Rigidbody2D>();
 			_rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
 			_rigidbody2D.simulated = true;
+
+			if (PlayFeedbackOnSpawn)
+			{
+				PlaySpawnFeedback();
+			}
+		}
+
+		/// <summary>
+		/// Memainkan feedback sesuai pola Corgi/MoreMountains: suara spawn via AudioSource
+		/// (atau AudioSource.PlayClipAtPoint) plus MMFeedbacks bila terpasang di prefab,
+		/// sehingga bisa menambah partikel/efek lain tanpa ganti kode.
+		/// </summary>
+		public virtual void PlaySpawnFeedback()
+		{
+			if (_feedbackPlayed)
+			{
+				return;
+			}
+
+			_feedbackPlayed = true;
+
+			PlaySpawnSound();
+			PlayFeedbacks();
+		}
+
+		protected virtual void PlaySpawnSound()
+		{
+			if (SpawnSound == null)
+			{
+				return;
+			}
+
+			if (SfxSource != null)
+			{
+				SfxSource.PlayOneShot(SpawnSound);
+				return;
+			}
+
+			AudioSource.PlayClipAtPoint(SpawnSound, transform.position);
+		}
+
+		/// <summary>
+		/// Memainkan MMFeedbacks di prefab (partikel, scale, dst.) bila terpasang.
+		/// Ini meniru leverage MMFeedbacks yang dipakai CorgiEngine untuk feedback spawn.
+		/// </summary>
+		protected virtual void PlayFeedbacks()
+		{
+			MMFeedbacks feedbacks = GetComponentInChildren<MMFeedbacks>(true);
+			if (feedbacks != null)
+			{
+				feedbacks.PlayFeedbacks();
+			}
 		}
 
 		public virtual void Initialize(SkillRuntimeContext context)
