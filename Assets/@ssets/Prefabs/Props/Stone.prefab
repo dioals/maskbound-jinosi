@@ -181,11 +181,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc7dcb48908d45cc872506605d6e63e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Breakables.BreakableStoneObject
+  MaxHealth: 30
+  HitFlashColor: {r: 1, g: 0, b: 0, a: 1}
+  HitFlashDuration: 0.15
+  DamageCooldown: 0.15
   BreakEffectPrefab: {fileID: 1855479440272291597, guid: c892b0f3da9209140a7b116adf1086c5,
     type: 3}
   DisableOnBreak: 0
   DestroyOnBreak: 0
   DestroyDelay: 0
+  SoulPickupPrefab: {fileID: 0}
+  SoulPickupCount: 1
+  PickupSpawnOffset: {x: 0, y: 1}
+  PickupSpreadRadius: 1
   SaveId: 
   Animator: {fileID: 8472916340127453123}
   DestroyParameter: Destroy

@@ -179,6 +179,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f230cfc6a7fa47b996473d4d6ec46b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Breakables.BreakableSoulObject
+  MaxHealth: 3
+  HitFlashColor: {r: 1, g: 0.85, b: 0.35, a: 1}
+  HitFlashDuration: 0.15
+  DamageCooldown: 0.15
   BreakEffectPrefab: {fileID: 1855479440272291597, guid: 6796f3b85c9c21e4188e30a3c69f936f,
     type: 3}
   DisableOnBreak: 0

@@ -34,6 +34,7 @@ namespace MaskboundJinosi.Breakables
 			_broken = true;
 			SaveBrokenState();
 			SpawnBreakEffect();
+			SpawnReward();
 
 			if (_collider2D != null)
 			{
