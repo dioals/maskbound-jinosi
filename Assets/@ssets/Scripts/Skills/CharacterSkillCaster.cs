@@ -447,7 +447,64 @@ namespace MaskboundJinosi.Skills
 				receivers[i].Initialize(runtimeContext);
 			}
 
+			PlaySpawnSound(skill, instance.transform.position);
+
 			return instance;
+		}
+
+		/// <summary>
+		/// Memainkan suara spawn skill (SpawndSound di ActiveSkillData) di posisi efek muncul.
+		/// Spatial di lokasi spawn sehingga terdengar dari arah skill dikeluarkan.
+		/// </summary>
+		protected virtual void PlaySpawnSound(ActiveSkillData skill, Vector3 position)
+		{
+			if (skill == null || skill.SpawnSound == null)
+			{
+				return;
+			}
+
+			AudioSource.PlayClipAtPoint(skill.SpawnSound, position, Mathf.Clamp01(skill.SpawnSoundVolume));
+		}
+
+		/// <summary>
+		/// Dipanggil dari Animation Event cast skill untuk memutar salah satu SFX dari
+		/// ActiveSkillData.SfxList. Contoh: event dengan method "PlaySkillSfx" dan
+		/// string parameter "slash" akan memutar SFX yang punya Id "slash".
+		/// Diputar di posisi pemain (spatial).
+		/// </summary>
+		public virtual void PlaySkillSfx(string sfxId)
+		{
+			PlaySkillSfx(sfxId, transform.position);
+		}
+
+		/// <summary>
+		/// Mencari SFX dengan Id yang cocok di skill yang sedang di-cast, lalu
+		/// memutarnya di posisi tertentu (default: posisi pemain).
+		/// </summary>
+		protected virtual void PlaySkillSfx(string sfxId, Vector3 position)
+		{
+			if (_currentSkill == null || string.IsNullOrEmpty(sfxId))
+			{
+				return;
+			}
+
+			ActiveSkillData.SkillSfx[] sfxList = _currentSkill.SfxList;
+			if (sfxList == null)
+			{
+				return;
+			}
+
+			for (int i = 0; i < sfxList.Length; i++)
+			{
+				ActiveSkillData.SkillSfx sfx = sfxList[i];
+				if (sfx == null || sfx.Clip == null || !string.Equals(sfx.Id, sfxId, System.StringComparison.Ordinal))
+				{
+					continue;
+				}
+
+				AudioSource.PlayClipAtPoint(sfx.Clip, position, Mathf.Clamp01(sfx.Volume));
+				return;
+			}
 		}
 
 		protected virtual bool ResolveFacingRight()

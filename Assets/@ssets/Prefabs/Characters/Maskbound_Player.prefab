@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd71e945bfcd4897b3a95607989c7d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStartFeedbacks: {fileID: 5978243596150314862}
   AbilityStopFeedbacks: {fileID: 0}
   AbilityPermitted: 1
   BlockingMovementStates: 
@@ -845,8 +845,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.SkillSlotManager
   _slots:
   - EquippedSkill: {fileID: 11400000, guid: 77f16bc18170e9c488d86e3d4354fcc5, type: 2}
-  - EquippedSkill: {fileID: 11400000, guid: 2bbfff7c4fad5bc44b664db148f84590, type: 2}
-  - EquippedSkill: {fileID: 11400000, guid: f2046b58fc47340419f6e258b4bfaccd, type: 2}
   _initialSlotCount: 3
 --- !u!114 &910000100000003
 MonoBehaviour:

@@ -28,6 +28,14 @@ namespace MaskboundJinosi.Gameplay.Dialogue
         [SerializeField] private string disappearAnimatorParameter = "Disappear";
         [Tooltip("Seconds to wait after the disappear trigger before the NPC is destroyed - time for its disappear animation to play.")]
         [SerializeField] private float disappearWaitDuration = 1f;
+        [Tooltip("Flip the NPC to face the player as soon as it spawns, without it having to move.")]
+        [SerializeField] private bool facePlayerOnSpawn = false;
+        [Tooltip("Whether the NPC's sprite art points right by default (FlipX off). Used to pick the correct flip when facing the player.")]
+        [SerializeField] private bool npcFacesRightByDefault = true;
+
+        [Header("Monologue")]
+        [Tooltip("Monologue mode: no NPC is spawned or faded - the camera focuses on the player and only the Fungus dialog plays.")]
+        [SerializeField] private bool monologueMode;
 
         [Header("Dialog (Fungus)")]
         [Tooltip("Fungus Flowchart prefab holding the dialog. If empty, the first Flowchart in the scene is used.")]
@@ -79,14 +87,16 @@ namespace MaskboundJinosi.Gameplay.Dialogue
         private Character _player;
         private CharacterAbility[] _playerAbilities;
         private bool[] _playerAbilitiesEnabledState;
-        private bool _sequenceStarted;
-        private bool _sequenceFinished;
-        private bool _dialogExecuting;
-        private bool _hudHidden;
-        private float _targetCameraX;
+private bool _sequenceStarted;
+		private bool _sequenceFinished;
+		private bool _dialogExecuting;
+		private bool _hudHidden;
+		private float _targetCameraX;
+		private Collider2D _triggerCollider;
 
-        protected virtual void Start()
-        {
+		protected virtual void Start()
+		{
+			_triggerCollider = GetComponent<Collider2D>();
             if (startOnLoadForTesting)
             {
                 StartCoroutine(StartOnLoadRoutine());
@@ -252,6 +262,18 @@ namespace MaskboundJinosi.Gameplay.Dialogue
                 yield return new WaitForSeconds(cameraDelay);
             }
 
+            if (monologueMode)
+            {
+                // No NPC in monologue mode: skip the spawn/appear steps and
+                // go straight to the dialog after the camera settles on the player.
+                yield return new WaitForSeconds(dialogDelay);
+
+                Debug.Log("[NPCDialogTrigger] Monologue: executing block '" + blockName + "' on flowchart '" + _flowchartInstance.name + "'.", this);
+                _dialogExecuting = true;
+                _flowchartInstance.ExecuteBlock(blockName);
+                yield break;
+            }
+
             // 2. Spawn NPC after the camera has finished focusing.
             SpawnNpc();
             if (_cinematicCamera != null && _npcInstance != null)
@@ -353,7 +375,34 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             _npcRenderer = _npcInstance.GetComponentInChildren<SpriteRenderer>();
             _npcAnimator = _npcInstance.GetComponentInChildren<Animator>();
             Debug.Log("[NPCDialogTrigger] Spawned NPC '" + _npcInstance.name + "' at " + _npcInstance.transform.position + ".", this);
+            FacePlayerOnSpawn();
             EnsureNpcVisible();
+        }
+
+        /// <summary>
+        /// Flips every SpriteRenderer on the spawned NPC so it faces the player
+        /// (horizontal flip only, no movement). Uses the player's X position relative
+        /// to the NPC to pick the correct side.
+        /// </summary>
+        protected virtual void FacePlayerOnSpawn()
+        {
+            if (!facePlayerOnSpawn || _npcInstance == null || _player == null)
+            {
+                return;
+            }
+
+            float deltaX = _player.transform.position.x - _npcInstance.transform.position.x;
+            bool playerOnRight = deltaX >= 0f;
+
+            // Flip only when the player is on the opposite side of the sprite's
+            // default facing direction.
+            bool shouldFlip = playerOnRight ? !npcFacesRightByDefault : npcFacesRightByDefault;
+
+            SpriteRenderer[] renderers = _npcInstance.GetComponentsInChildren<SpriteRenderer>(true);
+            for (int i = 0; i < renderers.Length; i++)
+            {
+                renderers[i].flipX = shouldFlip;
+            }
         }
 
         protected virtual void ResolveFlowchart()
@@ -391,8 +440,11 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             _cinematicCamera.transform.position = new Vector3(startX, cameraY, cameraZ);
 
             // Calculate the target X (spawn point + offset) for the horizontal pan.
-            Vector3 spawnPos = npcSpawnPoint != null ? npcSpawnPoint.position : transform.position;
-            _targetCameraX = spawnPos.x + cameraOffset.x;
+            // In monologue mode there is no NPC, so the camera focuses on the player.
+            Vector3 focusPos = monologueMode && _player != null
+                ? _player.transform.position
+                : (npcSpawnPoint != null ? npcSpawnPoint.position : transform.position);
+            _targetCameraX = focusPos.x + cameraOffset.x;
 
             _cinematicCamera.Lens.ModeOverride = LensSettings.OverrideModes.Orthographic;
             _cinematicCamera.Lens.OrthographicSize = cameraOrthographicSize;
@@ -724,6 +776,38 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             texture.Apply();
 
             spriteRenderer.sprite = Sprite.Create(texture, new Rect(0f, 0f, size, size), new Vector2(0.5f, 0.5f), 100f);
+        }
+
+        /// <summary>
+        /// Enables this trigger's collider so the player can walk into it again.
+        /// Callable from a Fungus flowchart via the built-in "Call Method" command to
+        /// chain dialog triggers in a fixed sequence.
+        /// </summary>
+        public virtual void EnableTrigger()
+        {
+            SetTriggerEnabled(true);
+        }
+
+        /// <summary>
+        /// Disables this trigger's collider so the player cannot start this dialog.
+        /// Callable from a Fungus flowchart via the built-in "Call Method" command.
+        /// </summary>
+        public virtual void DisableTrigger()
+        {
+            SetTriggerEnabled(false);
+        }
+
+        protected virtual void SetTriggerEnabled(bool enabled)
+        {
+            if (_triggerCollider == null)
+            {
+                _triggerCollider = GetComponent<Collider2D>();
+            }
+
+            if (_triggerCollider != null)
+            {
+                _triggerCollider.enabled = enabled;
+            }
         }
 
         /// <summary>

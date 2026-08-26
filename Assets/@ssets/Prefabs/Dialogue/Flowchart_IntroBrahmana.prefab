@@ -12,13 +12,6 @@ GameObject:
   - component: {fileID: 11400000}
   - component: {fileID: 11400001}
   - component: {fileID: 11400002}
-  - component: {fileID: 11400003}
-  - component: {fileID: 11400004}
-  - component: {fileID: 11400005}
-  - component: {fileID: 11400006}
-  - component: {fileID: 11400007}
-  - component: {fileID: 11400008}
-  - component: {fileID: 11400009}
   - component: {fileID: 1880275935377284151}
   - component: {fileID: 7498133898449043057}
   - component: {fileID: 4316287744425596664}
@@ -27,6 +20,19 @@ GameObject:
   - component: {fileID: -7302275814094497041}
   - component: {fileID: 1596623036447780184}
   - component: {fileID: 1529701539853727470}
+  - component: {fileID: 1324556080054925198}
+  - component: {fileID: 6166249887202509757}
+  - component: {fileID: 4048749001061928506}
+  - component: {fileID: 7460278756028193000}
+  - component: {fileID: 1954038220201931806}
+  - component: {fileID: 3831334556571653277}
+  - component: {fileID: 27197754209522243}
+  - component: {fileID: 6030916231643627406}
+  - component: {fileID: 1801738859998035274}
+  - component: {fileID: 5938792238479518295}
+  - component: {fileID: 4897023280929222563}
+  - component: {fileID: 1051920195348291292}
+  - component: {fileID: 999999}
   m_Layer: 0
   m_Name: Flowchart_IntroBrahmana
   m_TagString: Untagged
@@ -77,8 +83,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1880275935377284151}
-  selectedCommands:
-  - {fileID: 7498133898449043057}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -104,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 67
+    x: 66.2
     y: 70
     width: 111.535995
     height: 40
@@ -116,13 +121,11 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 11400002}
-  - {fileID: 11400003}
-  - {fileID: 11400004}
-  - {fileID: 11400005}
-  - {fileID: 11400006}
-  - {fileID: 11400007}
-  - {fileID: 11400008}
-  - {fileID: 11400009}
+  - {fileID: 4048749001061928506}
+  - {fileID: 1954038220201931806}
+  - {fileID: 27197754209522243}
+  - {fileID: 3831334556571653277}
+  - {fileID: 7460278756028193000}
   suppressAllAutoSelections: 0
 --- !u!114 &11400002
 MonoBehaviour:
@@ -138,122 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  storyText: Panji, putraku... akhirnya engkau tiba di Daha Kingdom.
-  description: 
-  character: {fileID: 11420000}
-  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
-  dialogSideOverride: 2
---- !u!114 &11400003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 2
-  indentLevel: 0
-  storyText: Brahmana Caksena! Aku mendengar kabar bahwa topeng-topeng pusaka telah
-    dicuri.
-  description: 
-  character: {fileID: 11410000}
-  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
-  dialogSideOverride: 0
---- !u!114 &11400004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 3
-  indentLevel: 0
-  storyText: Benar. Kegelapan telah merasuki kerajaan ini. Topeng-topeng itu bukan
-    sekadar pusaka...
-  description: 
-  character: {fileID: 11420000}
-  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
-  dialogSideOverride: 2
---- !u!114 &11400005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 4
-  indentLevel: 0
-  storyText: ...mereka adalah jati diri leluhur kita. Tanpa mereka, kesatuan negeri
-    ini akan runtuh.
-  description: 
-  character: {fileID: 11420000}
-  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 1
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
-  dialogSideOverride: 2
---- !u!114 &11400006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 5
-  indentLevel: 0
-  storyText: Lalu... apa yang bisa kulakukan?
+  storyText: Abdi hamba padamu wahai guru!
   description: 
   character: {fileID: 11410000}
   portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
@@ -267,92 +155,6 @@ MonoBehaviour:
   waitForVO: 0
   setSayDialog: {fileID: 0}
   dialogSideOverride: 1
---- !u!114 &11400007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 6
-  indentLevel: 0
-  storyText: Kaulah yang terpilih, Panji. Hanya hatimu yang murni yang mampu menahan
-    kuasa topeng itu.
-  description: 
-  character: {fileID: 11420000}
-  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
-  dialogSideOverride: 2
---- !u!114 &11400008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 7
-  indentLevel: 0
-  storyText: Temukan topeng-topeng yang tersebar di kerajaan-kerajaan, lalu kembalikan
-    ke tempatnya.
-  description: 
-  character: {fileID: 11420000}
-  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
-  dialogSideOverride: 2
---- !u!114 &11400009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 8
-  indentLevel: 0
-  storyText: Semoga leluhur menjaga langkahmu, Panji.
-  description: 
-  character: {fileID: 11420000}
-  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
-  dialogSideOverride: 2
 --- !u!114 &1880275935377284151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,6 +181,9 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 7498133898449043057}
+  - {fileID: 5938792238479518295}
+  - {fileID: 4897023280929222563}
+  - {fileID: 1051920195348291292}
   suppressAllAutoSelections: 0
 --- !u!114 &7498133898449043057
 MonoBehaviour:
@@ -394,7 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Fungus::Fungus.Say
   itemId: 10
   indentLevel: 0
-  storyText: Tutorial Pertama
+  storyText: Sampailah kita di Aras Mamungkut.
   description: 
   character: {fileID: 11420000}
   portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
@@ -407,7 +212,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
-  dialogSideOverride: 0
+  dialogSideOverride: 2
 --- !u!114 &4316287744425596664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,6 +378,373 @@ MonoBehaviour:
   waitForVO: 0
   setSayDialog: {fileID: 0}
   dialogSideOverride: 0
+--- !u!114 &1324556080054925198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Block
+  nodeRect:
+    serializedVersion: 2
+    x: 70.00798
+    y: 15.799988
+    width: 75.984
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 23
+  blockName: Intro
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 999999}
+  - {fileID: 6166249887202509757}
+  - {fileID: 6030916231643627406}
+  - {fileID: 1801738859998035274}
+  suppressAllAutoSelections: 0
+--- !u!114 &6166249887202509757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 22
+  indentLevel: 0
+  storyText: 'Apa gerangan yang sebenarnya terjadi disini? '
+  description: 
+  character: {fileID: 11410000}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &4048749001061928506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 24
+  indentLevel: 0
+  storyText: "Panji, daku punya kabar buruk. \r\nDewi Sekar Taji diculik oleh Prabu
+    Klana."
+  description: 
+  character: {fileID: 11420000}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &7460278756028193000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 25
+  indentLevel: 0
+  storyText: "Engkau benar Panji! Namun sebelum itu engkau perlu menyelesaikan latihan
+    terlebih dahulu. \r\nIkutlah daku ke Aras Mamungkut, engkau tidak akan bisa mengalahkan
+    Prabu Klana dengan kesaktian yang engkau miliki sekarang."
+  description: 
+  character: {fileID: 11420000}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &1954038220201931806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 26
+  indentLevel: 0
+  storyText: "Bagaimana bisa guru?! \r\nIstana ini dijaga oleh puluhan pengawal dan
+    prajurit\r\n"
+  description: 
+  character: {fileID: 11410000}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &3831334556571653277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 27
+  indentLevel: 0
+  storyText: "Prabu Klana kurang ajar! \r\nKita harus merebut kembali Dewi Sekar
+    Taji dari genggaman si Bajingan Prabu Klana!"
+  description: 
+  character: {fileID: 11410000}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &27197754209522243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 28
+  indentLevel: 0
+  storyText: "Prabu Klana datang kemari dengan niatan untuk meminang Dewi Sekar Taji
+    namun ditolak oleh Sang Dewi. \r\nAlhasil Prabu Klana murka lalu memporak-porandakan
+    istana dan menculik Sang Dewi."
+  description: 
+  character: {fileID: 11420000}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &6030916231643627406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 29
+  indentLevel: 0
+  storyText: 'Mengapa semuanya berantakan? '
+  description: 
+  character: {fileID: 11410000}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &1801738859998035274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 30
+  indentLevel: 0
+  storyText: Mengapa tak ada seorangpun penjaga?
+  description: 
+  character: {fileID: 11410000}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &5938792238479518295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 31
+  indentLevel: 0
+  storyText: Disini engkau akan mempelajari kesaktian untuk dapat menumbangkan Prabu
+    Kelana.
+  description: 
+  character: {fileID: 11420000}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &4897023280929222563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 32
+  indentLevel: 0
+  storyText: Kesaktian seperti apa yg perlu hamba pelajari lagi ya wahai guru?
+  description: 
+  character: {fileID: 11410000}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &1051920195348291292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 33
+  indentLevel: 0
+  storyText: Pertama daku ingin engkau perlihatkan kembali hasil latihan yang selama
+    ini engkau asah.
+  description: 
+  character: {fileID: 11420000}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &999999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7e38e2d5474064681106e9dddafa57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 34
+  indentLevel: 0
+  target: 0
+  parameterType: 0
+  parameterName: Idle
+  parameterValue: 0
+  bossObjectName: PrabuKlana
+  delay: 0
 --- !u!1 &110000
 GameObject:
   m_ObjectHideFlags: 0

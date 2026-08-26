@@ -32,6 +32,14 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("an event to trigger when this checkpoint is reached")]
 		public UnityEvent OnCheckpointReached;
 
+		[Header("Revive")]
+		/// whether the player should play a revive animation when spawning at this checkpoint (including at level start, since CorgoiEngine spawns through the current checkpoint)
+		[Tooltip("whether the player should play a revive animation when spawning at this checkpoint")]
+		public bool PlayReviveOnRespawn = false;
+		/// how many seconds the player stays invisible right after spawning and before popping into view as the revive animation starts (0 = appears immediately)
+		[Tooltip("how many seconds the player stays invisible right after spawning and before popping into view as the revive animation starts")]
+		public float ReviveDelaySeconds = 0f;
+
 		protected bool _reached = false;
 		protected List<Respawnable> _listeners;
 
@@ -50,7 +58,12 @@ namespace MoreMountains.CorgiEngine
 		public virtual void SpawnPlayer(Character player)
 		{
 			player.RespawnAt(transform, FacingDirection);
-			
+
+			if (PlayReviveOnRespawn)
+			{
+				PlayerRevive.Play(player, ReviveDelaySeconds);
+			}
+
 			foreach(Respawnable listener in _listeners)
 			{
 				listener.OnPlayerRespawn(this,player);

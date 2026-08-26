@@ -5,6 +5,15 @@ namespace MaskboundJinosi.Skills
 	[CreateAssetMenu(fileName = "ActiveSkillData", menuName = "Maskbound/Skills/Active Skill Data")]
 	public class ActiveSkillData : Skill
 	{
+		[System.Serializable]
+		public class SkillSfx
+		{
+			[Tooltip("Nama/id unik untuk dipanggil dari Animation Event lewat PlaySkillSfx(\"id\").")]
+			public string Id;
+			public AudioClip Clip;
+			[Range(0f, 1f)] public float Volume = 1f;
+		}
+
 		[Header("Cast")]
 		[Min(0f)] public float Damage;
 		[Min(0f)] public float Duration;
@@ -29,6 +38,14 @@ namespace MaskboundJinosi.Skills
 		public Vector2 ProjectileSpawnOffset = new Vector2(1f, 0f);
 		public bool ProjectileParentToOwner;
 		public bool ProjectileMatchOwnerFacing = true;
+
+		[Header("Audio")]
+		[Tooltip("Suara yang diputar begitu efek skill (SkillPrefab / ProjectilePrefab) dibuat di scene.")]
+		public AudioClip SpawnSound;
+		[Tooltip("Volume suara spawn. 0-1.")]
+		[Range(0f, 1f)] public float SpawnSoundVolume = 1f;
+		[Tooltip("Daftar SFX yang dipicu lewat Animation Event. Buat Animation Event yang memanggil PlaySkillSfx(\"Id\") di CharacterSkillCaster.")]
+		public SkillSfx[] SfxList;
 
 		[Header("Shop")]
 		[Min(0)] public int SoulPrice;
