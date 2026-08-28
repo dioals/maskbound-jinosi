@@ -1858,8 +1858,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -1628607475
-  m_SortingLayer: 2
+  m_SortingLayerID: 606350985
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 73d29ebe399710744a028c255bf797c3, type: 3}
@@ -1988,10 +1988,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.AI.AnimationEventTeleportBehindPlayer
   bossCharacter: {fileID: 7532373360727809212}
-  targetPlayer: {fileID: 0}
   behindDistance: 2
   verticalOffset: 0
-  facePlayerAfterTeleport: 1
   useCorgiSafePosition: 1
   stopVelocity: 1
   logMissingTarget: 0

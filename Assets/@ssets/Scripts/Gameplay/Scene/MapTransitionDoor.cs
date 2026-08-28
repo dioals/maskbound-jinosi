@@ -22,6 +22,12 @@ namespace MaskboundJinosi.Gameplay.Scene
         [SerializeField] private bool useBootstrapLoadingScreen = true;
         [SerializeField] private string loadingSceneName = "LoadingScreen";
 
+        [Header("Entry Point")]
+        [Tooltip("Index into the destination LevelManager's Points of Entry list. Set to -1 to keep the default checkpoint spawn (no override).")]
+        [SerializeField, Min(-1)] private int entryPointIndex = -1;
+        [Tooltip("Direction the player should face when spawning at the destination entry point.")]
+        [SerializeField] private Character.FacingDirections entryFacingDirection = Character.FacingDirections.Right;
+
         [Header("Interaction Prompt")]
         [Tooltip("Optional prefab shown above the door. Its text auto-adapts to the bound Interact key (e.g. InteractionPrompt.prefab). Falls back to the built-in promptText when empty.")]
         [SerializeField] private GameObject interactionPromptPrefab;
@@ -136,6 +142,8 @@ namespace MaskboundJinosi.Gameplay.Scene
 
             Time.timeScale = 1f;
 
+            StoreEntryPoint();
+
             BootstrapSceneLoader loader = FindFirstObjectByType<BootstrapSceneLoader>(FindObjectsInactive.Include);
             if (useBootstrapLoadingScreen && loader != null)
             {
@@ -150,6 +158,16 @@ namespace MaskboundJinosi.Gameplay.Scene
             }
 
             SceneManager.LoadScene(destinationScene);
+        }
+
+        private void StoreEntryPoint()
+        {
+            if (entryPointIndex < 0 || string.IsNullOrWhiteSpace(destinationScene) || GameManager.Instance == null)
+            {
+                return;
+            }
+
+            GameManager.Instance.StorePointsOfEntry(destinationScene, entryPointIndex, entryFacingDirection);
         }
 
         private bool IsDestinationValid()

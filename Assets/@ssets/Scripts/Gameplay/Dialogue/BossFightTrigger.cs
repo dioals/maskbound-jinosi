@@ -1,10 +1,8 @@
 using System.Collections;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
-using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Playables;
-using UnityEngine.Timeline;
 using Flowchart = Fungus.Flowchart;
 using CorgiCharacter = MoreMountains.CorgiEngine.Character;
 
@@ -41,12 +39,8 @@ namespace MaskboundJinosi.Gameplay.Dialogue
         [Header("Sequence")]
         [Tooltip("Delay before the dialog starts.")]
         [SerializeField] private float dialogDelay = 0.3f;
-
-        [Header("Intro Timeline (optional)")]
-        [Tooltip("Timeline played before the dialog: drives the camera and character animations. If empty, the dialog starts immediately.")]
-        [SerializeField] private TimelineAsset introTimeline;
-        [Tooltip("PlayableDirector that plays the intro timeline. If empty, a temporary one is created at runtime.")]
-        [SerializeField] private PlayableDirector introDirector;
+        [Tooltip("Seconds to wait after this trigger is called before its dialog starts. Default 0 = starts immediately when called.")]
+        [SerializeField] private float activationDelay = 0f;
 
         [Header("Player")]
         [Tooltip("Freeze the player and force the idle animation while the dialog is playing.")]
@@ -56,23 +50,21 @@ namespace MaskboundJinosi.Gameplay.Dialogue
         [Tooltip("Hide the gameplay HUD while the dialog sequence plays and restore it when it ends.")]
         [SerializeField] private bool hideHudDuringDialog = true;
 
-        [Header("Testing")]
-        [Tooltip("Editor testing: start the sequence shortly after the scene loads, without walking into the trigger.")]
-        [SerializeField] private bool startOnLoadForTesting;
-        [Tooltip("Delay before 'Start On Load For Testing' fires.")]
-        [SerializeField] private float startOnLoadDelay = 1.5f;
+        [Header("Intro Timeline")]
+        [Tooltip("PlayableDirector playing the intro timeline. Paused while the dialog runs, stopped when it ends. If empty, the timeline is left running.")]
+        [SerializeField] private PlayableDirector introDirector;
 
         private Flowchart _flowchartInstance;
         private AIBrain _bossBrain;
         private DamageOnTouch _bossDamage;
         private CorgiCharacter _player;
-        private CharacterAbility[] _playerAbilities;
-        private bool[] _playerAbilitiesEnabledState;
         private bool _sequenceStarted;
         private bool _sequenceFinished;
+        private bool _activationPending;
         private bool _dialogExecuting;
         private bool _hudHidden;
-        private PlayableDirector _activeDirector;
+        private bool _timelinePaused;
+        private float _activationStartTime;
 
         protected virtual void Start()
         {
@@ -80,26 +72,6 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             // finishes and the fight begins.
             ResolveBoss();
             FreezeBoss();
-
-            if (startOnLoadForTesting)
-            {
-                StartCoroutine(StartOnLoadRoutine());
-            }
-        }
-
-        protected virtual void OnTriggerEnter2D(Collider2D other)
-        {
-            TryStartSequence(other);
-        }
-
-        protected virtual void OnTriggerStay2D(Collider2D other)
-        {
-            if (Time.timeSinceLevelLoad < 0.5f)
-            {
-                return;
-            }
-
-            TryStartSequence(other);
         }
 
         protected virtual void Update()
@@ -121,49 +93,6 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             }
         }
 
-        protected virtual void TryStartSequence(Collider2D other)
-        {
-            if (_sequenceStarted || _sequenceFinished)
-            {
-                return;
-            }
-
-            CorgiCharacter character = GetPlayerCharacter(other);
-            if (character == null)
-            {
-                return;
-            }
-
-            if (PlayerPrefs.GetInt(saveFlagKey, 0) == 1)
-            {
-                Debug.Log("[BossFightTrigger] Flag '" + saveFlagKey + "' already set, skipping dialog.", this);
-                _sequenceFinished = true;
-                return;
-            }
-
-            StartSequence(character);
-        }
-
-        protected virtual IEnumerator StartOnLoadRoutine()
-        {
-            yield return new WaitForSeconds(startOnLoadDelay);
-
-            if (_sequenceStarted || _sequenceFinished)
-            {
-                yield break;
-            }
-
-            CorgiCharacter player = GetMainPlayer();
-            if (player == null)
-            {
-                Debug.LogWarning("[BossFightTrigger] Start On Load: no player found after " + startOnLoadDelay + "s.", this);
-                yield break;
-            }
-
-            Debug.Log("[BossFightTrigger] Start On Load (testing) firing.", this);
-            StartSequence(player);
-        }
-
         protected virtual CorgiCharacter GetMainPlayer()
         {
             if (LevelManager.HasInstance && LevelManager.Instance.Players != null && LevelManager.Instance.Players.Count > 0)
@@ -174,33 +103,179 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             return null;
         }
 
-        protected virtual CorgiCharacter GetPlayerCharacter(Collider2D other)
+        /// <summary>
+        /// Starts the activation countdown for this trigger. When the configured
+        /// activation delay elapses, the boss dialog sequence starts. Callable
+        /// from the timeline or from another dialog trigger.
+        /// </summary>
+        public virtual void ActivateTrigger()
         {
-            CorgiCharacter character = other.GetComponentInParent<CorgiCharacter>();
-            if (character != null)
+            if (_sequenceStarted || _sequenceFinished || _activationPending)
             {
-                return character;
+                return;
             }
 
-            if (other.CompareTag("Player"))
+            if (!string.IsNullOrEmpty(saveFlagKey) && PlayerPrefs.GetInt(saveFlagKey, 0) == 1)
             {
-                character = GetMainPlayer();
+                Debug.Log("[BossFightTrigger] Flag '" + saveFlagKey + "' already set, skipping dialog.", this);
+                _sequenceFinished = true;
+                return;
             }
 
-            return character;
+            _activationPending = true;
+            _activationStartTime = Time.time;
+            Debug.Log("[BossFightTrigger] ActivateTrigger called. activationDelay=" + activationDelay + "s, countdown started.", this);
+            StartCoroutine(WaitForPlayerThenStart());
         }
 
-        protected virtual void StartSequence(CorgiCharacter player)
+        /// <summary>
+        /// Convenience wrapper kept for existing timeline wiring. Same as
+        /// ActivateTrigger(): starts the countdown, then the dialog.
+        /// </summary>
+        public virtual void FreezePlayerAndStartDialog()
         {
-            _sequenceStarted = true;
+            ActivateTrigger();
+        }
+
+        /// <summary>
+        /// Waits until the player is spawned (LevelManager spawns it during scene
+        /// load) and then freezes both characters and plays the dialog.
+        /// </summary>
+        protected virtual IEnumerator WaitForPlayerThenStart()
+        {
+            CorgiCharacter player = null;
+            while (player == null)
+            {
+                player = GetMainPlayer();
+                if (player == null)
+                {
+                    yield return null;
+                }
+            }
+
+            Debug.Log("[BossFightTrigger] Player found, waiting for activation delay (" + activationDelay + "s since call).", this);
+
+            // Hold the signal until the activation delay (counted from the moment
+            // this trigger was called) has elapsed.
+            while (Time.time - _activationStartTime < activationDelay)
+            {
+                yield return null;
+            }
+
+            Debug.Log("[BossFightTrigger] Activation delay elapsed (" + (Time.time - _activationStartTime).ToString("F2") + "s), starting dialog sequence.", this);
+
+            _activationPending = false;
             _player = player;
-
-            Debug.Log("[BossFightTrigger] Player entered trigger, starting boss intro.", this);
-
             FreezePlayer();
-            HideHud();
+            FreezeBoss();
+            PlayDialog();
+        }
+
+        /// <summary>
+        /// Freezes the player using CorgiEngine's Character.Freeze(): gravity is
+        /// disabled, forces are zeroed and the character condition becomes Frozen,
+        /// which blocks abilities that list Frozen as a blocking condition.
+        /// Callable from the timeline via a signal.
+        /// </summary>
+        public virtual void FreezePlayer()
+        {
+            if (_player == null)
+            {
+                _player = GetMainPlayer();
+            }
+
+            if (!freezePlayerDuringDialog || _player == null)
+            {
+                return;
+            }
+
+            _player.Freeze();
+            ForcePlayerIdle();
+
+            Debug.Log("[BossFightTrigger] Player frozen.", this);
+        }
+
+        /// <summary>
+        /// Unfreezes the player using CorgiEngine's Character.UnFreeze().
+        /// Callable from the timeline via a signal.
+        /// </summary>
+        public virtual void UnfreezePlayer()
+        {
+            if (!freezePlayerDuringDialog || _player == null)
+            {
+                return;
+            }
+
+            _player.UnFreeze();
+
+            Debug.Log("[BossFightTrigger] Player unfrozen.", this);
+        }
+
+        /// <summary>
+        /// Freezes the boss: disables AI and damage so it stands idle and cannot
+        /// hurt the player. Callable from the timeline via a signal.
+        /// </summary>
+        public virtual void FreezeBoss()
+        {
             ResolveBoss();
-            ResolveFlowchart();
+
+            if (!freezeBossDuringDialog)
+            {
+                return;
+            }
+
+            if (_bossBrain != null)
+            {
+                _bossBrain.enabled = false;
+            }
+
+            if (_bossDamage != null)
+            {
+                _bossDamage.enabled = false;
+            }
+
+            Debug.Log("[BossFightTrigger] Boss frozen.", this);
+        }
+
+        /// <summary>
+        /// Unfreezes the boss: re-enables AI, transitions it to the fight state
+        /// and re-enables its damage. Callable from the timeline via a signal.
+        /// </summary>
+        public virtual void UnfreezeBoss()
+        {
+            if (_bossBrain != null)
+            {
+                _bossBrain.enabled = true;
+                _bossBrain.BrainActive = true;
+                _bossBrain.TransitionToState(fightStateName);
+            }
+
+            if (_bossDamage != null)
+            {
+                _bossDamage.enabled = true;
+            }
+
+            Debug.Log("[BossFightTrigger] Boss unfrozen (state '" + fightStateName + "').", this);
+        }
+
+        /// <summary>
+        /// Plays the dialog: resolves the flowchart and executes the configured
+        /// block. Callable from the timeline via a signal.
+        /// </summary>
+        public virtual void PlayDialog()
+        {
+            if (_sequenceStarted || _sequenceFinished)
+            {
+                return;
+            }
+
+            _sequenceStarted = true;
+            Debug.Log("[BossFightTrigger] PlayDialog called, executing block '" + blockName + "'.", this);
+
+            if (_flowchartInstance == null)
+            {
+                ResolveFlowchart();
+            }
 
             if (_flowchartInstance == null)
             {
@@ -209,189 +284,86 @@ namespace MaskboundJinosi.Gameplay.Dialogue
                 return;
             }
 
-            StartCoroutine(SequenceRoutine());
+            PauseIntroTimeline();
+            HideHud();
+            StartCoroutine(ExecuteDialogRoutine());
         }
 
-        protected virtual IEnumerator SequenceRoutine()
+        /// <summary>
+        /// Pauses the intro timeline while the dialog is running so the camera
+        /// (and any remaining timeline content) freezes during the dialog.
+        /// </summary>
+        protected virtual void PauseIntroTimeline()
         {
-            // Freeze the boss so it stays idle while the intro plays.
-            FreezeBoss();
-
-            if (introTimeline != null)
+            if (introDirector == null || _timelinePaused)
             {
-                yield return StartCoroutine(PlayIntroTimeline());
+                return;
             }
 
+            _timelinePaused = true;
+            introDirector.Pause();
+            Debug.Log("[BossFightTrigger] Intro timeline paused.", this);
+        }
+
+        /// <summary>
+        /// Resumes the intro timeline after the dialog ends so any remaining
+        /// timeline content (e.g. camera blends) plays out. If the timeline was
+        /// never paused (no director assigned), it is left alone.
+        /// </summary>
+        protected virtual void ResumeIntroTimeline()
+        {
+            if (introDirector == null)
+            {
+                return;
+            }
+
+            if (_timelinePaused)
+            {
+                introDirector.Resume();
+                _timelinePaused = false;
+                Debug.Log("[BossFightTrigger] Intro timeline resumed.", this);
+            }
+            else
+            {
+                introDirector.Stop();
+                Debug.Log("[BossFightTrigger] Intro timeline was not paused, stopped instead.", this);
+            }
+        }
+
+        /// <summary>
+        /// Stops the dialog: unfreezes both characters, restores the HUD and
+        /// starts the fight. Callable from the timeline via a signal.
+        /// </summary>
+        public virtual void StopDialog()
+        {
+            EndSequence();
+        }
+
+        /// <summary>
+        /// Starts another dialog trigger (e.g. an NPC dialog) programmatically.
+        /// Callable from a Fungus "Call Method" command inside the boss dialog to
+        /// chain to the next dialog trigger. The target trigger's collider is not
+        /// needed - TriggerDialog() is invoked directly.
+        /// </summary>
+        public virtual void CallDialogTrigger(NPCDialogTrigger target)
+        {
+            if (target == null)
+            {
+                Debug.LogWarning("[BossFightTrigger] CallDialogTrigger: target is null.", this);
+                return;
+            }
+
+            Debug.Log("[BossFightTrigger] Calling dialog trigger '" + target.name + "'.", this);
+            target.TriggerDialog();
+        }
+
+        protected virtual IEnumerator ExecuteDialogRoutine()
+        {
             yield return new WaitForSeconds(dialogDelay);
 
             Debug.Log("[BossFightTrigger] Executing block '" + blockName + "' on flowchart '" + _flowchartInstance.name + "'.", this);
             _dialogExecuting = true;
             _flowchartInstance.ExecuteBlock(blockName);
-        }
-
-        /// <summary>
-        /// Creates/resolves the PlayableDirector, binds the timeline's runtime
-        /// targets (player, boss, cinematic cameras), plays it and waits until
-        /// the timeline has finished.
-        /// </summary>
-        protected virtual IEnumerator PlayIntroTimeline()
-        {
-            PlayableDirector director = introDirector;
-            bool temporaryDirector = false;
-            if (director == null)
-            {
-                GameObject go = new GameObject("BossIntro_TimelineDirector");
-                director = go.AddComponent<PlayableDirector>();
-                temporaryDirector = true;
-            }
-
-            director.playableAsset = introTimeline;
-            BindTimelineRuntimeTargets(director);
-
-            _activeDirector = director;
-            director.Play();
-
-            // Wait until the timeline finishes before the dialog starts.
-            while (director != null && director.state == PlayState.Playing)
-            {
-                yield return null;
-            }
-
-            if (temporaryDirector && director != null)
-            {
-                Destroy(director.gameObject);
-            }
-
-            _activeDirector = null;
-        }
-
-        /// <summary>
-        /// Binds tracks that reference runtime-spawned objects: the player and the
-        /// boss. Also resolves Cinemachine shot exposed references to the actual
-        /// cameras in the scene, so the timeline drives them.
-        /// </summary>
-        protected virtual void BindTimelineRuntimeTargets(PlayableDirector director)
-        {
-            TimelineAsset asset = director.playableAsset as TimelineAsset;
-            if (asset == null)
-            {
-                return;
-            }
-
-            CorgiCharacter player = _player != null ? _player : GetMainPlayer();
-            CorgiCharacter bossChar = boss;
-
-            foreach (TrackAsset track in asset.GetOutputTracks())
-            {
-                if (track == null)
-                {
-                    continue;
-                }
-
-                if (track is AnimationTrack)
-                {
-                    if (player != null && track.name.IndexOf("Player", System.StringComparison.OrdinalIgnoreCase) >= 0)
-                    {
-                        director.SetGenericBinding(track, player.gameObject);
-                        Debug.Log("[BossFightTrigger] Bound timeline track '" + track.name + "' to player '" + player.name + "'.", this);
-                    }
-                    else if (bossChar != null && track.name.IndexOf("Boss", System.StringComparison.OrdinalIgnoreCase) >= 0)
-                    {
-                        director.SetGenericBinding(track, bossChar.gameObject);
-                        Debug.Log("[BossFightTrigger] Bound timeline track '" + track.name + "' to boss '" + bossChar.name + "'.", this);
-                    }
-                }
-                else if (track is CinemachineTrack)
-                {
-                    BindCinemachineShots(director, track);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Resolves CinemachineShot exposed references so each shot uses the
-        /// CinemachineCamera with the matching name in the scene.
-        /// </summary>
-        protected virtual void BindCinemachineShots(PlayableDirector director, TrackAsset track)
-        {
-            foreach (TimelineClip clip in track.GetClips())
-            {
-                if (clip == null || clip.asset == null)
-                {
-                    continue;
-                }
-
-                string cameraName = clip.displayName != null ? clip.displayName.Trim() : null;
-                CinemachineCamera camera = FindCinemachineCameraByName(cameraName);
-                if (camera == null)
-                {
-                    Debug.LogWarning("[BossFightTrigger] No CinemachineCamera named '" + cameraName + "' found for timeline shot.", this);
-                    continue;
-                }
-
-                // The shot's exposed reference is already bound by the editor when
-                // the timeline was set up; only override it when it is not bound yet.
-                PropertyName exposedName = GetShotExposedName(clip);
-                if (exposedName.ToString().Length > 0)
-                {
-                    director.SetReferenceValue(exposedName, camera);
-                }
-
-                Debug.Log("[BossFightTrigger] Bound Cinemachine shot '" + cameraName + "' to '" + camera.name + "'.", this);
-            }
-        }
-
-        /// <summary>
-        /// Reads the exposed reference name of a CinemachineShot clip asset via
-        /// reflection (Cinemachine 3 stores it in VirtualCamera.exposedName).
-        /// </summary>
-        protected virtual PropertyName GetShotExposedName(TimelineClip clip)
-        {
-            System.Type type = clip.asset.GetType();
-            System.Reflection.FieldInfo field = type.GetField("VirtualCamera");
-            if (field == null)
-            {
-                field = type.GetField("m_VirtualCamera");
-            }
-
-            if (field == null)
-            {
-                return default;
-            }
-
-            object value = field.GetValue(clip.asset);
-            if (value == null)
-            {
-                return default;
-            }
-
-            System.Reflection.FieldInfo nameField = value.GetType().GetField("exposedName");
-            if (nameField == null)
-            {
-                return default;
-            }
-
-            object name = nameField.GetValue(value);
-            return name is PropertyName pn ? pn : default;
-        }
-
-        protected virtual CinemachineCamera FindCinemachineCameraByName(string name)
-        {
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                return null;
-            }
-
-            CinemachineCamera[] cameras = FindObjectsByType<CinemachineCamera>(FindObjectsInactive.Include, FindObjectsSortMode.None);
-            foreach (CinemachineCamera camera in cameras)
-            {
-                if (camera.gameObject.name.Trim() == name.Trim())
-                {
-                    return camera;
-                }
-            }
-
-            return null;
         }
 
         protected virtual void ResolveBoss()
@@ -433,49 +405,6 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             return null;
         }
 
-        /// <summary>
-        /// Freezes the boss during the dialog: disables AI and damage so the boss
-        /// stands idle and cannot hurt the player while they talk.
-        /// </summary>
-        protected virtual void FreezeBoss()
-        {
-            if (!freezeBossDuringDialog)
-            {
-                return;
-            }
-
-            if (_bossBrain != null)
-            {
-                _bossBrain.enabled = false;
-            }
-
-            if (_bossDamage != null)
-            {
-                _bossDamage.enabled = false;
-            }
-        }
-
-        /// <summary>
-        /// Starts the fight: re-enables the boss AI, transitions it to the fight
-        /// state and re-enables its damage.
-        /// </summary>
-        protected virtual void StartFight()
-        {
-            if (_bossBrain != null)
-            {
-                _bossBrain.enabled = true;
-                _bossBrain.BrainActive = true;
-                _bossBrain.TransitionToState(fightStateName);
-            }
-
-            if (_bossDamage != null)
-            {
-                _bossDamage.enabled = true;
-            }
-
-            Debug.Log("[BossFightTrigger] Boss fight started (state '" + fightStateName + "').", this);
-        }
-
         protected virtual void ResolveFlowchart()
         {
             if (flowchartPrefab != null)
@@ -486,50 +415,6 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             {
                 _flowchartInstance = FindFirstObjectByType<Flowchart>();
             }
-        }
-
-        protected virtual void FreezePlayer()
-        {
-            if (!freezePlayerDuringDialog || _player == null)
-            {
-                return;
-            }
-
-            _playerAbilities = _player.GetComponents<CharacterAbility>();
-            _playerAbilitiesEnabledState = new bool[_playerAbilities.Length];
-
-            for (int i = 0; i < _playerAbilities.Length; i++)
-            {
-                _playerAbilitiesEnabledState[i] = _playerAbilities[i].enabled;
-                _playerAbilities[i].enabled = false;
-            }
-
-            CorgiController controller = _player.GetComponent<CorgiController>();
-            if (controller != null)
-            {
-                controller.SetHorizontalForce(0f);
-            }
-        }
-
-        protected virtual void UnfreezePlayer()
-        {
-            if (!freezePlayerDuringDialog || _player == null)
-            {
-                return;
-            }
-
-            if (_playerAbilities == null || _playerAbilitiesEnabledState == null)
-            {
-                return;
-            }
-
-            for (int i = 0; i < _playerAbilities.Length; i++)
-            {
-                _playerAbilities[i].enabled = _playerAbilitiesEnabledState[i];
-            }
-
-            _playerAbilities = null;
-            _playerAbilitiesEnabledState = null;
         }
 
         protected virtual void ForcePlayerIdle()
@@ -613,6 +498,16 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             return null;
         }
 
+        /// <summary>
+        /// Called when the boss dialog finishes: unfreezes both characters,
+        /// restores the HUD and starts the fight. Invoked automatically once the
+        /// dialog ends, or explicitly from the timeline / a Fungus block.
+        /// </summary>
+        public virtual void UnfreezePlayerAndEndDialog()
+        {
+            EndSequence();
+        }
+
         protected virtual void EndSequence()
         {
             if (_sequenceFinished)
@@ -623,33 +518,36 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             _sequenceFinished = true;
             _dialogExecuting = false;
 
-            StartFight();
+            ResumeIntroTimeline();
+            UnfreezeBoss();
             UnfreezePlayer();
             ShowHud();
 
-            PlayerPrefs.SetInt(saveFlagKey, 1);
-            PlayerPrefs.Save();
-
-            Debug.Log("[BossFightTrigger] Sequence finished, flag '" + saveFlagKey + "' set.", this);
+            if (!string.IsNullOrEmpty(saveFlagKey))
+            {
+                PlayerPrefs.SetInt(saveFlagKey, 1);
+                PlayerPrefs.Save();
+                Debug.Log("[BossFightTrigger] Sequence finished, flag '" + saveFlagKey + "' set.", this);
+            }
+            else
+            {
+                Debug.Log("[BossFightTrigger] Sequence finished (no saveFlagKey set, not saved).", this);
+            }
         }
 
         [ContextMenu("Force Start Sequence (testing)")]
         protected virtual void ForceStartSequenceForTesting()
         {
-            if (_sequenceStarted || _sequenceFinished)
+            if (_sequenceStarted || _sequenceFinished || _activationPending)
             {
                 Debug.LogWarning("[BossFightTrigger] Sequence already started/finished.", this);
                 return;
             }
 
-            CorgiCharacter player = GetMainPlayer();
-            if (player == null)
-            {
-                Debug.LogError("[BossFightTrigger] No player found. Run the game first, then use this command.", this);
-                return;
-            }
-
-            StartSequence(player);
+            _activationPending = true;
+            _activationStartTime = Time.time;
+            Debug.Log("[BossFightTrigger] ForceStartSequenceForTesting called. activationDelay=" + activationDelay + "s, countdown started.", this);
+            StartCoroutine(WaitForPlayerThenStart());
         }
     }
 }

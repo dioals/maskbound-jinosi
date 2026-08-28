@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.ActiveSkillData
   SkillId: gempita_mask
   DisplayName: Gempita Mask
-  Description: Active Skill menghasilkan bomb mask secara beruntun
+  Description: Active skill player yang membuat player dapat melakukan double jump
+    movement
   Icon: {fileID: 21300000, guid: 0733c6772a2207541b400faf37216bea, type: 3}
   SkillType: 1
+  SoulPrice: 10
   Damage: 50
   Duration: 5
   CastLockFallbackDuration: 1.2
@@ -35,3 +37,6 @@ MonoBehaviour:
   ProjectileSpawnOffset: {x: 1, y: 0}
   ProjectileParentToOwner: 0
   ProjectileMatchOwnerFacing: 1
+  SpawnSound: {fileID: 0}
+  SpawnSoundVolume: 1
+  SfxList: []

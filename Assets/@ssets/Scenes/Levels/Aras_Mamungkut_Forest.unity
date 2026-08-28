@@ -663,7 +663,13 @@ MonoBehaviour:
   CheckpointAttributionAxis: 0
   CheckpointAttributionDirection: 0
   CurrentCheckPoint: {fileID: 910000000000100006}
-  PointsOfEntry: []
+  PointsOfEntry:
+  - Name: Entry_Sabrang
+    Position: {fileID: 840000000000000011}
+    EntryFeedback: {fileID: 0}
+  - Name: Entry_Sendang
+    Position: {fileID: 840000000000000012}
+    EntryFeedback: {fileID: 0}
   IntroFadeDuration: 1
   OutroFadeDuration: 1
   FaderID: 0
@@ -2042,6 +2048,8 @@ MonoBehaviour:
   transitionDelay: 0
   useBootstrapLoadingScreen: 1
   loadingSceneName: LoadingScreen
+  entryPointIndex: -1
+  entryFacingDirection: 1
   interactionPromptPrefab: {fileID: 1000001, guid: bb33cc44dd55ee66ff77001122334456,
     type: 3}
   promptText: INTERACT
@@ -2796,6 +2804,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 547565507}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1484667753 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1529701539853727470, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1557728897}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+--- !u!114 &1484667754 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4749212535258430546, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1557728897}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1494325978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2928,6 +2960,39 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 910000000000000010}
     m_Modifications:
+    - target: {fileID: -7302275814094497041, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070,
+        type: 3}
+    - target: {fileID: -7302275814094497041, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: storyText
+      value: Setelah artefak pengurung berhasil kau hancurkan, bawalah jiwa itu bersama
+        dalam tubuhmu.
+      objectReference: {fileID: 0}
+    - target: {fileID: -7302275814094497041, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: dialogSideOverride
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1787909384593166739, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070,
+        type: 3}
+    - target: {fileID: -1787909384593166739, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: storyText
+      value: "Bagus! \r\nNamun seperti yang daku katakan sebelumnya, itu belum cukup. "
+      objectReference: {fileID: 0}
+    - target: {fileID: -1787909384593166739, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: dialogSideOverride
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
       propertyPath: m_Name
       value: Flowchart_IntroBrahmana
@@ -2973,21 +3038,157 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
+      propertyPath: scrollPos.x
+      value: 44.96901
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
+      propertyPath: scrollPos.y
+      value: -21.180481
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
       propertyPath: selectedBlocks.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
       propertyPath: selectedCommands.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
       propertyPath: 'selectedBlocks.Array.data[0]'
       value: 
-      objectReference: {fileID: 1557728900}
+      objectReference: {fileID: 1557728927}
     - target: {fileID: 11400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
       propertyPath: 'selectedCommands.Array.data[0]'
       value: 
-      objectReference: {fileID: 1557728902}
+      objectReference: {fileID: 1557728919}
+    - target: {fileID: 1529701539853727470, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98,
+        type: 3}
+    - target: {fileID: 1529701539853727470, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 1484667754}
+    - target: {fileID: 1529701539853727470, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: storyText
+      value: 'Terimakasih wahai manusia!
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529701539853727470, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: dialogSideOverride
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596623036447780184, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: nodeRect.x
+      value: 61.038986
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596623036447780184, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: commandList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596623036447780184, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: 'commandList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1557728920}
+    - target: {fileID: 1596623036447780184, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: 'commandList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1484667753}
+    - target: {fileID: 1596623036447780184, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: 'commandList.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1557728919}
+    - target: {fileID: 1596623036447780184, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: 'commandList.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1557728918}
+    - target: {fileID: 1596623036447780184, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: 'commandList.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1557728917}
+    - target: {fileID: 1596623036447780184, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: 'commandList.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1557728916}
+    - target: {fileID: 4316287744425596664, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: commandList.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4316287744425596664, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: 'commandList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1557728914}
+    - target: {fileID: 4316287744425596664, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: 'commandList.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1557728913}
+    - target: {fileID: 4316287744425596664, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: 'commandList.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1557728912}
+    - target: {fileID: 4316287744425596664, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: 'commandList.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1557728911}
+    - target: {fileID: 4316287744425596664, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: 'commandList.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1557728910}
+    - target: {fileID: 4316287744425596664, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: 'commandList.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1557728909}
+    - target: {fileID: 4316287744425596664, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: 'commandList.Array.data[7]'
+      value: 
+      objectReference: {fileID: 1557728908}
+    - target: {fileID: 4316287744425596664, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: 'commandList.Array.data[8]'
+      value: 
+      objectReference: {fileID: 1557728907}
+    - target: {fileID: 4316287744425596664, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: 'commandList.Array.data[9]'
+      value: 
+      objectReference: {fileID: 1557728905}
+    - target: {fileID: 4316287744425596664, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: 'commandList.Array.data[10]'
+      value: 
+      objectReference: {fileID: 1557728915}
+    - target: {fileID: 4316287744425596664, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: 'commandList.Array.data[11]'
+      value: 
+      objectReference: {fileID: 1557728906}
+    - target: {fileID: 4749212535258430546, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: portraits.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7869965819448228307, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
         type: 3}
       propertyPath: nodeRect.x
@@ -3016,6 +3217,98 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1557728902}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728914}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728911}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728912}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728907}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728906}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728913}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728910}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728909}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728905}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728908}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728915}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728920}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728916}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728917}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728919}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728918}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728927}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728926}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728925}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728924}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728923}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728922}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557728921}
   m_SourcePrefab: {fileID: 100100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
 --- !u!114 &1557728898 stripped
 MonoBehaviour:
@@ -3037,16 +3330,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1557728900 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7869965819448228307, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+  m_CorrespondingSourceObject: {fileID: 11420000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
     type: 3}
   m_PrefabInstance: {fileID: 1557728897}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1557728901}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Fungus::Fungus.Block
+  m_EditorClassIdentifier: 
 --- !u!1 &1557728901 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
@@ -3070,6 +3363,717 @@ MonoBehaviour:
   targetObject: {fileID: 1801375842}
   methodName: EnableTrigger
   delay: 0
+--- !u!114 &1557728903 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11410000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1557728897}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1557728905
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 44
+  indentLevel: 0
+  storyText: 'Engkau benar wahai muridku.
+
+    Karena itulah sekarang daku ingin
+    engkau mengumpulkan wasesa Sang Pangreksa.'
+  description: 
+  character: {fileID: 1557728900}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &1557728906
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 40
+  indentLevel: 0
+  storyText: Baik guru!
+  description: 
+  character: {fileID: 1557728903}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &1557728907
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 39
+  indentLevel: 0
+  storyText: 'Kejahatan Prabu Kelana sungguh kelewatan!
+
+    Bajingan itu harus segera
+    ditumbangkan.'
+  description: 
+  character: {fileID: 1557728903}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &1557728908
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 45
+  indentLevel: 0
+  storyText: Setelahnya Prabu Kelana memecah wasesa milik Sang Pangreksa kedalam
+    (jumlah artefak) dan menyebarkannya diseluruh Aras Mamungkut.
+  description: 
+  character: {fileID: 1557728900}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &1557728909
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 43
+  indentLevel: 0
+  storyText: Penolakan itu berbuah pada penyerangan pada Sang Pangreksa dan kekalahannya
+    dihadapan kekuatan Prabu Kelana.
+  description: 
+  character: {fileID: 1557728900}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &1557728910
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 42
+  indentLevel: 0
+  storyText: Prabu Kelana merupakan sosok yang begitu kuat menginginkan kekuatan
+    dan kekuasaan, namun Sang Pangreksa tidak menghendaki altarnya untuk digunakan
+    Prabu Kelana mendapatkan kekuatan yang didambakannya.
+  description: 
+  character: {fileID: 1557728900}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &1557728911
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 37
+  indentLevel: 0
+  storyText: 'Ialah Prabu Kelana.
+
+'
+  description: 
+  character: {fileID: 1557728900}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &1557728912
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 38
+  indentLevel: 0
+  storyText: Siapa yang tega melakukan hal itu pada Sang Pangreksa?
+  description: 
+  character: {fileID: 1557728903}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &1557728913
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 41
+  indentLevel: 0
+  storyText: 'Namun saat ini Roh Penjaga altar, Sang Pangreksa Topeng Derita, sedang
+    murka karena jiwanya dipecah lalu disebarkan diseluruh penjuru Aras Mamungkut.
+
+    Engkau
+    perlu menyatukan pecahan jiwa, wasesa Sang Pangreksa untuk menenangkannya.'
+  description: 
+  character: {fileID: 1557728900}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &1557728914
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 36
+  indentLevel: 0
+  storyText: 'Ini adalah altar semedi.
+
+    Disini engkau dapat memperoleh kesaktian
+    dengan melakukan semedi.'
+  description: 
+  character: {fileID: 1557728900}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &1557728915
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 46
+  indentLevel: 0
+  storyText: 'Hancurkan artefak yang mengurung mereka dan kembalikan mereka pada
+    Sang Pangreksa.
+
+    Lekasnya Sang Pangreksa akan tenang dan engkau dapat bersemedi
+    di altar ini.'
+  description: 
+  character: {fileID: 1557728900}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &1557728916
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 48
+  indentLevel: 0
+  storyText: Terimakasih atas kebaikan haitmu Sang Pangreksa Topeng Pelita!
+  description: 
+  character: {fileID: 1557728903}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &1557728917
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 49
+  indentLevel: 0
+  storyText: "Baiklah, engkau sudah daku restui! \r\nBerangkatlah ke panggung pertempuran!"
+  description: 
+  character: {fileID: 1557728900}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &1557728918
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 51
+  indentLevel: 0
+  storyText: 'Aku tlah tenang.
+
+    Engkau ku perbolehkan memakai altarku.
+
+    Niscaya
+    engkau akan memperoleh kesaktian untuk menandingi Prabu Kelana.'
+  description: 
+  character: {fileID: 1484667754}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &1557728919
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 50
+  indentLevel: 0
+  storyText: 'Akulah Sang Pangreksa Topeng Pelita.
+
+    Wujud dan namaku berubah
+    karena ulah Prabu Kelana.
+
+    Namun kini pecahan jiwaku tlah kembali.'
+  description: 
+  character: {fileID: 1484667754}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &1557728920
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 47
+  indentLevel: 0
+  storyText: 'Kerja bagus wahai muridku!
+
+    Sekarang lepaskan jiwa-jiwa itu, kembalikan
+    pada Sang Pangreksa.'
+  description: 
+  character: {fileID: 1557728900}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &1557728921
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 58
+  indentLevel: 0
+  storyText: Terimakasih atas kebaikan haitmu Sang Pangreksa Topeng Pelita!
+  description: 
+  character: {fileID: 1557728903}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &1557728922
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 57
+  indentLevel: 0
+  storyText: "Baiklah, engkau sudah daku restui! \r\nBerangkatlah ke panggung pertempuran!"
+  description: 
+  character: {fileID: 1557728900}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &1557728923
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 56
+  indentLevel: 0
+  storyText: 'Aku tlah tenang.
+
+    Engkau ku perbolehkan memakai altarku.
+
+    Niscaya
+    engkau akan memperoleh kesaktian untuk menandingi Prabu Kelana.'
+  description: 
+  character: {fileID: 1484667754}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &1557728924
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 55
+  indentLevel: 0
+  storyText: 'Akulah Sang Pangreksa Topeng Pelita.
+
+    Wujud dan namaku berubah
+    karena ulah Prabu Kelana.
+
+    Namun kini pecahan jiwaku tlah kembali.'
+  description: 
+  character: {fileID: 1484667754}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &1557728925
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 54
+  indentLevel: 0
+  storyText: 'Terimakasih wahai manusia!
+
+'
+  description: 
+  character: {fileID: 1484667754}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &1557728926
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 53
+  indentLevel: 0
+  storyText: 'Kerja bagus wahai muridku!
+
+    Sekarang lepaskan jiwa-jiwa itu, kembalikan
+    pada Sang Pangreksa.'
+  description: 
+  character: {fileID: 1557728900}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &1557728927
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557728901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Block
+  nodeRect:
+    serializedVersion: 2
+    x: 63.43898
+    y: 325.3805
+    width: 117.432
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 59
+  blockName: FifthTutorial
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 1557728926}
+  - {fileID: 1557728925}
+  - {fileID: 1557728924}
+  - {fileID: 1557728923}
+  - {fileID: 1557728922}
+  - {fileID: 1557728921}
+  suppressAllAutoSelections: 0
 --- !u!1 &1605590341
 GameObject:
   m_ObjectHideFlags: 0
@@ -3453,7 +4457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: MoreMountains.CorgiEngine::MoreMountains.CorgiEngine.ParallaxElement
   UpdateMode: 1
-  HorizontalSpeed: 1
+  HorizontalSpeed: 0.85
   VerticalSpeed: 0
   MoveInOppositeDirection: 0
 --- !u!1 &1801375842
@@ -4347,7 +5351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: MoreMountains.CorgiEngine::MoreMountains.CorgiEngine.ParallaxElement
   UpdateMode: 1
-  HorizontalSpeed: 1.01
+  HorizontalSpeed: 0.85
   VerticalSpeed: 0
   MoveInOppositeDirection: 0
 --- !u!1 &2114782770
@@ -4710,7 +5714,71 @@ Transform:
   - {fileID: 185681044}
   - {fileID: 1258865028}
   - {fileID: 798908965}
+  - {fileID: 840000000000000001}
+  - {fileID: 840000000000000002}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &840000000000000001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 840000000000000011}
+  m_Layer: 0
+  m_Name: Entry_Sabrang
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &840000000000000011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840000000000000001}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 88.3, y: -7.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 910000000000000010}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &840000000000000002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 840000000000000012}
+  m_Layer: 0
+  m_Name: Entry_Sendang
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &840000000000000012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840000000000000002}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.3, y: -8.59, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 910000000000000010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &910000000000100004
 Transform:
@@ -5024,8 +6092,142 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4619949420679773396, guid: 7bc6ad8b5d10fed41acbe247d704e5df,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2211555196635136546}
+    - targetCorrespondingSourceObject: {fileID: 4619949420679773396, guid: 7bc6ad8b5d10fed41acbe247d704e5df,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2211555196635136545}
   m_SourcePrefab: {fileID: 100100000, guid: 7bc6ad8b5d10fed41acbe247d704e5df, type: 3}
+--- !u!1 &2211555196635136544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4619949420679773396, guid: 7bc6ad8b5d10fed41acbe247d704e5df,
+    type: 3}
+  m_PrefabInstance: {fileID: 2211555196635136543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2211555196635136545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2211555196635136544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a847e274ee40da94d8c56a3d99c206c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Gameplay.Scene.SpiritualSoulTarget
+  ButtonActivatedRequirement: 2
+  RequiresPlayerType: 1
+  RequiresButtonActivationAbility: 1
+  PreventJumpsWhileInThisZone: 0
+  Activable: 1
+  AutoActivation: 0
+  AutoActivationAndButtonInteraction: 0
+  CanOnlyActivateIfGrounded: 0
+  ShouldUpdateState: 1
+  OnlyOneActivationAtOnce: 1
+  AlsoPerformChecksOnStay: 0
+  TargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  UnlimitedActivations: 1
+  MaxNumberOfActivations: 0
+  DelayBetweenUses: 0
+  DisableAfterUse: 0
+  InputType: 0
+  InputButton: Interact
+  InputKey: 32
+  AnimationTriggerParameterName: 
+  UseVisualPrompt: 1
+  ButtonPromptPrefab: {fileID: 0}
+  ButtonPromptText: A
+  ButtonPromptColor: {r: 0.4862745, g: 0.9882353, b: 0, a: 1}
+  ButtonPromptTextColor: {r: 1, g: 1, b: 1, a: 1}
+  AlwaysShowPrompt: 1
+  ShowPromptWhenColliding: 1
+  HidePromptAfterUse: 0
+  PromptRelativePosition: {x: 0, y: 0, z: 0}
+  ActivationFeedback: {fileID: 0}
+  DeniedFeedback: {fileID: 0}
+  EnterFeedback: {fileID: 0}
+  ExitFeedback: {fileID: 0}
+  OnActivation:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStay:
+    m_PersistentCalls:
+      m_Calls: []
+  requiredSoul: 100
+  activateOnSoulReached: 1
+  dormantSprite: {fileID: 21300000, guid: 830c31fd431f0fd40b759c401a114368, type: 3}
+  activeSprite: {fileID: 21300000, guid: d94747c1f14c6ff47a7f2b0bb9b49dbd, type: 3}
+  activateFeedback: {fileID: 0}
+  destinationScene: Sendang_Sanctum
+  transitionDelay: 0
+  useBootstrapLoadingScreen: 1
+  loadingSceneName: LoadingScreen
+  entryPointIndex: 1
+  entryFacingDirection: 1
+  interactionPromptPrefab: {fileID: 1000001, guid: bb33cc44dd55ee66ff77001122334456,
+    type: 3}
+  promptText: R
+  promptOffset: {x: 0, y: 1.25, z: 0}
+  promptScale: 0.015
+  promptColor: {r: 1, g: 1, b: 1, a: 1}
+  promptBackgroundColor: {r: 0, g: 0, b: 0, a: 0.75}
+--- !u!61 &2211555196635136546
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2211555196635136544}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &2430660287516294663
 GameObject:
   m_ObjectHideFlags: 0

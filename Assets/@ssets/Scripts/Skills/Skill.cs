@@ -13,6 +13,10 @@ namespace MaskboundJinosi.Skills
 		[Header("Type")]
 		public SkillType SkillType = SkillType.Passive;
 
+		[Header("Shop")]
+		[Tooltip("Harga dalam soul untuk membeli skill ini di shop.")]
+		[Min(0)] public int SoulPrice;
+
 		public virtual bool CanEquip(SkillContext context)
 		{
 			return true;

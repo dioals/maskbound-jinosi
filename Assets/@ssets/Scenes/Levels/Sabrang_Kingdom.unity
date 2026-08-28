@@ -146,15 +146,23 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 81f6a579243bb9b47a4f7ced2f6516d2, type: 2}
-  m_InitialState: 0
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: -8427939882785451271, guid: 81f6a579243bb9b47a4f7ced2f6516d2, type: 2}
     value: {fileID: 8040196612217246659}
+  - key: {fileID: 7294509091685696151, guid: 81f6a579243bb9b47a4f7ced2f6516d2, type: 2}
+    value: {fileID: 888000005}
   m_ExposedReferences:
     m_References:
+    - 5b8ae47ad01fdcf4c88cd5e5438df46d: {fileID: 93869865}
+    - eb6e57dd66082e74b8107653635c725b: {fileID: 8040196612217246660}
+    - 7406ef06401503f4a8fa0899f2158c9b: {fileID: 93869865}
+    - 530f05ebb8d15164ca244520d7aa1986: {fileID: 93869865}
+    - 518ce7bc502f4b64fa1d8d74172189c7: {fileID: 8040196612217246660}
+    - 5a12e568a4230b44781a5b6028d43e73: {fileID: 8040196612217246660}
     - 921bb15f02ad59f4f982be0bdad8480d: {fileID: 93869865}
     - b74841d0f234c5d4292ec65358b8e07c: {fileID: 93869865}
 --- !u!4 &57431538
@@ -644,6 +652,335 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1001 &325830920
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 910000000000000010}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: m_Name
+      value: Flowchart_BossIntro
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5023
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.45694
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: scrollPos.x
+      value: 4.9199677
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: scrollPos.y
+      value: 70.600006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: selectedBlocks.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: selectedCommands.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: 'selectedBlocks.Array.data[0]'
+      value: 
+      objectReference: {fileID: 325830934}
+    - target: {fileID: 11400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: 'selectedCommands.Array.data[0]'
+      value: 
+      objectReference: {fileID: 325830933}
+    - target: {fileID: 11400001, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: commandList.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400001, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: 'commandList.Array.data[6]'
+      value: 
+      objectReference: {fileID: 325830932}
+    - target: {fileID: 11410000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: dialogSide
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11410000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+      propertyPath: portraitsFace
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325830926}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325830931}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325830932}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325830934}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325830933}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325830935}
+  m_SourcePrefab: {fileID: 100100000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+--- !u!4 &325830921 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+    type: 3}
+  m_PrefabInstance: {fileID: 325830920}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &325830922 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11400000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+    type: 3}
+  m_PrefabInstance: {fileID: 325830920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325830925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &325830923 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11410000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+    type: 3}
+  m_PrefabInstance: {fileID: 325830920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &325830924 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11420000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+    type: 3}
+  m_PrefabInstance: {fileID: 325830920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &325830925 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+    type: 3}
+  m_PrefabInstance: {fileID: 325830920}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &325830926
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325830925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Block
+  nodeRect:
+    serializedVersion: 2
+    x: 64.80002
+    y: 120.79999
+    width: 159.64
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 12
+  blockName: BossAfter30Minute
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 325830931}
+  suppressAllAutoSelections: 0
+--- !u!114 &325830931
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325830925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 10
+  indentLevel: 0
+  storyText: '30 detik waktu tantanganmu sudah usai wahai Panji dari Daha!
+
+    Rupanya
+    kau hanya orang bermulut besar!'
+  description: 
+  character: {fileID: 325830923}
+  portrait: {fileID: 21300000, guid: 474b64f74a910d745aa8a3265982c419, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &325830932
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325830925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 11
+  indentLevel: 0
+  targetObject: {fileID: 1286695577}
+  methodName: ActivateTrigger
+  delay: 0
+--- !u!114 &325830933
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325830925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 14
+  indentLevel: 0
+  storyText: Musnahlah kau dari tanah ini wahai bajingan Prabu Klana!
+  description: 
+  character: {fileID: 325830924}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &325830934
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325830925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Block
+  nodeRect:
+    serializedVersion: 2
+    x: 65.60002
+    y: 185.6
+    width: 139.688
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 16
+  blockName: BossAfterDeath
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 325830933}
+  - {fileID: 325830935}
+  suppressAllAutoSelections: 0
+--- !u!114 &325830935
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325830925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 15
+  indentLevel: 0
+  storyText: "Diriku saat ini telah kalah, namun kau gagal memenuhi tantanganku.
+    \r\nKarenanya Dewi Sekar Taji masih akan terus bersamaku. Hahahaha!!"
+  description: 
+  character: {fileID: 325830923}
+  portrait: {fileID: 21300000, guid: 474b64f74a910d745aa8a3265982c419, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
 --- !u!1 &501879787
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,6 +1180,96 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!1 &756649611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 756649614}
+  - component: {fileID: 756649613}
+  - component: {fileID: 756649612}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &756649612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756649611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.UI.InputSystemUIInputModule
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
+--- !u!114 &756649613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756649611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &756649614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756649611}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &888000001
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,8 +1281,9 @@ GameObject:
   - component: {fileID: 888000002}
   - component: {fileID: 888000003}
   - component: {fileID: 888000004}
+  - component: {fileID: 888000005}
   m_Layer: 0
-  m_Name: BossFightTrigger
+  m_Name: BossIntroTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -869,12 +1297,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888000001}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: -6.34, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.6, y: 14.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 910000000000000010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &888000003
 BoxCollider2D:
@@ -883,7 +1311,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888000001}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -938,16 +1366,103 @@ MonoBehaviour:
   bossObjectName: PrabuKlana
   fightStateName: Chase
   freezeBossDuringDialog: 1
-  flowchartPrefab: {fileID: 11400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+  flowchartPrefab: {fileID: 325830922}
   blockName: BossIntro
-  saveFlagKey: Maskbound.BossIntroShown
+  saveFlagKey: 
   dialogDelay: 0.3
-  introTimeline: {fileID: 11400000, guid: 81f6a579243bb9b47a4f7ced2f6516d2, type: 2}
-  introDirector: {fileID: 57431537}
+  activationDelay: 0
   freezePlayerDuringDialog: 1
   hideHudDuringDialog: 1
-  startOnLoadForTesting: 0
-  startOnLoadDelay: 1
+  introDirector: {fileID: 57431537}
+--- !u!114 &888000005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 0fa7307e3780cdc4aa74254ee14b45c5, type: 2}
+    - {fileID: 11400000, guid: 346422bd3122d34429957b3a63707abe, type: 2}
+    - {fileID: 11400000, guid: 56a3580e9ac4fe74582dc267a8d665f6, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 888000004}
+          m_TargetAssemblyTypeName: MaskboundJinosi.Gameplay.Dialogue.BossFightTrigger,
+            Assembly-CSharp
+          m_MethodName: PlayDialog
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 888000004}
+          m_TargetAssemblyTypeName: MaskboundJinosi.Gameplay.Dialogue.BossFightTrigger,
+            Assembly-CSharp
+          m_MethodName: FreezePlayer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 888000004}
+          m_TargetAssemblyTypeName: MaskboundJinosi.Gameplay.Dialogue.BossFightTrigger,
+            Assembly-CSharp
+          m_MethodName: FreezeBoss
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 888000004}
+          m_TargetAssemblyTypeName: MaskboundJinosi.Gameplay.Dialogue.BossFightTrigger,
+            Assembly-CSharp
+          m_MethodName: UnfreezeBoss
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 888000004}
+          m_TargetAssemblyTypeName: MaskboundJinosi.Gameplay.Dialogue.BossFightTrigger,
+            Assembly-CSharp
+          m_MethodName: UnfreezePlayer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &920433731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1179,6 +1694,318 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8040196612217246658}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1251140204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1251140205}
+  - component: {fileID: 1251140208}
+  - component: {fileID: 1251140207}
+  - component: {fileID: 1251140206}
+  m_Layer: 0
+  m_Name: TriggerAfterDeath
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1251140205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251140204}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.6, y: 14.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 910000000000000010}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1251140206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251140204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
+  m_Events:
+    m_Signals: []
+    m_Events: []
+--- !u!114 &1251140207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251140204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e7d51921a098f4480bc3be57ccb059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 1677307133}
+  bossObjectName: PrabuKlana
+  fightStateName: Chase
+  freezeBossDuringDialog: 1
+  flowchartPrefab: {fileID: 325830922}
+  blockName: BossAfterDeath
+  saveFlagKey: 
+  dialogDelay: 0.3
+  activationDelay: 3
+  freezePlayerDuringDialog: 1
+  hideHudDuringDialog: 1
+  introDirector: {fileID: 57431537}
+--- !u!61 &1251140208
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251140204}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 8, y: 6}
+  m_EdgeRadius: 0
+--- !u!1 &1286695577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1286695578}
+  - component: {fileID: 1286695581}
+  - component: {fileID: 1286695580}
+  - component: {fileID: 1286695579}
+  m_Layer: 0
+  m_Name: TriggerAfter30Seconds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1286695578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286695577}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.6, y: 14.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 910000000000000010}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1286695579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286695577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 0fa7307e3780cdc4aa74254ee14b45c5, type: 2}
+    - {fileID: 11400000, guid: 346422bd3122d34429957b3a63707abe, type: 2}
+    - {fileID: 11400000, guid: 56a3580e9ac4fe74582dc267a8d665f6, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1286695580}
+          m_TargetAssemblyTypeName: MaskboundJinosi.Gameplay.Dialogue.BossFightTrigger,
+            Assembly-CSharp
+          m_MethodName: PlayDialog
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1286695580}
+          m_TargetAssemblyTypeName: MaskboundJinosi.Gameplay.Dialogue.BossFightTrigger,
+            Assembly-CSharp
+          m_MethodName: FreezePlayer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1286695580}
+          m_TargetAssemblyTypeName: MaskboundJinosi.Gameplay.Dialogue.BossFightTrigger,
+            Assembly-CSharp
+          m_MethodName: FreezeBoss
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1286695580}
+          m_TargetAssemblyTypeName: MaskboundJinosi.Gameplay.Dialogue.BossFightTrigger,
+            Assembly-CSharp
+          m_MethodName: UnfreezeBoss
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1286695580}
+          m_TargetAssemblyTypeName: MaskboundJinosi.Gameplay.Dialogue.BossFightTrigger,
+            Assembly-CSharp
+          m_MethodName: UnfreezePlayer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1286695580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286695577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e7d51921a098f4480bc3be57ccb059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 1677307133}
+  bossObjectName: PrabuKlana
+  fightStateName: Chase
+  freezeBossDuringDialog: 1
+  flowchartPrefab: {fileID: 325830922}
+  blockName: BossAfter30Minute
+  saveFlagKey: 
+  dialogDelay: 0.3
+  activationDelay: 30
+  freezePlayerDuringDialog: 1
+  hideHudDuringDialog: 1
+  introDirector: {fileID: 57431537}
+--- !u!61 &1286695581
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286695577}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 8, y: 6}
+  m_EdgeRadius: 0
 --- !u!1 &1494325978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,7 +2082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Fungus::Fungus.FungusState
-  selectedFlowchart: {fileID: 11400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
+  selectedFlowchart: {fileID: 325830922}
 --- !u!4 &1557677824
 Transform:
   m_ObjectHideFlags: 1
@@ -1279,10 +2106,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1356644743787140172, guid: 4618db918ea2b854ca5780a57a46f728,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292945620476484604, guid: 4618db918ea2b854ca5780a57a46f728,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -22.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3027916323863682979, guid: 4618db918ea2b854ca5780a57a46f728,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.54
+      value: 8.58
       objectReference: {fileID: 0}
     - target: {fileID: 3027916323863682979, guid: 4618db918ea2b854ca5780a57a46f728,
         type: 3}
@@ -1334,10 +2171,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrabuKlana
       objectReference: {fileID: 0}
+    - target: {fileID: 6377390025179805658, guid: 4618db918ea2b854ca5780a57a46f728,
+        type: 3}
+      propertyPath: States.Array.data[2].Actions.array.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377390025179805658, guid: 4618db918ea2b854ca5780a57a46f728,
+        type: 3}
+      propertyPath: 'States.Array.data[2].Actions.array.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1677307135}
+    - target: {fileID: 6661993517632565726, guid: 4618db918ea2b854ca5780a57a46f728,
+        type: 3}
+      propertyPath: behindDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813442648799132210, guid: 4618db918ea2b854ca5780a57a46f728,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976184962131319674, guid: 4618db918ea2b854ca5780a57a46f728,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8461175332577535908, guid: 4618db918ea2b854ca5780a57a46f728,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9152037392086004739, guid: 4618db918ea2b854ca5780a57a46f728,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1677307135}
   m_SourcePrefab: {fileID: 100100000, guid: 4618db918ea2b854ca5780a57a46f728, type: 3}
 --- !u!114 &1677307133 stripped
 MonoBehaviour:
@@ -1351,6 +2222,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b470d1b161b2454590386135b7fd64f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1677307134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9152037392086004739, guid: 4618db918ea2b854ca5780a57a46f728,
+    type: 3}
+  m_PrefabInstance: {fileID: 1677307132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1677307135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677307134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10318ffaa7a32ee44bf11a033fd6aa0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.AI.AIActionCallDialogTrigger
+  InitializationMode: 1
+  Label: 
+  bossFightTrigger: {fileID: 1251140207}
+  npcDialogTrigger: {fileID: 0}
+  playOnlyOnce: 1
 --- !u!1001 &1736196670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1439,7 +2333,7 @@ Transform:
   m_GameObject: {fileID: 1744976944}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.40387, y: -2.9, z: -17.551758}
+  m_LocalPosition: {x: -8.411636, y: -2.9, z: -17.551758}
   m_LocalScale: {x: 1.8230954, y: 1.8230954, z: 1.8230954}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1787,7 +2681,7 @@ Transform:
   m_GameObject: {fileID: 2029123862}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.702337, y: -8.307, z: -17.551758}
+  m_LocalPosition: {x: -16.707, y: -8.307, z: -17.551758}
   m_LocalScale: {x: 1.8230954, y: 1.8230954, z: 1.8230954}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2044,7 +2938,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 325830921}
+  - {fileID: 888000002}
+  - {fileID: 1286695578}
+  - {fileID: 1251140205}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &910000000000100004
@@ -2238,22 +3136,22 @@ PrefabInstance:
     - target: {fileID: 8040196612442320769, guid: 67e9e6648638ca94eaaa9e41373f42f2,
         type: 3}
       propertyPath: orthographic size
-      value: 9.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8040196612442320774, guid: 67e9e6648638ca94eaaa9e41373f42f2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8199997
+      value: 2.7811508
       objectReference: {fileID: 0}
     - target: {fileID: 8040196612442320774, guid: 67e9e6648638ca94eaaa9e41373f42f2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.7
+      value: -11.103529
       objectReference: {fileID: 0}
     - target: {fileID: 8040196612442320774, guid: 67e9e6648638ca94eaaa9e41373f42f2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.347885
+      value: -15.17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2272,6 +3170,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8040196612217246660 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6651406206867608696, guid: 67e9e6648638ca94eaaa9e41373f42f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8040196612217246658}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2282,6 +3192,6 @@ SceneRoots:
   - {fileID: 910000000000000010}
   - {fileID: 1677307132}
   - {fileID: 1557677824}
-  - {fileID: 888000002}
   - {fileID: 57431538}
   - {fileID: 93869866}
+  - {fileID: 756649614}

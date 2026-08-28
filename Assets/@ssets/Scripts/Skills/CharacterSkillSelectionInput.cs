@@ -29,15 +29,39 @@ namespace MaskboundJinosi.Skills
 		[SerializeField] private int selectedSlotIndex;
 		[SerializeField] private string selectedSkillName;
 
-		protected virtual void Awake()
-		{
-			if (SkillCaster == null)
-			{
-				SkillCaster = GetComponentInParent<CharacterSkillCaster>();
-			}
+        protected virtual void Awake()
+        {
+            if (SkillCaster == null)
+            {
+                SkillCaster = GetComponentInParent<CharacterSkillCaster>();
+            }
 
-			RefreshRuntimeSelection();
-		}
+            SelectFirstActiveSkill();
+            RefreshRuntimeSelection();
+        }
+
+        /// <summary>
+        /// On startup, points the selection at the first non-empty ACTIVE skill
+        /// slot so the joystick doesn't start on an empty/passive slot.
+        /// </summary>
+        protected virtual void SelectFirstActiveSkill()
+        {
+            if (SkillCaster == null || SkillCaster.SkillSlots == null)
+            {
+                return;
+            }
+
+            int slotCount = SkillCaster.SkillSlots.SlotCount;
+            for (int i = 0; i < slotCount; i++)
+            {
+                Skill skill = SkillCaster.SkillSlots.GetSkill(i);
+                if (skill != null && skill.SkillType == SkillType.Active)
+                {
+                    SkillCaster.SelectSkillSlot(i);
+                    return;
+                }
+            }
+        }
 
 		protected virtual void Update()
 		{
@@ -64,32 +88,67 @@ namespace MaskboundJinosi.Skills
 			RefreshRuntimeSelection();
 		}
 
-		public virtual void SelectRelative(int direction)
-		{
-			if (SkillCaster == null || SkillCaster.SkillSlots == null || SkillCaster.SkillSlots.SlotCount <= 0)
-			{
-				return;
-			}
+        public virtual void SelectRelative(int direction)
+        {
+            if (SkillCaster == null || SkillCaster.SkillSlots == null || SkillCaster.SkillSlots.SlotCount <= 0)
+            {
+                return;
+            }
 
-			int slotCount = SkillCaster.SkillSlots.SlotCount;
-			int nextIndex = SkillCaster.SelectedSkillSlotIndex + direction;
+            int slotCount = SkillCaster.SkillSlots.SlotCount;
+            int current = SkillCaster.SelectedSkillSlotIndex;
+            int nextIndex = FindNextSelectableSlot(current, direction, slotCount);
 
-			if (WrapAround)
-			{
-				nextIndex = ((nextIndex % slotCount) + slotCount) % slotCount;
-			}
-			else
-			{
-				nextIndex = Mathf.Clamp(nextIndex, 0, slotCount - 1);
-			}
+            if (nextIndex < 0)
+            {
+                return;
+            }
 
-			SkillCaster.SelectSkillSlot(nextIndex);
+            SkillCaster.SelectSkillSlot(nextIndex);
 
-			if (ActivateOnSelect)
-			{
-				SkillCaster.ActivateSelectedSkill();
-			}
-		}
+            if (ActivateOnSelect)
+            {
+                SkillCaster.ActivateSelectedSkill();
+            }
+        }
+
+        /// <summary>
+        /// Finds the next slot in the given direction that holds a non-empty
+        /// ACTIVE skill. Empty slots and passive-only slots are skipped so the
+        /// joystick selection only ever lands on usable active skills.
+        /// </summary>
+        private int FindNextSelectableSlot(int currentIndex, int direction, int slotCount)
+        {
+            if (slotCount <= 0)
+            {
+                return -1;
+            }
+
+            int steps = 0;
+            int index = currentIndex;
+
+            while (steps < slotCount)
+            {
+                index = WrapAround
+                    ? ((index + direction + slotCount) % slotCount + slotCount) % slotCount
+                    : Mathf.Clamp(index + direction, 0, slotCount - 1);
+
+                if (!WrapAround && index == currentIndex)
+                {
+                    return -1;
+                }
+
+                steps++;
+
+                Skill skill = SkillCaster.SkillSlots.GetSkill(index);
+                if (skill != null && skill.SkillType == SkillType.Active)
+                {
+                    return index;
+                }
+            }
+
+            return -1;
+        }
 
 		public virtual void SelectSlot(int slotIndex)
 		{

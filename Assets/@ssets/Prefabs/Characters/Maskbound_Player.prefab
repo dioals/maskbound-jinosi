@@ -843,9 +843,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b654882f26ed9dc4986523dddf43d989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.SkillSlotManager
-  _slots:
-  - EquippedSkill: {fileID: 11400000, guid: 77f16bc18170e9c488d86e3d4354fcc5, type: 2}
-  _initialSlotCount: 3
+  _slots: []
+  _initialSlotCount: 6
 --- !u!114 &910000100000003
 MonoBehaviour:
   m_ObjectHideFlags: 0

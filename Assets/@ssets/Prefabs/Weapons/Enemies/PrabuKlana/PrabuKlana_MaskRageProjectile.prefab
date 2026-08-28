@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 8839125055920636134}
   - component: {fileID: 5210718887114698586}
   - component: {fileID: 5760072930531224164}
+  - component: {fileID: 670000000000000001}
   m_Layer: 0
   m_Name: PrabuKlana_MaskRageProjectile
   m_TagString: Untagged
@@ -199,11 +200,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -26.686808, y: 0.7784848}
+  m_Offset: {x: -0.58884, y: -0.43321133}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -213,7 +214,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 62.796543, y: 4.264844}
+  m_Size: {x: 6.5293055, y: 5.7188797}
   m_EdgeRadius: 0
 --- !u!50 &8839125055920636134
 Rigidbody2D:
@@ -280,7 +281,7 @@ MonoBehaviour:
   DamageTakenInvincibilityDuration: 0.5
   HitDamageableFeedback: {fileID: 0}
   HitNonDamageableFeedback: {fileID: 0}
-  FreezeFramesOnHitDuration: 0.09
+  FreezeFramesOnHitDuration: 0.01
   Owner: {fileID: 0}
 --- !u!114 &5760072930531224164
 MonoBehaviour:
@@ -294,9 +295,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea7f3ec596ee8a42a7dbc01fc6381f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.Effects.TimedSkillObject
-  LifetimeOverride: 5
+  LifetimeOverride: 6.1
   DestroyOnEnd: 1
   StartAutomatically: 1
+--- !u!114 &670000000000000001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4797858593716115447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151e9925b61f9494abd73e91644de21b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.Effects.MaskRageProjectileController
+  explodeDelay: 5
+  damageRelay: {fileID: 8012636710422275639}
+  enableDamageOnExplode: 1
+  damageWindowDuration: 0.3
+  explodeOnHit: 1
+  logEvents: 0
 --- !u!1 &6218307207869066225
 GameObject:
   m_ObjectHideFlags: 0

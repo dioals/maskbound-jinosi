@@ -54,6 +54,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 410000}
+  - {fileID: 5262728041214188519}
   - {fileID: 420000}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -82,7 +83,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1880275935377284151}
+  - {fileID: 4316287744425596664}
   selectedCommands: []
   variables: []
   description: 
@@ -855,5 +856,61 @@ MonoBehaviour:
   dialogPanel: {fileID: 21300000, guid: d37b36c46613a2c4daaf39c2e85563c4, type: 3}
   dialogSide: 1
   description: Pendeta Kerajaan Daha
+  effectAudioSource: {fileID: 0}
+  voiceAudioSource: {fileID: 0}
+--- !u!1 &5802011392672564545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5262728041214188519}
+  - component: {fileID: 4749212535258430546}
+  m_Layer: 0
+  m_Name: Character_SangPangreksa
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5262728041214188519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5802011392672564545}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 400000}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4749212535258430546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5802011392672564545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Sang Pangreksa
+  nameColor: {r: 1, g: 0.84, b: 0.35, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  dialogPanel: {fileID: 21300000, guid: 694613b570a735f4794ff09fa880ac95, type: 3}
+  dialogSide: 0
+  description: Pangeran Kerajaan Jenggala
   effectAudioSource: {fileID: 0}
   voiceAudioSource: {fileID: 0}

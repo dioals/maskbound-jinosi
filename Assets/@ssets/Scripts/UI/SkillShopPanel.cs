@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using InControl;
 using MaskboundJinosi.Input;
 using MaskboundJinosi.Skills;
 using MaskboundJinosi.Soul;
@@ -29,8 +30,8 @@ namespace MaskboundJinosi.UI
     public class SkillShopPanel : MonoBehaviour
     {
         [Header("Data")]
-        [Tooltip("Skills available to buy in the shop grid.")]
-        [SerializeField] private ActiveSkillData[] availableSkills;
+        [Tooltip("Skills available to buy in the shop grid. Supports both ActiveSkillData and passive skills.")]
+        [SerializeField] private Skill[] availableSkills;
 
         [Header("Root")]
         [Tooltip("Root object that gets toggled on open/close.")]
@@ -66,18 +67,29 @@ namespace MaskboundJinosi.UI
         [Tooltip("Number of columns in the skill grid (matches the GridLayoutGroup constraint).")]
         [SerializeField] private int gridColumns = 3;
 
+        [Header("Entry Frames")]
+        [Tooltip("Frame sprite shown on grid entries for active skills. Leave empty to keep the entry prefab's default frame.")]
+        [SerializeField] private Sprite activeFrameSprite;
+        [Tooltip("Frame sprite shown on grid entries for passive skills.")]
+        [SerializeField] private Sprite passiveFrameSprite;
+
         private SkillSlotManager _slotManager;
         private Action _onClosed;
         private bool _isOpen;
         private bool _hudHidden;
 
-        private readonly List<ActiveSkillData> _visibleSkills = new List<ActiveSkillData>();
+        private readonly List<Skill> _visibleSkills = new List<Skill>();
         private readonly List<GameObject> _skillEntries = new List<GameObject>();
         private readonly List<Image> _entryBgImages = new List<Image>();
+        private readonly List<GameObject> _entrySelectionObjects = new List<GameObject>();
+        private readonly List<TextMeshProUGUI> _entryInUseLabels = new List<TextMeshProUGUI>();
+        private readonly HashSet<Skill> _ownedSkills = new HashSet<Skill>();
+        private bool _ownedInitialized;
         private readonly Color _entryNormalColor = new Color(0.12f, 0.1f, 0.16f, 0.9f);
         private readonly Color _entrySelectedColor = new Color(0.28f, 0.22f, 0.1f, 0.95f);
+        private readonly Color _entryNotOwnedTint = new Color(0.3f, 0.3f, 0.35f, 0.95f);
         private int _selectedIndex = -1;
-        private ActiveSkillData _selectedSkill;
+        private Skill _selectedSkill;
 
         private TextMeshProUGUI _buyPromptText;
         private bool _buyPromptResolved;
@@ -126,16 +138,31 @@ namespace MaskboundJinosi.UI
             bool meditateDown = false;
             Vector2 moveInput = Vector2.zero;
 
-            if (InputManager.HasInstance)
+            if (MoreMountains.CorgiEngine.InputManager.HasInstance)
             {
-                InputManager input = InputManager.Instance;
-                interactDown = input.InteractButton != null
-                    && input.InteractButton.State.CurrentState == MMInput.ButtonStates.ButtonDown;
+                MoreMountains.CorgiEngine.InputManager input = MoreMountains.CorgiEngine.InputManager.Instance;
                 moveInput = input.PrimaryMovement;
 
                 MaskboundInControlInputManager maskbound = input as MaskboundInControlInputManager;
                 meditateDown = maskbound != null && maskbound.MeditateButton != null
                     && maskbound.MeditateButton.State.CurrentState == MMInput.ButtonStates.ButtonDown;
+            }
+
+            // Gamepad: buy = Action1 (A), close = Action4 (Y). The world Interact
+            // binding is DPadUp, which would otherwise double as navigation inside
+            // the shop and trigger accidental purchases, so the shop uses direct
+            // gamepad buttons instead of InteractButton.
+            if (InControl.InputManager.ActiveDevice != null)
+            {
+                if (InControl.InputManager.ActiveDevice.GetControl(InputControlType.Action1).WasPressed)
+                {
+                    interactDown = true;
+                }
+
+                if (InControl.InputManager.ActiveDevice.GetControl(InputControlType.Action4).WasPressed)
+                {
+                    meditateDown = true;
+                }
             }
 
             // Keyboard fallbacks (in case the input manager is not active or unbound).
@@ -297,6 +324,7 @@ namespace MaskboundJinosi.UI
         {
             RefreshSlots();
             RefreshGrid();
+            UpdateOwnedState();
             RefreshDetail();
             RefreshSoul();
         }
@@ -347,12 +375,14 @@ namespace MaskboundJinosi.UI
             }
             _skillEntries.Clear();
             _entryBgImages.Clear();
+            _entrySelectionObjects.Clear();
+            _entryInUseLabels.Clear();
             _visibleSkills.Clear();
             _selectedIndex = -1;
 
             if (availableSkills == null || skillGridParent == null) return;
 
-            foreach (ActiveSkillData skill in availableSkills)
+            foreach (Skill skill in availableSkills)
             {
                 if (skill == null) continue;
 
@@ -367,6 +397,18 @@ namespace MaskboundJinosi.UI
                     icon.enabled = skill.Icon != null;
                 }
 
+                // Frame sprite depends on skill type (active vs passive).
+                Image frame = entry.transform.Find("Frame")?.GetComponent<Image>();
+                if (frame != null)
+                {
+                    Sprite frameSprite = skill.SkillType == SkillType.Passive ? passiveFrameSprite : activeFrameSprite;
+                    if (frameSprite != null)
+                    {
+                        frame.sprite = frameSprite;
+                        frame.enabled = true;
+                    }
+                }
+
                 // Cache the background image for selection tinting.
                 Image bg = entry.GetComponent<Image>();
                 if (bg != null)
@@ -374,8 +416,30 @@ namespace MaskboundJinosi.UI
                     bg.color = _entryNormalColor;
                 }
 
+                // Selection overlay: show on the selected entry only.
+                Transform selection = entry.transform.Find("Selection");
+                GameObject selectionObj = selection != null ? selection.gameObject : null;
+                if (selectionObj != null)
+                {
+                    selectionObj.SetActive(false);
+                }
+
+                // "IN USE" label: shown only on the currently equipped skill.
+                TextMeshProUGUI inUseLabel = null;
+                Transform inUse = entry.transform.Find("InUseLabel");
+                if (inUse != null)
+                {
+                    inUseLabel = inUse.GetComponent<TextMeshProUGUI>();
+                    if (inUseLabel != null)
+                    {
+                        inUseLabel.gameObject.SetActive(false);
+                    }
+                }
+
                 _skillEntries.Add(entry);
                 _entryBgImages.Add(bg);
+                _entrySelectionObjects.Add(selectionObj);
+                _entryInUseLabels.Add(inUseLabel);
                 _visibleSkills.Add(skill);
             }
 
@@ -394,6 +458,7 @@ namespace MaskboundJinosi.UI
             _selectedSkill = _visibleSkills[index];
             RefreshDetail();
             UpdateSelectionHighlight();
+            UpdateOwnedState();
         }
 
         private void UpdateSelectionHighlight()
@@ -406,6 +471,63 @@ namespace MaskboundJinosi.UI
 
                 bg.color = i == _selectedIndex ? _entrySelectedColor : _entryNormalColor;
             }
+
+            // Show the selection overlay only on the selected entry.
+            for (int i = 0; i < _entrySelectionObjects.Count; i++)
+            {
+                GameObject selection = _entrySelectionObjects[i];
+                if (selection != null)
+                {
+                    selection.SetActive(i == _selectedIndex);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Applies the owned/unowned visual state to every grid entry:
+        /// unowned icons are dimmed, owned icons are bright, and the
+        /// currently-equipped skill shows its "IN USE" label.
+        /// </summary>
+        private void UpdateOwnedState()
+        {
+            for (int i = 0; i < _visibleSkills.Count; i++)
+            {
+                Skill skill = _visibleSkills[i];
+                GameObject entry = _skillEntries[i];
+
+                bool owned = IsSkillOwned(skill);
+                bool equipped = IsSkillEquipped(skill);
+
+                Image icon = entry != null ? entry.transform.Find("Icon")?.GetComponent<Image>() : null;
+                if (icon != null)
+                {
+                    icon.color = owned ? Color.white : _entryNotOwnedTint;
+                }
+
+                if (i < _entryInUseLabels.Count && _entryInUseLabels[i] != null)
+                {
+                    _entryInUseLabels[i].gameObject.SetActive(equipped);
+                }
+            }
+        }
+
+        /// <summary>
+        /// True when the given skill is currently equipped in any slot of the
+        /// player's SkillSlotManager.
+        /// </summary>
+        private bool IsSkillEquipped(Skill skill)
+        {
+            if (skill == null || _slotManager == null) return false;
+
+            for (int i = 0; i < _slotManager.SlotCount; i++)
+            {
+                if (_slotManager.GetSkill(i) == skill)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private void RefreshDetail()
@@ -455,9 +577,12 @@ namespace MaskboundJinosi.UI
             if (detailStatsText != null)
             {
                 string stats = "";
-                if (_selectedSkill.Damage > 0) stats += $"Damage: {_selectedSkill.Damage}\n";
-                if (_selectedSkill.Cooldown > 0) stats += $"Cooldown: {_selectedSkill.Cooldown}s\n";
-                if (_selectedSkill.Duration > 0) stats += $"Duration: {_selectedSkill.Duration}s";
+                if (_selectedSkill is ActiveSkillData activeData)
+                {
+                    if (activeData.Damage > 0) stats += $"Damage: {activeData.Damage}\n";
+                    if (activeData.Cooldown > 0) stats += $"Cooldown: {activeData.Cooldown}s\n";
+                    if (activeData.Duration > 0) stats += $"Duration: {activeData.Duration}s";
+                }
                 detailStatsText.text = stats.TrimEnd('\n');
             }
 
@@ -479,6 +604,8 @@ namespace MaskboundJinosi.UI
             if (buyButton != null)
             {
                 bool canBuy = _selectedSkill.SoulPrice <= 0 || SoulWallet.CanSpend(_selectedSkill.SoulPrice);
+                bool owned = IsSkillOwned(_selectedSkill);
+                bool equipped = IsSkillEquipped(_selectedSkill);
 
                 // Hide the button's visual so it reads as a text prompt.
                 Image btnImage = buyButton.GetComponent<Image>();
@@ -492,10 +619,20 @@ namespace MaskboundJinosi.UI
                 TextMeshProUGUI label = GetBuyPromptText();
                 if (label != null)
                 {
-                    label.text = canBuy ? "PRESS F TO BUY" : "NOT ENOUGH SOUL";
-                    label.color = canBuy
-                        ? new Color(0.3f, 0.85f, 0.4f)
-                        : new Color(0.85f, 0.3f, 0.3f);
+                    if (equipped)
+                    {
+                        label.text = "PRESS A TO UNEQUIP";
+                        label.color = new Color(0.85f, 0.3f, 0.3f);
+                    }
+                    else
+                    {
+                        label.text = owned
+                            ? "PRESS A TO EQUIP"
+                            : canBuy ? "PRESS A TO BUY" : "NOT ENOUGH SOUL";
+                        label.color = canBuy
+                            ? new Color(0.3f, 0.85f, 0.4f)
+                            : new Color(0.85f, 0.3f, 0.3f);
+                    }
                 }
             }
         }
@@ -533,30 +670,131 @@ namespace MaskboundJinosi.UI
         {
             if (_selectedSkill == null) return;
 
-            int price = _selectedSkill.SoulPrice;
-            if (price > 0 && !SoulWallet.CanSpend(price)) return;
+            bool owned = IsSkillOwned(_selectedSkill);
+            bool equipped = IsSkillEquipped(_selectedSkill);
+            Debug.Log($"[SkillShop] A pressed on '{_selectedSkill.name}' | owned={owned} equipped={equipped} soul={SoulWallet.CurrentSoul}");
 
-            // Deduct soul
-            if (price > 0)
+            // Not owned yet: buy it (deduct soul, then equip).
+            if (!owned)
             {
-                SoulWallet.Spend(price);
+                int price = _selectedSkill.SoulPrice;
+                if (price > 0 && !SoulWallet.CanSpend(price))
+                {
+                    Debug.Log("[SkillShop] NOT ENOUGH SOUL, buy cancelled.");
+                    return;
+                }
+
+                if (price > 0)
+                {
+                    SoulWallet.Spend(price);
+                    Debug.Log($"[SkillShop] Spent {price} soul, now {SoulWallet.CurrentSoul}");
+                }
+
+                _ownedSkills.Add(_selectedSkill);
+                Debug.Log($"[SkillShop] Added '{_selectedSkill.name}' to owned set. Count={_ownedSkills.Count}");
+
+                EquipSelectedSkill();
+
+                // Refresh everything
+                RefreshAll();
+                return;
             }
 
-            // Find first empty slot and equip
-            if (_slotManager != null)
+            // Owned and currently equipped: pressing the button again unequips it.
+            if (equipped)
             {
-                for (int i = 0; i < _slotManager.SlotCount; i++)
+                UnequipSelectedSkill();
+                Debug.Log($"[SkillShop] Unequipped '{_selectedSkill.name}'.");
+                RefreshAll();
+                return;
+            }
+
+            // Owned but not equipped (e.g. no free slot at purchase time):
+            // pressing the button again equips it.
+            EquipSelectedSkill();
+            Debug.Log($"[SkillShop] Equipped (owned) '{_selectedSkill.name}'.");
+            RefreshAll();
+        }
+
+        /// <summary>
+        /// Unequips the selected skill from the first slot that holds it.
+        /// </summary>
+        private void UnequipSelectedSkill()
+        {
+            if (_selectedSkill == null || _slotManager == null) return;
+
+            for (int i = 0; i < _slotManager.SlotCount; i++)
+            {
+                if (_slotManager.GetSkill(i) == _selectedSkill)
                 {
-                    if (_slotManager.GetSkill(i) == null)
+                    _slotManager.Unequip(i);
+                    break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Equips the selected skill into the first empty slot matching its
+        /// type (active skills use the first slots, passive skills the rest).
+        /// No-op when no matching free slot exists.
+        /// </summary>
+        private void EquipSelectedSkill()
+        {
+            if (_selectedSkill == null || _slotManager == null) return;
+
+            int slotCount = _slotManager.SlotCount;
+            int activeSlots = Mathf.Min(3, slotCount);
+            int startIndex = _selectedSkill.SkillType == SkillType.Passive ? activeSlots : 0;
+            int endIndex = _selectedSkill.SkillType == SkillType.Passive ? slotCount : activeSlots;
+
+            for (int i = startIndex; i < endIndex; i++)
+            {
+                if (_slotManager.GetSkill(i) == null)
+                {
+                    _slotManager.Equip(i, _selectedSkill);
+                    break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// True when the given skill has been purchased. Purchases are tracked
+        /// for the lifetime of the panel (the set is seeded from the equipped
+        /// slots the first time it is queried, then only ever grows), so an
+        /// owned skill stays owned even after it is unequipped.
+        /// </summary>
+        private bool IsSkillOwned(Skill skill)
+        {
+            if (skill == null) return false;
+
+            if (!_ownedInitialized)
+            {
+                _ownedInitialized = true;
+
+                if (_slotManager != null)
+                {
+                    for (int i = 0; i < _slotManager.SlotCount; i++)
                     {
-                        _slotManager.Equip(i, _selectedSkill);
-                        break;
+                        Skill equipped = _slotManager.GetSkill(i);
+                        if (equipped != null)
+                        {
+                            _ownedSkills.Add(equipped);
+                            Debug.Log($"[SkillShop] Seeded owned from slot {i}: '{equipped.name}'");
+                        }
+                    }
+                }
+
+                foreach (Skill available in availableSkills)
+                {
+                    if (available != null && available.SoulPrice <= 0)
+                    {
+                        _ownedSkills.Add(available);
+                        Debug.Log($"[SkillShop] Free skill auto-owned: '{available.name}'");
                     }
                 }
             }
 
-            // Refresh everything
-            RefreshAll();
+            return _ownedSkills.Contains(skill);
         }
 
         private void OnDestroy()

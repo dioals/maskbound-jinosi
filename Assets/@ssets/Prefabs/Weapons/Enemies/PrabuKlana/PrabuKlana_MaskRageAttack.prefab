@@ -52,9 +52,9 @@ MonoBehaviour:
   InitializeOnStart: 0
   DelayBeforeUse: 0
   DelayBeforeUseReleaseInterruption: 1
-  TimeBetweenUses: 8
+  TimeBetweenUses: 5
   TimeBetweenUsesReleaseInterruption: 1
-  CooldownDuration: 8
+  CooldownDuration: 5
   UseBurstMode: 0
   BurstLength: 3
   BurstTimeBetweenShots: 0.1
@@ -174,6 +174,7 @@ MonoBehaviour:
   autoCloseAfterOpen: 1
   damageWindowDuration: 0.2
   logDamageWindow: 0
+  hitstopDuration: 0.06
 --- !u!1 &1907648966830053811
 GameObject:
   m_ObjectHideFlags: 0

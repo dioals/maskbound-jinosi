@@ -243,6 +243,36 @@ private bool _sequenceStarted;
             StartCoroutine(SequenceRoutine());
         }
 
+        /// <summary>
+        /// Starts this dialog trigger's sequence programmatically, without needing
+        /// the player to walk into its collider. Callable from another script
+        /// (e.g. BossFightTrigger) or from a Fungus "Call Method" command.
+        /// </summary>
+        public virtual void TriggerDialog()
+        {
+            if (_sequenceStarted || _sequenceFinished)
+            {
+                Debug.Log("[NPCDialogTrigger] Already started/finished, skipping TriggerDialog.", this);
+                return;
+            }
+
+            if (PlayerPrefs.GetInt(saveFlagKey, 0) == 1)
+            {
+                Debug.Log("[NPCDialogTrigger] Flag '" + saveFlagKey + "' already set, skipping dialog.", this);
+                _sequenceFinished = true;
+                return;
+            }
+
+            Character player = GetMainPlayer();
+            if (player == null)
+            {
+                Debug.LogWarning("[NPCDialogTrigger] TriggerDialog: no player found.", this);
+                return;
+            }
+
+            StartSequence(player);
+        }
+
         protected virtual IEnumerator SequenceRoutine()
         {
             // 0. Wait for the player to land on the ground if they are airborne

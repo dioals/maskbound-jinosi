@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.ActiveSkillData
   SkillId: gandewa_spirit
   DisplayName: Gandewa Spirit
-  Description: Summon Archer spirit selama beberapa detik
+  Description: Active Skill yang dapat mensummon Archer spirit
   Icon: {fileID: 21300000, guid: 62b4f00d941c7ae4fa2194d8be207aff, type: 3}
   SkillType: 1
+  SoulPrice: 10
   Damage: 60
   Duration: 5
   CastLockFallbackDuration: 3
@@ -36,3 +37,6 @@ MonoBehaviour:
   ProjectileSpawnOffset: {x: 1, y: 0}
   ProjectileParentToOwner: 0
   ProjectileMatchOwnerFacing: 1
+  SpawnSound: {fileID: 0}
+  SpawnSoundVolume: 1
+  SfxList: []

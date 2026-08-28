@@ -470,6 +470,26 @@ namespace MaskboundJinosi.Editor
             icon.color = Color.white;
             icon.raycastTarget = false;
 
+            // Frame behind the icon, swapped per skill type at runtime
+            // (active frame by default; passive frame for passive skills).
+            Image frame = Add<Image>(CreateUI(entry.transform, "Frame", typeof(RectTransform)));
+            Stretch(frame.rectTransform);
+            frame.color = Color.white;
+            frame.raycastTarget = false;
+
+            // Selection overlay shown on the selected entry.
+            Image selection = Add<Image>(CreateUI(entry.transform, "Selection", typeof(RectTransform)));
+            Stretch(selection.rectTransform);
+            selection.color = new Color(1f, 1f, 1f, 0.3f);
+            selection.raycastTarget = false;
+            selection.gameObject.SetActive(false);
+
+            // "IN USE" label shown under the icon for the equipped skill.
+            TextMeshProUGUI inUse = CreateLabel(entry.GetComponent<RectTransform>(), "InUseLabel", "IN USE", 14f, GreenColor,
+                new Vector2(0f, -38f), FontStyles.Bold, TextAlignmentOptions.Center);
+            inUse.rectTransform.sizeDelta = new Vector2(120f, 24f);
+            inUse.gameObject.SetActive(false);
+
             return entry;
         }
 

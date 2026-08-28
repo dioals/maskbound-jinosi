@@ -47,9 +47,6 @@ namespace MaskboundJinosi.Skills
 		[Tooltip("Daftar SFX yang dipicu lewat Animation Event. Buat Animation Event yang memanggil PlaySkillSfx(\"Id\") di CharacterSkillCaster.")]
 		public SkillSfx[] SfxList;
 
-		[Header("Shop")]
-		[Min(0)] public int SoulPrice;
-
 		public override bool CanActivate(SkillContext context)
 		{
 			if (!base.CanActivate(context))
