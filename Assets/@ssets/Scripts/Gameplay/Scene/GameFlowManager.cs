@@ -97,6 +97,9 @@ namespace MaskboundJinosi.Gameplay.Scene
 			// Breakable world objects (stones, ...) that stay broken once destroyed.
 			PlayerPrefs.DeleteKey(BreakableObject.BrokenBreakablesKey);
 
+			// Session skill progression (owned + equipped slots).
+			MaskboundJinosi.Skills.SkillSaveStore.Reset();
+
 			PlayerPrefs.Save();
 			RefreshUI();
 			Report("Save data cleared");

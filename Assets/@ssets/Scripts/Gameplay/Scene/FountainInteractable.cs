@@ -110,11 +110,11 @@ namespace MaskboundJinosi.Gameplay.Scene
                 _meditationAbility.MeditateStart();
             }
 
-            // Find skill slot manager if not assigned
-            if (skillSlotManager == null)
-            {
-                skillSlotManager = _nearbyCharacter.GetComponentInChildren<SkillSlotManager>(true);
-            }
+            // Find skill slot manager from the nearby character every time, so a
+            // stale reference from a previous scene's player is never reused.
+            skillSlotManager = _nearbyCharacter != null
+                ? _nearbyCharacter.GetComponentInChildren<SkillSlotManager>(true)
+                : null;
 
             // Find the shop panel if not assigned (it may live in the Bootstrap scene)
             if (skillShopPanel == null)

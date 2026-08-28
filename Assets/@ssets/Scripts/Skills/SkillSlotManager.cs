@@ -5,6 +5,7 @@ using UnityEngine;
 namespace MaskboundJinosi.Skills
 {
 	[AddComponentMenu("Maskbound/Skills/Skill Slot Manager")]
+	[DefaultExecutionOrder(-100)]
 	public class SkillSlotManager : MonoBehaviour
 	{
 		[Header("Slots")]
@@ -22,7 +23,41 @@ namespace MaskboundJinosi.Skills
 		protected virtual void Awake()
 		{
 			EnsureSlotCount(Mathf.Max(0, _initialSlotCount));
+			RestoreFromSaveStore();
 			ApplyEquippedPassives();
+		}
+
+		/// <summary>
+		/// Re-applies the session's saved slot layout (SkillSaveStore) onto this
+		/// manager. Used when the player is re-spawned on a new scene, so the
+		/// skills equipped in the shop survive the scene change.
+		/// </summary>
+		protected virtual void RestoreFromSaveStore()
+		{
+			if (!SkillSaveStore.HasData || SkillSaveStore.Equipped.Count == 0)
+			{
+				return;
+			}
+
+			for (int i = 0; i < _slots.Count && i < SkillSaveStore.Equipped.Count; i++)
+			{
+				Skill skill = SkillSaveStore.Equipped[i];
+				if (skill == null)
+				{
+					continue;
+				}
+
+				if (_slots[i].EquippedSkill == skill)
+				{
+					continue;
+				}
+
+				// No OnEquipped call here: ApplyEquippedPassives() handles passive
+				// effects right after this, and active skills don't override
+				// OnEquipped. Firing the event keeps slot UI listeners in sync.
+				_slots[i].EquippedSkill = skill;
+				SkillEquipped?.Invoke(i, skill);
+			}
 		}
 
 		public virtual void SetSlotCount(int slotCount)

@@ -83,8 +83,6 @@ namespace MaskboundJinosi.UI
         private readonly List<Image> _entryBgImages = new List<Image>();
         private readonly List<GameObject> _entrySelectionObjects = new List<GameObject>();
         private readonly List<TextMeshProUGUI> _entryInUseLabels = new List<TextMeshProUGUI>();
-        private readonly HashSet<Skill> _ownedSkills = new HashSet<Skill>();
-        private bool _ownedInitialized;
         private readonly Color _entryNormalColor = new Color(0.12f, 0.1f, 0.16f, 0.9f);
         private readonly Color _entrySelectedColor = new Color(0.28f, 0.22f, 0.1f, 0.95f);
         private readonly Color _entryNotOwnedTint = new Color(0.3f, 0.3f, 0.35f, 0.95f);
@@ -110,6 +108,36 @@ namespace MaskboundJinosi.UI
             _slotManager = slotManager;
             _onClosed = onClosed;
             _isOpen = true;
+
+            // Seed the session store from the player's current slots so skills
+            // equipped before this panel ever opened are treated as owned.
+            if (_slotManager != null)
+            {
+                List<Skill> slots = new List<Skill>(_slotManager.SlotCount);
+                for (int i = 0; i < _slotManager.SlotCount; i++)
+                {
+                    Skill skill = _slotManager.GetSkill(i);
+                    slots.Add(skill);
+                    if (skill != null)
+                    {
+                        SkillSaveStore.MarkOwned(skill);
+                    }
+                }
+
+                SkillSaveStore.SaveSlots(slots);
+            }
+
+            // Free skills are owned from the start (nothing to buy).
+            if (availableSkills != null)
+            {
+                foreach (Skill skill in availableSkills)
+                {
+                    if (skill != null && skill.SoulPrice <= 0)
+                    {
+                        SkillSaveStore.MarkOwned(skill);
+                    }
+                }
+            }
 
             RefreshAll();
             HideHud();
@@ -690,10 +718,11 @@ namespace MaskboundJinosi.UI
                     Debug.Log($"[SkillShop] Spent {price} soul, now {SoulWallet.CurrentSoul}");
                 }
 
-                _ownedSkills.Add(_selectedSkill);
-                Debug.Log($"[SkillShop] Added '{_selectedSkill.name}' to owned set. Count={_ownedSkills.Count}");
+                SkillSaveStore.MarkOwned(_selectedSkill);
+                Debug.Log($"[SkillShop] Added '{_selectedSkill.name}' to owned store. Count={SkillSaveStore.Owned.Count}");
 
                 EquipSelectedSkill();
+                PersistSlots();
 
                 // Refresh everything
                 RefreshAll();
@@ -704,6 +733,7 @@ namespace MaskboundJinosi.UI
             if (equipped)
             {
                 UnequipSelectedSkill();
+                PersistSlots();
                 Debug.Log($"[SkillShop] Unequipped '{_selectedSkill.name}'.");
                 RefreshAll();
                 return;
@@ -712,8 +742,29 @@ namespace MaskboundJinosi.UI
             // Owned but not equipped (e.g. no free slot at purchase time):
             // pressing the button again equips it.
             EquipSelectedSkill();
+            PersistSlots();
             Debug.Log($"[SkillShop] Equipped (owned) '{_selectedSkill.name}'.");
             RefreshAll();
+        }
+
+        /// <summary>
+        /// Writes the player's current slot layout into SkillSaveStore so the
+        /// next player spawn (after a scene change) can restore it.
+        /// </summary>
+        private void PersistSlots()
+        {
+            if (_slotManager == null)
+            {
+                return;
+            }
+
+            List<Skill> slots = new List<Skill>(_slotManager.SlotCount);
+            for (int i = 0; i < _slotManager.SlotCount; i++)
+            {
+                slots.Add(_slotManager.GetSkill(i));
+            }
+
+            SkillSaveStore.SaveSlots(slots);
         }
 
         /// <summary>
@@ -758,43 +809,13 @@ namespace MaskboundJinosi.UI
         }
 
         /// <summary>
-        /// True when the given skill has been purchased. Purchases are tracked
-        /// for the lifetime of the panel (the set is seeded from the equipped
-        /// slots the first time it is queried, then only ever grows), so an
-        /// owned skill stays owned even after it is unequipped.
+        /// True when the given skill has been purchased. Ownership lives in
+        /// SkillSaveStore (session-wide, survives scene changes), so an owned
+        /// skill stays owned even after it is unequipped or the scene changes.
         /// </summary>
         private bool IsSkillOwned(Skill skill)
         {
-            if (skill == null) return false;
-
-            if (!_ownedInitialized)
-            {
-                _ownedInitialized = true;
-
-                if (_slotManager != null)
-                {
-                    for (int i = 0; i < _slotManager.SlotCount; i++)
-                    {
-                        Skill equipped = _slotManager.GetSkill(i);
-                        if (equipped != null)
-                        {
-                            _ownedSkills.Add(equipped);
-                            Debug.Log($"[SkillShop] Seeded owned from slot {i}: '{equipped.name}'");
-                        }
-                    }
-                }
-
-                foreach (Skill available in availableSkills)
-                {
-                    if (available != null && available.SoulPrice <= 0)
-                    {
-                        _ownedSkills.Add(available);
-                        Debug.Log($"[SkillShop] Free skill auto-owned: '{available.name}'");
-                    }
-                }
-            }
-
-            return _ownedSkills.Contains(skill);
+            return SkillSaveStore.IsOwned(skill);
         }
 
         private void OnDestroy()
