@@ -380,7 +380,7 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  NumberOfJumps: 2
+  NumberOfJumps: 1
   JumpHeight: 7
   JumpRestrictions: 2
   ResetCameraOffsetOnJump: 0

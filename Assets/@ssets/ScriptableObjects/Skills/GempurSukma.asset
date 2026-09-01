@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e11b0a7c5db18574ba7acf1e81ad5cce, type: 3}
   m_Name: GempurSukma
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.ActiveSkillData
-  SkillId: gempita_mask
+  SkillId: gempur_sukma
   DisplayName: Gempita Mask
   Description: Active Skill menghasilkan shield yang kemudian dilempar
   Icon: {fileID: 21300000, guid: 06b4417d48622e44e905bc061f313f48, type: 3}
