@@ -23,6 +23,18 @@ namespace MaskboundJinosi.Skills
 		protected virtual void Awake()
 		{
 			EnsureSlotCount(Mathf.Max(0, _initialSlotCount));
+
+			// Skills baked into the prefab (starter loadout) must be resolvable by
+			// the save store before it loads, so register every equipped skill.
+			foreach (SkillSlot slot in _slots)
+			{
+				if (slot.EquippedSkill != null)
+				{
+					SkillSaveStore.Register(slot.EquippedSkill);
+				}
+			}
+
+			SkillSaveStore.Load();
 			RestoreFromSaveStore();
 			ApplyEquippedPassives();
 		}

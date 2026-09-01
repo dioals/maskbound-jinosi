@@ -101,6 +101,26 @@ namespace MaskboundJinosi.UI
 
         // ───────────────────── Public API ─────────────────────
 
+        private void Awake()
+        {
+            // The panel lives in the persistent Bootstrap scene, so its Awake
+            // runs before any level (and before the player is spawned). Register
+            // every shop skill by SkillId and load the persisted save here, so
+            // SkillSlotManager can resolve the save when the player spawns.
+            if (availableSkills != null)
+            {
+                foreach (Skill skill in availableSkills)
+                {
+                    if (skill != null)
+                    {
+                        SkillSaveStore.Register(skill);
+                    }
+                }
+            }
+
+            SkillSaveStore.Load();
+        }
+
         public void Open(SkillSlotManager slotManager, Action onClosed = null)
         {
             if (_isOpen) return;
@@ -109,22 +129,20 @@ namespace MaskboundJinosi.UI
             _onClosed = onClosed;
             _isOpen = true;
 
-            // Seed the session store from the player's current slots so skills
-            // equipped before this panel ever opened are treated as owned.
+            // Seed the session store's OWNED set from the player's current slots
+            // so skills equipped before this panel ever opened are treated as
+            // owned. Slot layout is only persisted on real changes (buy/equip/
+            // unequip) so opening the shop can never clobber a save.
             if (_slotManager != null)
             {
-                List<Skill> slots = new List<Skill>(_slotManager.SlotCount);
                 for (int i = 0; i < _slotManager.SlotCount; i++)
                 {
                     Skill skill = _slotManager.GetSkill(i);
-                    slots.Add(skill);
                     if (skill != null)
                     {
                         SkillSaveStore.MarkOwned(skill);
                     }
                 }
-
-                SkillSaveStore.SaveSlots(slots);
             }
 
             // Free skills are owned from the start (nothing to buy).
@@ -700,7 +718,10 @@ namespace MaskboundJinosi.UI
 
             bool owned = IsSkillOwned(_selectedSkill);
             bool equipped = IsSkillEquipped(_selectedSkill);
-            Debug.Log($"[SkillShop] A pressed on '{_selectedSkill.name}' | owned={owned} equipped={equipped} soul={SoulWallet.CurrentSoul}");
+            if (Debug.isDebugBuild)
+            {
+                Debug.Log($"[SkillShop] A pressed on '{_selectedSkill.name}' | owned={owned} equipped={equipped} soul={SoulWallet.CurrentSoul}");
+            }
 
             // Not owned yet: buy it (deduct soul, then equip).
             if (!owned)
@@ -708,18 +729,28 @@ namespace MaskboundJinosi.UI
                 int price = _selectedSkill.SoulPrice;
                 if (price > 0 && !SoulWallet.CanSpend(price))
                 {
-                    Debug.Log("[SkillShop] NOT ENOUGH SOUL, buy cancelled.");
+                    if (Debug.isDebugBuild)
+                    {
+                        Debug.Log("[SkillShop] NOT ENOUGH SOUL, buy cancelled.");
+                    }
+
                     return;
                 }
 
                 if (price > 0)
                 {
                     SoulWallet.Spend(price);
-                    Debug.Log($"[SkillShop] Spent {price} soul, now {SoulWallet.CurrentSoul}");
+                    if (Debug.isDebugBuild)
+                    {
+                        Debug.Log($"[SkillShop] Spent {price} soul, now {SoulWallet.CurrentSoul}");
+                    }
                 }
 
                 SkillSaveStore.MarkOwned(_selectedSkill);
-                Debug.Log($"[SkillShop] Added '{_selectedSkill.name}' to owned store. Count={SkillSaveStore.Owned.Count}");
+                if (Debug.isDebugBuild)
+                {
+                    Debug.Log($"[SkillShop] Added '{_selectedSkill.name}' to owned store. Count={SkillSaveStore.Owned.Count}");
+                }
 
                 EquipSelectedSkill();
                 PersistSlots();
@@ -734,7 +765,11 @@ namespace MaskboundJinosi.UI
             {
                 UnequipSelectedSkill();
                 PersistSlots();
-                Debug.Log($"[SkillShop] Unequipped '{_selectedSkill.name}'.");
+                if (Debug.isDebugBuild)
+                {
+                    Debug.Log($"[SkillShop] Unequipped '{_selectedSkill.name}'.");
+                }
+
                 RefreshAll();
                 return;
             }
@@ -743,7 +778,11 @@ namespace MaskboundJinosi.UI
             // pressing the button again equips it.
             EquipSelectedSkill();
             PersistSlots();
-            Debug.Log($"[SkillShop] Equipped (owned) '{_selectedSkill.name}'.");
+            if (Debug.isDebugBuild)
+            {
+                Debug.Log($"[SkillShop] Equipped (owned) '{_selectedSkill.name}'.");
+            }
+
             RefreshAll();
         }
 
