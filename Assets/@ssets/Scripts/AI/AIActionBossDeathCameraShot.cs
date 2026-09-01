@@ -121,11 +121,8 @@ namespace MaskboundJinosi.AI
             RestoreTimeScale();
 
             DemoBossChallengeTimer timer = FindFirstObjectByType<DemoBossChallengeTimer>(FindObjectsInactive.Include);
-            float completionTime = timer != null ? timer.ElapsedTime : 0f;
-            bool rewardEligible = timer != null && timer.RewardEligible;
-            BossVictoryOverlay.Show(completionTime, rewardEligible);
 
-            // Lewati frame saat overlay dibuat agar input last-hit tidak ikut dianggap konfirmasi.
+            // Lewati frame agar input last-hit tidak ikut dianggap konfirmasi.
             yield return null;
             while (!OverlayConfirmInput.WasPressedThisFrame())
             {

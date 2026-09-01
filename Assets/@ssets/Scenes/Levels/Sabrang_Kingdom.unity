@@ -652,6 +652,121 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &226030531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 226030532}
+  - component: {fileID: 226030534}
+  - component: {fileID: 226030533}
+  m_Layer: 0
+  m_Name: NPC_AfterBossDeath
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &226030532
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226030531}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.08, y: -7.76, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 910000000000000010}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &226030533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226030531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c7f3a5b2e4d6081a9c4e5f6071829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcPrefab: {fileID: 100000, guid: c5e1a9f34b7d4e6f9a8b7c6d5e4f3a2b, type: 3}
+  npcSpawnPoint: {fileID: 226030532}
+  destroyNpcAfterDialog: 1
+  appearAnimatorParameter: Appear
+  disappearAnimatorParameter: Disappear
+  disappearWaitDuration: 1
+  facePlayerOnSpawn: 0
+  npcFacesRightByDefault: 1
+  monologueMode: 0
+  flowchartPrefab: {fileID: 325830922}
+  blockName: NPCAfterBoss
+  saveFlagKey: Maskbound.NPCAfterBoss
+  cameraDelay: 0.6
+  npcFadeInDuration: 0.8
+  npcFadeOutDuration: 0.5
+  dialogDelay: 0.3
+  freezePlayerDuringDialog: 1
+  hideHudDuringDialog: 1
+  useCinematicCamera: 1
+  cameraOffset: {x: 0, y: 1.5}
+  cameraOrthographicSize: 8
+  cameraPriority: 20
+  startOnLoadForTesting: 0
+  startOnLoadDelay: 1.5
+--- !u!61 &226030534
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226030531}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 7, y: 13}
+  m_EdgeRadius: 0
 --- !u!1001 &325830920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -714,7 +829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
       propertyPath: selectedBlocks.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
       propertyPath: selectedCommands.Array.size
@@ -723,11 +838,11 @@ PrefabInstance:
     - target: {fileID: 11400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
       propertyPath: 'selectedBlocks.Array.data[0]'
       value: 
-      objectReference: {fileID: 325830934}
+      objectReference: {fileID: 325830938}
     - target: {fileID: 11400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
       propertyPath: 'selectedCommands.Array.data[0]'
       value: 
-      objectReference: {fileID: 325830933}
+      objectReference: {fileID: 325830936}
     - target: {fileID: 11400001, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
       propertyPath: commandList.Array.size
       value: 7
@@ -746,7 +861,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 400000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 757190547}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
         type: 3}
@@ -772,6 +891,38 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 325830935}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325830936}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325830938}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325830937}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325830940}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325830941}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325830942}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325830943}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325830944}
   m_SourcePrefab: {fileID: 100100000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
 --- !u!4 &325830921 stripped
 Transform:
@@ -951,6 +1102,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 325830933}
   - {fileID: 325830935}
+  - {fileID: 325830936}
   suppressAllAutoSelections: 0
 --- !u!114 &325830935
 MonoBehaviour:
@@ -971,6 +1123,239 @@ MonoBehaviour:
   description: 
   character: {fileID: 325830923}
   portrait: {fileID: 21300000, guid: 474b64f74a910d745aa8a3265982c419, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &325830936
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325830925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee63e642958494f1ebed8116ae4b1103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.SetAnimBool
+  itemId: 17
+  indentLevel: 0
+  _animator:
+    animatorRef: {fileID: 0}
+    animatorVal: {fileID: 1677307136}
+  _parameterName:
+    stringRef: {fileID: 0}
+    stringVal: BossEnd
+  value:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  animatorOLD: {fileID: 0}
+  parameterNameOLD: 
+--- !u!114 &325830937
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325830925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 19
+  indentLevel: 0
+  storyText: "Dia benar Panji, Dewi Sekar Taji tidak nampak disini. \r\nGuru sudah
+    mencari di seluruh penjuru istana namun tidak berhasil menemukan keberadaan Sang
+    Dewi. \r\nPrabu Klana pasti telah raib membawa Sang Dewi pergi bersamanya.\r\n"
+  description: 
+  character: {fileID: 757190548}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &325830938
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325830925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Block
+  nodeRect:
+    serializedVersion: 2
+    x: 68.000015
+    y: 244.00003
+    width: 131.088
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 16
+  blockName: NPCAfterBoss
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 325830937}
+  - {fileID: 325830940}
+  - {fileID: 325830941}
+  - {fileID: 325830942}
+  - {fileID: 325830943}
+  - {fileID: 325830944}
+  suppressAllAutoSelections: 0
+--- !u!114 &325830940
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325830925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 20
+  indentLevel: 0
+  storyText: "Dasar Prabu Klana bajingan! \r\nLantas, apa yang patut kita perbuat
+    sekarang ya wahai guru?!\r\n"
+  description: 
+  character: {fileID: 325830924}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &325830941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325830925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 21
+  indentLevel: 0
+  storyText: "Daku yakin benar Prabu Klana membawa serta Dewi Sekar Taji ke istananya
+    yg lain! \r\nNamun istana Prabu Klana tersebar di banyak penjuru, Daku tidak
+    dapat memastikan kemana dia menghilangkan jejaknya.\r\n"
+  description: 
+  character: {fileID: 757190548}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &325830942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325830925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 22
+  indentLevel: 0
+  storyText: Namun kita tidak bisa membiarkan bajingan itu membawa kabur Dewi Sekar
+    Taji dari kita!
+  description: 
+  character: {fileID: 325830924}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 1
+--- !u!114 &325830943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325830925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 23
+  indentLevel: 0
+  storyText: "Engkau benar wahai muridku! \r\nKita harus terus mencari Dewi Sekar
+    Taji dan membawanya kembali ke Daha! \r\nKita tidak boleh berhenti sekarang!\r\nAyo
+    bergerak!"
+  description: 
+  character: {fileID: 757190548}
+  portrait: {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+  dialogSideOverride: 2
+--- !u!114 &325830944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325830925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 24
+  indentLevel: 0
+  storyText: Baik guru! Lekas kita bergerak!
+  description: 
+  character: {fileID: 325830924}
+  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1270,6 +1655,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &757190546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 757190547}
+  - component: {fileID: 757190548}
+  m_Layer: 0
+  m_Name: Character_NPC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &757190547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757190546}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 325830921}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &757190548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757190546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Bramana Caksena
+  nameColor: {r: 1, g: 0.84, b: 0.35, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: e9cce81dfee1f0843bed7dcf37a99070, type: 3}
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  dialogPanel: {fileID: 21300000, guid: 694613b570a735f4794ff09fa880ac95, type: 3}
+  dialogSide: 1
+  description: 
+  effectAudioSource: {fileID: 0}
+  voiceAudioSource: {fileID: 0}
 --- !u!1 &888000001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,6 +2686,12 @@ MonoBehaviour:
   bossFightTrigger: {fileID: 1251140207}
   npcDialogTrigger: {fileID: 0}
   playOnlyOnce: 1
+--- !u!95 &1677307136 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5741675168251382948, guid: 4618db918ea2b854ca5780a57a46f728,
+    type: 3}
+  m_PrefabInstance: {fileID: 1677307132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1736196670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2940,6 +3387,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 325830921}
+  - {fileID: 226030532}
   - {fileID: 888000002}
   - {fileID: 1286695578}
   - {fileID: 1251140205}

@@ -8,7 +8,7 @@ namespace MaskboundJinosi.UI
     {
         private const string OverlayName = "GameOverOverlay";
 
-        public static void Show(float elapsedTime)
+        public static void Show(float? elapsedTime = null)
         {
             if (GameObject.Find(OverlayName) != null)
             {
@@ -37,9 +37,12 @@ namespace MaskboundJinosi.UI
             CreateText(panelRect, "Title", "GAME OVER", 82f, new Color(1f, 0.2f, 0.22f),
                 new Vector2(0f, 65f), FontStyles.Bold);
 
-            int seconds = Mathf.Max(0, Mathf.FloorToInt(elapsedTime));
-            CreateText(panelRect, "Time", $"WAKTU  {seconds / 60:00}:{seconds % 60:00}", 42f,
-                Color.white, new Vector2(0f, -25f), FontStyles.Normal);
+            if (elapsedTime.HasValue)
+            {
+                int seconds = Mathf.Max(0, Mathf.FloorToInt(elapsedTime.Value));
+                CreateText(panelRect, "Time", $"WAKTU  {seconds / 60:00}:{seconds % 60:00}", 42f,
+                    Color.white, new Vector2(0f, -25f), FontStyles.Normal);
+            }
 
             CreateText(panelRect, "Message", "TEKAN ATTACK (E) UNTUK MELANJUTKAN", 26f,
                 new Color(0.75f, 0.75f, 0.75f), new Vector2(0f, -90f), FontStyles.Normal);

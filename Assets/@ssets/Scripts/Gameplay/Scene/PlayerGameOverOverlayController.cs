@@ -43,7 +43,7 @@ namespace MaskboundJinosi.Gameplay.Scene
                 challengeTimer.StopTimer();
             }
 
-            GameOverOverlay.Show(challengeTimer != null ? challengeTimer.ElapsedTime : 0f);
+            GameOverOverlay.Show();
             _returnRoutine = StartCoroutine(ReturnToStartScreen());
         }
 
