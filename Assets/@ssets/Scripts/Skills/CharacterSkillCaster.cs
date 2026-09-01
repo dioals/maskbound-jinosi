@@ -53,6 +53,8 @@ namespace MaskboundJinosi.Skills
 		protected readonly Dictionary<ActiveSkillData, float> _lastCastTimes = new Dictionary<ActiveSkillData, float>();
 		protected float _lastGlobalCastTime = float.NegativeInfinity;
 		protected Character _character;
+		protected Health _health;
+		protected Coroutine _castLockCoroutine;
 		protected CharacterBlock _characterBlock;
 		protected List<CharacterHandleWeapon> _handleWeaponList;
 		protected CharacterHorizontalMovement _horizontalMovement;
@@ -100,7 +102,46 @@ namespace MaskboundJinosi.Skills
 				_characterBlock = _character.FindAbility<CharacterBlock>();
 				_handleWeaponList = _character.FindAbilities<CharacterHandleWeapon>();
 				_horizontalMovement = _character.FindAbility<CharacterHorizontalMovement>();
+				_health = _character.GetComponent<Health>();
 			}
+		}
+
+		protected virtual void OnEnable()
+		{
+			if (_health != null)
+			{
+				_health.OnHit += HandleCharacterHit;
+			}
+		}
+
+		protected virtual void OnDisable()
+		{
+			if (_health != null)
+			{
+				_health.OnHit -= HandleCharacterHit;
+			}
+		}
+
+		/// <summary>
+		/// Getting hit can cut the cast animation short before its animation event fires, which would
+		/// otherwise leave IsCasting (and the movement lock it drives) stuck until CastLockCo's fallback
+		/// timer runs out - or forever, if this component gets disabled mid-coroutine. Clear the lock the
+		/// moment damage lands instead of waiting on either of those.
+		/// </summary>
+		protected virtual void HandleCharacterHit()
+		{
+			if (!_isCasting)
+			{
+				return;
+			}
+
+			if (_castLockCoroutine != null)
+			{
+				StopCoroutine(_castLockCoroutine);
+				_castLockCoroutine = null;
+			}
+
+			StopCastingAnimation();
 		}
 
 		/// <summary>
@@ -320,7 +361,7 @@ namespace MaskboundJinosi.Skills
 			if (skill.CastLockFallbackDuration > 0f)
 			{
 				IsCasting = true;
-				StartCoroutine(CastLockCo(skill.CastLockFallbackDuration));
+				_castLockCoroutine = StartCoroutine(CastLockCo(skill.CastLockFallbackDuration));
 			}
 
 			if (LogDebug)
@@ -345,7 +386,7 @@ namespace MaskboundJinosi.Skills
 		protected virtual IEnumerator CastLockCo(float duration)
 		{
 			yield return new WaitForSeconds(duration);
-			IsCasting = false;
+			_castLockCoroutine = null;
 			StopCastingAnimation();
 		}
 

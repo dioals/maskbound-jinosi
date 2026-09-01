@@ -34,10 +34,10 @@ namespace MaskboundJinosi.AI
 
         [Header("Durations")]
         [Tooltip("Randomized duration range for the phase 1 Attack1.")]
-        public float Attack1DurationMin = 4f;
-        public float Attack1DurationMax = 5f;
-        public float Attack2Duration = 4f;
-        public float SpecialDuration = 6f;
+        public float Attack1DurationMin = 3f;
+        public float Attack1DurationMax = 4f;
+        public float Attack2Duration = 3f;
+        public float SpecialDuration = 5f;
 
         /// <summary>
         /// Duration of the attack that was just picked. Read by AIDecisionPhaseAttackDone.

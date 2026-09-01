@@ -30,6 +30,10 @@ namespace MaskboundJinosi.UI
         [SerializeField] private Color readyColor = Color.white;
         [SerializeField] private Color cooldownColor = new Color(0.45f, 0.45f, 0.45f, 1f);
 
+        [Header("Selection Darken")]
+        [Tooltip("Warna icon saat slot ini TIDAK sedang dipilih. Icon hanya balik ke readyColor/cooldownColor ketika dipilih.")]
+        [SerializeField] private Color unselectedColor = new Color(0.35f, 0.35f, 0.35f, 1f);
+
         private Skill _displayedSkill;
 
         private void Awake()
@@ -127,7 +131,11 @@ namespace MaskboundJinosi.UI
                 cooldownOverlay.fillAmount = fill;
             }
 
-            Color iconColor = coolingDown ? cooldownColor : readyColor;
+            bool selected = skillCaster != null &&
+                skillCaster.SelectedSkillSlotIndex == slotIndex;
+            Color iconColor = selected
+                ? (coolingDown ? cooldownColor : readyColor)
+                : unselectedColor;
             if (skillIconImage != null)
             {
                 skillIconImage.color = iconColor;
