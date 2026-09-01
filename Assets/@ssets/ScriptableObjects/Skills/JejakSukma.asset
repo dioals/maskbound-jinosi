@@ -18,7 +18,7 @@ MonoBehaviour:
     movement
   Icon: {fileID: 21300000, guid: 0733c6772a2207541b400faf37216bea, type: 3}
   SkillType: 1
-  SoulPrice: 10
+  SoulPrice: 40
   Damage: 50
   Duration: 5
   CastLockFallbackDuration: 1.2

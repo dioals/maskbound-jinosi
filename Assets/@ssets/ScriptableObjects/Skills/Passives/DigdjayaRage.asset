@@ -18,7 +18,7 @@ MonoBehaviour:
     namun menambah Cooldown Skill
   Icon: {fileID: 21300000, guid: 10c28863a3b68a343bdc63cdf55b07fa, type: 3}
   SkillType: 0
-  SoulPrice: 10
+  SoulPrice: 20
   Effects:
   - {fileID: 11400000, guid: 10000000000000000000000000000004, type: 2}
   - {fileID: 11400000, guid: 10000000000000000000000000000005, type: 2}

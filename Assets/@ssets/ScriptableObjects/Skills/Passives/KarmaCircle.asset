@@ -18,7 +18,7 @@ MonoBehaviour:
     mengurangi damage skill
   Icon: {fileID: 21300000, guid: c201d27ac96696746a88ed24526d05f2, type: 3}
   SkillType: 0
-  SoulPrice: 10
+  SoulPrice: 20
   Effects:
   - {fileID: 11400000, guid: 10000000000000000000000000000002, type: 2}
   - {fileID: 11400000, guid: 10000000000000000000000000000003, type: 2}
