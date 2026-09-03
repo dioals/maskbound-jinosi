@@ -471,8 +471,8 @@ MonoBehaviour:
   ResetPointsOnRestart: 1
   BoundsMode: 0
   LevelBounds:
-    m_Center: {x: -3, y: -2.5, z: 0}
-    m_Extent: {x: 35.1, y: 9.91, z: 5}
+    m_Center: {x: -2.9, y: -2.5, z: 0}
+    m_Extent: {x: 35.2, y: 9.91, z: 5}
   ConvertToColliderBoundsButton: 0
   LoadingSceneMode: 1
   LoadingSceneName: LoadingScreen
