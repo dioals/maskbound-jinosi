@@ -74,7 +74,7 @@ namespace MaskboundJinosi.Gameplay.Dialogue
         [SerializeField] private int cameraPriority = 20;
 
         [Header("Testing")]
-        [Tooltip("Editor testing: start the sequence shortly after the scene loads, without walking into the trigger. This bypasses the once-only flag.")]
+        [Tooltip("Editor testing: start the sequence shortly after the scene loads, without walking into the trigger. Still respects the once-only PlayerPrefs flag, so an already-shown dialog is not replayed when scenes reload.")]
         [SerializeField] private bool startOnLoadForTesting;
         [Tooltip("Delay before 'Start On Load For Testing' fires.")]
         [SerializeField] private float startOnLoadDelay = 1.5f;
@@ -176,6 +176,13 @@ private bool _sequenceStarted;
 
             if (_sequenceStarted || _sequenceFinished)
             {
+                yield break;
+            }
+
+            if (!string.IsNullOrEmpty(saveFlagKey) && PlayerPrefs.GetInt(saveFlagKey, 0) == 1)
+            {
+                Debug.Log("[NPCDialogTrigger] Flag '" + saveFlagKey + "' already set, skipping Start On Load (testing).", this);
+                _sequenceFinished = true;
                 yield break;
             }
 
@@ -670,6 +677,22 @@ private bool _sequenceStarted;
             _sequenceFinished = true;
             _dialogExecuting = false;
 
+            // Remember this dialog was already shown. Done here (not at the end of
+            // EndSequenceRoutine) so the flag is saved even if the play session is
+            // stopped mid fade-out, and so "Start On Load For Testing" re-runs it
+            // exactly like the collider path.
+            if (!string.IsNullOrEmpty(saveFlagKey))
+            {
+                PlayerPrefs.SetInt(saveFlagKey, 1);
+                PlayerPrefs.Save();
+
+                Debug.Log("[NPCDialogTrigger] Sequence finished, flag '" + saveFlagKey + "' set.", this);
+            }
+            else
+            {
+                Debug.Log("[NPCDialogTrigger] Sequence finished (no saveFlagKey set, not saved).", this);
+            }
+
             StartCoroutine(EndSequenceRoutine());
         }
 
@@ -699,12 +722,6 @@ private bool _sequenceStarted;
 
             // 4. HUD comes back now that the dialog is over.
             ShowHud();
-
-            // 5. Remember this dialog was already shown.
-            PlayerPrefs.SetInt(saveFlagKey, 1);
-            PlayerPrefs.Save();
-
-            Debug.Log("[NPCDialogTrigger] Sequence finished, flag '" + saveFlagKey + "' set.", this);
         }
 
         /// <summary>

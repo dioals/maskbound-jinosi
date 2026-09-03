@@ -1,5 +1,4 @@
 using System;
-using MaskboundJinosi.Breakables;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using TMPro;
@@ -63,41 +62,18 @@ namespace MaskboundJinosi.Gameplay.Scene
 		}
 
 		/// <summary>
-		/// All "seen once per save" dialog / tutorial flags written by NPCDialogTrigger
-		/// (its saveFlagKey field). Keep in sync with the keys used in the scenes.
-		/// </summary>
-		private static readonly string[] DialogFlagKeys =
-		{
-			"Maskbound.IntroDialogShown",
-			"Maskbound.FirstTutorialShown",
-			"Maskbound.SecondTutorialShown",
-			"Maskbound.ThirdTutorialShown",
-			"Maskbound.FourthTutorialShown"
-		};
-
-		/// <summary>
-		/// Wipes old PlayerPrefs save data so a New Game starts completely fresh:
-		/// the last gameplay scene (Continue), dialog "seen once" flags, Fungus'
-		/// save history and broken breakables. Add any new save key written by the
-		/// game here.
+		/// Wipes ALL PlayerPrefs save data so a New Game starts completely fresh:
+		/// the last gameplay scene (Continue), dialog/tutorial "seen once" flags,
+		/// Fungus' save history, broken breakables and the skill save. Because every
+		/// save key the game writes is deleted, no list of keys needs to be kept in
+		/// sync when new flags/features are added.
 		/// </summary>
 		public virtual void ClearSaveData()
 		{
-			PlayerPrefs.DeleteKey(LastSceneKey);
+			PlayerPrefs.DeleteAll();
 
-			// Dialog / tutorial flags written by NPCDialogTrigger ("only plays once per save").
-			foreach (string key in DialogFlagKeys)
-			{
-				PlayerPrefs.DeleteKey(key);
-			}
-
-			// Fungus save history (SaveManager).
-			PlayerPrefs.DeleteKey(Fungus.FungusConstants.DefaultSaveDataKey);
-
-			// Breakable world objects (stones, ...) that stay broken once destroyed.
-			PlayerPrefs.DeleteKey(BreakableObject.BrokenBreakablesKey);
-
-			// Session skill progression (owned + equipped slots).
+			// Session skill progression (owned + equipped slots) also lives in
+			// memory, so reset it there too.
 			MaskboundJinosi.Skills.SkillSaveStore.Reset();
 
 			PlayerPrefs.Save();
