@@ -192,7 +192,7 @@ namespace MaskboundJinosi.Combat
 			StopSpecialAttack();
 		}
 
-		protected virtual void StopSpecialAttack()
+		public virtual void StopSpecialAttack()
 		{
 			if (SpecialHitbox != null)
 			{

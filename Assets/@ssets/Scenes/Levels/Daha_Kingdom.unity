@@ -387,7 +387,7 @@ MonoBehaviour:
   facePlayerOnSpawn: 0
   npcFacesRightByDefault: 1
   monologueMode: 1
-  flowchartPrefab: {fileID: 11400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
+  flowchartPrefab: {fileID: 928151122}
   blockName: Intro
   saveFlagKey: Maskbound.Intro
   cameraDelay: 1
@@ -723,6 +723,54 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &367265172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 367265173}
+  - component: {fileID: 367265174}
+  m_Layer: 0
+  m_Name: AblityToggleControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &367265173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367265172}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 910000000000000010}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &367265174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367265172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0b756a930920ec4dbbc8c9ee8707b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Gameplay.PlayerControlToggles
+  character: {fileID: 0}
+  lockAllExceptWalkAndInteractOnStart: 1
+  unlockKeyPrefix: Maskbound.TutorialUnlock
+  logToggles: 0
 --- !u!4 &420936718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 408230, guid: ce0837de5d2b5d140aea3195484dca8a,
@@ -903,7 +951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Fungus::Fungus.FungusState
-  selectedFlowchart: {fileID: 0}
+  selectedFlowchart: {fileID: 928151122}
 --- !u!4 &515946259
 Transform:
   m_ObjectHideFlags: 1
@@ -1129,6 +1177,86 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a343ffc127af4b41b1e509d55d21956, type: 3}
+--- !u!1001 &928151120
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 910000000000000010}
+    m_Modifications:
+    - target: {fileID: 100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
+      propertyPath: m_Name
+      value: Flowchart_IntroBrahmana
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -59.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4749212535258430546, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+        type: 3}
+      propertyPath: portraits.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
+--- !u!4 &928151121 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 928151120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &928151122 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 928151120}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1018945407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,6 +2219,8 @@ Transform:
   - {fileID: 910000000000200002}
   - {fileID: 163230550}
   - {fileID: 910000000000300002}
+  - {fileID: 928151121}
+  - {fileID: 367265173}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &910000000000100004
@@ -2293,7 +2423,7 @@ MonoBehaviour:
   facePlayerOnSpawn: 0
   npcFacesRightByDefault: 1
   monologueMode: 0
-  flowchartPrefab: {fileID: 11400000, guid: a3c9e7f14b2d4c5f9e8a7b6c5d4e3f2a, type: 3}
+  flowchartPrefab: {fileID: 928151122}
   blockName: IntroDialog
   saveFlagKey: Maskbound.IntroDialogShown
   cameraDelay: 3
