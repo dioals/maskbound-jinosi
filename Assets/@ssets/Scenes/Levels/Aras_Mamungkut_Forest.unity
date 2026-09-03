@@ -133,6 +133,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1605590342}
     m_Modifications:
+    - target: {fileID: 2050726569287084779, guid: cad6cf205846ae2468be3631006eb700,
+        type: 3}
+      propertyPath: SaveId
+      value: kendi10
+      objectReference: {fileID: 0}
     - target: {fileID: 7215735613736845868, guid: cad6cf205846ae2468be3631006eb700,
         type: 3}
       propertyPath: m_Name
@@ -413,6 +418,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stone (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473884094713773903, guid: 4902d3bab2fc34547b5cdf6feb664b0b,
+        type: 3}
+      propertyPath: SaveId
+      value: stone4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -964,6 +974,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7473884094713773903, guid: 4902d3bab2fc34547b5cdf6feb664b0b,
         type: 3}
+      propertyPath: SaveId
+      value: stone2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473884094713773903, guid: 4902d3bab2fc34547b5cdf6feb664b0b,
+        type: 3}
       propertyPath: SoulPickupCount
       value: 4
       objectReference: {fileID: 0}
@@ -998,6 +1013,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1605590342}
     m_Modifications:
+    - target: {fileID: 2050726569287084779, guid: 2576695b3016e124686c1d0450bd2673,
+        type: 3}
+      propertyPath: SaveId
+      value: kendi7
+      objectReference: {fileID: 0}
     - target: {fileID: 7215735613736845868, guid: 2576695b3016e124686c1d0450bd2673,
         type: 3}
       propertyPath: m_Name
@@ -1300,6 +1320,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1605590342}
     m_Modifications:
+    - target: {fileID: 2050726569287084779, guid: 2576695b3016e124686c1d0450bd2673,
+        type: 3}
+      propertyPath: SaveId
+      value: kendi2
+      objectReference: {fileID: 0}
     - target: {fileID: 7215735613736845868, guid: 2576695b3016e124686c1d0450bd2673,
         type: 3}
       propertyPath: m_Name
@@ -1423,6 +1448,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7473884094713773903, guid: 4902d3bab2fc34547b5cdf6feb664b0b,
+        type: 3}
+      propertyPath: SaveId
+      value: stone3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1442,6 +1472,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1605590342}
     m_Modifications:
+    - target: {fileID: 2050726569287084779, guid: 2576695b3016e124686c1d0450bd2673,
+        type: 3}
+      propertyPath: SaveId
+      value: kendi4
+      objectReference: {fileID: 0}
     - target: {fileID: 7215735613736845868, guid: 2576695b3016e124686c1d0450bd2673,
         type: 3}
       propertyPath: m_Name
@@ -1667,6 +1702,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7473884094713773903, guid: 4902d3bab2fc34547b5cdf6feb664b0b,
+        type: 3}
+      propertyPath: SaveId
+      value: stone7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1686,6 +1726,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1605590342}
     m_Modifications:
+    - target: {fileID: 2050726569287084779, guid: 075ed66ac2b5e7d4aa9807086b48c78a,
+        type: 3}
+      propertyPath: SaveId
+      value: kendi1
+      objectReference: {fileID: 0}
     - target: {fileID: 7215735613736845868, guid: 075ed66ac2b5e7d4aa9807086b48c78a,
         type: 3}
       propertyPath: m_Name
@@ -2605,6 +2650,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone
       objectReference: {fileID: 0}
+    - target: {fileID: 7473884094713773903, guid: 4902d3bab2fc34547b5cdf6feb664b0b,
+        type: 3}
+      propertyPath: SaveId
+      value: stone1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2678,6 +2728,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stone (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473884094713773903, guid: 4902d3bab2fc34547b5cdf6feb664b0b,
+        type: 3}
+      propertyPath: SaveId
+      value: stone6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2940,6 +2995,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1605590342}
     m_Modifications:
+    - target: {fileID: 2050726569287084779, guid: 2576695b3016e124686c1d0450bd2673,
+        type: 3}
+      propertyPath: SaveId
+      value: kendi3
+      objectReference: {fileID: 0}
     - target: {fileID: 7215735613736845868, guid: 2576695b3016e124686c1d0450bd2673,
         type: 3}
       propertyPath: m_Name
@@ -4353,6 +4413,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1605590342}
     m_Modifications:
+    - target: {fileID: 2050726569287084779, guid: cad6cf205846ae2468be3631006eb700,
+        type: 3}
+      propertyPath: SaveId
+      value: kendi5
+      objectReference: {fileID: 0}
     - target: {fileID: 7215735613736845868, guid: cad6cf205846ae2468be3631006eb700,
         type: 3}
       propertyPath: m_Name
@@ -4864,6 +4929,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1605590342}
     m_Modifications:
+    - target: {fileID: 2050726569287084779, guid: 2576695b3016e124686c1d0450bd2673,
+        type: 3}
+      propertyPath: SaveId
+      value: kendi8
+      objectReference: {fileID: 0}
     - target: {fileID: 7215735613736845868, guid: 2576695b3016e124686c1d0450bd2673,
         type: 3}
       propertyPath: m_Name
@@ -5050,6 +5120,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7473884094713773903, guid: 4902d3bab2fc34547b5cdf6feb664b0b,
+        type: 3}
+      propertyPath: SaveId
+      value: stone5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5122,6 +5197,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1605590342}
     m_Modifications:
+    - target: {fileID: 2050726569287084779, guid: 075ed66ac2b5e7d4aa9807086b48c78a,
+        type: 3}
+      propertyPath: SaveId
+      value: kendi9
+      objectReference: {fileID: 0}
     - target: {fileID: 7215735613736845868, guid: 075ed66ac2b5e7d4aa9807086b48c78a,
         type: 3}
       propertyPath: m_Name
@@ -5295,6 +5375,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stone (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473884094713773903, guid: 4902d3bab2fc34547b5cdf6feb664b0b,
+        type: 3}
+      propertyPath: SaveId
+      value: stone8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5611,6 +5696,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1605590342}
     m_Modifications:
+    - target: {fileID: 2050726569287084779, guid: 075ed66ac2b5e7d4aa9807086b48c78a,
+        type: 3}
+      propertyPath: SaveId
+      value: kendi6
+      objectReference: {fileID: 0}
     - target: {fileID: 7215735613736845868, guid: 075ed66ac2b5e7d4aa9807086b48c78a,
         type: 3}
       propertyPath: m_Name
