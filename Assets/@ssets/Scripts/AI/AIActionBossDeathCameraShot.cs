@@ -92,6 +92,13 @@ namespace MaskboundJinosi.AI
 
         private IEnumerator PlayShot()
         {
+            // The killing hit already triggered a freeze-frame (DamageOnTouch hitstop),
+            // so Time.timeScale can be 0 the moment this coroutine starts. This death
+            // sequence must run at normal speed (death animation, dialog, confirm), so
+            // normalize to 1 first instead of capturing the frozen 0 and restoring to it.
+            Time.timeScale = 1f;
+            _previousTimeScale = 1f;
+
             if (shotDelay > 0f)
             {
                 yield return new WaitForSecondsRealtime(shotDelay);
@@ -100,7 +107,6 @@ namespace MaskboundJinosi.AI
             FocusCharacter(bossCharacter);
             _cameraIsOnBoss = true;
 
-            _previousTimeScale = Time.timeScale;
             if (hitStopDuration > 0f)
             {
                 Time.timeScale = 0f;
@@ -187,10 +193,11 @@ namespace MaskboundJinosi.AI
 
         private void RestoreTimeScale()
         {
-            if (!Mathf.Approximately(Time.timeScale, _previousTimeScale))
-            {
-                Time.timeScale = _previousTimeScale;
-            }
+            // Always restore to full speed: this is a death sequence that must finish
+            // (animations, dialog, return to start). Comparing against _previousTimeScale
+            // could skip the restore if that captured value was 0 from the killing hitstop.
+            Time.timeScale = 1f;
+            _previousTimeScale = 1f;
         }
     }
 }

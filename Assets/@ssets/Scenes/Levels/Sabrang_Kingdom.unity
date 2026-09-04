@@ -838,11 +838,11 @@ PrefabInstance:
     - target: {fileID: 11400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
       propertyPath: 'selectedBlocks.Array.data[0]'
       value: 
-      objectReference: {fileID: 325830938}
+      objectReference: {fileID: 325830934}
     - target: {fileID: 11400000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
       propertyPath: 'selectedCommands.Array.data[0]'
       value: 
-      objectReference: {fileID: 325830936}
+      objectReference: {fileID: 325830945}
     - target: {fileID: 11400001, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
       propertyPath: commandList.Array.size
       value: 7
@@ -923,6 +923,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 325830944}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 70c46d8ef98270e4da03a5e51c85d88e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325830945}
   m_SourcePrefab: {fileID: 100100000, guid: 70c46d8ef98270e4da03a5e51c85d88e, type: 3}
 --- !u!4 &325830921 stripped
 Transform:
@@ -1103,6 +1107,7 @@ MonoBehaviour:
   - {fileID: 325830933}
   - {fileID: 325830935}
   - {fileID: 325830936}
+  - {fileID: 325830945}
   suppressAllAutoSelections: 0
 --- !u!114 &325830935
 MonoBehaviour:
@@ -1208,7 +1213,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 16
+  itemId: 25
   blockName: NPCAfterBoss
   description: 
   eventHandler: {fileID: 0}
@@ -1251,7 +1256,7 @@ MonoBehaviour:
   dialogSideOverride: 1
 --- !u!114 &325830941
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1281,7 +1286,7 @@ MonoBehaviour:
   dialogSideOverride: 2
 --- !u!114 &325830942
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1310,7 +1315,7 @@ MonoBehaviour:
   dialogSideOverride: 1
 --- !u!114 &325830943
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1340,7 +1345,7 @@ MonoBehaviour:
   dialogSideOverride: 2
 --- !u!114 &325830944
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1366,6 +1371,23 @@ MonoBehaviour:
   waitForVO: 0
   setSayDialog: {fileID: 0}
   dialogSideOverride: 1
+--- !u!114 &325830945
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325830925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 26
+  indentLevel: 0
+  targetObject: {fileID: 1251140204}
+  methodName: ActivateTrigger
+  delay: 1
 --- !u!1 &501879787
 GameObject:
   m_ObjectHideFlags: 0
@@ -2204,7 +2226,7 @@ MonoBehaviour:
   blockName: BossAfterDeath
   saveFlagKey: 
   dialogDelay: 0.3
-  activationDelay: 3
+  activationDelay: 0
   freezePlayerDuringDialog: 1
   hideHudDuringDialog: 1
   introDirector: {fileID: 57431537}
@@ -2547,11 +2569,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 910000000000000302, guid: 4618db918ea2b854ca5780a57a46f728,
+        type: 3}
+      propertyPath: returnToStartScreen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1356644743787140172, guid: 4618db918ea2b854ca5780a57a46f728,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.2
       objectReference: {fileID: 0}
+    - target: {fileID: 1784688402122791095, guid: 4618db918ea2b854ca5780a57a46f728,
+        type: 3}
+      propertyPath: bossFightTrigger
+      value: 
+      objectReference: {fileID: 1251140207}
     - target: {fileID: 2292945620476484604, guid: 4618db918ea2b854ca5780a57a46f728,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2645,11 +2677,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9152037392086004739, guid: 4618db918ea2b854ca5780a57a46f728,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1677307135}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4618db918ea2b854ca5780a57a46f728, type: 3}
 --- !u!114 &1677307133 stripped
 MonoBehaviour:
@@ -2663,29 +2691,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b470d1b161b2454590386135b7fd64f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1677307134 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9152037392086004739, guid: 4618db918ea2b854ca5780a57a46f728,
+--- !u!114 &1677307135 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1784688402122791095, guid: 4618db918ea2b854ca5780a57a46f728,
     type: 3}
   m_PrefabInstance: {fileID: 1677307132}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1677307135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677307134}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10318ffaa7a32ee44bf11a033fd6aa0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.AI.AIActionCallDialogTrigger
-  InitializationMode: 1
-  Label: 
-  bossFightTrigger: {fileID: 1251140207}
-  npcDialogTrigger: {fileID: 0}
-  playOnlyOnce: 1
 --- !u!95 &1677307136 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5741675168251382948, guid: 4618db918ea2b854ca5780a57a46f728,
