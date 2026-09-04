@@ -120,6 +120,15 @@ namespace MaskboundJinosi.Skills
 			{
 				_health.OnHit -= HandleCharacterHit;
 			}
+
+			// Disabling mid-cast (dialog freeze, revive, generic all-ability disable)
+			// kills the CastLockCo fallback coroutine, leaving MovementForbidden stuck
+			// true - the player would glide while the animator never reaches Walking.
+			// Release the lock here so re-enabling later starts from a clean state.
+			if (_isCasting)
+			{
+				StopCastingAnimation();
+			}
 		}
 
 		/// <summary>

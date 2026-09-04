@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using MaskboundJinosi.Skills;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
@@ -147,6 +148,22 @@ namespace MaskboundJinosi.Combat
 				return false;
 			}
 
+			// Don't start a special mid-attack, mid-skill-cast or while blocking: those
+			// systems also lock horizontal movement, and overlapping two MovementForbidden
+			// owners (weapon + special) is what leaves the flag stuck after both finish.
+			if (_character != null)
+			{
+				if (_character.IsCastingSkill || _character.IsBlocking)
+				{
+					return false;
+				}
+
+				if (IsAttacking())
+				{
+					return false;
+				}
+			}
+
 			if (Time.time < _lastUseTime + SpecialAttackData.Cooldown)
 			{
 				return false;
@@ -158,6 +175,31 @@ namespace MaskboundJinosi.Combat
 			}
 
 			return true;
+		}
+
+		protected virtual bool IsAttacking()
+		{
+			if (_character == null)
+			{
+				return false;
+			}
+
+			List<CharacterHandleWeapon> handleWeapons = _character.FindAbilities<CharacterHandleWeapon>();
+			if (handleWeapons == null)
+			{
+				return false;
+			}
+
+			foreach (CharacterHandleWeapon handleWeapon in handleWeapons)
+			{
+				if ((handleWeapon.CurrentWeapon != null)
+				    && (handleWeapon.CurrentWeapon.WeaponState.CurrentState != Weapon.WeaponStates.WeaponIdle))
+				{
+					return true;
+				}
+			}
+
+			return false;
 		}
 
 		public virtual void RefillEnergy(float amount)
@@ -263,6 +305,29 @@ namespace MaskboundJinosi.Combat
 			}
 
 			StopSpecialAttack();
+		}
+
+		/// <summary>
+		/// If the ability is disabled mid-sequence (dialog freeze, generic all-ability
+		/// disable, respawn), the coroutine below dies before it can reach
+		/// StopSpecialAttack - leaving MovementForbidden stuck true and the player
+		/// gliding with no walking animation. Release the lock on disable instead.
+		/// </summary>
+		protected virtual void OnDisable()
+		{
+			base.OnDisable();
+
+			if (_attackCoroutine != null)
+			{
+				StopCoroutine(_attackCoroutine);
+				_attackCoroutine = null;
+			}
+
+			if (IsSpecialAttacking)
+			{
+				UnlockHorizontalMovement();
+				IsSpecialAttacking = false;
+			}
 		}
 
 		protected virtual void OnDrawGizmosSelected()
