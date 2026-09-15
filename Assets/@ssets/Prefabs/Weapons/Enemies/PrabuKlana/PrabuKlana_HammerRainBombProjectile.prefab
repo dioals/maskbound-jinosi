@@ -448,7 +448,7 @@ MonoBehaviour:
   destroyAnimationDuration: 0.6
   hitTrigger: Hit
   destroyTrigger: Destroy
-  bossStunDuration: 7
+  bossStunDuration: 2.5
 --- !u!114 &8439853728212290603
 MonoBehaviour:
   m_ObjectHideFlags: 0

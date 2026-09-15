@@ -47,14 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b16eacfee1a6a4aa752340f5b8db66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Combat.AnimationEventMeleeWeapon
-  TriggerMode: 1
+  TriggerMode: 0
   Interruptable: 0
   InitializeOnStart: 0
   DelayBeforeUse: 0
   DelayBeforeUseReleaseInterruption: 1
-  TimeBetweenUses: 4
+  TimeBetweenUses: 3.1
   TimeBetweenUsesReleaseInterruption: 1
-  CooldownDuration: 4
+  CooldownDuration: 0
   UseBurstMode: 0
   BurstLength: 3
   BurstTimeBetweenShots: 0.1

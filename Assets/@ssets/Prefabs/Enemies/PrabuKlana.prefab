@@ -422,6 +422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.AI.AIDecisionPhaseAttackDone
   Label: Attack Done
   PhaseAttackAction: {fileID: 991000000000000011}
+  MaximumStateDuration: 12
 --- !u!1 &2926269828800973588
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,7 +819,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 1, b: 1, a: 1}
-  ImmuneToKnockback: 0
+  ImmuneToKnockback: 1
   ImmuneToKnockbackIfZeroDamage: 0
   DeathFeedbacks: {fileID: 4833277056502639221}
   DestroyOnDeath: 0
@@ -2249,6 +2250,9 @@ MonoBehaviour:
     type: 3}
   MaskRageWeapon: {fileID: 1507084911690109563, guid: 51162f580ec4ea04d872775e2887456c,
     type: 3}
+  AttacksPerState: 2
+  MeleeRecovery: 0.3
+  SpecialRecovery: 0.5
   Attack1DurationMin: 3
   Attack1DurationMax: 4
   Attack2Duration: 3
