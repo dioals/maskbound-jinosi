@@ -9,13 +9,13 @@ namespace MaskboundJinosi.Skills.Effects
     /// <summary>
     /// Controls the PrabuKlana MaskRage projectile lifecycle.
     ///
-    /// Phase 1 (shadow idle): spawns with damage disabled and only shows the idle
-    /// shadow. If the shadow is hit by a player-owned attack (same detection as
+    /// Phase 1 (shadow idle): the shadow damage is active from spawn, so touching
+    /// the shadow hurts. If the shadow is hit by a player-owned attack (same detection as
     /// BreakableObject) it explodes immediately; otherwise it explodes automatically
     /// after ExplodeDelaySeconds.
     ///
-    /// Phase 2 (mask rage): triggers the animator's "Explode" state, then enables
-    /// the DamageOnTouch colliders so the mask rage deals damage.
+    /// Phase 2 (mask rage): triggers the animator's "Explode" state, disables the
+    /// shadow damage and enables the bite DamageOnTouch so the giant mask deals damage.
     /// </summary>
     [AddComponentMenu("Maskbound/Skills/Effects/Mask Rage Projectile Controller")]
     public class MaskRageProjectileController : MonoBehaviour
@@ -25,11 +25,15 @@ namespace MaskboundJinosi.Skills.Effects
         [SerializeField, Min(0f)] private float explodeDelay = 5f;
 
         [Header("Damage")]
-        [Tooltip("Optional relay that enables the DamageOnTouch colliders. Found automatically if empty.")]
-        [SerializeField] private DamageOnTouchAnimationRelay damageRelay;
-        [Tooltip("Enables the damage right when the explode trigger fires. If false, keep the DamageOnTouch disabled and enable it via an Animation Event calling EnableDamage().")]
+        [Tooltip("Damage saat terkena bayangan BOSS (fase shadow idle). Aktif sejak spawn, mati saat meledak.")]
+        [SerializeField] private DamageOnTouch shadowDamage;
+        [Tooltip("Damage saat terkena gigitan topeng raksasa (fase explode). Aktif sebentar setelah meledak.")]
+        [SerializeField] private DamageOnTouch biteDamage;
+        [Tooltip("Optional relay that enables the bite DamageOnTouch. Found automatically if empty.")]
+        [SerializeField] private DamageOnTouchAnimationRelay biteDamageRelay;
+        [Tooltip("Enables the bite damage right when the explode trigger fires. If false, keep the bite DamageOnTouch disabled and enable it via an Animation Event calling EnableDamage().")]
         [SerializeField] private bool enableDamageOnExplode = true;
-        [Tooltip("How long the damage collider stays active after exploding (a quick damage window). 0 = stays active forever until the object dies.")]
+        [Tooltip("How long the bite damage stays active after exploding (a quick damage window). 0 = stays active forever until the object dies.")]
         [SerializeField, Min(0f)] private float damageWindowDuration = 0.3f;
 
         [Header("Hit Detection")]
@@ -47,8 +51,9 @@ namespace MaskboundJinosi.Skills.Effects
         {
             ResolveReferences();
 
-            // Guarantee the shadow phase starts with damage off.
-            SetDamageEnabled(false);
+            // Fase shadow idle: damage bayangan aktif sejak spawn, damage gigitan mati.
+            SetDamageEnabled(shadowDamage, true);
+            SetBiteDamageEnabled(false);
         }
 
         protected virtual void OnEnable()
@@ -111,7 +116,9 @@ namespace MaskboundJinosi.Skills.Effects
 
             if (enableDamageOnExplode)
             {
-                SetDamageEnabled(true);
+                // Bayangan sudah meledak: matikan damage bayangan, nyalakan damage gigitan sebentar.
+                SetDamageEnabled(shadowDamage, false);
+                SetBiteDamageEnabled(true);
 
                 // Quick damage window: disable the collider again after a short time.
                 if (damageWindowDuration > 0f)
@@ -135,7 +142,20 @@ namespace MaskboundJinosi.Skills.Effects
                 Debug.Log($"{name}: Damage window over, disabling damage.", this);
             }
 
-            SetDamageEnabled(false);
+            SetBiteDamageEnabled(false);
+        }
+
+        private void SetBiteDamageEnabled(bool enabled)
+        {
+            ResolveDamageRelay();
+            if (biteDamageRelay != null)
+            {
+                biteDamageRelay.SetDamageEnabled(enabled);
+            }
+            else
+            {
+                SetDamageEnabled(biteDamage, enabled);
+            }
         }
 
         /// <summary>
@@ -252,20 +272,47 @@ namespace MaskboundJinosi.Skills.Effects
             return ownerCharacter != null && ownerCharacter.CharacterType == Character.CharacterTypes.Player;
         }
 
-        private void SetDamageEnabled(bool enabled)
+        private void SetDamageEnabled(DamageOnTouch damage, bool enabled)
         {
-            ResolveDamageRelay();
-            if (damageRelay != null)
+            if (damage != null)
             {
-                damageRelay.SetDamageEnabled(enabled);
+                damage.enabled = enabled;
             }
         }
 
         private void ResolveDamageRelay()
         {
-            if (damageRelay == null)
+            ResolveDamageTargets();
+
+            if (biteDamageRelay == null)
             {
-                damageRelay = GetComponentInChildren<DamageOnTouchAnimationRelay>(true);
+                biteDamageRelay = GetComponentInChildren<DamageOnTouchAnimationRelay>(true);
+            }
+        }
+
+        private void ResolveDamageTargets()
+        {
+            if (shadowDamage != null && biteDamage != null)
+            {
+                return;
+            }
+
+            DamageOnTouch[] damages = GetComponentsInChildren<DamageOnTouch>(true);
+            for (int i = 0; i < damages.Length; i++)
+            {
+                if (damages[i] == null)
+                {
+                    continue;
+                }
+
+                if (shadowDamage == null && damages[i].name.ToLowerInvariant().Contains("shadow"))
+                {
+                    shadowDamage = damages[i];
+                }
+                else if (biteDamage == null && damages[i] != shadowDamage)
+                {
+                    biteDamage = damages[i];
+                }
             }
         }
 

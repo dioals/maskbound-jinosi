@@ -9,6 +9,7 @@ using MoreMountains.Tools;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 namespace MaskboundJinosi.UI
 {
@@ -62,6 +63,9 @@ namespace MaskboundJinosi.UI
         [SerializeField] private Image detailSoulIcon;
         [Tooltip("Existing Buy button. Its visual is hidden at runtime and its label becomes the buy prompt text.")]
         [SerializeField] private Button buyButton;
+        [Header("Skill Preview")]
+        [Tooltip("VideoPlayer yang memutar preview video skill yang sedang dipilih.")]
+        [SerializeField] private VideoPlayer previewPlayer;
 
         [Header("Navigation")]
         [Tooltip("Number of columns in the skill grid (matches the GridLayoutGroup constraint).")]
@@ -161,6 +165,7 @@ namespace MaskboundJinosi.UI
             HideHud();
             if (panelRoot != null) panelRoot.SetActive(true);
             Time.timeScale = 0f;
+            PlayPreview();
         }
 
         public void Close()
@@ -168,6 +173,7 @@ namespace MaskboundJinosi.UI
             if (!_isOpen) return;
 
             _isOpen = false;
+            if (previewPlayer != null) previewPlayer.Stop();
             Time.timeScale = 1f;
             if (panelRoot != null) panelRoot.SetActive(false);
             ShowHud();
@@ -505,6 +511,29 @@ namespace MaskboundJinosi.UI
             RefreshDetail();
             UpdateSelectionHighlight();
             UpdateOwnedState();
+            PlayPreview();
+        }
+
+        private void PlayPreview()
+        {
+            if (previewPlayer == null) return;
+
+            if (_selectedSkill != null && _selectedSkill.PreviewClip != null)
+            {
+                previewPlayer.gameObject.SetActive(true);
+                previewPlayer.enabled = true;
+                if (previewPlayer.clip != _selectedSkill.PreviewClip)
+                {
+                    previewPlayer.clip = _selectedSkill.PreviewClip;
+                }
+                previewPlayer.Play();
+            }
+            else
+            {
+                previewPlayer.Stop();
+                previewPlayer.clip = null;
+                previewPlayer.gameObject.SetActive(false);
+            }
         }
 
         private void UpdateSelectionHighlight()
@@ -637,13 +666,10 @@ namespace MaskboundJinosi.UI
                 if (_selectedSkill.SoulPrice <= 0)
                 {
                     detailCostText.text = "FREE";
-                    detailCostText.color = new Color(0.3f, 0.85f, 0.4f);
                 }
                 else
                 {
                     detailCostText.text = _selectedSkill.SoulPrice.ToString();
-                    detailCostText.color = SoulWallet.CanSpend(_selectedSkill.SoulPrice)
-                        ? new Color(1f, 0.85f, 0.3f) : new Color(0.85f, 0.3f, 0.3f);
                 }
             }
 

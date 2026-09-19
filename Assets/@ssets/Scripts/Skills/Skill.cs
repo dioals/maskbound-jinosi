@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Video;
 
 namespace MaskboundJinosi.Skills
 {
@@ -9,6 +10,10 @@ namespace MaskboundJinosi.Skills
 		public string DisplayName;
 		[TextArea] public string Description;
 		public Sprite Icon;
+
+		[Header("Preview")]
+		[Tooltip("Video preview yang diputar di detail panel skill shop saat skill ini dipilih.")]
+		public VideoClip PreviewClip;
 
 		[Header("Type")]
 		public SkillType SkillType = SkillType.Passive;

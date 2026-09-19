@@ -17,6 +17,7 @@ MonoBehaviour:
   Description: Active skill player yang membuat player dapat melakukan double jump
     movement
   Icon: {fileID: 21300000, guid: 0733c6772a2207541b400faf37216bea, type: 3}
+  PreviewClip: {fileID: 32900000, guid: 4d8532f24e61e1842903f1942fbc41d9, type: 3}
   SkillType: 1
   SoulPrice: 40
   Damage: 50

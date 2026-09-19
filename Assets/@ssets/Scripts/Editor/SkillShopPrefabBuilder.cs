@@ -147,6 +147,7 @@ namespace MaskboundJinosi.Editor
             so.FindProperty("detailCostText").objectReferenceValue = Find(ui, "DetailCost")?.GetComponent<TextMeshProUGUI>();
             so.FindProperty("detailSoulIcon").objectReferenceValue = Find(ui, "DetailSoulIcon")?.GetComponent<Image>();
             so.FindProperty("buyButton").objectReferenceValue = Find(ui, "BuyButton")?.GetComponent<Button>();
+            so.FindProperty("previewPlayer").objectReferenceValue = Find(ui, "RawImage")?.GetComponent<UnityEngine.Video.VideoPlayer>();
 
             so.ApplyModifiedProperties();
         }
