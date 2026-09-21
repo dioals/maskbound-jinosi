@@ -9,14 +9,18 @@ namespace MaskboundJinosi.Skills
 	/// be cast with the Jump button instead of the generic activate-skill button (L2 / Q), so a double
 	/// jump feels like a jump rather than a skill cast.
 	///
-	/// This runs in LateUpdate on purpose: Corgi drives CharacterJump.HandleInput from Character.Update,
-	/// so by the time we look at the jump button the normal jump has already had its turn. We only react
-	/// to presses CharacterJump silently refused because the player is out of jumps mid-air.
+	/// Execution order matters here, hence the explicit attribute. We need to read the jump button after
+	/// Character.Update has run CharacterJump.HandleInput (so we only react to presses the normal jump
+	/// refused), but before InputManager.LateUpdate runs ProcessButtonStates, which flips ButtonDown to
+	/// ButtonPressed and would hide the press from us. A late-ordered Update sits exactly in that gap:
+	/// every Update runs before every LateUpdate, and the order value puts us after the default-order
+	/// InputManager and Character. LateUpdate would be a coin flip against InputManager's own LateUpdate.
 	///
 	/// The skill is gated per airborne stretch, not by its cooldown: one cast per time in the air, and it
 	/// comes back the moment the character touches ground.
 	/// </summary>
 	[AddComponentMenu("Maskbound/Skills/Character Jump Skill Input")]
+	[DefaultExecutionOrder(100)]
 	public class CharacterJumpSkillInput : MonoBehaviour
 	{
 		[Header("References")]
@@ -43,9 +47,18 @@ namespace MaskboundJinosi.Skills
 				_jump = _character.FindAbility<CharacterJump>();
 				_controller = _character.GetComponentInParent<CorgiController>();
 			}
+
+			// Silent when wired correctly. If any of these is missing the component is simply dead, and
+			// that is very hard to tell apart from "the skill isn't equipped" while playing.
+			if (_character == null || _jump == null || _controller == null || SkillCaster == null)
+			{
+				Debug.LogError($"CharacterJumpSkillInput is missing references and will do nothing - " +
+				               $"Character: {_character != null}, CharacterJump: {_jump != null}, " +
+				               $"CorgiController: {_controller != null}, SkillCaster: {SkillCaster != null}", this);
+			}
 		}
 
-		protected virtual void LateUpdate()
+		protected virtual void Update()
 		{
 			if (_controller == null || _jump == null || _character == null || SkillCaster == null)
 			{
@@ -66,12 +79,14 @@ namespace MaskboundJinosi.Skills
 			// Jump ability disabled by progression (PlayerControlToggles) or otherwise blocked
 			if (!_jump.enabled || !_jump.AbilityAuthorized)
 			{
+				LogBlocked("jump ability disabled or not authorized");
 				return;
 			}
 
 			// A regular, coyote or buffered jump already consumed this press
 			if (_jump.JumpHappenedThisFrame)
 			{
+				LogBlocked("a normal jump already happened this frame");
 				return;
 			}
 
@@ -79,17 +94,20 @@ namespace MaskboundJinosi.Skills
 			// NumberOfJumpsLeft > 0 also covers the coyote window, which stays a normal jump.
 			if (_controller.State.IsGrounded || _jump.NumberOfJumpsLeft > 0)
 			{
+				LogBlocked($"grounded ({_controller.State.IsGrounded}) or jumps still left ({_jump.NumberOfJumpsLeft})");
 				return;
 			}
 
 			if (usedSinceGrounded)
 			{
+				LogBlocked("already used since last touching ground");
 				return;
 			}
 
 			int slotIndex = FindJumpButtonSkillSlot();
 			if (slotIndex < 0)
 			{
+				LogBlocked("no equipped skill has ActivateWithJumpButton ticked");
 				return;
 			}
 
@@ -103,6 +121,24 @@ namespace MaskboundJinosi.Skills
 				{
 					Debug.Log($"Jump button cast skill in slot {slotIndex}", this);
 				}
+			}
+			else
+			{
+				// CanCast said no - casting, blocking, mid-attack, or inside the 0.4s global cooldown
+				LogBlocked($"slot {slotIndex} refused the cast (CharacterSkillCaster.CanCast)");
+			}
+		}
+
+		/// <summary>
+		/// Explains, under LogDebug, why a jump press did not turn into a skill cast. Every early exit
+		/// below the button check reports, so a silent double jump can be diagnosed from the console
+		/// instead of by guessing which gate closed.
+		/// </summary>
+		protected virtual void LogBlocked(string reason)
+		{
+			if (LogDebug)
+			{
+				Debug.Log($"Jump button press not routed to a skill: {reason}", this);
 			}
 		}
 
