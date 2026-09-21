@@ -23,11 +23,12 @@ MonoBehaviour:
   Damage: 50
   Duration: 5
   CastLockFallbackDuration: 1.2
-  Cooldown: 9
+  Cooldown: 0
   SkillIndex: 4
   CastTriggerParameter: SkillCast
   SkillIndexParameter: SkillIndex
   IsCastingParameter: IsCastingSkill
+  ActivateWithJumpButton: 1
   SkillPrefab: {fileID: 778269070720293681, guid: 2664e2f536a6d434a82bb320f04b2c1b,
     type: 3}
   SkillPrefabSpawnDelay: 0
