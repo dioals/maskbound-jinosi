@@ -807,6 +807,7 @@ GameObject:
   - component: {fileID: 910000100000008}
   - component: {fileID: 910000100000009}
   - component: {fileID: 910000100000010}
+  - component: {fileID: 910000100000011}
   m_Layer: 9
   m_Name: SkillSystem
   m_TagString: Untagged
@@ -867,6 +868,21 @@ MonoBehaviour:
   SelectedSkillSlotIndex: 0
   GlobalCooldown: 0.4
   LogDebug: 0
+--- !u!114 &910000100000011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910000100000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2d8b053a1d46039326956af63c1af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.CharacterJumpSkillInput
+  SkillCaster: {fileID: 910000100000003}
+  LogDebug: 0
+  usedSinceGrounded: 0
 --- !u!114 &910000100000004
 MonoBehaviour:
   m_ObjectHideFlags: 0
