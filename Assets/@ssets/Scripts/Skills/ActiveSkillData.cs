@@ -29,6 +29,9 @@ namespace MaskboundJinosi.Skills
 		[Tooltip("Skill ini di-trigger lewat tombol Jump (bukan L2 / tombol activate skill). Dipakai skill lompat seperti Jejak Sukma. Lihat CharacterJumpSkillInput.")]
 		public bool ActivateWithJumpButton;
 
+		[Tooltip("Biarkan player tetap bergerak horizontal selama cast. Untuk skill gerak seperti Jejak Sukma, mengunci gerakan membuat lompatannya terasa mati di udara.")]
+		public bool AllowMovementWhileCasting;
+
 		[Header("Spawn")]
 		public GameObject SkillPrefab;
 		[Tooltip("Delay setelah animasi cast dimulai sebelum SkillPrefab dibuat. Atur per skill agar efek muncul tepat pada frame animasi yang diinginkan.")]

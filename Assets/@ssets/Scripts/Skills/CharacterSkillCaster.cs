@@ -44,12 +44,16 @@ namespace MaskboundJinosi.Skills
 				{
 					// MovementForbidden (unlike AbilityPermitted) keeps running the movement update every frame
 					// and actively zeroes it out, instead of freezing whatever velocity was already in flight.
-					_horizontalMovement.MovementForbidden = value;
+					// Movement skills opt out via AllowMovementWhileCasting: killing air control for the whole
+					// cast lock makes a skill like Jejak Sukma's double jump feel dead in the air.
+					_horizontalMovement.MovementForbidden = value && !_currentCastAllowsMovement;
 				}
 			}
 		}
 
 		protected bool _isCasting;
+		/// mirrors the in-flight skill's AllowMovementWhileCasting, since the IsCasting setter has no skill to ask
+		protected bool _currentCastAllowsMovement;
 		protected readonly Dictionary<ActiveSkillData, float> _lastCastTimes = new Dictionary<ActiveSkillData, float>();
 		protected float _lastGlobalCastTime = float.NegativeInfinity;
 		protected Character _character;
@@ -369,6 +373,8 @@ namespace MaskboundJinosi.Skills
 
 			if (skill.CastLockFallbackDuration > 0f)
 			{
+				// set before IsCasting: the setter reads it to decide whether to lock movement
+				_currentCastAllowsMovement = skill.AllowMovementWhileCasting;
 				IsCasting = true;
 				_castLockCoroutine = StartCoroutine(CastLockCo(skill.CastLockFallbackDuration));
 			}
