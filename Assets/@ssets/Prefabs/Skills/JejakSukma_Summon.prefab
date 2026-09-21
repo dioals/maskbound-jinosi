@@ -195,3 +195,4 @@ MonoBehaviour:
   TriggerJumpOnInitialize: 1
   JumpLaunchVelocity: 0
   FallbackBonusDuration: 1.2
+  MaxCastWaitDuration: 1.5
