@@ -25,6 +25,10 @@ namespace MaskboundJinosi.Skills
 		public string SkillIndexParameter = "SkillIndex";
 		public string IsCastingParameter = "IsCastingSkill";
 
+		[Header("Input")]
+		[Tooltip("Skill ini di-trigger lewat tombol Jump (bukan L2 / tombol activate skill). Dipakai skill lompat seperti Jejak Sukma. Lihat CharacterJumpSkillInput.")]
+		public bool ActivateWithJumpButton;
+
 		[Header("Spawn")]
 		public GameObject SkillPrefab;
 		[Tooltip("Delay setelah animasi cast dimulai sebelum SkillPrefab dibuat. Atur per skill agar efek muncul tepat pada frame animasi yang diinginkan.")]
