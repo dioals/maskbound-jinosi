@@ -71,7 +71,7 @@ namespace MaskboundJinosi.AI
 
         protected CharacterHandleWeapon _characterHandleWeapon;
         protected Health _health;
-        protected bool _useMaskRage;
+        protected Weapon _lastPhase3Weapon;
         protected int _attacksPerformed;
         protected float _pendingRecovery;
         protected float _recoveryEndsAt;
@@ -188,21 +188,36 @@ namespace MaskboundJinosi.AI
             float timeout = Random.Range(Attack1DurationMin, Attack1DurationMax);
             float recovery = MeleeRecovery;
 
-            // Phase 3 (HP <= 50%): no attack 2 at all - mask rage when the player is close,
-            // otherwise laser beam / mask rage alternate.
+            // Phase 3 (HP <= threshold): random skill tapi tetap filter jarak.
+            // Dekat = skill dekat (Attack2, MaskRage), jauh = skill jauh
+            // (Attack1, RainHammer, LaserBeam).
             if (hpPercentage <= Phase3Threshold)
             {
                 if (distance <= Attack2Distance)
                 {
-                    chosenWeapon = MaskRageWeapon;
+                    chosenWeapon = PickRandomPhase3Weapon(Attack2Weapon, MaskRageWeapon);
                 }
                 else
                 {
-                    chosenWeapon = _useMaskRage ? MaskRageWeapon : LaserBeamWeapon;
-                    _useMaskRage = !_useMaskRage;
+                    chosenWeapon = PickRandomPhase3Weapon(Attack1Weapon, RainHammerWeapon, LaserBeamWeapon);
                 }
-                timeout = SpecialDuration;
-                recovery = SpecialRecovery;
+
+                if (chosenWeapon == Attack1Weapon)
+                {
+                    timeout = Random.Range(Attack1DurationMin, Attack1DurationMax);
+                    recovery = MeleeRecovery;
+                }
+                else if (chosenWeapon == Attack2Weapon)
+                {
+                    timeout = Attack2Duration;
+                    recovery = MeleeRecovery;
+                }
+                else
+                {
+                    timeout = SpecialDuration;
+                    recovery = SpecialRecovery;
+                }
+                _lastPhase3Weapon = chosenWeapon;
             }
             // Close-range melee (attack 2) is available in phases 1 and 2.
             else if (distance <= Attack2Distance)
@@ -236,6 +251,46 @@ namespace MaskboundJinosi.AI
             _pendingRecovery = Mathf.Max(recovery, 0.05f);
             _attackStartedAt = Time.time;
             _attackInFlight = true;
+        }
+
+        protected virtual Weapon PickRandomPhase3Weapon(params Weapon[] candidates)
+        {
+            Weapon fallback = null;
+            Weapon pick = null;
+            int validCount = 0;
+            for (int i = 0; i < candidates.Length; i++)
+            {
+                if (candidates[i] == null)
+                {
+                    continue;
+                }
+                if (fallback == null)
+                {
+                    fallback = candidates[i];
+                }
+                validCount++;
+            }
+
+            if (validCount == 0)
+            {
+                return Attack1Weapon;
+            }
+
+            // Hindari skill yang sama dua kali berturut-turut kalau ada pilihan lain.
+            for (int attempt = 0; attempt < 4; attempt++)
+            {
+                pick = candidates[Random.Range(0, candidates.Length)];
+                if (pick == null)
+                {
+                    continue;
+                }
+                if (validCount <= 1 || pick != _lastPhase3Weapon)
+                {
+                    break;
+                }
+            }
+
+            return pick != null ? pick : fallback;
         }
 
         protected virtual bool WeaponAlreadyEquipped(Weapon weapon)
