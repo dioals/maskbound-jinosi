@@ -80,7 +80,7 @@ namespace MaskboundJinosi.Skills
 				SelectRelative(1);
 			}
 
-			if (WasActivatePressed())
+			if (WasActivatePressed() && !SelectedSkillIsJumpButtonSkill())
 			{
 				SkillCaster.ActivateSelectedSkill();
 			}
@@ -106,10 +106,26 @@ namespace MaskboundJinosi.Skills
 
             SkillCaster.SelectSkillSlot(nextIndex);
 
-            if (ActivateOnSelect)
+            if (ActivateOnSelect && !SelectedSkillIsJumpButtonSkill())
             {
                 SkillCaster.ActivateSelectedSkill();
             }
+        }
+
+        /// <summary>
+        /// True when the currently selected slot holds a skill that is cast with the Jump button
+        /// (see CharacterJumpSkillInput). Those skills stay visible in the LB/RB cycle so the player
+        /// can see they're equipped, but the activate button must not fire them.
+        /// </summary>
+        protected virtual bool SelectedSkillIsJumpButtonSkill()
+        {
+            if (SkillCaster == null || SkillCaster.SkillSlots == null)
+            {
+                return false;
+            }
+
+            ActiveSkillData active = SkillCaster.SkillSlots.GetSkill(SkillCaster.SelectedSkillSlotIndex) as ActiveSkillData;
+            return active != null && active.ActivateWithJumpButton;
         }
 
         /// <summary>
@@ -159,7 +175,7 @@ namespace MaskboundJinosi.Skills
 
 			SkillCaster.SelectSkillSlot(slotIndex);
 
-			if (ActivateOnSelect)
+			if (ActivateOnSelect && !SelectedSkillIsJumpButtonSkill())
 			{
 				SkillCaster.ActivateSelectedSkill();
 			}
