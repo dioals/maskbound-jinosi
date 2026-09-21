@@ -196,3 +196,4 @@ MonoBehaviour:
   JumpLaunchVelocity: 0
   FallbackBonusDuration: 1.2
   MaxCastWaitDuration: 1.5
+  ConsumeJumpsAfterLaunch: 1
