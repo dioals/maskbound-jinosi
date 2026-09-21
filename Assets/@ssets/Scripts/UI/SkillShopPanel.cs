@@ -63,6 +63,12 @@ namespace MaskboundJinosi.UI
         [SerializeField] private Image detailSoulIcon;
         [Tooltip("Existing Buy button. Its visual is hidden at runtime and its label becomes the buy prompt text.")]
         [SerializeField] private Button buyButton;
+        [Header("Confirm Panel")]
+        [Tooltip("Optional popup konfirmasi pembelian. Kalau kosong, dibuat otomatis saat runtime.")]
+        [SerializeField] private GameObject confirmPanelRoot;
+        [SerializeField] private TextMeshProUGUI confirmSkillNameText;
+        [SerializeField] private TextMeshProUGUI confirmPriceText;
+        [SerializeField] private TextMeshProUGUI confirmHintText;
         [Header("Skill Preview")]
         [Tooltip("VideoPlayer yang memutar preview video skill yang sedang dipilih.")]
         [SerializeField] private VideoPlayer previewPlayer;
@@ -92,6 +98,7 @@ namespace MaskboundJinosi.UI
         private readonly Color _entryNotOwnedTint = new Color(0.3f, 0.3f, 0.35f, 0.95f);
         private int _selectedIndex = -1;
         private Skill _selectedSkill;
+        private Skill _pendingConfirmSkill;
 
         private TextMeshProUGUI _buyPromptText;
         private bool _buyPromptResolved;
@@ -102,11 +109,13 @@ namespace MaskboundJinosi.UI
         private const float NavRepeatDelay = 0.2f;
 
         public bool IsOpen => _isOpen;
+        public bool IsConfirmOpen => _pendingConfirmSkill != null;
 
         // ───────────────────── Public API ─────────────────────
 
         private void Awake()
         {
+            ResolveConfirmPanelFromHierarchy();
             // The panel lives in the persistent Bootstrap scene, so its Awake
             // runs before any level (and before the player is spawned). Register
             // every shop skill by SkillId and load the persisted save here, so
@@ -132,6 +141,7 @@ namespace MaskboundJinosi.UI
             _slotManager = slotManager;
             _onClosed = onClosed;
             _isOpen = true;
+            _pendingConfirmSkill = null;
 
             // Seed the session store's OWNED set from the player's current slots
             // so skills equipped before this panel ever opened are treated as
@@ -166,6 +176,7 @@ namespace MaskboundJinosi.UI
             if (panelRoot != null) panelRoot.SetActive(true);
             Time.timeScale = 0f;
             PlayPreview();
+            HideConfirmPanel();
         }
 
         public void Close()
@@ -173,6 +184,8 @@ namespace MaskboundJinosi.UI
             if (!_isOpen) return;
 
             _isOpen = false;
+            _pendingConfirmSkill = null;
+            HideConfirmPanel();
             if (previewPlayer != null) previewPlayer.Stop();
             Time.timeScale = 1f;
             if (panelRoot != null) panelRoot.SetActive(false);
@@ -231,6 +244,27 @@ namespace MaskboundJinosi.UI
             if (UnityEngine.Input.GetKey(KeyCode.A) || UnityEngine.Input.GetKey(KeyCode.LeftArrow)) moveInput.x -= 1f;
             if (UnityEngine.Input.GetKey(KeyCode.D) || UnityEngine.Input.GetKey(KeyCode.RightArrow)) moveInput.x += 1f;
 
+            if (_pendingConfirmSkill != null)
+            {
+                // Saat panel konfirmasi terbuka, navigasi dikunci. Input hanya
+                // confirm (A) atau batal (Y/M).
+                if (interactDown)
+                {
+                    TryBuySelected();
+                    return;
+                }
+
+                if (meditateDown)
+                {
+                    _pendingConfirmSkill = null;
+                    HideConfirmPanel();
+                    RefreshDetail();
+                    return;
+                }
+
+                return;
+            }
+
             HandleNavigation(moveInput);
 
             if (interactDown)
@@ -243,6 +277,177 @@ namespace MaskboundJinosi.UI
             {
                 Close();
             }
+        }
+
+        private void ShowConfirmPanel(Skill skill)
+        {
+            if (skill == null) return;
+
+            _pendingConfirmSkill = skill;
+            ResolveConfirmPanelFromHierarchy();
+
+            if (confirmPanelRoot == null)
+            {
+                RefreshDetail();
+                return;
+            }
+
+            string displayName = !string.IsNullOrEmpty(skill.DisplayName)
+                ? skill.DisplayName.ToUpper()
+                : skill.name.ToUpper();
+            string priceText = skill.SoulPrice <= 0
+                ? "FREE"
+                : $"{skill.SoulPrice} SOUL";
+
+            if (confirmSkillNameText != null)
+            {
+                confirmSkillNameText.text = displayName;
+            }
+
+            if (confirmPriceText != null)
+            {
+                confirmPriceText.text = $"BELI {displayName} SEHARGA {priceText}?";
+            }
+
+            if (confirmHintText != null)
+            {
+                confirmHintText.text = "A / F = YA BELI - Y / M = BATAL";
+            }
+
+            confirmPanelRoot.SetActive(true);
+            RefreshDetail();
+        }
+
+        private void HideConfirmPanel()
+        {
+            _pendingConfirmSkill = null;
+            if (confirmPanelRoot != null)
+            {
+                confirmPanelRoot.SetActive(false);
+            }
+        }
+
+        private bool IsConfirming(Skill skill)
+        {
+            return skill != null && _pendingConfirmSkill == skill;
+        }
+
+        private void ResolveConfirmPanelFromHierarchy()
+        {
+            ResolveConfirmTexts();
+
+            if (confirmPanelRoot != null) return;
+
+            Transform root = panelRoot != null ? panelRoot.transform : transform;
+            Transform found = FindDeepChild(root, "ConfirmPanel");
+
+            if (found != null)
+            {
+                confirmPanelRoot = found.gameObject;
+                ResolveConfirmTexts();
+                confirmPanelRoot.SetActive(false);
+                return;
+            }
+
+            BuildRuntimeConfirmPanel(root);
+            ResolveConfirmTexts();
+            if (confirmPanelRoot != null)
+            {
+                confirmPanelRoot.SetActive(false);
+            }
+        }
+
+        private void ResolveConfirmTexts()
+        {
+            if (confirmPanelRoot == null) return;
+
+            Transform found = confirmPanelRoot.transform;
+            if (confirmSkillNameText == null)
+            {
+                Transform nameText = FindDeepChild(found, "ConfirmSkillName");
+                if (nameText != null) confirmSkillNameText = nameText.GetComponent<TextMeshProUGUI>();
+            }
+
+            if (confirmPriceText == null)
+            {
+                Transform priceText = FindDeepChild(found, "ConfirmPrice");
+                if (priceText != null) confirmPriceText = priceText.GetComponent<TextMeshProUGUI>();
+            }
+
+            if (confirmHintText == null)
+            {
+                Transform hintText = FindDeepChild(found, "ConfirmHint");
+                if (hintText != null) confirmHintText = hintText.GetComponent<TextMeshProUGUI>();
+            }
+        }
+
+        private void BuildRuntimeConfirmPanel(Transform root)
+        {
+            if (root == null) return;
+
+            GameObject dim = new GameObject("ConfirmPanel", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
+            dim.transform.SetParent(root, false);
+            dim.transform.SetAsLastSibling();
+
+            RectTransform dimRect = dim.GetComponent<RectTransform>();
+            dimRect.anchorMin = Vector2.zero;
+            dimRect.anchorMax = Vector2.one;
+            dimRect.offsetMin = dimRect.offsetMax = Vector2.zero;
+
+            Image dimImage = dim.GetComponent<Image>();
+            dimImage.color = new Color(0f, 0f, 0f, 0.7f);
+
+            GameObject box = new GameObject("ConfirmBox", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
+            box.transform.SetParent(dim.transform, false);
+            RectTransform boxRect = box.GetComponent<RectTransform>();
+            boxRect.anchorMin = new Vector2(0.3f, 0.35f);
+            boxRect.anchorMax = new Vector2(0.7f, 0.65f);
+            boxRect.offsetMin = boxRect.offsetMax = Vector2.zero;
+            box.GetComponent<Image>().color = new Color(0.05f, 0.06f, 0.1f, 0.95f);
+
+            confirmSkillNameText = CreateRuntimeLabel(box.transform, "ConfirmSkillName", "SKILL", 26f,
+                new Color(1f, 0.85f, 0.3f), new Vector2(0f, 60f));
+            confirmPriceText = CreateRuntimeLabel(box.transform, "ConfirmPrice", "BELI SKILL?", 22f,
+                Color.white, new Vector2(0f, 0f));
+            confirmHintText = CreateRuntimeLabel(box.transform, "ConfirmHint", "A / F = YA BELI - Y / M = BATAL", 20f,
+                new Color(0.3f, 0.85f, 0.4f), new Vector2(0f, -60f));
+
+            confirmPanelRoot = dim;
+        }
+
+        private static TextMeshProUGUI CreateRuntimeLabel(
+            Transform parent, string name, string value, float size, Color color, Vector2 position)
+        {
+            GameObject go = new GameObject(name, typeof(RectTransform), typeof(CanvasRenderer), typeof(TextMeshProUGUI));
+            go.transform.SetParent(parent, false);
+            RectTransform rect = go.GetComponent<RectTransform>();
+            rect.anchorMin = rect.anchorMax = rect.pivot = new Vector2(0.5f, 0.5f);
+            rect.anchoredPosition = position;
+            rect.sizeDelta = new Vector2(560f, 60f);
+
+            TextMeshProUGUI tmp = go.GetComponent<TextMeshProUGUI>();
+            tmp.text = value;
+            tmp.fontSize = size;
+            tmp.color = color;
+            tmp.fontStyle = FontStyles.Bold;
+            tmp.alignment = TextAlignmentOptions.Center;
+            tmp.enableWordWrapping = true;
+            tmp.raycastTarget = false;
+            return tmp;
+        }
+
+        private static Transform FindDeepChild(Transform parent, string name)
+        {
+            if (parent == null) return null;
+            if (parent.name == name) return parent;
+
+            for (int i = 0; i < parent.childCount; i++)
+            {
+                Transform result = FindDeepChild(parent.GetChild(i), name);
+                if (result != null) return result;
+            }
+
+            return null;
         }
 
         private void HandleNavigation(Vector2 moveInput)
@@ -508,6 +713,8 @@ namespace MaskboundJinosi.UI
 
             _selectedIndex = index;
             _selectedSkill = _visibleSkills[index];
+            // Pindah seleksi membatalkan konfirmasi yang tertunda.
+            HideConfirmPanel();
             RefreshDetail();
             UpdateSelectionHighlight();
             UpdateOwnedState();
@@ -693,8 +900,13 @@ namespace MaskboundJinosi.UI
                 {
                     if (equipped)
                     {
-                        label.text = "PRESS A TO UNEQUIP";
-                        label.color = new Color(0.85f, 0.3f, 0.3f);
+                        label.text = "SEDANG DIGUNAKAN";
+                        label.color = new Color(0.5f, 0.5f, 0.55f);
+                    }
+                    else if (IsConfirming(_selectedSkill))
+                    {
+                        label.text = "MENUNGGU KONFIRMASI...";
+                        label.color = new Color(1f, 0.85f, 0.3f);
                     }
                     else
                     {
@@ -749,10 +961,22 @@ namespace MaskboundJinosi.UI
                 Debug.Log($"[SkillShop] A pressed on '{_selectedSkill.name}' | owned={owned} equipped={equipped} soul={SoulWallet.CurrentSoul}");
             }
 
-            // Not owned yet: buy it (deduct soul, then equip).
+            // Not owned yet: first press opens the confirm panel, second press buys.
             if (!owned)
             {
                 int price = _selectedSkill.SoulPrice;
+                if (!IsConfirming(_selectedSkill))
+                {
+                    ShowConfirmPanel(_selectedSkill);
+                    if (Debug.isDebugBuild)
+                    {
+                        Debug.Log($"[SkillShop] Confirm buy '{_selectedSkill.name}' price={price}. Press A again to confirm.");
+                    }
+
+                    return;
+                }
+
+                HideConfirmPanel();
                 if (price > 0 && !SoulWallet.CanSpend(price))
                 {
                     if (Debug.isDebugBuild)
@@ -786,17 +1010,14 @@ namespace MaskboundJinosi.UI
                 return;
             }
 
-            // Owned and currently equipped: pressing the button again unequips it.
+            // Owned and currently equipped: final, tidak bisa dikembalikan.
             if (equipped)
             {
-                UnequipSelectedSkill();
-                PersistSlots();
                 if (Debug.isDebugBuild)
                 {
-                    Debug.Log($"[SkillShop] Unequipped '{_selectedSkill.name}'.");
+                    Debug.Log($"[SkillShop] '{_selectedSkill.name}' already equipped, no-op.");
                 }
 
-                RefreshAll();
                 return;
             }
 
@@ -830,23 +1051,6 @@ namespace MaskboundJinosi.UI
             }
 
             SkillSaveStore.SaveSlots(slots);
-        }
-
-        /// <summary>
-        /// Unequips the selected skill from the first slot that holds it.
-        /// </summary>
-        private void UnequipSelectedSkill()
-        {
-            if (_selectedSkill == null || _slotManager == null) return;
-
-            for (int i = 0; i < _slotManager.SlotCount; i++)
-            {
-                if (_slotManager.GetSkill(i) == _selectedSkill)
-                {
-                    _slotManager.Unequip(i);
-                    break;
-                }
-            }
         }
 
         /// <summary>

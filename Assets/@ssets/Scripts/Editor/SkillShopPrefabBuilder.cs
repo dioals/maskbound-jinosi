@@ -147,6 +147,10 @@ namespace MaskboundJinosi.Editor
             so.FindProperty("detailCostText").objectReferenceValue = Find(ui, "DetailCost")?.GetComponent<TextMeshProUGUI>();
             so.FindProperty("detailSoulIcon").objectReferenceValue = Find(ui, "DetailSoulIcon")?.GetComponent<Image>();
             so.FindProperty("buyButton").objectReferenceValue = Find(ui, "BuyButton")?.GetComponent<Button>();
+            so.FindProperty("confirmPanelRoot").objectReferenceValue = Find(ui, "ConfirmPanel");
+            so.FindProperty("confirmSkillNameText").objectReferenceValue = Find(ui, "ConfirmSkillName")?.GetComponent<TextMeshProUGUI>();
+            so.FindProperty("confirmPriceText").objectReferenceValue = Find(ui, "ConfirmPrice")?.GetComponent<TextMeshProUGUI>();
+            so.FindProperty("confirmHintText").objectReferenceValue = Find(ui, "ConfirmHint")?.GetComponent<TextMeshProUGUI>();
             so.FindProperty("previewPlayer").objectReferenceValue = Find(ui, "RawImage")?.GetComponent<UnityEngine.Video.VideoPlayer>();
 
             so.ApplyModifiedProperties();
@@ -200,6 +204,7 @@ namespace MaskboundJinosi.Editor
             BuildLeftSection(mainPanel.rectTransform);
             BuildCenterSection(mainPanel.rectTransform);
             BuildRightSection(mainPanel.rectTransform);
+            BuildConfirmPanel(root.transform);
 
             return root;
         }
@@ -415,6 +420,43 @@ namespace MaskboundJinosi.Editor
 
             CreateLabel(buyRect, "BuyLabel", "BUY", 24f, Color.white,
                 Vector2.zero, FontStyles.Bold, TextAlignmentOptions.Center);
+        }
+
+        private static void BuildConfirmPanel(Transform parent)
+        {
+            Image dim = Add<Image>(CreateUI(parent, "ConfirmPanel", typeof(RectTransform)));
+            Stretch(dim.rectTransform);
+            dim.color = new Color(0f, 0f, 0f, 0.7f);
+
+            Image box = Add<Image>(CreateUI(dim.transform, "ConfirmBox", typeof(RectTransform)));
+            RectTransform boxRect = box.rectTransform;
+            boxRect.anchorMin = new Vector2(0.3f, 0.35f);
+            boxRect.anchorMax = new Vector2(0.7f, 0.65f);
+            boxRect.offsetMin = boxRect.offsetMax = Vector2.zero;
+            box.color = DetailBgColor;
+
+            Image border = Add<Image>(CreateUI(boxRect, "ConfirmBorder", typeof(RectTransform)));
+            RectTransform borderRect = border.rectTransform;
+            borderRect.anchorMin = new Vector2(0.05f, 0.9f);
+            borderRect.anchorMax = new Vector2(0.95f, 0.92f);
+            borderRect.offsetMin = borderRect.offsetMax = Vector2.zero;
+            border.color = GoldColor;
+
+            CreateLabel(boxRect, "ConfirmTitle", "KONFIRMASI PEMBELIAN", 28f, GoldColor,
+                new Vector2(0f, 60f), FontStyles.Bold, TextAlignmentOptions.Center);
+
+            CreateLabel(boxRect, "ConfirmSkillName", "SKILL", 22f, TextColor,
+                new Vector2(0f, 10f), FontStyles.Bold, TextAlignmentOptions.Center);
+
+            TextMeshProUGUI price = CreateLabel(boxRect, "ConfirmPrice", "BELI SKILL SEHARGA 0 SOUL?", 20f, TextColor,
+                new Vector2(0f, -30f), FontStyles.Normal, TextAlignmentOptions.Center);
+            price.rectTransform.sizeDelta = new Vector2(560f, 60f);
+            price.enableWordWrapping = true;
+
+            CreateLabel(boxRect, "ConfirmHint", "A / F = YA BELI - Y / M = BATAL", 20f, GreenColor,
+                new Vector2(0f, -80f), FontStyles.Bold, TextAlignmentOptions.Center);
+
+            dim.gameObject.SetActive(false);
         }
 
         private static void CreateSkillSlot(RectTransform parent, string name)

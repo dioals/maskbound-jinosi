@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: JejakSukma
   m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.Skills.ActiveSkillData
   SkillId: jejak_sukma
-  DisplayName: Gempita Mask
+  DisplayName: Jejak Sukma
   Description: Active skill player yang membuat player dapat melakukan double jump
     movement
   Icon: {fileID: 21300000, guid: 0733c6772a2207541b400faf37216bea, type: 3}
