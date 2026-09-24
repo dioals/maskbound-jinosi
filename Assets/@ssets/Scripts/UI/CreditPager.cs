@@ -6,21 +6,29 @@ using UnityEngine.Events;
 
 namespace MaskboundJinosi.UI
 {
-	[AddComponentMenu("Maskbound/UI/Credit Pager")]
+	/// <summary>
+	/// Image pager generik: tampilkan satu halaman, next/prev sampai habis,
+	/// lalu tutup. Dipakai CreditUI (game over) dan TutorialUI (main menu).
+	/// </summary>
+	[AddComponentMenu("Maskbound/UI/Image Pager")]
 	public class CreditPager : MonoBehaviour
 	{
 		[Header("Pages (manual)")]
-		[Tooltip("Urutan halaman credit. Isi manual di Inspector: Credit 1.1, Credit 1.2, Credit 2. Frame jangan dimasukkan, dia selalu nyala.")]
+		[Tooltip("Urutan halaman. Isi manual di Inspector dengan objek halaman (image). Frame jangan dimasukkan, dia selalu nyala.")]
 		public List<GameObject> Pages = new List<GameObject>();
 
 		[Header("Behaviour")]
 		[Tooltip("Kalau ON, Next di halaman terakhir balik ke halaman pertama. Kalau OFF, Next di akhir tidak ngapa-ngapain.")]
 		public bool LoopPages = true;
-		[Tooltip("Kalau ON, Next di halaman terakhir menutup credit dan memanggil OnFinished. Untuk credit game-over/game-selesai biarkan ON supaya next-next sampai habis lalu selesai.")]
+		[Tooltip("Kalau ON, Next di halaman terakhir menutup overlay dan memanggil OnFinished.")]
 		public bool FinishOnLastNext = true;
+		[Tooltip("Kalau ON, tombol close (M / Esc / Action4) menutup overlay kapan saja. Untuk tutorial main menu biarkan ON.")]
+		public bool AllowCloseButton = true;
+		[Tooltip("Root overlay yang di-toggle saat Close. Kosongkan = pakai parent objek ini (otomatis).")]
+		public GameObject OverlayRoot;
 
 		[Header("Show / Hide")]
-		[Tooltip("Root CreditUI yang di-toggle. Kosongkan = pakai parent dari MainCredit (otomatis).")]
+		[Tooltip("Root CreditUI yang di-toggle. Kosongkan = pakai OverlayRoot / parent objek ini (otomatis). Deprecated: pakai OverlayRoot.")]
 		public GameObject CreditRoot;
 		[Tooltip("Sembunyikan HUD gameplay saat credit tampil, kembalikan saat credit ditutup.")]
 		public bool HideHudDuringCredits = true;
@@ -33,6 +41,8 @@ namespace MaskboundJinosi.UI
 
 		[Header("Events")]
 		public UnityEvent OnFinished;
+		[Tooltip("Dipanggil hanya saat user Next di halaman terakhir (selesai baca semua). Close manual (M / Esc / tombol close) tidak memanggil ini.")]
+		public UnityEvent OnCompletedLastPage;
 
 		[Header("Input")]
 		public KeyCode NextKey = KeyCode.F;
@@ -102,9 +112,18 @@ namespace MaskboundJinosi.UI
 			{
 				Prev();
 			}
+			else if (AllowCloseButton && WasClosePressed())
+			{
+				Close();
+			}
 		}
 
 		public virtual void ShowCredits()
+		{
+			Show();
+		}
+
+		public virtual void Show()
 		{
 			if (_isShowing)
 			{
@@ -173,6 +192,7 @@ namespace MaskboundJinosi.UI
 			{
 				if (FinishOnLastNext)
 				{
+					OnCompletedLastPage?.Invoke();
 					Close();
 					return;
 				}
@@ -222,8 +242,18 @@ namespace MaskboundJinosi.UI
 			return Object.FindFirstObjectByType<CreditPager>(FindObjectsInactive.Include);
 		}
 
+		public virtual void ShowFromButton()
+		{
+			Show();
+		}
+
 		private GameObject ResolveRoot()
 		{
+			if (OverlayRoot != null)
+			{
+				return OverlayRoot;
+			}
+
 			if (CreditRoot != null)
 			{
 				return CreditRoot;
@@ -420,6 +450,23 @@ namespace MaskboundJinosi.UI
 			return UseBumpers && device.LeftBumper.WasPressed;
 		}
 
+		private bool WasClosePressed()
+		{
+			if (UnityEngine.Input.GetKeyDown(KeyCode.M)
+				|| UnityEngine.Input.GetKeyDown(KeyCode.Escape))
+			{
+				return true;
+			}
+
+			InputDevice device = InControl.InputManager.ActiveDevice;
+			if (device == null)
+			{
+				return false;
+			}
+
+			return device.GetControl(InputControlType.Action4).WasPressed;
+		}
+
 		private void CollectPages()
 		{
 			Pages.Clear();
@@ -430,7 +477,8 @@ namespace MaskboundJinosi.UI
 					continue;
 				}
 
-				if (child.name.ToLowerInvariant().Contains("credit"))
+				string childName = child.name.ToLowerInvariant();
+				if (childName.Contains("credit") || childName.Contains("tutorial"))
 				{
 					Pages.Add(child.gameObject);
 				}
