@@ -2276,7 +2276,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   PlayReviveOnRespawn: 1
-  ReviveDelaySeconds: 1
+  ReviveDelaySeconds: 2
 --- !u!61 &910000000000100007
 BoxCollider2D:
   m_ObjectHideFlags: 0

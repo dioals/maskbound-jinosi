@@ -1,0 +1,4719 @@
+fileFormatVersion: 2
+guid: 337ff18b77372324da672b55f87d59f5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 541790682836353347
+    second: Credit list 1.1_0
+  - first:
+      213: -869446285936797054
+    second: Credit list 1.1_1
+  - first:
+      213: -6717520522355603847
+    second: Credit list 1.1_2
+  - first:
+      213: -3258092004559365970
+    second: Credit list 1.1_3
+  - first:
+      213: 7313263700310645323
+    second: Credit list 1.1_4
+  - first:
+      213: 7106866826307745324
+    second: Credit list 1.1_5
+  - first:
+      213: 5526839877826051261
+    second: Credit list 1.1_6
+  - first:
+      213: 7072402813823914438
+    second: Credit list 1.1_7
+  - first:
+      213: 362582952191891075
+    second: Credit list 1.1_8
+  - first:
+      213: 889639344499093162
+    second: Credit list 1.1_9
+  - first:
+      213: -6906451661439859331
+    second: Credit list 1.1_10
+  - first:
+      213: 3353369990998332633
+    second: Credit list 1.1_11
+  - first:
+      213: -6109258529420772161
+    second: Credit list 1.1_12
+  - first:
+      213: -2500738183101244458
+    second: Credit list 1.1_13
+  - first:
+      213: -2231955549880152304
+    second: Credit list 1.1_14
+  - first:
+      213: -2895419372475019074
+    second: Credit list 1.1_15
+  - first:
+      213: -5413159771122515385
+    second: Credit list 1.1_16
+  - first:
+      213: -1250816326707221878
+    second: Credit list 1.1_17
+  - first:
+      213: -3869669744148129073
+    second: Credit list 1.1_18
+  - first:
+      213: 1759121981675273521
+    second: Credit list 1.1_19
+  - first:
+      213: -116630066344369463
+    second: Credit list 1.1_20
+  - first:
+      213: -2475971616837730594
+    second: Credit list 1.1_21
+  - first:
+      213: 9159758711682017231
+    second: Credit list 1.1_22
+  - first:
+      213: 5518797669040236910
+    second: Credit list 1.1_23
+  - first:
+      213: -237283644612949551
+    second: Credit list 1.1_24
+  - first:
+      213: 2701720884631166753
+    second: Credit list 1.1_25
+  - first:
+      213: 4925425990692172106
+    second: Credit list 1.1_26
+  - first:
+      213: 2739243865139106676
+    second: Credit list 1.1_27
+  - first:
+      213: 4185806735833819270
+    second: Credit list 1.1_28
+  - first:
+      213: -5814432896461517439
+    second: Credit list 1.1_29
+  - first:
+      213: -7535254471609318793
+    second: Credit list 1.1_30
+  - first:
+      213: -732158533322553247
+    second: Credit list 1.1_31
+  - first:
+      213: 8748134085310765668
+    second: Credit list 1.1_32
+  - first:
+      213: -917447674278166261
+    second: Credit list 1.1_33
+  - first:
+      213: -8178985456688097245
+    second: Credit list 1.1_34
+  - first:
+      213: -5577919454931753922
+    second: Credit list 1.1_35
+  - first:
+      213: -5640708534229204488
+    second: Credit list 1.1_36
+  - first:
+      213: -7132814181756700773
+    second: Credit list 1.1_37
+  - first:
+      213: 1118733005558617048
+    second: Credit list 1.1_38
+  - first:
+      213: 5061946798294805827
+    second: Credit list 1.1_39
+  - first:
+      213: -8191555413071783564
+    second: Credit list 1.1_40
+  - first:
+      213: 1094466257940660013
+    second: Credit list 1.1_41
+  - first:
+      213: 8585083487722581712
+    second: Credit list 1.1_42
+  - first:
+      213: 8412988114204954082
+    second: Credit list 1.1_43
+  - first:
+      213: 1394422272359812122
+    second: Credit list 1.1_44
+  - first:
+      213: 199418083390101133
+    second: Credit list 1.1_45
+  - first:
+      213: -9102875736672133766
+    second: Credit list 1.1_46
+  - first:
+      213: 3257309539135767758
+    second: Credit list 1.1_47
+  - first:
+      213: -7346858315076025382
+    second: Credit list 1.1_48
+  - first:
+      213: -5713829018410941622
+    second: Credit list 1.1_49
+  - first:
+      213: 7939953598098743751
+    second: Credit list 1.1_50
+  - first:
+      213: 5208356599783942257
+    second: Credit list 1.1_51
+  - first:
+      213: -6846149087038531554
+    second: Credit list 1.1_52
+  - first:
+      213: -3159413550756214452
+    second: Credit list 1.1_53
+  - first:
+      213: -3247962688305592013
+    second: Credit list 1.1_54
+  - first:
+      213: 7793460309957790979
+    second: Credit list 1.1_55
+  - first:
+      213: 7839330567795980568
+    second: Credit list 1.1_56
+  - first:
+      213: 8211692224007801395
+    second: Credit list 1.1_57
+  - first:
+      213: 5629553154749799685
+    second: Credit list 1.1_58
+  - first:
+      213: -6728317293912555259
+    second: Credit list 1.1_59
+  - first:
+      213: 7444706630951917570
+    second: Credit list 1.1_60
+  - first:
+      213: 1084442834477404692
+    second: Credit list 1.1_61
+  - first:
+      213: 7557993214180104799
+    second: Credit list 1.1_62
+  - first:
+      213: 6482808157025546788
+    second: Credit list 1.1_63
+  - first:
+      213: 2978092619256136659
+    second: Credit list 1.1_64
+  - first:
+      213: -8243983005205309858
+    second: Credit list 1.1_65
+  - first:
+      213: -2980555990684344423
+    second: Credit list 1.1_66
+  - first:
+      213: -5439806115190703416
+    second: Credit list 1.1_67
+  - first:
+      213: 8888832170871580682
+    second: Credit list 1.1_68
+  - first:
+      213: -3844980747193554712
+    second: Credit list 1.1_69
+  - first:
+      213: 7417810634600261397
+    second: Credit list 1.1_70
+  - first:
+      213: -4935312099050752165
+    second: Credit list 1.1_71
+  - first:
+      213: -3312573315662244260
+    second: Credit list 1.1_72
+  - first:
+      213: 6785099177514550381
+    second: Credit list 1.1_73
+  - first:
+      213: 4200399459184023594
+    second: Credit list 1.1_74
+  - first:
+      213: 6856307310329733177
+    second: Credit list 1.1_75
+  - first:
+      213: 2240595529700233028
+    second: Credit list 1.1_76
+  - first:
+      213: 4663475938066804453
+    second: Credit list 1.1_77
+  - first:
+      213: 796312838097569669
+    second: Credit list 1.1_78
+  - first:
+      213: -6738947789364353295
+    second: Credit list 1.1_79
+  - first:
+      213: 7398271603417791051
+    second: Credit list 1.1_80
+  - first:
+      213: 7732608997159795455
+    second: Credit list 1.1_81
+  - first:
+      213: 864204400539714895
+    second: Credit list 1.1_82
+  - first:
+      213: -7136637015866284462
+    second: Credit list 1.1_83
+  - first:
+      213: -2250987700431540419
+    second: Credit list 1.1_84
+  - first:
+      213: 9140684601998045179
+    second: Credit list 1.1_85
+  - first:
+      213: -734797634853681143
+    second: Credit list 1.1_86
+  - first:
+      213: -7306133168883153952
+    second: Credit list 1.1_87
+  - first:
+      213: -6326014553756746468
+    second: Credit list 1.1_88
+  - first:
+      213: 2116601726397574392
+    second: Credit list 1.1_89
+  - first:
+      213: -7349377046326523390
+    second: Credit list 1.1_90
+  - first:
+      213: -950910234717851028
+    second: Credit list 1.1_91
+  - first:
+      213: -6619154553185805927
+    second: Credit list 1.1_92
+  - first:
+      213: -9025899134630227832
+    second: Credit list 1.1_93
+  - first:
+      213: -6323380459217817509
+    second: Credit list 1.1_94
+  - first:
+      213: -8545426740385602556
+    second: Credit list 1.1_95
+  - first:
+      213: 3350482109958887568
+    second: Credit list 1.1_96
+  - first:
+      213: 967755844912809158
+    second: Credit list 1.1_97
+  - first:
+      213: 4670195171036668760
+    second: Credit list 1.1_98
+  - first:
+      213: 2573281332398741310
+    second: Credit list 1.1_99
+  - first:
+      213: 5783091753949044788
+    second: Credit list 1.1_100
+  - first:
+      213: 672804122122768662
+    second: Credit list 1.1_101
+  - first:
+      213: 1169402946559028897
+    second: Credit list 1.1_102
+  - first:
+      213: -6620949014057392966
+    second: Credit list 1.1_103
+  - first:
+      213: 9092562461171019861
+    second: Credit list 1.1_104
+  - first:
+      213: 5430630881330728531
+    second: Credit list 1.1_105
+  - first:
+      213: 92065890837128765
+    second: Credit list 1.1_106
+  - first:
+      213: 3777565191991807626
+    second: Credit list 1.1_107
+  - first:
+      213: -3128208986820650634
+    second: Credit list 1.1_108
+  - first:
+      213: 5810360121245767545
+    second: Credit list 1.1_109
+  - first:
+      213: 8417158961216440628
+    second: Credit list 1.1_110
+  - first:
+      213: 6850880831125103226
+    second: Credit list 1.1_111
+  - first:
+      213: 3235098867565767471
+    second: Credit list 1.1_112
+  - first:
+      213: 1358204407866723779
+    second: Credit list 1.1_113
+  - first:
+      213: -4859523692216083446
+    second: Credit list 1.1_114
+  - first:
+      213: -292433710239241073
+    second: Credit list 1.1_115
+  - first:
+      213: -5841674827087331908
+    second: Credit list 1.1_116
+  - first:
+      213: -4352303119067012457
+    second: Credit list 1.1_117
+  - first:
+      213: -7057389699222846168
+    second: Credit list 1.1_118
+  - first:
+      213: 4476756288268787212
+    second: Credit list 1.1_119
+  - first:
+      213: -4347965885534939319
+    second: Credit list 1.1_120
+  - first:
+      213: 2629874522647636738
+    second: Credit list 1.1_121
+  - first:
+      213: 1870576964321071905
+    second: Credit list 1.1_122
+  - first:
+      213: 1625103490710506663
+    second: Credit list 1.1_123
+  - first:
+      213: -8177156629168692391
+    second: Credit list 1.1_124
+  - first:
+      213: -2865791031918103636
+    second: Credit list 1.1_125
+  - first:
+      213: -8246700409630372608
+    second: Credit list 1.1_126
+  - first:
+      213: -2178147302477043543
+    second: Credit list 1.1_127
+  - first:
+      213: 7225803738498845793
+    second: Credit list 1.1_128
+  - first:
+      213: 2394835533565023767
+    second: Credit list 1.1_129
+  - first:
+      213: -8907380730963631402
+    second: Credit list 1.1_130
+  - first:
+      213: -5978814349106965393
+    second: Credit list 1.1_131
+  - first:
+      213: 4253589055355699671
+    second: Credit list 1.1_132
+  - first:
+      213: 2504277553766906223
+    second: Credit list 1.1_133
+  - first:
+      213: 1994363538765342247
+    second: Credit list 1.1_134
+  - first:
+      213: -7510214702925923191
+    second: Credit list 1.1_135
+  - first:
+      213: -3561528435742548111
+    second: Credit list 1.1_136
+  - first:
+      213: -6504667679818239407
+    second: Credit list 1.1_137
+  - first:
+      213: -8445124052643798450
+    second: Credit list 1.1_138
+  - first:
+      213: 1148791096777901811
+    second: Credit list 1.1_139
+  - first:
+      213: 8515489285050451382
+    second: Credit list 1.1_140
+  - first:
+      213: 7997623304467184643
+    second: Credit list 1.1_141
+  - first:
+      213: -5077065164952200701
+    second: Credit list 1.1_142
+  - first:
+      213: -4980652801934896012
+    second: Credit list 1.1_143
+  - first:
+      213: 3868672325317844632
+    second: Credit list 1.1_144
+  - first:
+      213: 3999874279168206320
+    second: Credit list 1.1_145
+  - first:
+      213: -5432753931273642070
+    second: Credit list 1.1_146
+  - first:
+      213: 1079574685654804395
+    second: Credit list 1.1_147
+  - first:
+      213: -3203306935163395626
+    second: Credit list 1.1_148
+  - first:
+      213: 5091308575265482853
+    second: Credit list 1.1_149
+  - first:
+      213: -3743543995924847432
+    second: Credit list 1.1_150
+  - first:
+      213: -5818777790752452069
+    second: Credit list 1.1_151
+  - first:
+      213: -2334848593820916336
+    second: Credit list 1.1_152
+  - first:
+      213: -2299808827964786460
+    second: Credit list 1.1_153
+  - first:
+      213: 6561541951267681924
+    second: Credit list 1.1_154
+  - first:
+      213: 5140847421660923535
+    second: Credit list 1.1_155
+  - first:
+      213: 9168965187331723391
+    second: Credit list 1.1_156
+  - first:
+      213: 2843599891377410493
+    second: Credit list 1.1_157
+  - first:
+      213: -7423749760659598295
+    second: Credit list 1.1_158
+  - first:
+      213: 6384494442332458795
+    second: Credit list 1.1_159
+  - first:
+      213: -6762668200597125660
+    second: Credit list 1.1_160
+  - first:
+      213: -1663739428198492865
+    second: Credit list 1.1_161
+  - first:
+      213: -5114278295773001938
+    second: Credit list 1.1_162
+  - first:
+      213: -8108933424970757204
+    second: Credit list 1.1_163
+  - first:
+      213: 6418333263574649235
+    second: Credit list 1.1_164
+  - first:
+      213: 1126441537657854363
+    second: Credit list 1.1_165
+  - first:
+      213: -3982639004424332928
+    second: Credit list 1.1_166
+  - first:
+      213: -32565964031060559
+    second: Credit list 1.1_167
+  - first:
+      213: -8621408073203227455
+    second: Credit list 1.1_168
+  - first:
+      213: -7822473723836160438
+    second: Credit list 1.1_169
+  - first:
+      213: 655921946504611287
+    second: Credit list 1.1_170
+  - first:
+      213: -4804494010085537085
+    second: Credit list 1.1_171
+  - first:
+      213: 5554421660125895348
+    second: Credit list 1.1_172
+  - first:
+      213: 3761820330519158414
+    second: Credit list 1.1_173
+  - first:
+      213: -1595938767248129982
+    second: Credit list 1.1_174
+  - first:
+      213: -4200289934353017191
+    second: Credit list 1.1_175
+  - first:
+      213: 2535631836540993899
+    second: Credit list 1.1_176
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Credit list 1.1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 490
+        height: 774
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 341c31961c3d48700800000000000000
+      internalID: 541790682836353347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_1
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 578
+        width: 386
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28a547f953b1fe3f0800000000000000
+      internalID: -869446285936797054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_2
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 636
+        width: 90
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97609950da296c2a0800000000000000
+      internalID: -6717520522355603847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_3
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 649
+        width: 38
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea8d2be759ee8c2d0800000000000000
+      internalID: -3258092004559365970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_4
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 500
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a56cd869eed7560800000000000000
+      internalID: 7313263700310645323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_5
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 500
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c26b41889b9a0a260800000000000000
+      internalID: 7106866826307745324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_6
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 500
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbcf840269743bc40800000000000000
+      internalID: 5526839877826051261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_7
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 500
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c1927253e8362260800000000000000
+      internalID: 7072402813823914438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_8
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 500
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38692032647280500800000000000000
+      internalID: 362582952191891075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_9
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 500
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aae64133542a85c00800000000000000
+      internalID: 889639344499093162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_10
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 500
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d75887d4eca5720a0800000000000000
+      internalID: -6906451661439859331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_11
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 472
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d419e96d30998e20800000000000000
+      internalID: 3353369990998332633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_12
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 487
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbc79d85cbd873ba0800000000000000
+      internalID: -6109258529420772161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_13
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 472
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6db9ef73fd79b4dd0800000000000000
+      internalID: -2500738183101244458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_14
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 472
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f8ee6b0408601e0800000000000000
+      internalID: -2231955549880152304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_15
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 472
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb097dbdb6761d7d0800000000000000
+      internalID: -2895419372475019074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_16
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 472
+        width: 29
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 742cec94ed790e4b0800000000000000
+      internalID: -5413159771122515385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_17
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 472
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8a6b5f8d2534aee0800000000000000
+      internalID: -1250816326707221878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_18
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 472
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fca59fdbedb2c4ac0800000000000000
+      internalID: -3869669744148129073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_19
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 472
+        width: 29
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13df5524f18a96810800000000000000
+      internalID: 1759121981675273521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_20
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 472
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c2e9659295a16ef0800000000000000
+      internalID: -116630066344369463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_21
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 472
+        width: 7
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edeff68cee493add0800000000000000
+      internalID: -2475971616837730594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_22
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 472
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc7a81e84000e1f70800000000000000
+      internalID: 9159758711682017231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_23
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 472
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e69a56a7d35b69c40800000000000000
+      internalID: 5518797669040236910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_24
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 472
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d9c5db48cff4bcf0800000000000000
+      internalID: -237283644612949551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_25
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 472
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12fd1ba84d07e7520800000000000000
+      internalID: 2701720884631166753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_26
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 472
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a41feaea7d0aa5440800000000000000
+      internalID: 4925425990692172106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_27
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 469
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473d8ce38cfb30620800000000000000
+      internalID: 2739243865139106676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_28
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 472
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 688efc38c09f61a30800000000000000
+      internalID: 4185806735833819270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_29
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 487
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18dc01c361cfe4fa0800000000000000
+      internalID: -5814432896461517439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_30
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 472
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7728d874bf56d6790800000000000000
+      internalID: -7535254471609318793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_31
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 472
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 168c90e61b9d6d5f0800000000000000
+      internalID: -732158533322553247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_32
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 467
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46a5f6ad99d976970800000000000000
+      internalID: 8748134085310765668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_33
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 472
+        width: 39
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0144aa73329443f0800000000000000
+      internalID: -917447674278166261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_34
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 472
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 328150faf086e7e80800000000000000
+      internalID: -8178985456688097245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_35
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 423
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e346d0f0fcf3792b0800000000000000
+      internalID: -5577919454931753922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_36
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 424
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f101cf497d28b1b0800000000000000
+      internalID: -5640708534229204488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_37
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 424
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b97f58ffa47230d90800000000000000
+      internalID: -7132814181756700773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_38
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 423
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d393d2cdb9868f00800000000000000
+      internalID: 1118733005558617048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_39
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 424
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34da9403bc5af3640800000000000000
+      internalID: 5061946798294805827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_40
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 424
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4799de5a0cfb15e80800000000000000
+      internalID: -8191555413071783564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_41
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 424
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2f343b4343503f00800000000000000
+      internalID: 1094466257940660013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_42
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 424
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dea6c442f7542770800000000000000
+      internalID: 8585083487722581712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_43
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 423
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ed05cead10f0c470800000000000000
+      internalID: 8412988114204954082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_44
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 424
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c46e23babf95310800000000000000
+      internalID: 1394422272359812122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_45
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 424
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d869146b0b974c200800000000000000
+      internalID: 199418083390101133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_46
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 424
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7d92212fb61ca180800000000000000
+      internalID: -9102875736672133766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_47
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 424
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec4cda394c9443d20800000000000000
+      internalID: 3257309539135767758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_48
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 424
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad3c4caa947ba0a90800000000000000
+      internalID: -7346858315076025382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_49
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 421
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a430c4ae7c664b0b0800000000000000
+      internalID: -5713829018410941622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_50
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 424
+        width: 7
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c1a2c3dab1603e60800000000000000
+      internalID: 7939953598098743751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_51
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 423
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 178eea18bbcc74840800000000000000
+      internalID: 5208356599783942257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_52
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 424
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1814b38da79df0a0800000000000000
+      internalID: -6846149087038531554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_53
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 423
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c49ce986d128724d0800000000000000
+      internalID: -3159413550756214452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_54
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 423
+        width: 34
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33982d7b42bece2d0800000000000000
+      internalID: -3247962688305592013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_55
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 424
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30dc3224cdee72c60800000000000000
+      internalID: 7793460309957790979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_56
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 424
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 819375aed95eacc60800000000000000
+      internalID: 7839330567795980568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_57
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 424
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a82d0029ac5f170800000000000000
+      internalID: 8211692224007801395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_58
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 423
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50d9a0184c0302e40800000000000000
+      internalID: 5629553154749799685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_59
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 423
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5018930c11730a2a0800000000000000
+      internalID: -6728317293912555259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_60
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 424
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20852e2bc39e05760800000000000000
+      internalID: 7444706630951917570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_61
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 372
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4125e382307bc0f00800000000000000
+      internalID: 1084442834477404692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_62
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 372
+        width: 45
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5a940ac8c263e860800000000000000
+      internalID: 7557993214180104799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_63
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 372
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4223382ebaf87f950800000000000000
+      internalID: 6482808157025546788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_64
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 372
+        width: 7
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d389f6657f445920800000000000000
+      internalID: 2978092619256136659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_65
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 372
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e565160a22d779d80800000000000000
+      internalID: -8243983005205309858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_66
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 372
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99fd81e3e10f2a6d0800000000000000
+      internalID: -2980555990684344423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_67
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 372
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ca7f09d82de184b0800000000000000
+      internalID: -5439806115190703416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_68
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 372
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a086ddca3c97b5b70800000000000000
+      internalID: 8888832170871580682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_69
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 372
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e8ef4bc162e3aac0800000000000000
+      internalID: -3844980747193554712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_70
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 372
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 517a67e887b51f660800000000000000
+      internalID: 7417810634600261397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_71
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 372
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5774685bcf328bb0800000000000000
+      internalID: -4935312099050752165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_72
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 372
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c569383ce106702d0800000000000000
+      internalID: -3312573315662244260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_73
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 372
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d64cc81c0c3892e50800000000000000
+      internalID: 6785099177514550381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_74
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 343
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a28186fad01da4a30800000000000000
+      internalID: 4200399459184023594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_75
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 343
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9302e172c2f762f50800000000000000
+      internalID: 6856307310329733177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_76
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 343
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44f4c1953c1381f10800000000000000
+      internalID: 2240595529700233028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_77
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 343
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eead0358aef7b040800000000000000
+      internalID: 4663475938066804453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_78
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 343
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58783e4ae421d0b00800000000000000
+      internalID: 796312838097569669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_79
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 343
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f6a807a0b27a72a0800000000000000
+      internalID: -6738947789364353295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_80
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 343
+        width: 7
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4ab39953d0fba660800000000000000
+      internalID: 7398271603417791051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_81
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 359
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffaf2bee9eebf4b60800000000000000
+      internalID: 7732608997159795455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_82
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 343
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f45cf73d2554efb00800000000000000
+      internalID: 864204400539714895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_83
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 343
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 256e262127295fc90800000000000000
+      internalID: -7136637015866284462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_84
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 343
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3f210adc92e2c0e0800000000000000
+      internalID: -2250987700431540419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_85
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 343
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bffe9f1573c3ade70800000000000000
+      internalID: 9140684601998045179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_86
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 343
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 908cfb8b1797dc5f0800000000000000
+      internalID: -734797634853681143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_87
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 343
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e3450ba7966b9a90800000000000000
+      internalID: -7306133168883153952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_88
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 301
+        width: 56
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1db06fa74b7538a0800000000000000
+      internalID: -6326014553756746468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_89
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 301
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fce7e05e0eaf5d10800000000000000
+      internalID: 2116601726397574392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_90
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 301
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20a4c49d384c10a90800000000000000
+      internalID: -7349377046326523390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_91
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 301
+        width: 7
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62fb5efd20bdc2f0800000000000000
+      internalID: -950910234717851028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_92
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 301
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99953ffe00a0424a0800000000000000
+      internalID: -6619154553185805927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_93
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 301
+        width: 58
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8801cddee809db280800000000000000
+      internalID: -9025899134630227832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_94
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 301
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b50fcac99f6de38a0800000000000000
+      internalID: -6323380459217817509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_95
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 276
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 404213db7ab886980800000000000000
+      internalID: -8545426740385602556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_96
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 276
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09896663abd4f7e20800000000000000
+      internalID: 3350482109958887568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_97
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 276
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c4065540d82e6d00800000000000000
+      internalID: 967755844912809158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_98
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 276
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 853a269a3cddfc040800000000000000
+      internalID: 4670195171036668760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_99
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 276
+        width: 7
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3755ccecb126b320800000000000000
+      internalID: 2573281332398741310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_100
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 292
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 430af916f4ba14050800000000000000
+      internalID: 5783091753949044788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_101
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 276
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 611db8ec8c7465900800000000000000
+      internalID: 672804122122768662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_102
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 276
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ae22fcb8cd8a3010800000000000000
+      internalID: 1169402946559028897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_103
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 276
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab4e22573f9ad14a0800000000000000
+      internalID: -6620949014057392966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_104
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 276
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 550762c42654f2e70800000000000000
+      internalID: 9092562461171019861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_105
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 276
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35e0cfb830a7d5b40800000000000000
+      internalID: 5430630881330728531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_106
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 276
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d36e64f9075174100800000000000000
+      internalID: 92065890837128765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_107
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 276
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8e4d88178b9c6430800000000000000
+      internalID: 3777565191991807626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_108
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 276
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 679de5d108e5694d0800000000000000
+      internalID: -3128208986820650634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_109
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 271
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97713f3eebb82a050800000000000000
+      internalID: 5810360121245767545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_110
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 276
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4394d4daa71cfc470800000000000000
+      internalID: 8417158961216440628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_111
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 276
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a72aeb181d7331f50800000000000000
+      internalID: 6850880831125103226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_112
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 276
+        width: 49
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2ba68e974165ec20800000000000000
+      internalID: 3235098867565767471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_113
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 276
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cd044f76bf49d210800000000000000
+      internalID: 1358204407866723779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_114
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 276
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0c9dd3e2f08f8cb0800000000000000
+      internalID: -4859523692216083446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_115
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 292
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8c27d4071111fbf0800000000000000
+      internalID: -292433710239241073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_116
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 276
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbd3e1ef1b33eeea0800000000000000
+      internalID: -5841674827087331908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_117
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 276
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 792af296f538993c0800000000000000
+      internalID: -4352303119067012457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_118
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 236
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8254250d57d1f0e90800000000000000
+      internalID: -7057389699222846168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_119
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 236
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ed1441022a02e30800000000000000
+      internalID: 4476756288268787212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_120
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 233
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9475c29401ce8a3c0800000000000000
+      internalID: -4347965885534939319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_121
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 236
+        width: 42
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b2346d1f03f7420800000000000000
+      internalID: 2629874522647636738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_122
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 236
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 123d26b96df95f910800000000000000
+      internalID: 1870576964321071905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_123
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 236
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ac0c0fb3078d8610800000000000000
+      internalID: 1625103490710506663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_124
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 236
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9536ba5ce57e48e80800000000000000
+      internalID: -8177156629168692391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_125
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 236
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca375067d3aaa38d0800000000000000
+      internalID: -2865791031918103636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_126
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 236
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00dc9ea9ba5dd8d80800000000000000
+      internalID: -8246700409630372608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_127
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 236
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a86167919aa5c1e0800000000000000
+      internalID: -2178147302477043543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_128
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 236
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16cc9e95736374460800000000000000
+      internalID: 7225803738498845793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_129
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 208
+        width: 38
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71650a9ba3a2c3120800000000000000
+      internalID: 2394835533565023767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_130
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 203
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d2e0c32b60a26480800000000000000
+      internalID: -8907380730963631402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_131
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 208
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f64987fc60cf60da0800000000000000
+      internalID: -5978814349106965393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_132
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 208
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d147f895b8c70b30800000000000000
+      internalID: 4253589055355699671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_133
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 208
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f69b24bba2bf0c220800000000000000
+      internalID: 2504277553766906223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_134
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 208
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 726691962176dab10800000000000000
+      internalID: 1994363538765342247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_135
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 208
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98c3f2db48b56c790800000000000000
+      internalID: -7510214702925923191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_136
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 224
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17fdc1ae1c8e29ec0800000000000000
+      internalID: -3561528435742548111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_137
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 208
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 152387a5537cab5a0800000000000000
+      internalID: -6504667679818239407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_138
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 208
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e422f061b64ecca80800000000000000
+      internalID: -8445124052643798450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_139
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 208
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f6049c7a6351ff00800000000000000
+      internalID: 1148791096777901811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_140
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 208
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b5c31443681d2670800000000000000
+      internalID: 8515489285050451382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_141
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 224
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30cf62ea5044dfe60800000000000000
+      internalID: 7997623304467184643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_142
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 208
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30a9385c124aa89b0800000000000000
+      internalID: -5077065164952200701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_143
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 208
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 474dd1f4aaa21eab0800000000000000
+      internalID: -4980652801934896012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_144
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 165
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89e54f69bf840b530800000000000000
+      internalID: 3868672325317844632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_145
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 165
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f5ea04f678628730800000000000000
+      internalID: 3999874279168206320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_146
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 165
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aafd35e551bfa94b0800000000000000
+      internalID: -5432753931273642070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_147
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 165
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba765fee47b6bfe00800000000000000
+      internalID: 1079574685654804395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_148
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 165
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d16a0770519b83d0800000000000000
+      internalID: -3203306935163395626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_149
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 165
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 568699e9c26f7a640800000000000000
+      internalID: 5091308575265482853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_150
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 165
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b46ad1e1924c0cc0800000000000000
+      internalID: -3743543995924847432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_151
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 165
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b129443bd6c8f3fa0800000000000000
+      internalID: -5818777790752452069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_152
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 165
+        width: 7
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 095ebf01393f89fd0800000000000000
+      internalID: -2334848593820916336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_153
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 165
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e8f9dd4e007510e0800000000000000
+      internalID: -2299808827964786460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_154
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 162
+        width: 11
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4863220e3a74f0b50800000000000000
+      internalID: 6561541951267681924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_155
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 165
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f86059c1e75f75740800000000000000
+      internalID: 5140847421660923535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_156
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 165
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7094d43245be3f70800000000000000
+      internalID: 9168965187331723391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_157
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 165
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db1d3e0090f767720800000000000000
+      internalID: 2843599891377410493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_158
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 165
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9245e76ecea89f890800000000000000
+      internalID: -7423749760659598295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_159
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 165
+        width: 7
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2f8ea96ed74a9850800000000000000
+      internalID: 6384494442332458795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_160
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 165
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e504990a1d2622a0800000000000000
+      internalID: -6762668200597125660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_161
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 138
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f35da6f0ec539e8e0800000000000000
+      internalID: -1663739428198492865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_162
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 137
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e27c5f19cfe6609b0800000000000000
+      internalID: -5114278295773001938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_163
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 137
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cab83515308477f80800000000000000
+      internalID: -8108933424970757204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_164
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 135
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 399c071f810821950800000000000000
+      internalID: 6418333263574649235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_165
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 137
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9957504c9ce1af00800000000000000
+      internalID: 1126441537657854363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_166
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 138
+        width: 7
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0891ca82de2dab8c0800000000000000
+      internalID: -3982639004424332928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_167
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 137
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b51922ad6d4c8ff0800000000000000
+      internalID: -32565964031060559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_168
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 138
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c4690d190b9a5880800000000000000
+      internalID: -8621408073203227455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_169
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 138
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a462be9e79df07390800000000000000
+      internalID: -7822473723836160438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_170
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 137
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d54acdf88d4a1900800000000000000
+      internalID: 655921946504611287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_171
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 137
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ca0c533722035db0800000000000000
+      internalID: -4804494010085537085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_172
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 137
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ba1a804215451d40800000000000000
+      internalID: 5554421660125895348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_173
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 138
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8edf6dd8aba43430800000000000000
+      internalID: 3761820330519158414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_174
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 153
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24086e695261ad9e0800000000000000
+      internalID: -1595938767248129982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_175
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 138
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9965d3d0f8295b5c0800000000000000
+      internalID: -4200289934353017191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Credit list 1.1_176
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 138
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b61823298bf503320800000000000000
+      internalID: 2535631836540993899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Credit list 1.1_0: 541790682836353347
+      Credit list 1.1_1: -869446285936797054
+      Credit list 1.1_10: -6906451661439859331
+      Credit list 1.1_100: 5783091753949044788
+      Credit list 1.1_101: 672804122122768662
+      Credit list 1.1_102: 1169402946559028897
+      Credit list 1.1_103: -6620949014057392966
+      Credit list 1.1_104: 9092562461171019861
+      Credit list 1.1_105: 5430630881330728531
+      Credit list 1.1_106: 92065890837128765
+      Credit list 1.1_107: 3777565191991807626
+      Credit list 1.1_108: -3128208986820650634
+      Credit list 1.1_109: 5810360121245767545
+      Credit list 1.1_11: 3353369990998332633
+      Credit list 1.1_110: 8417158961216440628
+      Credit list 1.1_111: 6850880831125103226
+      Credit list 1.1_112: 3235098867565767471
+      Credit list 1.1_113: 1358204407866723779
+      Credit list 1.1_114: -4859523692216083446
+      Credit list 1.1_115: -292433710239241073
+      Credit list 1.1_116: -5841674827087331908
+      Credit list 1.1_117: -4352303119067012457
+      Credit list 1.1_118: -7057389699222846168
+      Credit list 1.1_119: 4476756288268787212
+      Credit list 1.1_12: -6109258529420772161
+      Credit list 1.1_120: -4347965885534939319
+      Credit list 1.1_121: 2629874522647636738
+      Credit list 1.1_122: 1870576964321071905
+      Credit list 1.1_123: 1625103490710506663
+      Credit list 1.1_124: -8177156629168692391
+      Credit list 1.1_125: -2865791031918103636
+      Credit list 1.1_126: -8246700409630372608
+      Credit list 1.1_127: -2178147302477043543
+      Credit list 1.1_128: 7225803738498845793
+      Credit list 1.1_129: 2394835533565023767
+      Credit list 1.1_13: -2500738183101244458
+      Credit list 1.1_130: -8907380730963631402
+      Credit list 1.1_131: -5978814349106965393
+      Credit list 1.1_132: 4253589055355699671
+      Credit list 1.1_133: 2504277553766906223
+      Credit list 1.1_134: 1994363538765342247
+      Credit list 1.1_135: -7510214702925923191
+      Credit list 1.1_136: -3561528435742548111
+      Credit list 1.1_137: -6504667679818239407
+      Credit list 1.1_138: -8445124052643798450
+      Credit list 1.1_139: 1148791096777901811
+      Credit list 1.1_14: -2231955549880152304
+      Credit list 1.1_140: 8515489285050451382
+      Credit list 1.1_141: 7997623304467184643
+      Credit list 1.1_142: -5077065164952200701
+      Credit list 1.1_143: -4980652801934896012
+      Credit list 1.1_144: 3868672325317844632
+      Credit list 1.1_145: 3999874279168206320
+      Credit list 1.1_146: -5432753931273642070
+      Credit list 1.1_147: 1079574685654804395
+      Credit list 1.1_148: -3203306935163395626
+      Credit list 1.1_149: 5091308575265482853
+      Credit list 1.1_15: -2895419372475019074
+      Credit list 1.1_150: -3743543995924847432
+      Credit list 1.1_151: -5818777790752452069
+      Credit list 1.1_152: -2334848593820916336
+      Credit list 1.1_153: -2299808827964786460
+      Credit list 1.1_154: 6561541951267681924
+      Credit list 1.1_155: 5140847421660923535
+      Credit list 1.1_156: 9168965187331723391
+      Credit list 1.1_157: 2843599891377410493
+      Credit list 1.1_158: -7423749760659598295
+      Credit list 1.1_159: 6384494442332458795
+      Credit list 1.1_16: -5413159771122515385
+      Credit list 1.1_160: -6762668200597125660
+      Credit list 1.1_161: -1663739428198492865
+      Credit list 1.1_162: -5114278295773001938
+      Credit list 1.1_163: -8108933424970757204
+      Credit list 1.1_164: 6418333263574649235
+      Credit list 1.1_165: 1126441537657854363
+      Credit list 1.1_166: -3982639004424332928
+      Credit list 1.1_167: -32565964031060559
+      Credit list 1.1_168: -8621408073203227455
+      Credit list 1.1_169: -7822473723836160438
+      Credit list 1.1_17: -1250816326707221878
+      Credit list 1.1_170: 655921946504611287
+      Credit list 1.1_171: -4804494010085537085
+      Credit list 1.1_172: 5554421660125895348
+      Credit list 1.1_173: 3761820330519158414
+      Credit list 1.1_174: -1595938767248129982
+      Credit list 1.1_175: -4200289934353017191
+      Credit list 1.1_176: 2535631836540993899
+      Credit list 1.1_18: -3869669744148129073
+      Credit list 1.1_19: 1759121981675273521
+      Credit list 1.1_2: -6717520522355603847
+      Credit list 1.1_20: -116630066344369463
+      Credit list 1.1_21: -2475971616837730594
+      Credit list 1.1_22: 9159758711682017231
+      Credit list 1.1_23: 5518797669040236910
+      Credit list 1.1_24: -237283644612949551
+      Credit list 1.1_25: 2701720884631166753
+      Credit list 1.1_26: 4925425990692172106
+      Credit list 1.1_27: 2739243865139106676
+      Credit list 1.1_28: 4185806735833819270
+      Credit list 1.1_29: -5814432896461517439
+      Credit list 1.1_3: -3258092004559365970
+      Credit list 1.1_30: -7535254471609318793
+      Credit list 1.1_31: -732158533322553247
+      Credit list 1.1_32: 8748134085310765668
+      Credit list 1.1_33: -917447674278166261
+      Credit list 1.1_34: -8178985456688097245
+      Credit list 1.1_35: -5577919454931753922
+      Credit list 1.1_36: -5640708534229204488
+      Credit list 1.1_37: -7132814181756700773
+      Credit list 1.1_38: 1118733005558617048
+      Credit list 1.1_39: 5061946798294805827
+      Credit list 1.1_4: 7313263700310645323
+      Credit list 1.1_40: -8191555413071783564
+      Credit list 1.1_41: 1094466257940660013
+      Credit list 1.1_42: 8585083487722581712
+      Credit list 1.1_43: 8412988114204954082
+      Credit list 1.1_44: 1394422272359812122
+      Credit list 1.1_45: 199418083390101133
+      Credit list 1.1_46: -9102875736672133766
+      Credit list 1.1_47: 3257309539135767758
+      Credit list 1.1_48: -7346858315076025382
+      Credit list 1.1_49: -5713829018410941622
+      Credit list 1.1_5: 7106866826307745324
+      Credit list 1.1_50: 7939953598098743751
+      Credit list 1.1_51: 5208356599783942257
+      Credit list 1.1_52: -6846149087038531554
+      Credit list 1.1_53: -3159413550756214452
+      Credit list 1.1_54: -3247962688305592013
+      Credit list 1.1_55: 7793460309957790979
+      Credit list 1.1_56: 7839330567795980568
+      Credit list 1.1_57: 8211692224007801395
+      Credit list 1.1_58: 5629553154749799685
+      Credit list 1.1_59: -6728317293912555259
+      Credit list 1.1_6: 5526839877826051261
+      Credit list 1.1_60: 7444706630951917570
+      Credit list 1.1_61: 1084442834477404692
+      Credit list 1.1_62: 7557993214180104799
+      Credit list 1.1_63: 6482808157025546788
+      Credit list 1.1_64: 2978092619256136659
+      Credit list 1.1_65: -8243983005205309858
+      Credit list 1.1_66: -2980555990684344423
+      Credit list 1.1_67: -5439806115190703416
+      Credit list 1.1_68: 8888832170871580682
+      Credit list 1.1_69: -3844980747193554712
+      Credit list 1.1_7: 7072402813823914438
+      Credit list 1.1_70: 7417810634600261397
+      Credit list 1.1_71: -4935312099050752165
+      Credit list 1.1_72: -3312573315662244260
+      Credit list 1.1_73: 6785099177514550381
+      Credit list 1.1_74: 4200399459184023594
+      Credit list 1.1_75: 6856307310329733177
+      Credit list 1.1_76: 2240595529700233028
+      Credit list 1.1_77: 4663475938066804453
+      Credit list 1.1_78: 796312838097569669
+      Credit list 1.1_79: -6738947789364353295
+      Credit list 1.1_8: 362582952191891075
+      Credit list 1.1_80: 7398271603417791051
+      Credit list 1.1_81: 7732608997159795455
+      Credit list 1.1_82: 864204400539714895
+      Credit list 1.1_83: -7136637015866284462
+      Credit list 1.1_84: -2250987700431540419
+      Credit list 1.1_85: 9140684601998045179
+      Credit list 1.1_86: -734797634853681143
+      Credit list 1.1_87: -7306133168883153952
+      Credit list 1.1_88: -6326014553756746468
+      Credit list 1.1_89: 2116601726397574392
+      Credit list 1.1_9: 889639344499093162
+      Credit list 1.1_90: -7349377046326523390
+      Credit list 1.1_91: -950910234717851028
+      Credit list 1.1_92: -6619154553185805927
+      Credit list 1.1_93: -9025899134630227832
+      Credit list 1.1_94: -6323380459217817509
+      Credit list 1.1_95: -8545426740385602556
+      Credit list 1.1_96: 3350482109958887568
+      Credit list 1.1_97: 967755844912809158
+      Credit list 1.1_98: 4670195171036668760
+      Credit list 1.1_99: 2573281332398741310
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -27,6 +27,8 @@ namespace MaskboundJinosi.AI
         [Header("After Death")]
         [SerializeField] private bool returnToStartScreen = true;
         [SerializeField] private bool resetChallengeTimer = true;
+        [Tooltip("Kalau ON, credit tampil setelah input confirm boss-mati ditekan, lalu start screen dibuka setelah credit selesai.")]
+        [SerializeField] private bool showCreditsOnBossDeath = true;
 
         [Header("Optional Slow Motion")]
         [SerializeField] private bool useSlowMotion;
@@ -140,6 +142,13 @@ namespace MaskboundJinosi.AI
                 timer?.ResetTimer();
             }
 
+            if (showCreditsOnBossDeath && TryShowCredits())
+            {
+                // CreditPager.OnFinished melanjutkan ke start screen / player.
+                _shotRoutine = null;
+                yield break;
+            }
+
             if (returnToStartScreen)
             {
                 GameFlowManager gameFlow = FindFirstObjectByType<GameFlowManager>(FindObjectsInactive.Include);
@@ -159,6 +168,48 @@ namespace MaskboundJinosi.AI
 
             _cameraIsOnBoss = false;
             _shotRoutine = null;
+        }
+
+        private bool TryShowCredits()
+        {
+            CreditPager credits = CreditPager.FindInScene();
+            if (credits == null)
+            {
+                return false;
+            }
+
+            credits.OnFinished.RemoveListener(OnCreditsFinished);
+            credits.OnFinished.AddListener(OnCreditsFinished);
+            credits.ShowCredits();
+            return true;
+        }
+
+        private void OnCreditsFinished()
+        {
+            CreditPager credits = CreditPager.FindInScene();
+            if (credits != null)
+            {
+                credits.OnFinished.RemoveListener(OnCreditsFinished);
+            }
+
+            if (returnToStartScreen)
+            {
+                GameFlowManager gameFlow = FindFirstObjectByType<GameFlowManager>(FindObjectsInactive.Include);
+                if (gameFlow != null)
+                {
+                    gameFlow.ReturnToMainMenu();
+                }
+                else
+                {
+                    Debug.LogWarning("AIActionBossDeathCameraShot: GameFlowManager tidak ditemukan, tidak bisa kembali ke Start Screen.", this);
+                }
+            }
+            else if (returnToPlayer)
+            {
+                FocusPlayer();
+            }
+
+            _cameraIsOnBoss = false;
         }
 
         private void ResolveBoss()

@@ -1,5 +1,7 @@
+using System.Collections;
 using MaskboundJinosi.Skills;
 using MoreMountains.CorgiEngine;
+using MoreMountains.Tools;
 using UnityEngine;
 
 namespace MaskboundJinosi.Gameplay
@@ -16,7 +18,7 @@ namespace MaskboundJinosi.Gameplay
 	/// matching EnableX call.
 	/// </summary>
 	[AddComponentMenu("Maskbound/Gameplay/Player Control Toggles")]
-	public class PlayerControlToggles : MonoBehaviour
+	public class PlayerControlToggles : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 	{
 		[Header("References (auto-found on Awake if empty)")]
 		[Tooltip("The player Character. Defaults to the one on this object.")]
@@ -36,6 +38,12 @@ namespace MaskboundJinosi.Gameplay
 		private const string BlockId = "Block";
 		private const string SkillsId = "Skills";
 		private const string PauseId = "Pause";
+
+		[Header("Freeze")]
+		[Tooltip("Freeze player saat Start (semua CharacterAbility di-disable seperti NPCDialogTrigger, gravity tetap jalan). Unfreeze via UnfreezePlayer().")]
+		[SerializeField] private bool freezePlayerOnStart;
+		[Tooltip("PlayerPrefs key: kalau sudah 1, freeze dilewati (dialog sudah pernah tampil, jadi tidak ada unfreeze yang akan datang). Contoh: Maskbound.FirstTutorialShown.")]
+		[SerializeField] private string skipFreezeIfSaveFlagKey;
 
 		[Header("Diagnostics")]
 		[Tooltip("Log every enable/disable call.")]
@@ -61,12 +69,15 @@ namespace MaskboundJinosi.Gameplay
 		private bool _skillInputWasEnabled;
 		private bool _pauseWasEnabled;
 		private bool _startLockApplied;
+		private bool _freezeApplied;
+		private CharacterAbility[] _playerAbilities;
+		private bool[] _playerAbilitiesEnabledState;
 
 		protected virtual void Awake()
 		{
 			// Attached directly on the player prefab? Then the Character is already
-			// here. Attached to a scene object instead? The player is spawned later
-			// by LevelManager.Start(), so we wait in Update until it exists.
+			// here. Attached to a scene object instead? The player is registered
+			// via the LevelStart event (see OnMMEvent).
 			if (character == null)
 			{
 				character = GetComponent<Character>();
@@ -78,50 +89,61 @@ namespace MaskboundJinosi.Gameplay
 			}
 		}
 
-		protected virtual void Update()
+		protected virtual void OnEnable()
 		{
-			if (!lockAllExceptWalkAndInteractOnStart)
+			this.MMEventStartListening<CorgiEngineEvent>();
+		}
+
+		protected virtual void OnDisable()
+		{
+			this.MMEventStopListening<CorgiEngineEvent>();
+		}
+
+		public virtual void OnMMEvent(CorgiEngineEvent engineEvent)
+		{
+			if (engineEvent.EventType != CorgiEngineEventTypes.LevelStart)
 			{
 				return;
 			}
 
-			if (character == null)
+			if (engineEvent.OriginCharacter != null)
 			{
-				// Scene-placed component: the player is spawned by LevelManager after
-				// this object's Awake/Start, so keep looking until it appears.
-				character = GetSpawnedPlayer();
-				if (character == null)
-				{
-					return;
-				}
-
-				Log("Spawned player found: '" + character.name + "', resolving abilities.");
+				character = engineEvent.OriginCharacter;
 				ResolvePlayer(character);
 			}
 
-			// The spawned player's abilities initialize in their own Start, which
-			// may still be pending this frame. Applying the lock before that would
-			// snapshot half-initialized states, so wait until they are ready.
-			if (!AreAbilitiesReady())
+			if (!freezePlayerOnStart && !lockAllExceptWalkAndInteractOnStart)
 			{
 				return;
 			}
 
-			if (!_startLockApplied)
+			StartCoroutine(ApplyStartStatesWhenReady());
+		}
+
+		protected virtual IEnumerator ApplyStartStatesWhenReady()
+		{
+			yield return new WaitUntil(() => character != null && AreAbilitiesReady());
+
+			if (freezePlayerOnStart && !_freezeApplied && !IsFreezeSkippedBySaveFlag())
+			{
+				DisableMovementAbility();
+				_freezeApplied = true;
+				Debug.Log("[PlayerControlToggles] Player abilities disabled on Start.", this);
+			}
+
+			if (lockAllExceptWalkAndInteractOnStart && !_startLockApplied)
 			{
 				RememberStates();
 				ApplyStartLock();
 				_startLockApplied = true;
-				Debug.Log("[PlayerControlToggles] Start lock applied. Unlock keys -> " +
-				          "Run=" + GetKeyValue(RunId) +
-				          ", Jump=" + GetKeyValue(JumpId) +
-				          ", Dash=" + GetKeyValue(DashId) +
-				          ", Attack=" + GetKeyValue(AttackId) +
-				          ", SpecialAttack=" + GetKeyValue(SpecialAttackId) +
-				          ", Block=" + GetKeyValue(BlockId) +
-				          ", Skills=" + GetKeyValue(SkillsId) +
-				          ", Pause=" + GetKeyValue(PauseId) +
-				          " (1 = already unlocked, skipped).", this);
+				Debug.Log("[PlayerControlToggles] Start lock applied.", this);
+			}
+		}
+
+		protected virtual void Update()
+		{
+			if (!lockAllExceptWalkAndInteractOnStart || !_startLockApplied)
+			{
 				return;
 			}
 
@@ -131,7 +153,7 @@ namespace MaskboundJinosi.Gameplay
 			// otherwise re-enable abilities that are still locked. Re-apply the lock
 			// whenever such a restore slips a locked ability back on.
 			MaintainLock();
-		}
+	}
 
 		/// <summary>
 		/// Re-disables any ability that is still locked (its unlock key is not set)
@@ -250,6 +272,76 @@ namespace MaskboundJinosi.Gameplay
 		}
 
 		#region Per-ability toggles
+
+		public virtual void FreezePlayer()
+		{
+			if (character == null)
+			{
+				character = GetComponent<Character>() ?? GetSpawnedPlayer();
+			}
+
+			if (character == null || !AreAbilitiesReady())
+			{
+				return;
+			}
+
+			DisableMovementAbility();
+			_freezeApplied = true;
+			Log("Player frozen (all abilities disabled)");
+		}
+
+		public virtual void UnfreezePlayer()
+		{
+			if (character == null)
+			{
+				return;
+			}
+
+			// One-shot: matikan flag start-freeze supaya tidak di-freeze ulang.
+			freezePlayerOnStart = false;
+			RestoreMovementAbility();
+			_freezeApplied = false;
+			Log("Player unfrozen (abilities restored)");
+		}
+
+		protected virtual void DisableMovementAbility()
+		{
+			if (character == null)
+			{
+				return;
+			}
+
+			_playerAbilities = character.GetComponents<CharacterAbility>();
+			_playerAbilitiesEnabledState = new bool[_playerAbilities.Length];
+
+			for (int i = 0; i < _playerAbilities.Length; i++)
+			{
+				_playerAbilitiesEnabledState[i] = _playerAbilities[i].enabled;
+				_playerAbilities[i].enabled = false;
+			}
+
+			CorgiController controller = character.GetComponent<CorgiController>();
+			if (controller != null)
+			{
+				controller.SetHorizontalForce(0f);
+			}
+		}
+
+		protected virtual void RestoreMovementAbility()
+		{
+			if (_playerAbilities == null || _playerAbilitiesEnabledState == null)
+			{
+				return;
+			}
+
+			for (int i = 0; i < _playerAbilities.Length; i++)
+			{
+				_playerAbilities[i].enabled = _playerAbilitiesEnabledState[i];
+			}
+
+			_playerAbilities = null;
+			_playerAbilitiesEnabledState = null;
+		}
 
 		public virtual void DisableRun()
 		{
@@ -474,6 +566,22 @@ namespace MaskboundJinosi.Gameplay
 		#endregion
 
 		#region Helpers
+
+		protected virtual bool IsFreezeSkippedBySaveFlag()
+		{
+			if (string.IsNullOrEmpty(skipFreezeIfSaveFlagKey))
+			{
+				return false;
+			}
+
+			bool skipped = PlayerPrefs.GetInt(skipFreezeIfSaveFlagKey, 0) == 1;
+			if (skipped)
+			{
+				Debug.Log("[PlayerControlToggles] Freeze skipped, flag '" + skipFreezeIfSaveFlagKey + "' already set.", this);
+			}
+
+			return skipped;
+		}
 
 		protected virtual void StopRunIfRunning()
 		{
