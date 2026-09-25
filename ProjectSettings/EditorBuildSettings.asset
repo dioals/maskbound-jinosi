@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/@ssets/Scenes/Levels/Sendang_Sanctum.unity
     guid: c1b1af0f4f11fd249ac726a5c6f72803
   - enabled: 1
+    path: Assets/@ssets/Scenes/Levels/GameOver.unity
+    guid: 2d1d974439e6de347992d735b5639340
+  - enabled: 1
     path: Assets/CorgiEngine/Demos/StartScreen/SplashScreen.unity
     guid: 7b96552fd1198fa4eaae54a2f975645e
   - enabled: 1
