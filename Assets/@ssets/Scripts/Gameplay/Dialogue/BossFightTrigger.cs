@@ -1,4 +1,5 @@
 using System.Collections;
+using MaskboundJinosi.Skills;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
@@ -16,7 +17,7 @@ namespace MaskboundJinosi.Gameplay.Dialogue
     /// </summary>
     [AddComponentMenu("Maskbound/Dialogue/Boss Fight Trigger")]
     [RequireComponent(typeof(BoxCollider2D))]
-    public class BossFightTrigger : MonoBehaviour
+    public class BossFightTrigger : MonoBehaviour, MMEventListener<CorgiEngineEvent>
     {
         [Header("Boss")]
         [Tooltip("The boss character. If empty, found by 'Boss Object Name' at runtime.")]
@@ -58,6 +59,15 @@ namespace MaskboundJinosi.Gameplay.Dialogue
         private AIBrain _bossBrain;
         private DamageOnTouch _bossDamage;
         private CorgiCharacter _player;
+        private CharacterSkillCaster _skillCaster;
+        private CharacterSkillSelectionInput _skillSelectionInput;
+        private CharacterSkillKeyboardInput _skillKeyboardInput;
+        private CharacterJumpSkillInput _jumpSkillInput;
+        private bool _skillCasterWasEnabled = true;
+        private bool _skillSelectionInputWasEnabled = true;
+        private bool _skillKeyboardInputWasEnabled;
+        private bool _jumpSkillInputWasEnabled = true;
+        private bool _playerSkillsDisabled;
         private bool _sequenceStarted;
         private bool _sequenceFinished;
         private bool _activationPending;
@@ -72,6 +82,69 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             // finishes and the fight begins.
             ResolveBoss();
             FreezeBoss();
+            // Player spawn bisa lebih lambat dari Start (LevelManager spawn saat
+            // scene load): kalau player belum ada, disable menyusul lewat event.
+            DisableSpawnedPlayerSkills();
+        }
+
+        protected virtual void OnEnable()
+        {
+            this.MMEventStartListening<CorgiEngineEvent>();
+        }
+
+        protected virtual void OnDisable()
+        {
+            this.MMEventStopListening<CorgiEngineEvent>();
+        }
+
+        public virtual void OnMMEvent(CorgiEngineEvent engineEvent)
+        {
+            if (engineEvent.EventType != CorgiEngineEventTypes.LevelStart
+                && engineEvent.EventType != CorgiEngineEventTypes.SpawnCharacterStarts
+                && engineEvent.EventType != CorgiEngineEventTypes.Respawn)
+            {
+                return;
+            }
+
+            if (_sequenceFinished)
+            {
+                return;
+            }
+
+            if (engineEvent.OriginCharacter != null)
+            {
+                _player = engineEvent.OriginCharacter;
+            }
+
+            // Disable langsung setelah spawn, sebelum timeline/dialog sempat jalan.
+            DisableSpawnedPlayerSkills();
+        }
+
+        /// <summary>
+        /// Disables the spawned player's skill input right after spawn (before
+        /// the intro timeline/dialog gets a chance to run). No-op once the
+        /// dialog sequence has finished.
+        /// </summary>
+        protected virtual void DisableSpawnedPlayerSkills()
+        {
+            if (_sequenceFinished)
+            {
+                return;
+            }
+
+            if (_player == null)
+            {
+                _player = GetMainPlayer();
+            }
+
+            if (_player == null)
+            {
+                Debug.Log("[BossFightTrigger] Disable after spawn: player not spawned yet, will retry on next spawn event.", this);
+                return;
+            }
+
+            Debug.Log("[BossFightTrigger] Disable after spawn: player '" + _player.name + "' found.", this);
+            DisablePlayerSkills();
         }
 
         protected virtual void Update()
@@ -184,13 +257,19 @@ namespace MaskboundJinosi.Gameplay.Dialogue
                 _player = GetMainPlayer();
             }
 
-            if (!freezePlayerDuringDialog || _player == null)
+            if (_player == null)
+            {
+                return;
+            }
+
+            if (!freezePlayerDuringDialog)
             {
                 return;
             }
 
             _player.Freeze();
             ForcePlayerIdle();
+            DisablePlayerSkills();
 
             Debug.Log("[BossFightTrigger] Player frozen.", this);
         }
@@ -201,6 +280,18 @@ namespace MaskboundJinosi.Gameplay.Dialogue
         /// </summary>
         public virtual void UnfreezePlayer()
         {
+            if (_player == null)
+            {
+                // Player ref hilang tapi skill sempat dimatikan: coba resolve
+                // ulang supaya restore tetap jalan.
+                _player = GetMainPlayer();
+            }
+
+            if (_playerSkillsDisabled)
+            {
+                RestorePlayerSkills();
+            }
+
             if (!freezePlayerDuringDialog || _player == null)
             {
                 return;
@@ -270,6 +361,8 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             }
 
             _sequenceStarted = true;
+            FreezePlayer();
+            FreezeBoss();
             Debug.Log("[BossFightTrigger] PlayDialog called, executing block '" + blockName + "'.", this);
 
             if (_flowchartInstance == null)
@@ -445,6 +538,122 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             }
         }
 
+        /// <summary>
+        /// Disables only the player's skill input (caster + 3 input paths).
+        /// Unlike FreezePlayer, this never touches Character.Freeze(), so it is
+        /// safe to call right after spawn while the player is still initializing.
+        /// Restore target follows the player prefab defaults (caster, selection
+        /// and jump on; keyboard stays as-is since it is off by design), never a
+        /// runtime snapshot that could catch the revive freeze window.
+        /// </summary>
+        protected virtual void DisablePlayerSkills()
+        {
+            if (_player == null)
+            {
+                return;
+            }
+
+            // Player di-respawn/di-spawn ulang oleh LevelManager: cache lama
+            // menunjuk komponen player yang sudah dihancurkan. Resolve ulang
+            // selalu supaya disable + restore selalu kena instance yang hidup.
+            _skillCaster = _player.GetComponentInChildren<CharacterSkillCaster>(true);
+            _skillSelectionInput = _player.GetComponentInChildren<CharacterSkillSelectionInput>(true);
+            _skillKeyboardInput = _player.GetComponentInChildren<CharacterSkillKeyboardInput>(true);
+            _jumpSkillInput = _player.GetComponentInChildren<CharacterJumpSkillInput>(true);
+
+            if (!_playerSkillsDisabled)
+            {
+                // Prefab Maskbound_Player: caster + selection + jump default
+                // enabled, keyboard default disabled. Jangan snapshot dari
+                // runtime (bisa kena fase revive yang matikan semuanya),
+                // pakai default prefab sebagai kebenaran.
+                _skillCasterWasEnabled = true;
+                _skillSelectionInputWasEnabled = true;
+                _skillKeyboardInputWasEnabled = _skillKeyboardInput == null || _skillKeyboardInput.enabled;
+                _jumpSkillInputWasEnabled = true;
+                _playerSkillsDisabled = true;
+            }
+
+            if (_skillCaster != null)
+            {
+                Debug.Log("[BossFightTrigger] Disabling skill caster (was " + _skillCaster.enabled + ").", this);
+                _skillCaster.StopCastingAnimation();
+                _skillCaster.enabled = false;
+            }
+            else
+            {
+                Debug.LogWarning("[BossFightTrigger] CharacterSkillCaster NOT found on player '" + _player.name + "'.", this);
+            }
+
+            if (_skillSelectionInput != null)
+            {
+                Debug.Log("[BossFightTrigger] Disabling skill selection input (was " + _skillSelectionInput.enabled + ").", this);
+                _skillSelectionInput.enabled = false;
+            }
+            else
+            {
+                Debug.LogWarning("[BossFightTrigger] CharacterSkillSelectionInput NOT found on player '" + _player.name + "'.", this);
+            }
+
+            if (_skillKeyboardInput != null)
+            {
+                Debug.Log("[BossFightTrigger] Disabling skill keyboard input (was " + _skillKeyboardInput.enabled + ").", this);
+                _skillKeyboardInput.enabled = false;
+            }
+
+            if (_jumpSkillInput != null)
+            {
+                Debug.Log("[BossFightTrigger] Disabling jump skill input (was " + _jumpSkillInput.enabled + ").", this);
+                _jumpSkillInput.enabled = false;
+            }
+        }
+
+        protected virtual void RestorePlayerSkills()
+        {
+            if (!_playerSkillsDisabled)
+            {
+                Debug.Log("[BossFightTrigger] RestorePlayerSkills: nothing to restore (skills were never disabled by this trigger).", this);
+                return;
+            }
+
+            _playerSkillsDisabled = false;
+
+            if (_player != null)
+            {
+                Debug.Log("[BossFightTrigger] Restoring skills on player '" + _player.name + "': caster=" + _skillCasterWasEnabled + ", selection=" + _skillSelectionInputWasEnabled + ", keyboard=" + _skillKeyboardInputWasEnabled + ", jump=" + _jumpSkillInputWasEnabled + ".", this);
+
+                CharacterSkillCaster liveCaster = _player.GetComponentInChildren<CharacterSkillCaster>(true);
+                CharacterSkillSelectionInput liveSelection = _player.GetComponentInChildren<CharacterSkillSelectionInput>(true);
+                CharacterSkillKeyboardInput liveKeyboard = _player.GetComponentInChildren<CharacterSkillKeyboardInput>(true);
+                CharacterJumpSkillInput liveJump = _player.GetComponentInChildren<CharacterJumpSkillInput>(true);
+
+                if (liveCaster != null)
+                {
+                    liveCaster.enabled = _skillCasterWasEnabled;
+                }
+
+                if (liveSelection != null)
+                {
+                    liveSelection.enabled = _skillSelectionInputWasEnabled;
+                }
+
+                if (liveKeyboard != null)
+                {
+                    liveKeyboard.enabled = _skillKeyboardInputWasEnabled;
+                }
+
+                if (liveJump != null)
+                {
+                    liveJump.enabled = _jumpSkillInputWasEnabled;
+                }
+            }
+
+            _skillCaster = null;
+            _skillSelectionInput = null;
+            _skillKeyboardInput = null;
+            _jumpSkillInput = null;
+        }
+
         protected virtual void HideHud()
         {
             if (!hideHudDuringDialog || _hudHidden)
@@ -522,6 +731,15 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             UnfreezeBoss();
             UnfreezePlayer();
             ShowHud();
+
+            // Pastikan skill benar-benar nyala lagi: UnfreezePlayer bisa
+            // early-return (freezePlayerDuringDialog mati / _player null),
+            // sementara skill sempat dimatikan. Paksa restore di sini.
+            if (_playerSkillsDisabled)
+            {
+                Debug.Log("[BossFightTrigger] EndSequence: skills still disabled, forcing restore.", this);
+                RestorePlayerSkills();
+            }
 
             if (!string.IsNullOrEmpty(saveFlagKey))
             {
