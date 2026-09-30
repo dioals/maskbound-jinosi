@@ -579,9 +579,28 @@ private bool _sequenceStarted;
                 _player.MovementState.ChangeState(CharacterStates.MovementStates.Idle);
             }
 
+            // Entered mid-jump: CharacterJump is disabled, so it never sees the
+            // landing (JustGotGrounded) and the state stays Jumping/Falling. Once
+            // restored, CharacterHorizontalMovement only goes to Walking from
+            // Idle/Falling (and its Jumping->Idle check needs TimeAirborne, which is
+            // 0 on the ground), so the player would slide around in idle pose.
+            CorgiController controller = _player.GetComponent<CorgiController>();
+            bool grounded = controller != null && controller.State.IsGrounded;
+            if (grounded
+                && (state == CharacterStates.MovementStates.Jumping
+                    || state == CharacterStates.MovementStates.DoubleJumping
+                    || state == CharacterStates.MovementStates.Falling))
+            {
+                _player.MovementState.ChangeState(CharacterStates.MovementStates.Idle);
+            }
+
             Animator animator = _player.CharacterAnimator;
             if (animator != null)
             {
+                if (grounded)
+                {
+                    animator.SetBool("Jumping", false);
+                }
                 animator.SetBool("Idle", true);
                 animator.SetBool("Walking", false);
                 animator.SetBool("Running", false);
