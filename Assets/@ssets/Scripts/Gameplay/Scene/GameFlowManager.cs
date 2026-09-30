@@ -76,6 +76,15 @@ namespace MaskboundJinosi.Gameplay.Scene
 			// memory, so reset it there too.
 			MaskboundJinosi.Skills.SkillSaveStore.Reset();
 
+			// The persistent GameManager remembers the last point of entry per scene
+			// (set by doors / scene transitions). Without clearing it, a New Game
+			// started in the same session would spawn at the stored entry point
+			// instead of the scene's initial spawn.
+			if (GameManager.HasInstance)
+			{
+				GameManager.Instance.ClearAllPointsOfEntry();
+			}
+
 			PlayerPrefs.Save();
 			RefreshUI();
 			Report("Save data cleared");

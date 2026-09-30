@@ -425,7 +425,9 @@ namespace MoreMountains.CorgiEngine
 		{
 			// in debug mode we spawn the player on the debug spawn point
 			#if UNITY_EDITOR
-			if (DebugSpawn!= null)
+			// a stored point of entry (set by a door / scene transition) takes priority over the debug spawn,
+			// so scene-to-scene transitions behave the same in the editor as in builds
+			if (DebugSpawn != null && !HasStoredPointOfEntry())
 			{
 				DebugSpawn.SpawnPlayer(Players[0]);
 				return;
@@ -437,6 +439,15 @@ namespace MoreMountains.CorgiEngine
 			#else
 				RegularSpawnSingleCharacter();
 			#endif
+		}
+
+		/// <summary>
+		/// Returns true if the GameManager holds a valid point of entry for the current scene
+		/// </summary>
+		protected virtual bool HasStoredPointOfEntry()
+		{
+			PointsOfEntryStorage point = GameManager.Instance.GetPointsOfEntry(SceneManager.GetActiveScene().name);
+			return (point != null) && (PointsOfEntry.Count >= (point.PointOfEntryIndex + 1));
 		}
 
 		/// <summary>
