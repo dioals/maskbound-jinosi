@@ -26,6 +26,10 @@ namespace MaskboundJinosi.Gameplay.Scene
 		public TMP_Text SettingsValueText;
 		public GameObject[] DevelopmentOnlyObjects;
 
+		[Header("HUD")]
+		[Tooltip("Gameplay scenes where the HUD (HP bar etc.) stays hidden. Every other gameplay scene shows it.")]
+		public string[] HudHiddenScenes = { "Daha_Kingdom" };
+
 		[Header("Settings")]
 		[Range(0f, 1f)] public float MasterVolume = 1f;
 		[Range(0.05f, 0.5f)] public float VolumeStep = 0.1f;
@@ -75,6 +79,15 @@ namespace MaskboundJinosi.Gameplay.Scene
 			// Session skill progression (owned + equipped slots) also lives in
 			// memory, so reset it there too.
 			MaskboundJinosi.Skills.SkillSaveStore.Reset();
+
+			// The persistent GameManager remembers the last point of entry per scene
+			// (set by doors / scene transitions). Without clearing it, a New Game
+			// started in the same session would spawn at the stored entry point
+			// instead of the scene's initial spawn.
+			if (GameManager.HasInstance)
+			{
+				GameManager.Instance.ClearAllPointsOfEntry();
+			}
 
 			PlayerPrefs.Save();
 			RefreshUI();
@@ -206,7 +219,62 @@ namespace MaskboundJinosi.Gameplay.Scene
 			PlayerPrefs.SetString(LastSceneKey, scene.name);
 			PlayerPrefs.Save();
 			SetMainMenuVisible(false);
+			ApplyHudSceneVisibility(scene.name);
 			RefreshUI();
+		}
+
+		/// <summary>
+		/// Hides the HUD in the scenes listed in HudHiddenScenes. Uses a CanvasGroup
+		/// (alpha / raycasts) instead of SetActive so it doesn't fight the loader,
+		/// dialog, shop and credits scripts that toggle the HUD's active state.
+		/// </summary>
+		private void ApplyHudSceneVisibility(string sceneName)
+		{
+			GameObject hud = GetHud();
+			if (hud == null)
+			{
+				return;
+			}
+
+			bool hidden = HudHiddenScenes != null && Array.IndexOf(HudHiddenScenes, sceneName) >= 0;
+
+			CanvasGroup group = hud.GetComponent<CanvasGroup>();
+			if (group == null)
+			{
+				if (!hidden)
+				{
+					return;
+				}
+
+				group = hud.AddComponent<CanvasGroup>();
+			}
+
+			group.alpha = hidden ? 0f : 1f;
+			group.interactable = !hidden;
+			group.blocksRaycasts = !hidden;
+		}
+
+		private GameObject GetHud()
+		{
+			if (GUIManager.HasInstance && GUIManager.Instance.HUD != null)
+			{
+				return GUIManager.Instance.HUD;
+			}
+
+			if (GameplayUIRoots == null)
+			{
+				return null;
+			}
+
+			foreach (GameObject root in GameplayUIRoots)
+			{
+				if (root != null && root.name == "HUD")
+				{
+					return root;
+				}
+			}
+
+			return null;
 		}
 
 		private void SetMainMenuVisible(bool visible)

@@ -525,9 +525,25 @@ namespace MaskboundJinosi.Gameplay.Dialogue
                 _player.MovementState.ChangeState(CharacterStates.MovementStates.Idle);
             }
 
+            // Entered mid-jump: see NPCDialogTrigger.ForcePlayerIdle - without this
+            // the state stays Jumping after landing and walking never animates.
+            CorgiController controller = _player.GetComponent<CorgiController>();
+            bool grounded = controller != null && controller.State.IsGrounded;
+            if (grounded
+                && (state == CharacterStates.MovementStates.Jumping
+                    || state == CharacterStates.MovementStates.DoubleJumping
+                    || state == CharacterStates.MovementStates.Falling))
+            {
+                _player.MovementState.ChangeState(CharacterStates.MovementStates.Idle);
+            }
+
             Animator animator = _player.CharacterAnimator;
             if (animator != null)
             {
+                if (grounded)
+                {
+                    animator.SetBool("Jumping", false);
+                }
                 animator.SetBool("Idle", true);
                 animator.SetBool("Walking", false);
                 animator.SetBool("Running", false);

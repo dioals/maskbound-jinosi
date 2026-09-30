@@ -11,7 +11,9 @@ namespace Fungus
         /// <summary> Dialogue box on the left side. </summary>
         Left,
         /// <summary> Dialogue box on the right side. </summary>
-        Right
+        Right,
+        /// <summary> Dialogue box centered, using the Say Dialog's center layout. </summary>
+        Center
     }
 
     /// <summary>
@@ -25,6 +27,8 @@ namespace Fungus
         /// <summary> Force the dialogue box to the left side. </summary>
         Left,
         /// <summary> Force the dialogue box to the right side. </summary>
-        Right
+        Right,
+        /// <summary> Force the dialogue box to the center. </summary>
+        Center
     }
 }

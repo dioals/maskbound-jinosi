@@ -9,13 +9,17 @@ namespace MoreMountains.CorgiEngine
     /// The player spawns (is repositioned) normally but is kept invisible for a short
     /// moment, then pops into view exactly as the revive animation starts. Player abilities
     /// are frozen while the animation plays so the locomotion animator cannot override it,
-    /// and are restored once the animation finishes.
+    /// and are restored once the animation finishes. The player is invulnerable for the
+    /// whole revive, since it can neither be seen nor act during it.
     /// Triggered from a CheckPoint when its PlayReviveOnRespawn flag is enabled, so the
     /// revive is fully configurable per checkpoint.
     /// </summary>
     public static class PlayerRevive
     {
         private const string ReviveStateName = "Revive";
+        private const string AliveParameterName = "Alive";
+        private const string DamageTriggerName = "Damage";
+        private const string DeathTriggerName = "Death";
         private const float ReviveAnimationDuration = 0.9f;
 
         /// <summary>
@@ -49,6 +53,16 @@ namespace MoreMountains.CorgiEngine
         /// </summary>
         private class ReviveRunner : MonoBehaviour
         {
+            // Snapshot of the player's state taken when a revive starts. Kept across a
+            // restarted revive (e.g. two respawns in a row) so the second revive never
+            // snapshots the already-frozen state and restores the player to "disabled".
+            private bool _reviving;
+            private bool _characterWasEnabled;
+            private CharacterAbility[] _abilities;
+            private bool[] _abilityStates;
+            private Health _health;
+            private bool _healthWasInvulnerable;
+
             public void PlayRevive(float delayBeforeVisible)
             {
                 StopAllCoroutines();
@@ -75,17 +89,29 @@ namespace MoreMountains.CorgiEngine
                     yield break;
                 }
 
-                CharacterAbility[] abilities = player.GetComponents<CharacterAbility>();
-                bool[] abilityStates = new bool[abilities.Length];
+                if (!_reviving)
+                {
+                    TakeSnapshot(player);
+                    _reviving = true;
+                }
 
                 // Freeze the player so the locomotion animator cannot override the revive.
-                bool characterWasEnabled = player.enabled;
                 player.enabled = false;
-
-                for (int i = 0; i < abilities.Length; i++)
+                for (int i = 0; i < _abilities.Length; i++)
                 {
-                    abilityStates[i] = abilities[i].enabled;
-                    abilities[i].enabled = false;
+                    _abilities[i].enabled = false;
+                }
+
+                // The Character stops updating the animator while disabled, so its
+                // parameters keep their values from the death frame (Alive = false).
+                // Reset them, otherwise any Damage/Death trigger drives the animator
+                // back into the Die state for the whole revive.
+                ResetAnimatorForRevive(animator);
+
+                // Invisible and unable to act: don't let anything hit the player meanwhile.
+                if (_health != null)
+                {
+                    _health.DamageDisabled();
                 }
 
                 CorgiController controller = player.GetComponent<CorgiController>();
@@ -105,11 +131,59 @@ namespace MoreMountains.CorgiEngine
                 // Wait out the animation before handing back control to the player.
                 yield return new WaitForSeconds(ReviveAnimationDuration);
 
-                // Unfreeze.
-                player.enabled = characterWasEnabled;
-                for (int i = 0; i < abilities.Length; i++)
+                Restore(player);
+            }
+
+            private void TakeSnapshot(CorgiCharacter player)
+            {
+                _characterWasEnabled = player.enabled;
+                _abilities = player.GetComponents<CharacterAbility>();
+                _abilityStates = new bool[_abilities.Length];
+                for (int i = 0; i < _abilities.Length; i++)
                 {
-                    abilities[i].enabled = abilityStates[i];
+                    _abilityStates[i] = _abilities[i].enabled;
+                }
+
+                _health = player.CharacterHealth;
+                _healthWasInvulnerable = (_health != null) && _health.TemporarilyInvulnerable;
+            }
+
+            private void Restore(CorgiCharacter player)
+            {
+                player.enabled = _characterWasEnabled;
+                for (int i = 0; i < _abilities.Length; i++)
+                {
+                    if (_abilities[i] != null)
+                    {
+                        _abilities[i].enabled = _abilityStates[i];
+                    }
+                }
+
+                // Only lift the invulnerability we added, not one set by another system.
+                if ((_health != null) && !_healthWasInvulnerable)
+                {
+                    _health.DamageEnabled();
+                }
+
+                _reviving = false;
+                _abilities = null;
+                _abilityStates = null;
+                _health = null;
+            }
+
+            private static void ResetAnimatorForRevive(Animator animator)
+            {
+                foreach (AnimatorControllerParameter parameter in animator.parameters)
+                {
+                    if (parameter.name == AliveParameterName && parameter.type == AnimatorControllerParameterType.Bool)
+                    {
+                        animator.SetBool(AliveParameterName, true);
+                    }
+                    else if ((parameter.name == DamageTriggerName || parameter.name == DeathTriggerName)
+                             && parameter.type == AnimatorControllerParameterType.Trigger)
+                    {
+                        animator.ResetTrigger(parameter.name);
+                    }
                 }
             }
 

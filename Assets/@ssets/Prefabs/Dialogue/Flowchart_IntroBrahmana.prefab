@@ -83,7 +83,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 4316287744425596664}
+  - {fileID: 1596623036447780184}
   selectedCommands: []
   variables: []
   description: 
@@ -112,7 +112,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 66.2
     y: 70
-    width: 111.535995
+    width: 111.54
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -171,8 +171,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 64.2
-    y: 122.2
-    width: 116.752
+    y: 121.2
+    width: 116.75
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 63.399994
     y: 174.2
-    width: 135.144
+    width: 135.14
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -285,7 +285,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 59.399994
     y: 228.6
-    width: 121.528
+    width: 121.53
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -340,7 +340,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 61.83899
     y: 277.3805
-    width: 128.784
+    width: 128.79001
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -395,7 +395,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 70.00798
     y: 15.799988
-    width: 75.984
+    width: 75.979996
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -905,12 +905,11 @@ MonoBehaviour:
   nameText: Sang Pangreksa
   nameColor: {r: 1, g: 0.84, b: 0.35, a: 1}
   soundEffect: {fileID: 0}
-  portraits:
-  - {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  portraits: []
   portraitsFace: 0
   setSayDialog: {fileID: 0}
-  dialogPanel: {fileID: 21300000, guid: 694613b570a735f4794ff09fa880ac95, type: 3}
-  dialogSide: 0
+  dialogPanel: {fileID: 21300000, guid: b759f59c0183ca2429724090d5e50e01, type: 3}
+  dialogSide: 2
   description: Pangeran Kerajaan Jenggala
   effectAudioSource: {fileID: 0}
   voiceAudioSource: {fileID: 0}
