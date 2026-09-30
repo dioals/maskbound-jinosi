@@ -19,7 +19,7 @@ namespace MaskboundJinosi.UI
         [Tooltip("Dipanggil hanya saat user Next di halaman terakhir (selesai baca semua). Close manual tidak memanggil ini.")]
         public UnityEvent OnTutorialFinished;
 
-        private CreditPager _tutorialPager;
+        private ImagePager _tutorialPager;
 
         protected virtual void Awake()
         {
@@ -59,7 +59,7 @@ namespace MaskboundJinosi.UI
             {
                 if (target != null && target.name == tutorialRootName)
                 {
-                    _tutorialPager = target.GetComponentInChildren<CreditPager>(true);
+                    _tutorialPager = target.GetComponentInChildren<ImagePager>(true);
                     return;
                 }
             }

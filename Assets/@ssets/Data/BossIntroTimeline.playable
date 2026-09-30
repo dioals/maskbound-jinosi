@@ -25,13 +25,13 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -2394898645023447589}
-    m_Duration: 8.15
+    m_Duration: 6.2
     m_TimeScale: 1
     m_ParentTrack: {fileID: -8427939882785451271}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 1.9000000000000004
+    m_BlendOutDuration: 2.6
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -91,15 +91,15 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: 'BossIntro_Shot1_Cam '
   - m_Version: 1
-    m_Start: 6.25
+    m_Start: 3.6
     m_ClipIn: 0
     m_Asset: {fileID: 5070772937095875165}
-    m_Duration: 4.916666666666666
+    m_Duration: 5.800000000000001
     m_TimeScale: 1
     m_ParentTrack: {fileID: -8427939882785451271}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 1.9000000000000004
+    m_BlendInDuration: 2.6
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 6.383333333333334
+  m_Time: 3.6
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 56a3580e9ac4fe74582dc267a8d665f6, type: 2}
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 6.25
+  m_Time: 3.466666666666667
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 0fa7307e3780cdc4aa74254ee14b45c5, type: 2}

@@ -503,7 +503,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3f7e0153036abe48babd88a3b43a810, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.UI.CreditPager
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.UI.ImagePager
   Pages:
   - {fileID: 2022268361279528802}
   - {fileID: 1929641013944762386}

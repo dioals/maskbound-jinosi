@@ -25052,6 +25052,7 @@ MonoBehaviour:
   resetChallengeTimer: 1
   gameFlowManager: {fileID: 215762478}
   challengeTimer: {fileID: 910000000000000101}
+  creditsRootName: CreditUI
 --- !u!114 &910000000000000107
 MonoBehaviour:
   m_ObjectHideFlags: 0

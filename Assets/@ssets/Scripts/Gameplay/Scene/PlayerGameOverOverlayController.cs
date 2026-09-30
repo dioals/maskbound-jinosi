@@ -12,6 +12,8 @@ namespace MaskboundJinosi.Gameplay.Scene
         [SerializeField] private bool resetChallengeTimer = true;
         [SerializeField] private GameFlowManager gameFlowManager;
         [SerializeField] private DemoBossChallengeTimer challengeTimer;
+        [Tooltip("Nama root overlay credit di scene. Dipakai untuk lookup ImagePager yang benar (bukan tutorial).")]
+        [SerializeField] private string creditsRootName = "CreditUI";
 
         private Coroutine _returnRoutine;
 
@@ -75,24 +77,22 @@ namespace MaskboundJinosi.Gameplay.Scene
                 yield return null;
             }
 
-            if (ShowCreditsThenReturn())
-            {
-                _returnRoutine = null;
-                yield break;
-            }
-
             if (resetChallengeTimer)
             {
                 challengeTimer?.ResetTimer();
             }
 
-            gameFlowManager?.ReturnToMainMenu();
+            if (ShowCreditsThenReturn())
+            {
+                _returnRoutine = null;
+                yield break;
+            }
             _returnRoutine = null;
         }
 
         private bool ShowCreditsThenReturn()
         {
-            CreditPager credits = CreditPager.FindInScene();
+            ImagePager credits = ImagePager.FindByRootName(creditsRootName);
             if (credits == null)
             {
                 return false;
@@ -100,13 +100,13 @@ namespace MaskboundJinosi.Gameplay.Scene
 
             credits.OnFinished.RemoveListener(OnCreditsFinished);
             credits.OnFinished.AddListener(OnCreditsFinished);
-            credits.ShowCredits();
+            credits.Show();
             return true;
         }
 
         private void OnCreditsFinished()
         {
-            CreditPager credits = CreditPager.FindInScene();
+            ImagePager credits = ImagePager.FindByRootName(creditsRootName);
             if (credits != null)
             {
                 credits.OnFinished.RemoveListener(OnCreditsFinished);

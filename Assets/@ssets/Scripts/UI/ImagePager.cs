@@ -7,11 +7,13 @@ using UnityEngine.Events;
 namespace MaskboundJinosi.UI
 {
 	/// <summary>
-	/// Image pager generik: tampilkan satu halaman, next/prev sampai habis,
+	/// Pager halaman gambar generik: tampilkan satu halaman, next/prev sampai habis,
 	/// lalu tutup. Dipakai CreditUI (game over) dan TutorialUI (main menu).
+	/// Karena satu script dipakai beberapa overlay, lookup-nya berdasarkan nama root
+	/// (<see cref="FindByRootName"/>) supaya tidak salah ambil instance.
 	/// </summary>
 	[AddComponentMenu("Maskbound/UI/Image Pager")]
-	public class CreditPager : MonoBehaviour
+	public class ImagePager : MonoBehaviour
 	{
 		[Header("Pages (manual)")]
 		[Tooltip("Urutan halaman. Isi manual di Inspector dengan objek halaman (image). Frame jangan dimasukkan, dia selalu nyala.")]
@@ -28,15 +30,15 @@ namespace MaskboundJinosi.UI
 		public GameObject OverlayRoot;
 
 		[Header("Show / Hide")]
-		[Tooltip("Root CreditUI yang di-toggle. Kosongkan = pakai OverlayRoot / parent objek ini (otomatis). Deprecated: pakai OverlayRoot.")]
+		[Tooltip("Root overlay yang di-toggle. Kosongkan = pakai OverlayRoot / parent objek ini (otomatis). Deprecated: pakai OverlayRoot.")]
 		public GameObject CreditRoot;
-		[Tooltip("Sembunyikan HUD gameplay saat credit tampil, kembalikan saat credit ditutup.")]
+		[Tooltip("Sembunyikan HUD gameplay saat overlay tampil, kembalikan saat overlay ditutup.")]
 		public bool HideHudDuringCredits = true;
-		[Tooltip("UI lain yang ikut di-hide saat credit tampil (opsional, isi manual). HUD otomatis, tidak perlu dimasukkan.")]
+		[Tooltip("UI lain yang ikut di-hide saat overlay tampil (opsional, isi manual). HUD otomatis, tidak perlu dimasukkan.")]
 		public List<GameObject> HideOtherUI = new List<GameObject>();
-		[Tooltip("Otomatis hide overlay GameOver/BossVictory saat credit tampil.")]
+		[Tooltip("Otomatis hide overlay GameOver/BossVictory saat overlay tampil.")]
 		public bool HideEndOverlays = true;
-		[Tooltip("Kembalikan UI yang di-hide saat credit ditutup. Untuk flow game-over biarkan ON supaya HUD balik sebelum load main menu.")]
+		[Tooltip("Kembalikan UI yang di-hide saat overlay ditutup. Untuk flow game-over biarkan ON supaya HUD balik sebelum load main menu.")]
 		public bool RestoreOnClose = true;
 
 		[Header("Events")]
@@ -116,11 +118,6 @@ namespace MaskboundJinosi.UI
 			{
 				Close();
 			}
-		}
-
-		public virtual void ShowCredits()
-		{
-			Show();
 		}
 
 		public virtual void Show()
@@ -237,14 +234,31 @@ namespace MaskboundJinosi.UI
 			}
 		}
 
-		public static CreditPager FindInScene()
+		/// <summary>
+		/// Cari pager berdasarkan nama root overlay-nya (mis. "CreditUI" / "TutorialUI"),
+		/// termasuk objek yang sedang nonaktif. Dipakai supaya scene yang punya beberapa
+		/// ImagePager tidak salah ambil instance.
+		/// </summary>
+		public static ImagePager FindByRootName(string rootName)
 		{
-			return Object.FindFirstObjectByType<CreditPager>(FindObjectsInactive.Include);
-		}
+			if (string.IsNullOrEmpty(rootName))
+			{
+				return null;
+			}
 
-		public virtual void ShowFromButton()
-		{
-			Show();
+			GameObject[] objects = Object.FindObjectsByType<GameObject>(
+				FindObjectsInactive.Include,
+				FindObjectsSortMode.None);
+
+			foreach (GameObject target in objects)
+			{
+				if (target != null && target.name == rootName)
+				{
+					return target.GetComponentInChildren<ImagePager>(true);
+				}
+			}
+
+			return null;
 		}
 
 		private GameObject ResolveRoot()

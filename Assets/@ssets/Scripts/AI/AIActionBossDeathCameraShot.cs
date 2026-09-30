@@ -29,6 +29,8 @@ namespace MaskboundJinosi.AI
         [SerializeField] private bool resetChallengeTimer = true;
         [Tooltip("Kalau ON, credit tampil setelah input confirm boss-mati ditekan, lalu start screen dibuka setelah credit selesai.")]
         [SerializeField] private bool showCreditsOnBossDeath = true;
+        [Tooltip("Nama root overlay credit di scene. Dipakai untuk lookup ImagePager yang benar (bukan tutorial).")]
+        [SerializeField] private string creditsRootName = "CreditUI";
 
         [Header("Optional Slow Motion")]
         [SerializeField] private bool useSlowMotion;
@@ -144,7 +146,7 @@ namespace MaskboundJinosi.AI
 
             if (showCreditsOnBossDeath && TryShowCredits())
             {
-                // CreditPager.OnFinished melanjutkan ke start screen / player.
+                // ImagePager.OnFinished melanjutkan ke start screen / player.
                 _shotRoutine = null;
                 yield break;
             }
@@ -172,7 +174,7 @@ namespace MaskboundJinosi.AI
 
         private bool TryShowCredits()
         {
-            CreditPager credits = CreditPager.FindInScene();
+            ImagePager credits = ImagePager.FindByRootName(creditsRootName);
             if (credits == null)
             {
                 return false;
@@ -180,13 +182,13 @@ namespace MaskboundJinosi.AI
 
             credits.OnFinished.RemoveListener(OnCreditsFinished);
             credits.OnFinished.AddListener(OnCreditsFinished);
-            credits.ShowCredits();
+            credits.Show();
             return true;
         }
 
         private void OnCreditsFinished()
         {
-            CreditPager credits = CreditPager.FindInScene();
+            ImagePager credits = ImagePager.FindByRootName(creditsRootName);
             if (credits != null)
             {
                 credits.OnFinished.RemoveListener(OnCreditsFinished);
