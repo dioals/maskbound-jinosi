@@ -113,7 +113,16 @@ namespace Fungus
             sayDialog.SetCharacter(character);
             if (dialogSideOverride != DialogSideOverride.None)
             {
-                sayDialog.SetDialogSide(dialogSideOverride == DialogSideOverride.Right ? DialogSide.Right : DialogSide.Left);
+                DialogSide side = DialogSide.Left;
+                if (dialogSideOverride == DialogSideOverride.Right)
+                {
+                    side = DialogSide.Right;
+                }
+                else if (dialogSideOverride == DialogSideOverride.Center)
+                {
+                    side = DialogSide.Center;
+                }
+                sayDialog.SetDialogSide(side);
             }
             sayDialog.SetCharacterImage(portrait);
 

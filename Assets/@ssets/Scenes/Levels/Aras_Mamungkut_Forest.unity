@@ -4012,7 +4012,7 @@ MonoBehaviour:
     Namun kini pecahan jiwaku tlah kembali.'
   description: 
   character: {fileID: 1484667754}
-  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -4165,7 +4165,7 @@ MonoBehaviour:
     Namun kini pecahan jiwaku tlah kembali.'
   description: 
   character: {fileID: 1484667754}
-  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -4195,7 +4195,7 @@ MonoBehaviour:
 '
   description: 
   character: {fileID: 1484667754}
-  portrait: {fileID: 21300000, guid: b738002221813834ab3e70c34f500a98, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1

@@ -92,7 +92,19 @@ namespace Fungus
         [Tooltip("Dialog box background image used when the speaking character is on the right side. Must be a horizontally flipped version of the default panel.")]
         [SerializeField] protected Image panelImageRight;
         protected Sprite defaultPanelSpriteRight;
-    
+
+        [Tooltip("Dialog box background image used when the speaking character uses the Center dialog side.")]
+        [SerializeField] protected Image panelImageCenter;
+        protected Sprite defaultPanelSpriteCenter;
+
+        [Tooltip("Placeholder RectTransform (sibling of the name text) defining the name text layout for the Center dialog side. Leave empty to keep the authored layout.")]
+        [SerializeField] protected RectTransform centerNameLayout;
+
+        [Tooltip("Placeholder RectTransform (sibling of the story text) defining the story text layout for the Center dialog side. Leave empty to keep the authored layout.")]
+        [SerializeField] protected RectTransform centerStoryLayout;
+
+        protected DialogSide currentSide = DialogSide.Left;
+
         [Tooltip("Adjust width of story text when Character Image is displayed (to avoid overlapping)")]
         [SerializeField] protected bool fitTextWithImage = true;
 
@@ -128,12 +140,25 @@ namespace Fungus
 			public Vector2 anchorMin;
 			public Vector2 anchorMax;
 			public Vector2 anchoredPosition;
+			public Vector2 sizeDelta;
+			public Vector2 pivot;
 
-			public RectLayoutCache(Vector2 anchorMin, Vector2 anchorMax, Vector2 anchoredPosition)
+			public RectLayoutCache(RectTransform rectTransform)
 			{
-				this.anchorMin = anchorMin;
-				this.anchorMax = anchorMax;
-				this.anchoredPosition = anchoredPosition;
+				anchorMin = rectTransform.anchorMin;
+				anchorMax = rectTransform.anchorMax;
+				anchoredPosition = rectTransform.anchoredPosition;
+				sizeDelta = rectTransform.sizeDelta;
+				pivot = rectTransform.pivot;
+			}
+
+			public void ApplyTo(RectTransform rectTransform)
+			{
+				rectTransform.anchorMin = anchorMin;
+				rectTransform.anchorMax = anchorMax;
+				rectTransform.pivot = pivot;
+				rectTransform.sizeDelta = sizeDelta;
+				rectTransform.anchoredPosition = anchoredPosition;
 			}
 		}
 
@@ -154,6 +179,10 @@ namespace Fungus
             if (panelImageRight != null)
             {
                 defaultPanelSpriteRight = panelImageRight.sprite;
+            }
+            if (panelImageCenter != null)
+            {
+                defaultPanelSpriteCenter = panelImageCenter.sprite;
             }
         }
 
@@ -475,7 +504,9 @@ namespace Fungus
             }
 
             // Adjust story text box to not overlap image rect
-            if (fitTextWithImage && 
+            // Center layout is authored explicitly, so skip the fit adjustment there
+            if (fitTextWithImage &&
+                currentSide != DialogSide.Center &&
                 StoryText != null &&
                 characterImage.gameObject.activeSelf)
             {
@@ -506,27 +537,45 @@ namespace Fungus
         /// </summary>
         public virtual void SetDialogSide(DialogSide side)
         {
-            if (panelImage == null && panelImageRight == null)
+            if (panelImage == null && panelImageRight == null && panelImageCenter == null)
             {
                 return;
             }
 
+            // Fall back to the left side if no center panel is set up
+            if (side == DialogSide.Center && panelImageCenter == null)
+            {
+                side = DialogSide.Left;
+            }
+
+            currentSide = side;
             bool isRight = (side == DialogSide.Right);
+            bool isCenter = (side == DialogSide.Center);
 
             // Toggle the correct dialog box background
             if (panelImage != null)
             {
-                panelImage.gameObject.SetActive(!isRight);
+                panelImage.gameObject.SetActive(side == DialogSide.Left);
             }
             if (panelImageRight != null)
             {
                 panelImageRight.gameObject.SetActive(isRight);
+            }
+            if (panelImageCenter != null)
+            {
+                panelImageCenter.gameObject.SetActive(isCenter);
             }
 
             // Mirror the text layout so it stays inside the active dialog box.
             // Layout is authored for the left side; mirroring around the panel
             // center flips it to the right side.
             MirrorTextLayout(isRight);
+
+            if (isCenter)
+            {
+                ApplyCenterLayout(nameText != null ? nameText.rectTransform : null, centerNameLayout);
+                ApplyCenterLayout(storyText != null ? storyText.rectTransform : null, centerStoryLayout);
+            }
 
             // Flip the character image horizontally so it faces the dialog box.
             if (characterImage != null)
@@ -562,14 +611,8 @@ namespace Fungus
                 return;
             }
 
-            // Cache the authored layout on first use.
-            if (!mirroredLayoutCache.ContainsKey(rectTransform))
-            {
-                mirroredLayoutCache[rectTransform] = new RectLayoutCache(
-                    rectTransform.anchorMin, rectTransform.anchorMax, rectTransform.anchoredPosition);
-            }
-
-            var cached = mirroredLayoutCache[rectTransform];
+            var cached = GetAuthoredLayout(rectTransform);
+            cached.ApplyTo(rectTransform);
 
             if (isRight)
             {
@@ -577,12 +620,36 @@ namespace Fungus
                 rectTransform.anchorMax = new Vector2(1f - cached.anchorMin.x, cached.anchorMax.y);
                 rectTransform.anchoredPosition = new Vector2(-cached.anchoredPosition.x, cached.anchoredPosition.y);
             }
-            else
+        }
+
+        /// <summary>
+        /// Copies the layout of a placeholder RectTransform onto a UI element for the Center dialog side.
+        /// Placeholder must share the same parent as the element.
+        /// </summary>
+        protected virtual void ApplyCenterLayout(RectTransform rectTransform, RectTransform placeholder)
+        {
+            if (rectTransform == null || placeholder == null)
             {
-                rectTransform.anchorMin = cached.anchorMin;
-                rectTransform.anchorMax = cached.anchorMax;
-                rectTransform.anchoredPosition = cached.anchoredPosition;
+                return;
             }
+
+            GetAuthoredLayout(rectTransform);
+            new RectLayoutCache(placeholder).ApplyTo(rectTransform);
+        }
+
+        /// <summary>
+        /// Returns the authored layout of a RectTransform, caching it on first use
+        /// so repeated side changes do not accumulate.
+        /// </summary>
+        protected virtual RectLayoutCache GetAuthoredLayout(RectTransform rectTransform)
+        {
+            RectLayoutCache cached;
+            if (!mirroredLayoutCache.TryGetValue(rectTransform, out cached))
+            {
+                cached = new RectLayoutCache(rectTransform);
+                mirroredLayoutCache[rectTransform] = cached;
+            }
+            return cached;
         }
 
         /// <summary>
@@ -600,6 +667,11 @@ namespace Fungus
             if (panelImageRight != null)
             {
                 panelImageRight.sprite = sprite != null ? sprite : defaultPanelSpriteRight;
+            }
+
+            if (panelImageCenter != null)
+            {
+                panelImageCenter.sprite = sprite != null ? sprite : defaultPanelSpriteCenter;
             }
         }
 
