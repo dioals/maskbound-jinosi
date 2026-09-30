@@ -21,7 +21,7 @@ namespace MaskboundJinosi.UI
     ///
     /// Navigation: WASD or left stick / D-pad.
     /// Buy: Interact (F on keyboard, or the interact button on controller).
-    /// Close: Meditate (M) or Escape.
+    /// Close: Meditate (M), Escape, or Dash.
     ///
     /// All UI references are wired manually in the Inspector.
     /// Use the "Maskbound/UI Skill Shop/Setup Selected" editor menu to
@@ -87,6 +87,7 @@ namespace MaskboundJinosi.UI
         private Action _onClosed;
         private bool _isOpen;
         private bool _hudHidden;
+        private bool _closeRequested;
 
         private readonly List<Skill> _visibleSkills = new List<Skill>();
         private readonly List<GameObject> _skillEntries = new List<GameObject>();
@@ -141,6 +142,7 @@ namespace MaskboundJinosi.UI
             _slotManager = slotManager;
             _onClosed = onClosed;
             _isOpen = true;
+            _closeRequested = false;
             _pendingConfirmSkill = null;
 
             // Seed the session store's OWNED set from the player's current slots
@@ -184,6 +186,7 @@ namespace MaskboundJinosi.UI
             if (!_isOpen) return;
 
             _isOpen = false;
+            _closeRequested = false;
             _pendingConfirmSkill = null;
             HideConfirmPanel();
             if (previewPlayer != null) previewPlayer.Stop();
@@ -201,6 +204,7 @@ namespace MaskboundJinosi.UI
 
             bool interactDown = false;
             bool meditateDown = false;
+            bool dashDown = false;
             Vector2 moveInput = Vector2.zero;
 
             if (MoreMountains.CorgiEngine.InputManager.HasInstance)
@@ -211,6 +215,9 @@ namespace MaskboundJinosi.UI
                 MaskboundInControlInputManager maskbound = input as MaskboundInControlInputManager;
                 meditateDown = maskbound != null && maskbound.MeditateButton != null
                     && maskbound.MeditateButton.State.CurrentState == MMInput.ButtonStates.ButtonDown;
+
+                dashDown = input.DashButton != null
+                    && input.DashButton.State.CurrentState == MMInput.ButtonStates.ButtonDown;
             }
 
             // Gamepad: buy = Action1 (A), close = Action4 (Y). The world Interact
@@ -244,6 +251,20 @@ namespace MaskboundJinosi.UI
             if (UnityEngine.Input.GetKey(KeyCode.A) || UnityEngine.Input.GetKey(KeyCode.LeftArrow)) moveInput.x -= 1f;
             if (UnityEngine.Input.GetKey(KeyCode.D) || UnityEngine.Input.GetKey(KeyCode.RightArrow)) moveInput.x += 1f;
 
+            // Dash closes the shop (or cancels the confirm popup, like Y/M).
+            // The close is deferred to LateUpdate so the player's dash ability,
+            // re-permitted on close, can't consume the same ButtonDown and dash.
+            if (dashDown && _pendingConfirmSkill == null)
+            {
+                _closeRequested = true;
+                return;
+            }
+
+            if (dashDown)
+            {
+                meditateDown = true;
+            }
+
             if (_pendingConfirmSkill != null)
             {
                 // Saat panel konfirmasi terbuka, navigasi dikunci. Input hanya
@@ -274,6 +295,14 @@ namespace MaskboundJinosi.UI
             }
 
             if (meditateDown)
+            {
+                Close();
+            }
+        }
+
+        private void LateUpdate()
+        {
+            if (_isOpen && _closeRequested)
             {
                 Close();
             }
