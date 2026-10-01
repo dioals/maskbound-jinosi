@@ -17,7 +17,6 @@ namespace MoreMountains.CorgiEngine
     public static class PlayerRevive
     {
         private const string ReviveStateName = "Revive";
-        private const string AliveParameterName = "Alive";
         private const string DamageTriggerName = "Damage";
         private const string DeathTriggerName = "Death";
         private const float ReviveAnimationDuration = 0.9f;
@@ -103,9 +102,9 @@ namespace MoreMountains.CorgiEngine
                 }
 
                 // The Character stops updating the animator while disabled, so its
-                // parameters keep their values from the death frame (Alive = false).
-                // Reset them, otherwise any Damage/Death trigger drives the animator
-                // back into the Die state for the whole revive.
+                // parameters keep stale values. Clear any pending Damage/Death trigger,
+                // otherwise it drives the animator back into the Die state for the
+                // whole revive.
                 ResetAnimatorForRevive(animator);
 
                 // Invisible and unable to act: don't let anything hit the player meanwhile.
@@ -171,16 +170,18 @@ namespace MoreMountains.CorgiEngine
                 _health = null;
             }
 
+            // Alive is deliberately left untouched: the AnyState -> jumpAndFall transition
+            // fires on (Alive && !Grounded), and Grounded is stale (false) while the
+            // Character is disabled, so forcing Alive = true would override Revive with
+            // the jump/fall pose. Alive = false alone never enters Die (that needs the
+            // Death trigger, or DamageEffect via the Damage trigger, both cleared here,
+            // and the player is invulnerable during the revive).
             private static void ResetAnimatorForRevive(Animator animator)
             {
                 foreach (AnimatorControllerParameter parameter in animator.parameters)
                 {
-                    if (parameter.name == AliveParameterName && parameter.type == AnimatorControllerParameterType.Bool)
-                    {
-                        animator.SetBool(AliveParameterName, true);
-                    }
-                    else if ((parameter.name == DamageTriggerName || parameter.name == DeathTriggerName)
-                             && parameter.type == AnimatorControllerParameterType.Trigger)
+                    if ((parameter.name == DamageTriggerName || parameter.name == DeathTriggerName)
+                        && parameter.type == AnimatorControllerParameterType.Trigger)
                     {
                         animator.ResetTrigger(parameter.name);
                     }
