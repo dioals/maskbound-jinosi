@@ -90,9 +90,12 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             // finishes and the fight begins.
             ResolveBoss();
             FreezeBoss();
-            // Player spawn bisa lebih lambat dari Start (LevelManager spawn saat
-            // scene load): kalau player belum ada, disable menyusul lewat event.
-            DisableSpawnedPlayerSkills();
+            if (IsSequenceActive)
+            {
+                // Player spawn bisa lebih lambat dari Start (LevelManager spawn saat
+                // scene load): kalau player belum ada, disable menyusul lewat event.
+                DisableSpawnedPlayerSkills();
+            }
         }
 
         protected virtual void OnEnable()
@@ -114,7 +117,7 @@ namespace MaskboundJinosi.Gameplay.Dialogue
                 return;
             }
 
-            if (_sequenceFinished)
+            if (_sequenceFinished || !IsSequenceActive)
             {
                 return;
             }
@@ -130,12 +133,14 @@ namespace MaskboundJinosi.Gameplay.Dialogue
 
         /// <summary>
         /// Disables the spawned player's skill input right after spawn (before
-        /// the intro timeline/dialog gets a chance to run). No-op once the
-        /// dialog sequence has finished.
+        /// the intro timeline/dialog gets a chance to run). Only runs while a
+        /// dialog sequence is actually pending or playing: reviving mid-fight
+        /// (no dialog running) must not lock the skills, otherwise nothing
+        /// restores them since no dialog will finish.
         /// </summary>
         protected virtual void DisableSpawnedPlayerSkills()
         {
-            if (_sequenceFinished)
+            if (_sequenceFinished || !IsSequenceActive)
             {
                 return;
             }
