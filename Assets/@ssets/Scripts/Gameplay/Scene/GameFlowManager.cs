@@ -68,7 +68,7 @@ namespace MaskboundJinosi.Gameplay.Scene
 		/// <summary>
 		/// Wipes ALL PlayerPrefs save data so a New Game starts completely fresh:
 		/// the last gameplay scene (Continue), dialog/tutorial "seen once" flags,
-		/// Fungus' save history, broken breakables and the skill save. Because every
+		/// Fungus' save history, broken breakables, unlocked soul portals and the skill save. Because every
 		/// save key the game writes is deleted, no list of keys needs to be kept in
 		/// sync when new flags/features are added.
 		/// </summary>

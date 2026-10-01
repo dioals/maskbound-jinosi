@@ -17,11 +17,22 @@ namespace MaskboundJinosi.Gameplay.Scene
     [AddComponentMenu("Maskbound/Scene/Spiritual Soul Target")]
     public class SpiritualSoulTarget : ButtonActivated
     {
+        /// <summary>
+        /// PlayerPrefs key prefix marking a target as already activated in the current save,
+        /// so spending soul afterwards doesn't lock it again.
+        /// Wiped by GameFlowManager.ClearSaveData() on New Game.
+        /// </summary>
+        private const string ActivatedKeyPrefix = "Maskbound.SoulTargetActivated.";
+
         [Header("Soul Requirement")]
         [Tooltip("Minimum total soul in the wallet required to activate this target.")]
         [SerializeField, Min(0f)] private int requiredSoul = 100;
         [Tooltip("If true, the target only needs the soul threshold; no button press is needed to become active. Button press is still required to travel.")]
         [SerializeField] private bool activateOnSoulReached = true;
+
+        [Header("Persistence")]
+        [Tooltip("Unique ID used to remember that this target was activated. Leave empty to derive one from the scene and destination names.")]
+        [SerializeField] private string saveId;
 
         [Header("Visual")]
         [Tooltip("Sprite shown before the soul requirement is met.")]
@@ -89,8 +100,15 @@ namespace MaskboundJinosi.Gameplay.Scene
         protected virtual void Start()
         {
             ResolveSpriteRenderers();
+            if (PlayerPrefs.GetInt(ActivatedKey, 0) == 1)
+            {
+                _activated = true;
+            }
             RefreshVisuals();
         }
+
+        private string ActivatedKey => ActivatedKeyPrefix
+            + (string.IsNullOrWhiteSpace(saveId) ? $"{gameObject.scene.name}->{destinationScene}" : saveId);
 
         private void Update()
         {
@@ -175,6 +193,8 @@ namespace MaskboundJinosi.Gameplay.Scene
             }
 
             _activated = true;
+            PlayerPrefs.SetInt(ActivatedKey, 1);
+            PlayerPrefs.Save();
             RefreshVisuals();
 
             if (activateFeedback != null)
