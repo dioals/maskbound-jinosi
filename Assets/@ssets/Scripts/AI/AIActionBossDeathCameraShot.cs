@@ -3,6 +3,7 @@ using MaskboundJinosi.Gameplay;
 using MaskboundJinosi.Gameplay.Scene;
 using MaskboundJinosi.UI;
 using MoreMountains.CorgiEngine;
+using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
 using UnityEngine;
 
@@ -32,12 +33,19 @@ namespace MaskboundJinosi.AI
         [Tooltip("Nama root overlay credit di scene. Dipakai untuk lookup ImagePager yang benar (bukan tutorial).")]
         [SerializeField] private string creditsRootName = "CreditUI";
 
-        [Header("Optional Slow Motion")]
-        [SerializeField] private bool useSlowMotion;
-        [Range(0.05f, 1f)] [SerializeField] private float slowMotionScale = 0.35f;
+        [Header("Slow Motion")]
+        [Tooltip("Slow-mo dramatis setelah hit-stop untuk menegaskan boss sudah kalah.")]
+        [SerializeField] private bool useSlowMotion = true;
+        [Range(0.05f, 1f)] [SerializeField] private float slowMotionScale = 0.2f;
+        [Tooltip("Durasi (real-time) slow-mo ditahan di Slow Motion Scale.")]
+        [Min(0f)] [SerializeField] private float slowMotionHoldDuration = 1.2f;
+        [Tooltip("Durasi (real-time) transisi dari Slow Motion Scale kembali ke kecepatan normal.")]
+        [Min(0f)] [SerializeField] private float slowMotionRecoverDuration = 1f;
+        [SerializeField] private AnimationCurve slowMotionRecoverCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
 
         private Coroutine _shotRoutine;
         private float _previousTimeScale = 1f;
+        private float _baseFixedDeltaTime;
         private bool _hasPlayed;
         private bool _cameraIsOnBoss;
 
@@ -100,8 +108,16 @@ namespace MaskboundJinosi.AI
             // so Time.timeScale can be 0 the moment this coroutine starts. This death
             // sequence must run at normal speed (death animation, dialog, confirm), so
             // normalize to 1 first instead of capturing the frozen 0 and restoring to it.
+            // Clearing the MMTimeManager stack also stops that pending freeze from expiring
+            // mid-sequence and snapping time back to 1 over our hit-stop / slow-mo.
+            if (MMTimeManager.HasInstance)
+            {
+                MMTimeScaleEvent.Reset();
+            }
+
             Time.timeScale = 1f;
             _previousTimeScale = 1f;
+            _baseFixedDeltaTime = Time.fixedDeltaTime;
 
             if (shotDelay > 0f)
             {
@@ -118,14 +134,18 @@ namespace MaskboundJinosi.AI
                 Time.timeScale = _previousTimeScale;
             }
 
+            float slowMotionDuration = 0f;
             if (useSlowMotion)
             {
-                Time.timeScale = slowMotionScale;
+                slowMotionDuration = slowMotionHoldDuration + slowMotionRecoverDuration;
+                yield return PlaySlowMotion();
             }
 
-            if (deathAnimationDuration > 0f)
+            // Slow-mo berjalan di dalam deathAnimationDuration, sisanya ditunggu normal.
+            float remainingDeathDuration = deathAnimationDuration - slowMotionDuration;
+            if (remainingDeathDuration > 0f)
             {
-                yield return new WaitForSecondsRealtime(deathAnimationDuration);
+                yield return new WaitForSecondsRealtime(remainingDeathDuration);
             }
 
             RestoreTimeScale();
@@ -244,12 +264,47 @@ namespace MaskboundJinosi.AI
             FocusCharacter(LevelManager.Instance.Players[0]);
         }
 
+        private IEnumerator PlaySlowMotion()
+        {
+            // Time scale is re-applied every frame so a stray freeze-frame event handled by
+            // MMTimeManager can't override the slow-mo for longer than a single frame.
+            float elapsed = 0f;
+            while (elapsed < slowMotionHoldDuration)
+            {
+                ApplyTimeScale(slowMotionScale);
+                yield return null;
+                elapsed += Time.unscaledDeltaTime;
+            }
+
+            elapsed = 0f;
+            while (elapsed < slowMotionRecoverDuration)
+            {
+                float progress = slowMotionRecoverCurve.Evaluate(elapsed / slowMotionRecoverDuration);
+                ApplyTimeScale(Mathf.LerpUnclamped(slowMotionScale, 1f, progress));
+                yield return null;
+                elapsed += Time.unscaledDeltaTime;
+            }
+
+            ApplyTimeScale(1f);
+        }
+
+        private void ApplyTimeScale(float timeScale)
+        {
+            Time.timeScale = timeScale;
+
+            // Scale physics steps too, otherwise rigidbodies stutter visibly during slow-mo.
+            if (_baseFixedDeltaTime > 0f && timeScale > 0f)
+            {
+                Time.fixedDeltaTime = _baseFixedDeltaTime * timeScale;
+            }
+        }
+
         private void RestoreTimeScale()
         {
             // Always restore to full speed: this is a death sequence that must finish
             // (animations, dialog, return to start). Comparing against _previousTimeScale
             // could skip the restore if that captured value was 0 from the killing hitstop.
-            Time.timeScale = 1f;
+            ApplyTimeScale(1f);
             _previousTimeScale = 1f;
         }
     }

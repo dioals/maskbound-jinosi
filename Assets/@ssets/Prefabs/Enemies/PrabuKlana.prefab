@@ -2220,8 +2220,10 @@ MonoBehaviour:
   playOnlyOnce: 1
   returnToStartScreen: 1
   resetChallengeTimer: 1
-  useSlowMotion: 0
-  slowMotionScale: 0.35
+  useSlowMotion: 1
+  slowMotionScale: 0.2
+  slowMotionHoldDuration: 1.2
+  slowMotionRecoverDuration: 1
 --- !u!114 &991000000000000011
 MonoBehaviour:
   m_ObjectHideFlags: 0
