@@ -94,6 +94,11 @@ private bool _sequenceStarted;
 		private float _targetCameraX;
 		private Collider2D _triggerCollider;
 
+		/// <summary>
+		/// True while the dialog sequence (camera pan, NPC appear, dialog) is running.
+		/// </summary>
+		public bool IsSequenceActive => _sequenceStarted && !_sequenceFinished;
+
 		protected virtual void Start()
 		{
 			_triggerCollider = GetComponent<Collider2D>();

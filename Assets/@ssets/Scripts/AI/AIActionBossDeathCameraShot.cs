@@ -1,5 +1,6 @@
 using System.Collections;
 using MaskboundJinosi.Gameplay;
+using MaskboundJinosi.Gameplay.Dialogue;
 using MaskboundJinosi.Gameplay.Scene;
 using MaskboundJinosi.UI;
 using MoreMountains.CorgiEngine;
@@ -152,7 +153,17 @@ namespace MaskboundJinosi.AI
 
             DemoBossChallengeTimer timer = FindFirstObjectByType<DemoBossChallengeTimer>(FindObjectsInactive.Include);
 
-            // Lewati frame agar input last-hit tidak ikut dianggap konfirmasi.
+            // Dialog after-death (AIActionCallDialogTrigger di state yang sama) pakai
+            // tombol yang sama dengan confirm, jadi tunggu dialog selesai dulu supaya
+            // tombol next-dialog tidak ikut membuka credit di tengah dialog.
+            BossFightTrigger[] bossDialogs = FindObjectsByType<BossFightTrigger>(FindObjectsSortMode.None);
+            NPCDialogTrigger[] npcDialogs = FindObjectsByType<NPCDialogTrigger>(FindObjectsSortMode.None);
+            while (IsAnyDialogActive(bossDialogs, npcDialogs))
+            {
+                yield return null;
+            }
+
+            // Lewati frame agar input last-hit / penutup dialog tidak ikut dianggap konfirmasi.
             yield return null;
             while (!OverlayConfirmInput.WasPressedThisFrame())
             {
@@ -190,6 +201,27 @@ namespace MaskboundJinosi.AI
 
             _cameraIsOnBoss = false;
             _shotRoutine = null;
+        }
+
+        private static bool IsAnyDialogActive(BossFightTrigger[] bossDialogs, NPCDialogTrigger[] npcDialogs)
+        {
+            foreach (BossFightTrigger dialog in bossDialogs)
+            {
+                if (dialog != null && dialog.IsSequenceActive)
+                {
+                    return true;
+                }
+            }
+
+            foreach (NPCDialogTrigger dialog in npcDialogs)
+            {
+                if (dialog != null && dialog.IsSequenceActive)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private bool TryShowCredits()

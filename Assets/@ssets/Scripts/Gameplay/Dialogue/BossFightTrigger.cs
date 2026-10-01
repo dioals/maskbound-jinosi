@@ -76,6 +76,12 @@ namespace MaskboundJinosi.Gameplay.Dialogue
         private bool _timelinePaused;
         private float _activationStartTime;
 
+        /// <summary>
+        /// True from the moment the trigger is activated (including its activation
+        /// delay) until the dialog sequence ends.
+        /// </summary>
+        public bool IsSequenceActive => !_sequenceFinished && (_activationPending || _sequenceStarted);
+
         protected virtual void Start()
         {
             // Freeze the boss from the start so it stands idle until the dialog
