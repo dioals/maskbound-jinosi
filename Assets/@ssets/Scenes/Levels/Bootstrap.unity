@@ -2406,6 +2406,8 @@ MonoBehaviour:
   DevelopmentOnlyObjects:
   - {fileID: 377795343}
   - {fileID: 570502565}
+  HudHiddenScenes:
+  - Daha_Kingdom
   MasterVolume: 1
   VolumeStep: 0.1
 --- !u!1 &226844577
@@ -11825,24 +11827,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1167497020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167497013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 254ce7aeb6e941db883ca329f6182b40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.UI.CreditAutoScroller
-  ScrollSpeed: 60
-  ReturnSpeed: 180
-  PauseAtTop: 2
-  PauseAtBottom: 2
-  ResumeDelayAfterInput: 3
-  ResetOnEnable: 1
 --- !u!222 &1167497017
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11881,6 +11865,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1167497020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167497013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 254ce7aeb6e941db883ca329f6182b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskboundJinosi.UI.CreditAutoScroller
+  ScrollSpeed: 60
+  ReturnSpeed: 180
+  PauseAtTop: 2
+  PauseAtBottom: 2
+  ResumeDelayAfterInput: 3
+  ResetOnEnable: 1
 --- !u!1 &1171016953
 GameObject:
   m_ObjectHideFlags: 0
@@ -25901,10 +25903,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2421637789445309542, guid: b702626cea65cbb4cb31e15ef295722b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4238996110595109383, guid: b702626cea65cbb4cb31e15ef295722b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4305983557732558429, guid: b702626cea65cbb4cb31e15ef295722b,
         type: 3}
       propertyPath: m_Name
       value: Skill
+      objectReference: {fileID: 0}
+    - target: {fileID: 6492759400195865357, guid: b702626cea65cbb4cb31e15ef295722b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188160712826681456, guid: b702626cea65cbb4cb31e15ef295722b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
