@@ -2073,6 +2073,11 @@ PrefabInstance:
       propertyPath: returnToStartScreen
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 910000000000000302, guid: 4618db918ea2b854ca5780a57a46f728,
+        type: 3}
+      propertyPath: showCreditsOnBossDeath
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1356644743787140172, guid: 4618db918ea2b854ca5780a57a46f728,
         type: 3}
       propertyPath: m_LocalPosition.x
