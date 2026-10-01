@@ -163,11 +163,17 @@ namespace MaskboundJinosi.AI
                 yield return null;
             }
 
-            // Lewati frame agar input last-hit / penutup dialog tidak ikut dianggap konfirmasi.
-            yield return null;
-            while (!OverlayConfirmInput.WasPressedThisFrame())
+            // Confirm hanya dibutuhkan kalau ada yang dibuka setelahnya (credit / start screen).
+            // Kalau keduanya OFF (alur penutup di-handle Fungus), langsung balik ke player
+            // supaya tombol next-dialog berikutnya tidak ikut terbaca di sini.
+            if (showCreditsOnBossDeath || returnToStartScreen)
             {
+                // Lewati frame agar input last-hit / penutup dialog tidak ikut dianggap konfirmasi.
                 yield return null;
+                while (!OverlayConfirmInput.WasPressedThisFrame())
+                {
+                    yield return null;
+                }
             }
 
             if (resetChallengeTimer)
