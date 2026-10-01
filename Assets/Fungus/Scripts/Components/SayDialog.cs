@@ -30,30 +30,52 @@ namespace Fungus
         [Tooltip("TextAdapter will search for appropriate output on this GameObject if nameText is null")]
         [SerializeField] protected GameObject nameTextGO;
         protected TextAdapter nameTextAdapter = new TextAdapter();
+        protected virtual TextAdapter ActiveNameAdapter
+        {
+            get
+            {
+                if (currentSide == DialogSide.Center && nameTextCenterAdapter.HasTextObject())
+                {
+                    return nameTextCenterAdapter;
+                }
+                return nameTextAdapter;
+            }
+        }
         public virtual string NameText
         {
             get
             {
-                return nameTextAdapter.Text;
+                return ActiveNameAdapter.Text;
             }
             set
             {
-                nameTextAdapter.Text = value;
+                ActiveNameAdapter.Text = value;
             }
         }
 
         [Tooltip("The character subtitle text UI object (e.g. title/description under the name)")]
         [SerializeField] protected Text subtitleText;
         protected TextAdapter subtitleTextAdapter = new TextAdapter();
+        protected virtual TextAdapter ActiveSubtitleAdapter
+        {
+            get
+            {
+                if (currentSide == DialogSide.Center && subtitleTextCenterAdapter.HasTextObject())
+                {
+                    return subtitleTextCenterAdapter;
+                }
+                return subtitleTextAdapter;
+            }
+        }
         public virtual string SubtitleText
         {
             get
             {
-                return subtitleTextAdapter.Text;
+                return ActiveSubtitleAdapter.Text;
             }
             set
             {
-                subtitleTextAdapter.Text = value;
+                ActiveSubtitleAdapter.Text = value;
             }
         }
 
@@ -62,15 +84,80 @@ namespace Fungus
         [Tooltip("TextAdapter will search for appropriate output on this GameObject if storyText is null")]
         [SerializeField] protected GameObject storyTextGO;
         protected TextAdapter storyTextAdapter = new TextAdapter();
+
+        [Tooltip("The name text UI object used for the Center dialog side. Leave empty to keep using the shared name text.")]
+        [SerializeField] protected Text nameTextCenter;
+        [Tooltip("TextAdapter will search for appropriate output on this GameObject if nameTextCenter is null")]
+        [SerializeField] protected GameObject nameTextCenterGO;
+        protected TextAdapter nameTextCenterAdapter = new TextAdapter();
+
+        [Tooltip("The character subtitle text UI object used for the Center dialog side. Leave empty to keep using the shared subtitle text.")]
+        [SerializeField] protected Text subtitleTextCenter;
+        [Tooltip("TextAdapter will search for appropriate output on this GameObject if subtitleTextCenter is null")]
+        [SerializeField] protected GameObject subtitleTextCenterGO;
+        protected TextAdapter subtitleTextCenterAdapter = new TextAdapter();
+
+        [Tooltip("The story text UI object used for the Center dialog side. Leave empty to keep using the shared story text.")]
+        [SerializeField] protected Text storyTextCenter;
+        [Tooltip("TextAdapter will search for appropriate output on this GameObject if storyTextCenter is null")]
+        [SerializeField] protected GameObject storyTextCenterGO;
+        protected TextAdapter storyTextCenterAdapter = new TextAdapter();
+
+        [Tooltip("The continue button UI object used for the Center dialog side. Leave empty to keep using the shared continue button.")]
+        [SerializeField] protected Button continueButtonCenter;
+        protected virtual Button ActiveContinueButton
+        {
+            get
+            {
+                if (currentSide == DialogSide.Center && continueButtonCenter != null)
+                {
+                    return continueButtonCenter;
+                }
+                return continueButton;
+            }
+        }
         public virtual string StoryText
         {
             get
             {
-                return storyTextAdapter.Text;
+                return ActiveStoryAdapter.Text;
             }
             set
             {
-                storyTextAdapter.Text = value;
+                ActiveStoryAdapter.Text = value;
+            }
+        }
+        protected virtual TextAdapter ActiveStoryAdapter
+        {
+            get
+            {
+                if (currentSide == DialogSide.Center && storyTextCenterAdapter.HasTextObject())
+                {
+                    return storyTextCenterAdapter;
+                }
+                return storyTextAdapter;
+            }
+        }
+        protected virtual GameObject ActiveStoryTextGO
+        {
+            get
+            {
+                if (currentSide == DialogSide.Center)
+                {
+                    if (storyTextCenter != null)
+                    {
+                        return storyTextCenter.gameObject;
+                    }
+                    if (storyTextCenterGO != null)
+                    {
+                        return storyTextCenterGO;
+                    }
+                }
+                if (storyText != null)
+                {
+                    return storyText.gameObject;
+                }
+                return storyTextGO;
             }
         }
         public virtual RectTransform StoryTextRectTrans
@@ -169,9 +256,12 @@ namespace Fungus
 				activeSayDialogs.Add(this);
 			}
 
-            nameTextAdapter.InitFromGameObject(nameText != null ? nameText.gameObject : nameTextGO);
-            subtitleTextAdapter.InitFromGameObject(subtitleText != null ? subtitleText.gameObject : null);
-            storyTextAdapter.InitFromGameObject(storyText != null ? storyText.gameObject : storyTextGO);
+		            nameTextAdapter.InitFromGameObject(nameText != null ? nameText.gameObject : nameTextGO);
+		            nameTextCenterAdapter.InitFromGameObject(nameTextCenter != null ? nameTextCenter.gameObject : nameTextCenterGO);
+		            subtitleTextAdapter.InitFromGameObject(subtitleText != null ? subtitleText.gameObject : null);
+		            subtitleTextCenterAdapter.InitFromGameObject(subtitleTextCenter != null ? subtitleTextCenter.gameObject : subtitleTextCenterGO);
+		            storyTextAdapter.InitFromGameObject(storyText != null ? storyText.gameObject : storyTextGO);
+		            storyTextCenterAdapter.InitFromGameObject(storyTextCenter != null ? storyTextCenter.gameObject : storyTextCenterGO);
             if (panelImage != null)
             {
                 defaultPanelSprite = panelImage.sprite;
@@ -270,9 +360,14 @@ namespace Fungus
         {
             UpdateAlpha();
 
+            bool waiting = GetWriter().IsWaitingForInput;
             if (continueButton != null)
             {
-                continueButton.gameObject.SetActive( GetWriter().IsWaitingForInput );
+                continueButton.gameObject.SetActive(waiting && ActiveContinueButton == continueButton);
+            }
+            if (continueButtonCenter != null)
+            {
+                continueButtonCenter.gameObject.SetActive(waiting && ActiveContinueButton == continueButtonCenter);
             }
         }
 
@@ -315,7 +410,57 @@ namespace Fungus
 
         protected virtual void ClearStoryText()
         {
-            StoryText = "";
+            storyTextAdapter.Text = "";
+            storyTextCenterAdapter.Text = "";
+        }
+
+        protected virtual void RetargetWriterToActiveStory()
+        {
+            GetWriter().SetTargetTextObject(ActiveStoryTextGO);
+        }
+
+        protected virtual void SetSideTextObjectsActive(bool isCenter)
+        {
+            if (nameText != null)
+            {
+                nameText.gameObject.SetActive(!isCenter || !nameTextCenterAdapter.HasTextObject());
+            }
+            if (nameTextCenter != null)
+            {
+                nameTextCenter.gameObject.SetActive(isCenter);
+            }
+            else if (nameTextCenterGO != null)
+            {
+                nameTextCenterGO.SetActive(isCenter);
+            }
+            if (subtitleText != null)
+            {
+                subtitleText.gameObject.SetActive(!isCenter || !subtitleTextCenterAdapter.HasTextObject());
+            }
+            if (subtitleTextCenter != null)
+            {
+                subtitleTextCenter.gameObject.SetActive(isCenter);
+            }
+            else if (subtitleTextCenterGO != null)
+            {
+                subtitleTextCenterGO.SetActive(isCenter);
+            }
+            if (storyText != null)
+            {
+                storyText.gameObject.SetActive(!isCenter || !storyTextCenterAdapter.HasTextObject());
+            }
+            else if (storyTextGO != null)
+            {
+                storyTextGO.SetActive(!isCenter || !storyTextCenterAdapter.HasTextObject());
+            }
+            if (storyTextCenter != null)
+            {
+                storyTextCenter.gameObject.SetActive(isCenter);
+            }
+            else if (storyTextCenterGO != null)
+            {
+                storyTextCenterGO.SetActive(isCenter);
+            }
         }
 
         #region Public members
@@ -462,16 +607,12 @@ namespace Fungus
                     // Use game object name as default
                     characterName = character.GetObjectName();
                 }
-                    
-                SetCharacterName(characterName, character.NameColor);
-
-                if (subtitleText != null)
-                {
-                    SubtitleText = character.GetDescription();
-                }
 
                 SetDialogSide(character.DialogSide);
                 SetPanelImage(character.DialogPanel);
+
+                SetCharacterName(characterName, character.NameColor);
+                SubtitleText = character.GetDescription();
             }
         }
 
@@ -568,14 +709,9 @@ namespace Fungus
 
             // Mirror the text layout so it stays inside the active dialog box.
             // Layout is authored for the left side; mirroring around the panel
-            // center flips it to the right side.
+            // center flips it to the right side. Center uses its own text objects,
+            // so the shared set always returns to its authored layout there.
             MirrorTextLayout(isRight);
-
-            if (isCenter)
-            {
-                ApplyCenterLayout(nameText != null ? nameText.rectTransform : null, centerNameLayout);
-                ApplyCenterLayout(storyText != null ? storyText.rectTransform : null, centerStoryLayout);
-            }
 
             // Flip the character image horizontally so it faces the dialog box.
             if (characterImage != null)
@@ -584,6 +720,9 @@ namespace Fungus
                 scale.x = Mathf.Abs(scale.x) * (isRight ? -1f : 1f);
                 characterImage.rectTransform.localScale = scale;
             }
+
+            SetSideTextObjectsActive(isCenter);
+            RetargetWriterToActiveStory();
         }
 
         /// <summary>
@@ -625,6 +764,7 @@ namespace Fungus
         /// <summary>
         /// Copies the layout of a placeholder RectTransform onto a UI element for the Center dialog side.
         /// Placeholder must share the same parent as the element.
+        /// Kept for backwards compatibility with older prefab wiring.
         /// </summary>
         protected virtual void ApplyCenterLayout(RectTransform rectTransform, RectTransform placeholder)
         {
@@ -681,12 +821,9 @@ namespace Fungus
         /// </summary>
         public virtual void SetCharacterName(string name, Color color)
         {
-            if (NameText != null)
-            {
-                var subbedName = stringSubstituter.SubstituteStrings(name);
-                NameText = subbedName;
-                nameTextAdapter.SetTextColor(color);
-            }
+            var subbedName = stringSubstituter.SubstituteStrings(name);
+            ActiveNameAdapter.Text = subbedName;
+            ActiveNameAdapter.SetTextColor(color);
         }
 
         /// <summary>
@@ -701,6 +838,7 @@ namespace Fungus
         /// <param name="onComplete">Callback to execute when writing and player input have finished.</param>
         public virtual void Say(string text, bool clearPrevious, bool waitForInput, bool fadeWhenDone, bool stopVoiceover, bool waitForVO, AudioClip voiceOverClip, Action onComplete)
         {
+            RetargetWriterToActiveStory();
             StartCoroutine(DoSay(text, clearPrevious, waitForInput, fadeWhenDone, stopVoiceover, waitForVO, voiceOverClip, onComplete));
         }
 

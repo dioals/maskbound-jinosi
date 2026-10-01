@@ -992,6 +992,19 @@ namespace Fungus
             yield return StartCoroutine(ProcessTokens(tokens, stopAudio, onComplete));
         }
 
+        public virtual void SetTargetTextObject(GameObject go)
+        {
+            if (isWriting || isWaitingForInput)
+            {
+                return;
+            }
+            textAdapter.InitFromGameObject(go);
+            if (forceRichText)
+            {
+                textAdapter.ForceRichText();
+            }
+        }
+
         public void SetTextColor(Color textColor)
         {
             textAdapter.SetTextColor(textColor);
