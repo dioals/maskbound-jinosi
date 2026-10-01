@@ -111,7 +111,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 17.72, y: 17.72}
+  m_Size: {x: 10.63, y: 10.63}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -317,6 +317,8 @@ MonoBehaviour:
   enableDamageOnExplode: 1
   damageWindowDuration: 0.3
   explodeOnHit: 1
+  explodeSound: {fileID: 8300000, guid: f95f313766c6ecd4bb9a482a9763911f, type: 3}
+  explodeSoundVolume: 1
   logEvents: 0
 --- !u!1 &6218307207869066225
 GameObject:

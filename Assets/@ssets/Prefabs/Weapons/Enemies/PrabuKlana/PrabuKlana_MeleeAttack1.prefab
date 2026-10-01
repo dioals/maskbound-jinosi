@@ -328,7 +328,7 @@ MonoBehaviour:
     - rid: 0
       type: {class: MMF_Sound, ns: MoreMountains.Feedbacks, asm: MoreMountains.Tools}
       data:
-        Active: 0
+        Active: 1
         UniqueID: 239961131
         Label: Sound
         OriginalLabel: Sound
@@ -399,7 +399,7 @@ MonoBehaviour:
           ButtonText: Automatic Shaker Setup
         Owner: {fileID: 7016458537401838596}
         DebugActive: 0
-        Sfx: {fileID: 8300000, guid: 2d6f1b59f05ba40e3a702c2695cb86fd, type: 3}
+        Sfx: {fileID: 8300000, guid: d5c12ddb46563a64e85b60a941b5d727, type: 3}
         RandomSfx: []
         TestPlayButton:
           ButtonText: Debug Play Sound
@@ -1106,7 +1106,7 @@ MonoBehaviour:
           ButtonText: Automatic Shaker Setup
         Owner: {fileID: 2208126147509581562}
         DebugActive: 0
-        Sfx: {fileID: 8300000, guid: de0de99cd7ac84fa0978dd5176617fbb, type: 3}
+        Sfx: {fileID: 8300000, guid: d5c12ddb46563a64e85b60a941b5d727, type: 3}
         RandomSfx: []
         TestPlayButton:
           ButtonText: Debug Play Sound

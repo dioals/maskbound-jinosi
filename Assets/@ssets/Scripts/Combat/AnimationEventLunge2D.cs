@@ -11,6 +11,10 @@ namespace MaskboundJinosi.Combat
         [SerializeField] private Character character;
         [SerializeField] private CorgiController controller;
 
+        [Header("Sound")]
+        [SerializeField] private AudioClip lungeSound;
+        [SerializeField, Range(0f, 1f)] private float lungeSoundVolume = 1f;
+
         [Header("Lunge")]
         [SerializeField, Min(0f)] private float horizontalDistance = 1.5f;
         [SerializeField, Min(0.01f)] private float duration = 0.2f;
@@ -28,17 +32,20 @@ namespace MaskboundJinosi.Combat
 
         public void Lunge()
         {
+            PlayLungeSound();
             StartDistanceLunge(horizontalDistance, duration);
         }
 
         // Kept for existing animation events that still pass a raw Corgi force value.
         public void LungeWithForce(float horizontalForce)
         {
+            PlayLungeSound();
             StartForceLunge(new Vector2(horizontalForce, 0f), duration);
         }
 
         public void LungeDistance(float distance)
         {
+            PlayLungeSound();
             StartDistanceLunge(Mathf.Abs(distance), duration);
         }
 
@@ -149,6 +156,16 @@ namespace MaskboundJinosi.Combat
             }
 
             return 1f;
+        }
+
+        private void PlayLungeSound()
+        {
+            if (lungeSound == null)
+            {
+                return;
+            }
+
+            AudioSource.PlayClipAtPoint(lungeSound, transform.position, Mathf.Clamp01(lungeSoundVolume));
         }
     }
 }

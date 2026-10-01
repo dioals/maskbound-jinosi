@@ -1332,6 +1332,7 @@ MonoBehaviour:
   saveFlagKey: 
   dialogDelay: 0.3
   activationDelay: 0
+  cancelIfBossDefeated: 0
   freezePlayerDuringDialog: 1
   hideHudDuringDialog: 1
   introDirector: {fileID: 57431537}
@@ -1725,6 +1726,7 @@ MonoBehaviour:
   saveFlagKey: 
   dialogDelay: 0.3
   activationDelay: 3
+  cancelIfBossDefeated: 0
   freezePlayerDuringDialog: 1
   hideHudDuringDialog: 1
   introDirector: {fileID: 57431537}
@@ -2163,6 +2165,11 @@ PrefabInstance:
       propertyPath: behindDistance
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7140115265765520747, guid: 4618db918ea2b854ca5780a57a46f728,
+        type: 3}
+      propertyPath: lungeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c26698105fe57f14f8254d317ff43a1c, type: 3}
     - target: {fileID: 7813442648799132210, guid: 4618db918ea2b854ca5780a57a46f728,
         type: 3}
       propertyPath: m_LocalPosition.x

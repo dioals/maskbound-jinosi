@@ -40,6 +40,11 @@ namespace MaskboundJinosi.Skills.Effects
         [Tooltip("When the shadow is hit by a player attack, it explodes immediately.")]
         [SerializeField] private bool explodeOnHit = true;
 
+        [Header("Sound")]
+        [Tooltip("Played once when the shadow explodes into mask rage.")]
+        [SerializeField] private AudioClip explodeSound;
+        [SerializeField, Range(0f, 1f)] private float explodeSoundVolume = 1f;
+
         [Header("Debug")]
         [SerializeField] private bool logEvents;
 
@@ -106,6 +111,11 @@ namespace MaskboundJinosi.Skills.Effects
 
             _exploded = true;
             StopExplodeTimer();
+
+            if (explodeSound != null)
+            {
+                AudioSource.PlayClipAtPoint(explodeSound, transform.position, Mathf.Clamp01(explodeSoundVolume));
+            }
 
             if (_animator != null)
             {

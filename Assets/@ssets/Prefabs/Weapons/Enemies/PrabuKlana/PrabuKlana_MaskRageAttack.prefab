@@ -1035,7 +1035,7 @@ MonoBehaviour:
     - rid: 0
       type: {class: MMF_Sound, ns: MoreMountains.Feedbacks, asm: MoreMountains.Tools}
       data:
-        Active: 0
+        Active: 1
         UniqueID: -776557830
         Label: Sound
         OriginalLabel: Sound
@@ -1106,7 +1106,7 @@ MonoBehaviour:
           ButtonText: Automatic Shaker Setup
         Owner: {fileID: 2208126147509581562}
         DebugActive: 0
-        Sfx: {fileID: 8300000, guid: de0de99cd7ac84fa0978dd5176617fbb, type: 3}
+        Sfx: {fileID: 8300000, guid: e34659a9197a4544e90bbef28fe207cc, type: 3}
         RandomSfx: []
         TestPlayButton:
           ButtonText: Debug Play Sound
