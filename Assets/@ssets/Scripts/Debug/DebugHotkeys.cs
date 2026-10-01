@@ -28,12 +28,12 @@ namespace MaskboundJinosi.Debugging
 
 		protected virtual void Update()
 		{
-			if (Input.GetKeyDown(KillPlayerKey))
+			if (UnityEngine.Input.GetKeyDown(KillPlayerKey))
 			{
 				ForceKill(ResolvePlayerHealth(), "Player");
 			}
 
-			if (Input.GetKeyDown(KillBossKey))
+			if (UnityEngine.Input.GetKeyDown(KillBossKey))
 			{
 				ForceKill(ResolveBossHealth(), "Boss");
 			}
