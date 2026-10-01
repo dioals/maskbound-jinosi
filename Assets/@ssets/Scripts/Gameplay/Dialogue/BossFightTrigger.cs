@@ -42,6 +42,8 @@ namespace MaskboundJinosi.Gameplay.Dialogue
         [SerializeField] private float dialogDelay = 0.3f;
         [Tooltip("Seconds to wait after this trigger is called before its dialog starts. Default 0 = starts immediately when called.")]
         [SerializeField] private float activationDelay = 0f;
+        [Tooltip("Cancel this dialog if the boss is defeated before it starts (e.g. the challenge time-up dialog). Leave OFF for dialogs that should play after the boss dies.")]
+        [SerializeField] private bool cancelIfBossDefeated;
 
         [Header("Player")]
         [Tooltip("Freeze the player and force the idle animation while the dialog is playing.")]
@@ -238,7 +240,17 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             // this trigger was called) has elapsed.
             while (Time.time - _activationStartTime < activationDelay)
             {
+                if (CancelIfBossDefeated())
+                {
+                    yield break;
+                }
+
                 yield return null;
+            }
+
+            if (CancelIfBossDefeated())
+            {
+                yield break;
             }
 
             Debug.Log("[BossFightTrigger] Activation delay elapsed (" + (Time.time - _activationStartTime).ToString("F2") + "s), starting dialog sequence.", this);
@@ -248,6 +260,39 @@ namespace MaskboundJinosi.Gameplay.Dialogue
             FreezePlayer();
             FreezeBoss();
             PlayDialog();
+        }
+
+        /// <summary>
+        /// Drops a pending activation when the boss died during the activation
+        /// delay, so challenge dialogs (e.g. time-up) don't play after a win.
+        /// </summary>
+        protected virtual bool CancelIfBossDefeated()
+        {
+            if (!cancelIfBossDefeated || !IsBossDefeated())
+            {
+                return false;
+            }
+
+            _activationPending = false;
+            _sequenceFinished = true;
+            Debug.Log("[BossFightTrigger] Boss defeated before activation delay elapsed, dialog '" + blockName + "' cancelled.", this);
+            return true;
+        }
+
+        protected virtual bool IsBossDefeated()
+        {
+            if (boss == null)
+            {
+                return false;
+            }
+
+            if (boss.ConditionState.CurrentState == CharacterStates.CharacterConditions.Dead)
+            {
+                return true;
+            }
+
+            Health health = boss.CharacterHealth != null ? boss.CharacterHealth : boss.GetComponent<Health>();
+            return health != null && health.CurrentHealth <= 0f;
         }
 
         /// <summary>

@@ -1918,6 +1918,7 @@ MonoBehaviour:
   saveFlagKey: 
   dialogDelay: 0.3
   activationDelay: 30
+  cancelIfBossDefeated: 1
   freezePlayerDuringDialog: 1
   hideHudDuringDialog: 1
   introDirector: {fileID: 57431537}
